@@ -1,0 +1,5 @@
+<swiper-container delSwiper [config]="config" init="false" class="w-full">
+    <swiper-slide [class]="class" *ngFor="let slide of slides">
+        <ng-template *ngIf="slideTemplateRef" [ngTemplateOutlet]="slideTemplateRef" [ngTemplateOutletContext]="{ $implicit: slide }"></ng-template>
+    </swiper-slide>
+</swiper-container>

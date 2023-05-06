@@ -1,0 +1,32 @@
+@import "style";
+
+.top-header {
+  .marquee-wrapper {
+    white-space: nowrap;
+    width: 50%;
+
+    @include small-screen {
+      width: auto;
+      min-width: max-content;
+    }
+
+    .marquee {
+      padding-inline-start: 100%;
+      text-indent: 0;
+      white-space: nowrap;
+      animation: marquee 15s linear infinite;
+      box-sizing: content-box;
+    }
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translate3d(0, 0, 0);
+    visibility: visible;
+  }
+
+  100% {
+    transform: translate3d(var(--translateX), 0, 0);
+  }
+}

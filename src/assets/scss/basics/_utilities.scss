@@ -1,0 +1,186 @@
+.text-dark {
+  color: $dark !important;
+}
+
+.text-primary {
+  color: $primary !important;
+}
+
+.text-primary-light {
+  color: $primary-light;
+}
+
+.text-secondary {
+  color: $secondary !important;
+}
+
+.text-middle {
+  color: $middle !important;
+}
+
+.text-light {
+  color: $text-light !important;
+}
+
+.text-success {
+  color: $success !important;
+}
+
+.text-error {
+  color: $error !important;
+}
+
+.text-pending {
+  color: $pending !important;
+}
+
+// bg
+.bg-primary {
+  background-color: $primary !important;
+}
+
+.bg-primary-light {
+  background-color: $primary-light;
+}
+
+.bg-primary-light-2 {
+  background-color: rgba($color: $primary-light, $alpha: 0.023);
+}
+
+.bg-secondary {
+  background-color: $secondary !important;
+}
+
+.bg-middle {
+  background-color: $middle !important;
+}
+
+.bg-light {
+  background-color: $light !important;
+}
+
+.bg-success {
+  background-color: $success-light !important;
+}
+
+.bg-error {
+  background-color: $error !important;
+}
+
+.bg-error-light {
+  background-color: $error-light !important;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.h-40 {
+  height: 40px !important;
+  min-height: 40px !important;
+}
+
+.w-80 {
+  width: 100%;
+
+  @include small-screen {
+    width: 80%;
+  }
+}
+
+.bottom-0 {
+  bottom: 0;
+}
+
+.border-thin {
+  border-width: .5px !important;
+}
+
+.title-border-bottom {
+  border-bottom: 2px solid $border-color;
+}
+
+.border-primary {
+  border-color: $primary !important;
+}
+
+.border-primary-light {
+  border-color: rgba($color: $primary, $alpha: .5) !important;
+}
+
+.border-error {
+  border-color: $error !important;
+}
+
+.border {
+  border: 1px solid $border-color !important;
+  border-radius: 1px;
+}
+
+.border-radius-0 {
+  border-radius: 0;
+}
+
+.border-radius-2 {
+  border-radius: 2px !important;
+}
+
+.border-radius-4 {
+  border-radius: 4px !important;
+}
+
+.border-radius-8 {
+  border-radius: 8px;
+}
+
+.border-radius-50 {
+  border-radius: 50%;
+}
+
+.box-shadow {
+  box-shadow: 0 0 7px 0px rgba(0, 0, 0, 0.1) !important;
+}
+
+.mend-5 {
+  margin-inline-end: 3rem;
+}
+
+// badge
+.badge-circle {
+  width: 35px;
+  min-width: 35px !important;
+  height: 35px;
+  max-height: 35px !important;
+  border-radius: 50% !important;
+}
+
+.badge-square {
+  width: 30px;
+  min-width: 30px !important;
+  height: 25px;
+  max-height: 25px !important;
+  border-radius: 2px !important;
+}
+
+.w-max {
+  width: auto;
+  min-width: max-content;
+}
+
+.page-wrapper {
+  padding: 1.5rem clamp(1rem, 5vw, 2.5rem) !important;
+}
+
+.p-x {
+  padding-inline: clamp(1rem, 5vw, 2.5rem) !important;
+}
+
+.page-title {
+  font-size: clamp(1.2rem, 1.9vw, 2.5rem) !important;
+}
+
+@include xlarge-screen {
+  .container-lg {
+    max-width: 1400px
+  }
+}

@@ -1,0 +1,18 @@
+{
+    "APP_DISCOUNT": "Download the Delmar & Atallah app now, {{ mobileAppDiscountPercentage }}% discount.",
+    "DOWNLOAD_APP": "Click here to download",
+    "SEARCHBAR_PLACEHOLDER": "Search for a product...",
+    "USER_HEADER_LIST": {
+        "SIGN_IN": "Sign In",
+        "SIGN_OUT": "Sign Out",
+        "MY_ACCOUNT": "My Account"
+    },
+    "ALL_CATEGORIES": "All Categories",
+    "HOME": "Home",
+    "MAGAZINES": "Magazines",
+    "ERROR": {
+        "404": "PAGE NOT FOUND",
+        "403": "FORBIDDEN",
+        "401": "UNAUTHORIZED"
+    }
+}

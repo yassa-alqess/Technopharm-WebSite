@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { TranslationService } from 'core/services';
 
 @Component({
   selector: 'del-root',
@@ -6,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'delmar-attallah';
+  title = 'delmar-attalla';
+
+  constructor(private translateService: TranslationService, private titleService: Title) {
+    if (this.translateService.isEnglish) {
+      this.titleService.setTitle('Delmar & Attalla');
+    } else {
+      this.titleService.setTitle('موقغ دلمار وعطا لله');
+    }
+  }
 }

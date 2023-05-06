@@ -1,0 +1,64 @@
+<!-- Bottom Header -->
+<div class="bottom-header p-2" (isEnglish)="isEnglish = $event">
+    <div class="container-lg">
+        <div class="d-flex align-items-center">
+            <mat-list class="d-flex flex-column flex-xl-row align-items-center p-0" role="list">
+                <!-- All Categories -->
+                <mat-list-item role="listitem" class="p-0 h-40 bg-primary overflow-visible mend-5">
+                    <del-menu menuClass="mt-2 box-shadow categories-menu" btnClass="h-40">
+                        <span matMenuLabel class="d-flex align-items-center gap-2 px-3 text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
+                                 stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12H12m-8.25 5.25h16.5" />
+                            </svg>
+
+                            {{ "ALL_CATEGORIES" | translate }}
+                        </span>
+
+                        <div class="menu-item-hover" matMenuContent *ngFor="let category of categories">
+                            <a class="h-40 overflow-visible" mat-menu-item [disableRipple]="true" [routerLink]="''">
+                                <span class="d-flex font-14 menu-item-text w-100">
+                                    {{ isEnglish ? category.Description : category.ArabicDescription }}
+                                </span>
+                            </a>
+                        </div>
+                    </del-menu>
+                </mat-list-item>
+
+                <!-- Home -->
+                <mat-list-item role="listitem" class="px-1 overflow-visible" *ngIf="categories.length">
+                    <del-menu menuClass="mt-2" btnClass="h-40" [isMenuTrigger]="false">
+                        <span matMenuLabel class="d-flex font-16" routerLink="/" routerLinkActive="text-primary">{{ "HOME" | translate }}</span>
+                    </del-menu>
+                </mat-list-item>
+
+                <!-- Categories -->
+                <mat-list-item role="listitem" class="px-1 overflow-visible" *ngFor="let category of categories">
+                    <del-menu menuClass="mt-2 box-shadow categories-menu" btnClass="h-40">
+                        <span matMenuLabel class="d-flex font-16">{{ isEnglish ? category.Description : category.ArabicDescription }}</span>
+
+                        <div [ngClass]="{'row': (category.ProductGroups?.length || 0) > maxItemCount }" matMenuContent
+                             *ngIf="category.ProductGroups?.length">
+
+                            <div class="menu-item-hover" [ngClass]="{'col-xl-4': (category.ProductGroups?.length || 0) > maxItemCount }"
+                                 *ngFor="let ProductGroup of category.ProductGroups">
+                                <a class="h-40 overflow-visible" mat-menu-item [disableRipple]="true" [routerLink]="ProductGroup.Id || null">
+                                    <span class="d-flex font-14 menu-item-text text-capitalize w-100">
+                                        {{ isEnglish ? (ProductGroup.Description | lowercase) : ProductGroup.ArabicDescription }}
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </del-menu>
+                </mat-list-item>
+
+                <!-- Magazine -->
+                <mat-list-item role="listitem" class="px-1 overflow-visible" *ngIf="categories.length">
+                    <del-menu menuClass="mt-2" btnClass="h-40" [isMenuTrigger]="false">
+                        <a matMenuLabel class="d-flex font-16" [href]="magazineURL" target="_blank">{{ "MAGAZINES" | translate }}</a>
+                    </del-menu>
+                </mat-list-item>
+            </mat-list>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+{
+  "html.format.templating": true,
+  "html.format.indentInnerHtml": true,
+  "html.format.indentHandlebars": true,
+  "html.format.endWithNewline": true,
+  "html.format.contentUnformatted": "pre",
+  "html.format.wrapAttributes": "aligned-multiple",
+  "html.format.wrapLineLength": 150,
+  "javascript.format.insertSpaceAfterConstructor": true,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+  "javascript.format.semicolons": "insert",
+  "typescript.format.insertSpaceAfterTypeAssertion": true,
+  "typescript.format.semicolons": "insert",
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingJsxExpressionBraces": true,
+  "css.format.spaceAroundSelectorSeparator": true,
+  "scss.format.spaceAroundSelectorSeparator": true,
+  "less.format.spaceAroundSelectorSeparator": true,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  }
+}

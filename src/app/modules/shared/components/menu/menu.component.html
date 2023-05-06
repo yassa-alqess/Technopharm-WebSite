@@ -1,0 +1,7 @@
+<button class="main-btn {{ btnClass }}" mat-button [matMenuTriggerFor]="isMenuTrigger ? menu : null">
+    <ng-content select="[matMenuLabel]"></ng-content>
+</button>
+
+<mat-menu class="{{ menuClass }}" #menu="matMenu">
+    <ng-content select="[matMenuContent]"></ng-content>
+</mat-menu>

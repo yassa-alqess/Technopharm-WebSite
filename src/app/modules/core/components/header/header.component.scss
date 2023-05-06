@@ -1,0 +1,77 @@
+@import "style";
+
+:host ::ng-deep .header {
+    .navigation {
+        .navbar {
+            .logo-wraper {
+                width: 100%;
+
+                @include normal-screen {
+                    width: auto;
+                }
+
+                .logo-link {
+                    img {
+                        width: clamp(120px, 4vw, 160px);
+                    }
+                }
+            }
+
+            .search-bar {
+                width: 50%;
+
+                .input-group {
+                    .form-control {
+                        height: auto;
+                        border-radius: 0;
+                        border: none;
+
+                        &:focus {
+                            box-shadow: none;
+                        }
+                    }
+
+                    .input-group-text {
+                        padding: 11px 15px;
+                        border: none;
+                        border-radius: 0 4px 4px 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .list-menu {
+        mat-list {
+            .mdc-list-item {
+                &.item-border {
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+
+                    &::before,
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        height: 50%;
+                        width: 1px;
+                        opacity: 1;
+                        background-color: #c4c4c4 !important;
+                    }
+
+                    &::before {
+                        left: 0;
+                    }
+
+                    &::after {
+                        right: 0;
+                    }
+                }
+
+                &__content {
+                    overflow: visible !important;
+                }
+            }
+        }
+    }
+}

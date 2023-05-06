@@ -1,0 +1,9 @@
+::ng-deep {
+    .mat-mdc-menu-content.mdc-list {
+        padding: 0;
+    }
+
+    .mat-mdc-button {
+        --mat-mdc-button-persistent-ripple-color: transparent;
+    }
+}

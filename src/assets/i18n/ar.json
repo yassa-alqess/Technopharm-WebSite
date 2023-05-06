@@ -1,0 +1,18 @@
+{
+    "APP_DISCOUNT": "حمل تطبيق دلمار وعطا الله الآن، خصم {{ mobileAppDiscountPercentage }}%.",
+    "DOWNLOAD_APP": "إضغط هنا للتحميل",
+    "SEARCHBAR_PLACEHOLDER": "ابحث عن منتج...",
+    "USER_HEADER_LIST": {
+        "SIGN_IN": "تسجيل الدخول",
+        "SIGN_OUT": "إنشاء حساب",
+        "MY_ACCOUNT": "حسابي"
+    },
+    "ALL_CATEGORIES": "كل الأقسام",
+    "HOME": "الرئيسية",
+    "MAGAZINES": "المجلات",
+    "ERROR": {
+        "404": "الصفحة غير موجودة",
+        "403": "محظور",
+        "401": "غير مصرح لك بالدخول"
+    }
+}
