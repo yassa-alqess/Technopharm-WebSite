@@ -23,20 +23,6 @@ h6 {
 body {
   text-align: start;
   background-color: $page-bg;
-
-  .cdk-global-overlay-wrapper {
-    direction: ltr !important;
-  }
-}
-
-[dir=rtl] * {
-  direction: rtl;
-}
-
-.rtl {
-  .cdk-global-overlay-wrapper {
-    direction: rtl !important;
-  }
 }
 
 /* Scrollbar Styles Start Here*/
@@ -67,18 +53,18 @@ body {
 .mat-menu-panel {
   margin-top: .5rem;
   min-width: 130px !important;
-  min-height: $menu-item-height  !important;
+  min-height: $menu-item-height !important;
 
   .mat-menu-content {
     padding: 0 !important;
 
     .mat-list {
       .mat-list-item {
-        height: $menu-item-height  !important;
+        height: $menu-item-height !important;
 
         .mat-list-item-content {
           .mat-menu-item {
-            height: $menu-item-height  !important;
+            height: $menu-item-height !important;
             align-items: center;
           }
         }
@@ -127,7 +113,7 @@ body {
       }
 
       .mat-slider-track-fill {
-        background-color: $secondary  !important;
+        background-color: $secondary !important;
         transition: all .4s ease;
       }
     }
@@ -135,7 +121,7 @@ body {
     .mat-slider-thumb {
       border-radius: 2px;
       box-shadow: 0 4px 10px 0 rgba(12, 0, 51, 0.22);
-      background-color: $primary  !important;
+      background-color: $primary !important;
     }
   }
 }
@@ -155,10 +141,6 @@ body {
   .mat-slide-toggle-content {
     font-family: $font-regular;
   }
-}
-
-.cdk-overlay-connected-position-bounding-box {
-  direction: ltr !important;
 }
 
 // modal

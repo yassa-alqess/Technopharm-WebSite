@@ -1,4 +1,5 @@
 {
+    "APP_TITLE": "Delmar & Attalla",
     "APP_DISCOUNT": "Download the Delmar & Atallah app now, {{ mobileAppDiscountPercentage }}% discount.",
     "DOWNLOAD_APP": "Click here to download",
     "SEARCHBAR_PLACEHOLDER": "Search for a product...",

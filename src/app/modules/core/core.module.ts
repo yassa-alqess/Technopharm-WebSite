@@ -18,7 +18,7 @@ import { HeaderTopComponent } from './components/header/components/header-top/he
 import { HeaderCategoriesComponent } from './components/header/components/header-categories/header-categories.component';
 
 import { BaseSharedModule } from 'shared/sub-modules/base-shared/base-shared.module';
-import { MenuComponent } from 'shared/components';
+import { BreadcrumbComponent, MenuComponent } from 'shared/components';
 
 const COMPONENTS = [
   LayoutComponent,
@@ -41,6 +41,7 @@ const MATERIAL_MODULES = [
     ...MATERIAL_MODULES,
     CommonModule,
     MenuComponent,
+    BreadcrumbComponent,
     BaseSharedModule,
     HttpClientModule,
     ToastrModule.forRoot(),

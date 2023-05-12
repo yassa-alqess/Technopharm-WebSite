@@ -1,24 +1,37 @@
 @import "style";
 
+.bottom-header {
+    background-color: rgba(229, 229, 229, 0.3);
+}
+
 ::ng-deep.categories-menu {
     min-width: 156px !important;
 
     .menu-item-hover {
         .mdc-list-item__primary-text {
+            overflow: visible;
             width: 100%;
+        }
 
-            .menu-item-text {
-                transform: translateX(0);
-                transition: all 0.3s ease;
-            }
+        .menu-item-text {
+            transform: translateX(0);
+            transition: all 0.3s ease;
         }
 
         a {
-            &:hover {
+            &:hover, &.active {
                 .menu-item-text {
                     color: $primary !important;
                     transform: translateX(10px);
                     transition: all 0.3s ease;
+                }
+            }
+
+            &.rtl {
+                &:hover, &.active {
+                    .menu-item-text {
+                        transform: translateX(-10px);
+                    }
                 }
             }
         }

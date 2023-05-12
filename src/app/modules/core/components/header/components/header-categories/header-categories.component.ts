@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { StaticCategoriesIDs } from 'core/enums';
+import { CategoryIDs, StaticCategoriesIDs } from 'core/enums';
 import { Category } from 'core/interfaces';
 import { CategoriesService } from 'core/services';
 
@@ -22,12 +22,14 @@ export class HeaderCategoriesComponent {
       {
         Id: StaticCategoriesIDs.ABOUT,
         Description: "About Us",
-        ArabicDescription: "نبذة عنا"
+        ArabicDescription: "نبذة عنا",
+        route: StaticCategoriesIDs.ABOUT.toLowerCase()
       },
       {
         Id: StaticCategoriesIDs.CONTACT,
         Description: "Contact Us",
-        ArabicDescription: "إتصل بنا"
+        ArabicDescription: "إتصل بنا",
+        route: StaticCategoriesIDs.CONTACT.toLowerCase()
       }
     ];
   }
@@ -40,9 +42,29 @@ export class HeaderCategoriesComponent {
     this.getCategories();
   }
 
+  /**
+   * get categories from the server side and add the static categories to its array
+   */
   getCategories() {
     this.categoriesService.categories.subscribe(categories => {
       this.categories = [...categories, ...this.staticCategories];
     });
+  }
+
+  /**
+   * 
+   * @param categoryId `CategoryIDs | StaticCategoriesIDs`
+   * @param subCategoryId `string | null`
+   * @description generate the sub-category router link
+   */
+  getSubCategoryRouterLink(categoryId: CategoryIDs | StaticCategoriesIDs, subCategoryId: string | null) {
+    const routerLink = `categories`,
+      categoryRouterLink = categoryId?.replaceAll(' ', '_'),
+      subCategoryRouterLink = subCategoryId?.replaceAll(' ', '_');
+
+    return {
+      routerLink: `${routerLink}/${categoryRouterLink}`,
+      queryParams: { subCategoryId: subCategoryRouterLink }
+    }
   }
 }

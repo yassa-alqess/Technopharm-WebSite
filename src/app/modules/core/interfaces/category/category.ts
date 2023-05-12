@@ -10,6 +10,7 @@ export interface Category {
     Description:       string;
     Images?:           Image[];
     ProductGroups?:    ProductGroup[];
+    route?:            string;
 }
 
 export interface ProductGroup {

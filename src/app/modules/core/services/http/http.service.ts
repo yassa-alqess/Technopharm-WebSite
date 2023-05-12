@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Observable, map } from 'rxjs';
 import { environment } from '../../../../../environments/environment';
 
@@ -25,10 +25,9 @@ interface API_Config<T = any> {
 export abstract class HttpService implements HttpServiceBaseService {
 
   private domainName = environment.HOST_API;
+  private http = inject(HttpClient);
 
   baseUrl = 'UCJson.svc/';
-
-  constructor(private http: HttpClient) { }
 
   get<T>(API_Config: API_Config) {
     return this.http.get<T>(`${this.domainName}${this.baseUrl}${API_Config.APIName}`, { params: API_Config.params })
