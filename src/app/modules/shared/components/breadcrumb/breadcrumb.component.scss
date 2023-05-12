@@ -1,0 +1,31 @@
+@import "style";
+
+.breadcrumb-wrap {
+    .banner {
+        background-image: url("../../../../../assets/images/common/breadcrumb.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        ol.breadcrumb {
+            li {
+                &:last-child {
+                    display: none;
+                }
+
+                a {
+                    color: $middle;
+
+                    &:hover {
+                        color: $primary;
+                    }
+
+                    &.rtl {
+                        svg {
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

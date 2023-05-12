@@ -16,7 +16,8 @@
                         </span>
 
                         <div class="menu-item-hover" matMenuContent *ngFor="let category of categories">
-                            <a class="h-40 overflow-visible" mat-menu-item [disableRipple]="true" [routerLink]="''">
+                            <a class="h-40 overflow-visible" mat-menu-item [disableRipple]="true" setRtl
+                               [routerLink]="category.route ? category.route : ('/categories/' + category.Id.replaceAll(' ', '_'))">
                                 <span class="d-flex font-14 menu-item-text w-100">
                                     {{ isEnglish ? category.Description : category.ArabicDescription }}
                                 </span>
@@ -35,14 +36,20 @@
                 <!-- Categories -->
                 <mat-list-item role="listitem" class="px-1 overflow-visible" *ngFor="let category of categories">
                     <del-menu menuClass="mt-2 box-shadow categories-menu" btnClass="h-40">
-                        <span matMenuLabel class="d-flex font-16">{{ isEnglish ? category.Description : category.ArabicDescription }}</span>
+                        <span matMenuLabel class="d-flex font-16 text-capitalize" [routerLink]="category.route ? category.route : null"
+                              routerLinkActive="text-primary">
+                            {{ isEnglish ? category.Description : category.ArabicDescription }}
+                        </span>
 
                         <div [ngClass]="{'row': (category.ProductGroups?.length || 0) > maxItemCount }" matMenuContent
                              *ngIf="category.ProductGroups?.length">
 
                             <div class="menu-item-hover" [ngClass]="{'col-xl-4': (category.ProductGroups?.length || 0) > maxItemCount }"
                                  *ngFor="let ProductGroup of category.ProductGroups">
-                                <a class="h-40 overflow-visible" mat-menu-item [disableRipple]="true" [routerLink]="ProductGroup.Id || null">
+                                <a class="h-40 overflow-visible" mat-menu-item [disableRipple]="true" setRtl
+                                   [routerLink]="getSubCategoryRouterLink(category.Id, ProductGroup.Id || null).routerLink"
+                                   [queryParams]="getSubCategoryRouterLink(category.Id, ProductGroup.Id || null).queryParams"
+                                   routerLinkActive="active">
                                     <span class="d-flex font-14 menu-item-text text-capitalize w-100">
                                         {{ isEnglish ? (ProductGroup.Description | lowercase) : ProductGroup.ArabicDescription }}
                                     </span>

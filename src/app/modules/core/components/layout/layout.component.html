@@ -8,9 +8,12 @@
             <del-header [drawer]="drawer"></del-header>
 
             <section class="main-page d-flex flex-column flex-grow-1 h-100 position-relative">
+                <!-- Breadcrumb Start -->
+                <del-breadcrumb [ngClass]="{'d-none': hidden}"></del-breadcrumb>
+                <!-- Breadcrumb End -->
+
                 <router-outlet></router-outlet>
             </section>
-
             <del-footer></del-footer>
         </mat-drawer-content>
     </mat-drawer-container>

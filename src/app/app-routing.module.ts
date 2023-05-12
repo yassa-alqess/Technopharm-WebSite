@@ -1,21 +1,31 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from 'core/components/layout/layout.component';
+import { AuthGuard } from 'core/guards/auth/auth.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
+    canActivate: [AuthGuard],
+    data: { breadcrumb: 'HOME' },
     children: [
       {
         path: '',
+        data: { breadcrumbHidden: true },
         loadChildren: () => import('./modules/features/home/home.module').then(m => m.HomeModule),
       },
       {
         path: 'categories',
+        data: {
+          breadcrumb: ''
+        },
         children: [
           {
             path: ':categoryCode',
+            data: {
+              breadcrumb: ''
+            },
             loadChildren: () => import('./modules/features/categories/categories.module').then(m => m.CategoriesModule),
           }
         ]

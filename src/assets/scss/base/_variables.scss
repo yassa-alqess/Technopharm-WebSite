@@ -13,7 +13,7 @@ $light: #F4F4F5;
 $dark: #1F2937;
 
 $text-light: #d9d9d9;
-$middle: #9CA3AF;
+$middle: #767676;
 
 $success: #10B981;
 $success-light: rgba($success, 0.11);
@@ -26,6 +26,7 @@ $pending-light: rgba($pending, 0.11);
 
 :root {
     --translateX: -100%;
+    --primary: #B72227;
 }
 
 [dir="rtl"] {
