@@ -5,6 +5,7 @@ import { Category } from 'core/interfaces';
 import { CategoriesService } from 'core/services';
 
 import { environment } from '../../../../../../../environments/environment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'del-header-categories',
@@ -34,7 +35,7 @@ export class HeaderCategoriesComponent {
     ];
   }
 
-  constructor(private categoriesService: CategoriesService) { }
+  constructor(private categoriesService: CategoriesService, private router: Router) { }
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
@@ -52,6 +53,24 @@ export class HeaderCategoriesComponent {
   }
 
   /**
+   * @returns `boolean`
+   * @description  if the current page is Home, the `text-primary` class will be added.
+   */
+  get isHome(): boolean {
+    return this.router.url == '/';
+  }
+
+  /**
+   * 
+   * @param categoryId `string`
+   * @returns `boolean`
+   * @description if the selected category is active, the `text-primary` class will be added.
+   */
+  isActiveCategory(categoryId: string): boolean {
+    return this.router.url.includes(categoryId?.replaceAll(' ', '_'));
+  }
+
+  /**
    * 
    * @param categoryId `CategoryIDs | StaticCategoriesIDs`
    * @param subCategoryId `string | null`
@@ -65,6 +84,6 @@ export class HeaderCategoriesComponent {
     return {
       routerLink: `${routerLink}/${categoryRouterLink}`,
       queryParams: { subCategoryId: subCategoryRouterLink }
-    }
+    };
   }
 }

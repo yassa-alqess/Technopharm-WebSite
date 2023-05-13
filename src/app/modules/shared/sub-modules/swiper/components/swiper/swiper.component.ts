@@ -1,9 +1,8 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component, ContentChild, EventEmitter, Input, OnInit, Output, TemplateRef, ViewEncapsulation } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, ContentChild, Input, OnInit, TemplateRef, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import Swiper, { A11y, Mousewheel, Navigation, Pagination, SwiperOptions } from 'swiper';
+import { A11y, Mousewheel, Navigation, Pagination, SwiperOptions } from 'swiper';
 import { register } from 'swiper/element';
-import { SwiperDirective } from '../../directives/swiper/swiper.directive';
-import { SlideDirective } from '../../directives/slide/slide.directive';
+import { SwiperDirective, SlideDirective } from '../../directives';
 
 @Component({
   selector: 'swiper',

@@ -43,19 +43,16 @@
                 <mat-list class="d-flex align-items-center p-0" role="list">
                     <!-- User -->
                     <mat-list-item role="listitem" class="px-1 overflow-visible">
-                        <del-menu menuClass="mt-2" btnClass="w-max">
+                        <del-menu menuClass="mt-2 box-shadow" btnClass="h-40 w-max">
                             <svg matMenuLabel xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                                  stroke="currentColor" width="24" height="24">
                                 <path stroke-linecap="round" stroke-linejoin="round"
                                       d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                             </svg>
 
-                            <div matMenuContent>
-                                <a mat-menu-item [disableRipple]="true" [routerLink]="menuItem.menuItemRoute || null"
-                                   *ngFor="let menuItem of userMenuItems">
-                                    {{ menuItem.menuItemName | translate }}
-                                </a>
-                            </div>
+                            <del-menu-item matMenuContent [routerLink]="menuItem.menuItemRoute || null" *ngFor="let menuItem of userMenuItems">
+                                {{ menuItem.menuItemName | translate }}
+                            </del-menu-item>
                         </del-menu>
                     </mat-list-item>
 
