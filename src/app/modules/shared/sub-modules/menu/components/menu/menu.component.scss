@@ -11,4 +11,10 @@
     .mat-mdc-menu-content {
         overflow: hidden;
     }
+
+    del-menu {
+        a {
+            --bs-link-hover-color: initial;
+        }
+    }
 }
