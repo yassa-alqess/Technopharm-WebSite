@@ -6,12 +6,13 @@ import { HomeComponent } from './pages/home/home.component';
 
 import { BaseSharedModule } from 'shared/sub-modules/base-shared/base-shared.module';
 
-import { BannerComponent } from './components';
+import { BannerComponent, HomeCategoriesComponent } from './components';
 
 @NgModule({
   declarations: [
     HomeComponent,
-    BannerComponent
+    BannerComponent,
+    HomeCategoriesComponent
   ],
   imports: [
     CommonModule,
