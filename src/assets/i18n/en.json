@@ -5,7 +5,7 @@
     "SEARCHBAR_PLACEHOLDER": "Search for a product...",
     "USER_HEADER_LIST": {
         "SIGN_IN": "Sign In",
-        "SIGN_OUT": "Sign Out",
+        "REGISTER": "Register",
         "MY_ACCOUNT": "My Account"
     },
     "ALL_CATEGORIES": "All Categories",

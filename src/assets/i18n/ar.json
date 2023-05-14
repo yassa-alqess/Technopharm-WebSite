@@ -5,7 +5,7 @@
     "SEARCHBAR_PLACEHOLDER": "ابحث عن منتج...",
     "USER_HEADER_LIST": {
         "SIGN_IN": "تسجيل الدخول",
-        "SIGN_OUT": "إنشاء حساب",
+        "REGISTER": "إنشاء حساب",
         "MY_ACCOUNT": "حسابي"
     },
     "ALL_CATEGORIES": "كل الأقسام",

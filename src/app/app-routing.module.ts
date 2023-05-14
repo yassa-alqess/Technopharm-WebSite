@@ -32,6 +32,10 @@ const routes: Routes = [
       },
     ]
   },
+  {
+    path: 'account',
+    loadChildren: () => import('./modules/features/account/account.module').then(m => m.AccountModule)
+  },
   { path: 'error', loadChildren: () => import('./modules/features/error/error.module').then(m => m.ErrorModule) },
   { path: '**', redirectTo: '/error/404' }
 ];
