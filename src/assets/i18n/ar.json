@@ -1,5 +1,5 @@
 {
-    "APP_TITLE": "موقغ دلمار وعطا لله",
+    "APP_TITLE": "دلمار وعطا لله",
     "APP_DISCOUNT": "حمل تطبيق دلمار وعطا الله الآن، خصم {{ mobileAppDiscountPercentage }}%.",
     "DOWNLOAD_APP": "إضغط هنا للتحميل",
     "SEARCHBAR_PLACEHOLDER": "ابحث عن منتج...",
@@ -8,7 +8,11 @@
         "REGISTER": "إنشاء حساب",
         "MY_ACCOUNT": "حسابي"
     },
-    "ALL_CATEGORIES": "كل الأقسام",
+    "CATEGORIES": {
+        "TITLE": "أقسام",
+        "ALL_CATEGORIES": "كل الأقسام",
+        "HINT": "هناك أنواع مختلفة من الأقسام التي يمكن التسوق بها"
+    },
     "HOME": "الرئيسية",
     "MAGAZINES": "المجلات",
     "ERROR": {

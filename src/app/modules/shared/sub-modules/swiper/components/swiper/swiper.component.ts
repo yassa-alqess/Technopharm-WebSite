@@ -28,7 +28,7 @@ export class SwiperComponent implements OnInit {
     mousewheel: true,
     loop: false,
     slidesPerView: "auto",
-    centeredSlides: true
+    centeredSlides: false
   };
 
   @ContentChild(SlideDirective, { read: TemplateRef }) slideTemplateRef!: TemplateRef<any>;

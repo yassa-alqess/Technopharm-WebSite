@@ -8,7 +8,11 @@
         "REGISTER": "Register",
         "MY_ACCOUNT": "My Account"
     },
-    "ALL_CATEGORIES": "All Categories",
+    "CATEGORIES": {
+        "TITLE": "Categories",
+        "ALL_CATEGORIES": "All Categories",
+        "HINT": "There are different types of departments in which to shop"
+    },
     "HOME": "Home",
     "MAGAZINES": "Magazines",
     "ERROR": {
