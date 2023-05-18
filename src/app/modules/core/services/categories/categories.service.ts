@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { Category, CategoryResponse } from 'core/interfaces';
 import { HttpService } from '../http/http.service';
 import { BehaviorSubject, catchError, map, of } from 'rxjs';
-import { Categories } from '../../../../../assets/mock-data/categories';
+import { Categories } from '../../../../../assets/mock-data';
+import { CategoryIDs } from 'core/enums';
 
 @Injectable({
   providedIn: 'root'
@@ -26,5 +27,17 @@ export class CategoriesService extends HttpService {
         return of(Categories);
       }),
     );
+  }
+
+  getByCategoryCode(categoryCode: CategoryIDs) {
+    return this.categories.pipe(map(categories => categories.find(category => category.Id === categoryCode) as Category));
+  }
+
+  getSubCategory(categoryCode: CategoryIDs, subCategoryCode: string) {
+    return this.categories.pipe(map(categories => {
+      const category = categories.find(category => category.Id === categoryCode) as Category;
+
+      return category.ProductGroups?.find(each => each.Id === subCategoryCode) as Category;
+    }));
   }
 }

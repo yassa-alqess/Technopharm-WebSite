@@ -6,14 +6,19 @@ import { CategoriesResolver } from './resolvers/categories/categories.resolver';
 const routes: Routes = [
   {
     path: '', // query params -> subCategoryId
-    data: {
-      breadcrumb: '',
-      categories: []
-    },
-    resolve: {
-      categories: CategoriesResolver
-    },
-    component: CategoriesComponent
+    children: [
+      {
+        path: '',
+        data: {
+          breadcrumb: '',
+          categories: []
+        },
+        resolve: {
+          categories: CategoriesResolver
+        },
+        component: CategoriesComponent
+      },
+    ]
   }
 ];
 

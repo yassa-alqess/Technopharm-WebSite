@@ -3,6 +3,9 @@
     "APP_DISCOUNT": "Download the Delmar & Atallah app now, {{ mobileAppDiscountPercentage }}% discount.",
     "DOWNLOAD_APP": "Click here to download",
     "SEARCHBAR_PLACEHOLDER": "Search for a product...",
+    "HOME": "Home",
+    "MAGAZINES": "Magazines",
+    "SOLD_OUT": "Sold Out",
     "USER_HEADER_LIST": {
         "SIGN_IN": "Sign In",
         "REGISTER": "Register",
@@ -11,10 +14,18 @@
     "CATEGORIES": {
         "TITLE": "Categories",
         "ALL_CATEGORIES": "All Categories",
-        "HINT": "There are different types of departments in which to shop"
+        "HINT": "There are different types of categories in which to shop"
     },
-    "HOME": "Home",
-    "MAGAZINES": "Magazines",
+    "BEST_SELLER": {
+        "BEST": "Best",
+        "SELLER": "Seller",
+        "HINT": "There are different products of the available different categories"
+    },
+    "ACTIONS": {
+        "ADD_FAVOURITES": "Add to Favourites",
+        "ADD_CART": "Add to Cart",
+        "QUICK_VIEW": "Quick View"
+    },
     "ERROR": {
         "404": "PAGE NOT FOUND",
         "403": "FORBIDDEN",

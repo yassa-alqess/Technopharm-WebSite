@@ -18,8 +18,8 @@ export class HomeCategoriesComponent {
     slidesPerView: 1,
     pagination: false,
     navigation: {
-      nextEl: ".swiper-next",
-      prevEl: ".swiper-prev",
+      nextEl: ".categories-wrapper .swiper-next",
+      prevEl: ".categories-wrapper .swiper-prev",
       lockClass: 'd-none'
     },
     breakpoints: {
