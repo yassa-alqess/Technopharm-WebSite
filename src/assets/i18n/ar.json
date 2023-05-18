@@ -1,8 +1,11 @@
 {
-    "APP_TITLE": "دلمار وعطا لله",
+    "APP_TITLE": "دلمار و عطا لله",
     "APP_DISCOUNT": "حمل تطبيق دلمار وعطا الله الآن، خصم {{ mobileAppDiscountPercentage }}%.",
     "DOWNLOAD_APP": "إضغط هنا للتحميل",
     "SEARCHBAR_PLACEHOLDER": "ابحث عن منتج...",
+    "HOME": "الرئيسية",
+    "MAGAZINES": "المجلات",
+    "SOLD_OUT": "نفذت الكمية",
     "USER_HEADER_LIST": {
         "SIGN_IN": "تسجيل الدخول",
         "REGISTER": "إنشاء حساب",
@@ -13,8 +16,16 @@
         "ALL_CATEGORIES": "كل الأقسام",
         "HINT": "هناك أنواع مختلفة من الأقسام التي يمكن التسوق بها"
     },
-    "HOME": "الرئيسية",
-    "MAGAZINES": "المجلات",
+    "BEST_SELLER": {
+        "BEST": "الأفضل",
+        "SELLER": "مبيعاً",
+        "HINT": "هناك منتجات مختلفة من الأقسام المختلفة المتاحة"
+    },
+    "ACTIONS": {
+        "ADD_FAVOURITES": "أضف إلى المفضلة",
+        "ADD_CART": "أضف إلى عربة التسوق",
+        "QUICK_VIEW": "عرض سريع"
+    },
     "ERROR": {
         "404": "الصفحة غير موجودة",
         "403": "محظور",

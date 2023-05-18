@@ -1,28 +1,19 @@
-<section class="categories-wrapper p-0 pt-4" (isEnglish)="isEnglish = $event" *ngIf="categories.length">
+<section class="best-seller-wrapper p-0 pt-4 mt-4" *ngIf="bestSelerItems.length">
     <div class="container-lg">
-        <div class="d-flex flex-column align-items-center categories-header">
+        <div class="d-flex flex-column align-items-center best-seller-header">
             <h2 class="m-0 text-dark font-24 d-flex align-items-center fw-bold" setRtl>
-                <span class="text-primary mx-2">{{ 'APP_TITLE' | translate }}</span>
-                {{ 'CATEGORIES.TITLE' | translate }}
+                <span class="text-primary mx-2">{{ 'BEST_SELLER.BEST' | translate }}</span>
+                {{ 'BEST_SELLER.SELLER' | translate }}
             </h2>
 
-            <p class="m-0 mt-2 font-16 text-middle">{{ 'CATEGORIES.HINT' | translate }}</p>
+            <p class="m-0 mt-2 font-16 text-middle">{{ 'BEST_SELLER.HINT' | translate }}</p>
         </div>
 
-        <div class="categories-content position-relative mt-4">
-            <swiper [slides]="categories" [config]="config">
-                <ng-template swiperSlide let-category>
-                    <div class="swiper-slide d-flex justify-content-center">
-                        <div class="catagories-box bg-white">
-                            <a class="d-flex flex-column align-items-center h-100" [routerLink]="'/categories/' + category.Id.replaceAll(' ', '_')">
-                                <img class="img-fluid" [src]="category.Images[0].Location" loading="lazy" [alt]="category.Description" />
-
-                                <h4 class="m-0 font-20 text-dark py-2 text-capitalize">
-                                    {{ isEnglish ? (category.Description | lowercase) : category.ArabicDescription }}
-                                </h4>
-                            </a>
-                        </div>
-                    </div>
+        <!-- best-seller-content -->
+        <div class="best-seller-content position-relative mt-4" id="bestSeller">
+            <swiper [slides]="bestSelerItems" [config]="config">
+                <ng-template swiperSlide let-product>
+                    <del-product [product]="product" (action)="doAction($event)"></del-product>
                 </ng-template>
             </swiper>
 
@@ -43,6 +34,8 @@
                     </svg>
                 </button>
             </div>
+
+            <!-- <a href="shop-left-sidebar.html" class="btn-solid btn-sm mb-line center-button">عرض كل العروض </a> -->
         </div>
     </div>
 </section>

@@ -71,6 +71,10 @@
   background-color: $error-light !important;
 }
 
+.bg-pending {
+  background-color: $pending !important;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -113,8 +117,13 @@
 }
 
 .border {
-  border: 1px solid $border-color !important;
-  border-radius: 1px;
+  --bs-border-width: 1px;
+  --bs-border-style: solid;
+  --bs-border-color: transparent;
+
+  &.default {
+    border-color: $border-color !important;
+  }
 }
 
 .border-radius-0 {
@@ -182,5 +191,14 @@
 @include xlarge-screen {
   .container-lg {
     max-width: 1400px
+  }
+}
+
+.left-0 {
+  left: 0;
+
+  &.rtl {
+    left: unset;
+    right: 0;
   }
 }
