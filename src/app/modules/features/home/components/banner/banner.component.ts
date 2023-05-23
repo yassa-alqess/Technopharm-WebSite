@@ -8,7 +8,9 @@ import { SwiperOptions } from 'swiper';
 })
 export class BannerComponent {
   config: SwiperOptions = {
-    mousewheel: false
+    mousewheel: false,
+    loop: true,
+    autoplay: true,
   };
 
   @Input() slides: string[] = [];
