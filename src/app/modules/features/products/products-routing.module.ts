@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CategoriesComponent } from './pages/categories/categories.component';
+import { ProductsComponent } from './pages/products/products.component';
 import { CategoriesResolver } from './resolvers/categories/categories.resolver';
 
 const routes: Routes = [
@@ -11,12 +11,13 @@ const routes: Routes = [
         path: '',
         data: {
           breadcrumb: '',
-          categories: []
+          categories: [],
+          queryParamKeyName: 'subCategoryId'
         },
         resolve: {
           categories: CategoriesResolver
         },
-        component: CategoriesComponent
+        component: ProductsComponent
       },
     ]
   }

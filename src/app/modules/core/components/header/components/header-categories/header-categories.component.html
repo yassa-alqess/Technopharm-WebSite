@@ -1,10 +1,10 @@
 <!-- Bottom Header -->
-<div class="bottom-header p-2" (isEnglish)="isEnglish = $event">
+<div class="bottom-header p-2 h-100" (isEnglish)="isEnglish = $event">
     <div class="container-lg">
         <div class="d-flex align-items-center">
             <mat-list class="d-flex flex-column flex-xl-row align-items-center p-0" role="list">
                 <!-- All Categories -->
-                <mat-list-item role="listitem" class="p-0 h-40 bg-primary overflow-visible mend-5">
+                <mat-list-item role="listitem" class="p-0 h-40 bg-primary overflow-visible mend-xl-5">
                     <del-menu menuClass="mt-2 box-shadow categories-menu" btnClass="h-40">
                         <span matMenuLabel class="d-flex align-items-center gap-2 px-3 text-white">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5"
@@ -16,7 +16,7 @@
                         </span>
 
                         <del-menu-item matMenuContent *ngFor="let category of categories"
-                                       [routerLink]="category.route ? category.route : ('/categories/' + category.Id.replaceAll(' ', '_'))">
+                                       [routerLink]="category.route ? category.route : ('/products/' + category.Id.replaceAll(' ', '_'))">
                             {{ isEnglish ? (category.Description | lowercase) : category.ArabicDescription }}
                         </del-menu-item>
                     </del-menu>
@@ -24,14 +24,14 @@
 
                 <!-- Home -->
                 <mat-list-item role="listitem" class="px-1 overflow-visible" *ngIf="categories.length">
-                    <del-menu menuClass="mt-2" btnClass="h-40" [isMenuTrigger]="false">
+                    <del-menu menuClass="mt-2" btnClass="h-40 justify-content-start justify-content-xl-center" [isMenuTrigger]="false">
                         <a matMenuLabel class="d-flex font-16" [ngClass]="{'text-primary': isHome}" routerLink="/">{{ "HOME" | translate }}</a>
                     </del-menu>
                 </mat-list-item>
 
                 <!-- Categories -->
                 <mat-list-item role="listitem" class="px-1 overflow-visible" *ngFor="let category of categories">
-                    <del-menu menuClass="mt-2 box-shadow categories-menu" btnClass="h-40">
+                    <del-menu menuClass="mt-2 box-shadow categories-menu" btnClass="h-40 justify-content-start justify-content-xl-center">
                         <a matMenuLabel class="d-flex font-16 text-capitalize" [ngClass]="{'text-primary': isActiveCategory(category.Id)}"
                               [routerLink]="category.route ? category.route : null" routerLinkActive="text-primary">
                             {{ isEnglish ? category.Description : category.ArabicDescription }}

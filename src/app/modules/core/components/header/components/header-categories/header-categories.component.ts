@@ -77,7 +77,7 @@ export class HeaderCategoriesComponent {
    * @description generate the sub-category router link
    */
   getSubCategoryRouterLink(categoryId: CategoryIDs | StaticCategoriesIDs, subCategoryId: string | null) {
-    const routerLink = `categories`,
+    const routerLink = `products`,
       categoryRouterLink = categoryId?.replaceAll(' ', '_'),
       subCategoryRouterLink = subCategoryId?.replaceAll(' ', '_');
 
