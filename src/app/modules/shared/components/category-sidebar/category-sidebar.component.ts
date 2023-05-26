@@ -32,7 +32,7 @@ export class CategorySidebarComponent {
       takeUntil(this.destroy$)
     ).subscribe(() => {
       this.setActiveCategory();
-      if (this.selectedSubCategoryId) this.getSubSelectedCategory();
+      this.getSubSelectedCategory();
     });
   }
 
@@ -55,12 +55,9 @@ export class CategorySidebarComponent {
       const selectedCategoryId = route.snapshot.paramMap.get('categoryCode')?.replaceAll('_', ' ') as CategoryIDs;
       this.getSelectedCategory(this.categories.find(category => category.Id === selectedCategoryId) as Category, false);
 
-      const subCategoryId = this.activatedRoute.snapshot.queryParamMap.get('subCategoryId') as string;
-      if (subCategoryId && this.subCategories.map(subCategory => subCategory.Id).includes(subCategoryId.replaceAll(' ', '_'))) {
+      const subCategoryId = route.snapshot.queryParamMap.get('subCategoryId') as string;
+      if (subCategoryId) {
         this.selectedSubCategoryId = subCategoryId.replaceAll('_', ' ');
-      } else {
-        // reset the `selectedSubCategoryId` property incase it's not including into the `subCategories` array.
-        this.selectedSubCategoryId = '';
       }
     }
   }
@@ -93,8 +90,11 @@ export class CategorySidebarComponent {
    * @description navigate to the selected sub-category.
    */
   getSubSelectedCategory() {
-    const subCategoryRouterLink = this.selectedSubCategoryId?.replaceAll(' ', '_'),
+    const subCategoryId = this.selectedSubCategoryId?.replaceAll(' ', '_'),
+      subCategoryRouterLink = subCategoryId,
       queryParams = { subCategoryId: subCategoryRouterLink };
+
+    if (!this.subCategories.map(subCategory => subCategory.Id).includes(subCategoryId)) return;
 
     this.router.navigate([], { queryParams, relativeTo: this.activatedRoute });
   }
