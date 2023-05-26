@@ -14,7 +14,8 @@
     "CATEGORIES": {
         "TITLE": "Categories",
         "ALL_CATEGORIES": "All Categories",
-        "HINT": "There are different types of categories in which to shop"
+        "HINT": "There are different types of categories in which to shop",
+        "SUB_CATEGORIES": "Sub Categories"
     },
     "BEST_SELLER": {
         "BEST": "Best",
@@ -24,7 +25,9 @@
     "ACTIONS": {
         "ADD_FAVOURITES": "Add to Favourites",
         "ADD_CART": "Add to Cart",
-        "QUICK_VIEW": "Quick View"
+        "QUICK_VIEW": "Quick View",
+        "BACK": "Back",
+        "FILTER_RESULT": "Filter Results"
     },
     "ERROR": {
         "404": "PAGE NOT FOUND",

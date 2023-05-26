@@ -3,6 +3,18 @@ import { CategoryIDs } from "core/enums";
 export interface ProductResponse {
     BestSellerItemsGetResult: Product[];
 }
+export interface ProductsResponse {
+    ItemsPageResult: Product[];
+}
+
+export interface ProductsPayload {
+    pageSize:       number;
+    pageNumber:     number;
+    itemCategoryId: string;
+    productGroupId: string;
+    search:         string;
+    includeDetails: boolean;
+}
 
 export interface Product {
     Id:                     string;

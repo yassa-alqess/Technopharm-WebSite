@@ -1,23 +1,66 @@
-<!-- <mat-drawer #drawer mode="over">
-    dasd
-</mat-drawer> -->
-<!-- (click)="drawer.toggle()" -->
-
 <section class="shop-page d-flex flex-column flex-grow-1 h-100">
     <div class="container-lg h-100">
         <div class="row h-100">
-            <div class="col-xl-3">
-                <div class="sidebar-content">
-                    <!-- <div class="back-box py-2 px-3 mb-3 border-radius-8 d-flex align-items-center justify-content-between bg-primary text-white"
-                         (click)="drawer.close()">
-                        <span>Back</span>
+            <div class="col-lg-4 col-xl-3 d-none d-lg-block">
+                <del-category-sidebar></del-category-sidebar>
+            </div>
 
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="20">
-                            <path
-                                  d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
-                        </svg>
-                    </div> -->
-                    <p>categories works!</p>
+            <div class="col-lg-4 col-xl-9">
+                <div class="products-content">
+                    <div
+                         class="filter-wrapper w-100 d-flex flex-column flex-lg-row align-items-start align-items-lg-center justify-content-lg-between gap-3 gap-lg-0">
+                        <span class="filter-btn d-flex d-lg-none align-items-center px-3 py-2 font-14 fw-500 bg-primary text-white position-relative gap-2"
+                              (click)="drawerToggle()">
+                            {{ 'ACTIONS.FILTER_RESULT' | translate }}
+
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                 width="14">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 01-.659 1.591l-5.432 5.432a2.25 2.25 0 00-.659 1.591v2.927a2.25 2.25 0 01-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 00-.659-1.591L3.659 7.409A2.25 2.25 0 013 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0112 3z" />
+                            </svg>
+                        </span>
+
+                        <!-- <div class="grid-option-wrap">
+                        <div class="select-options">
+                          <div class="select-menu">
+                            <div class="dropdown select-dropdown">
+                              <button class="select-showval" id="sortProduct"><span>ترتيب النتائج</span> <i data-feather="chevron-down"></i></button>
+                              <ul class="onhover-show-div select-vallist">
+                                <li class="select-list">الأعلي تقيماً</li>
+                                <li class="select-list">الأقل سعراً</li>
+                                <li class="select-list">الأعلي سعراً</li>
+
+                              </ul>
+                            </div>
+
+                          </div>
+                        </div>
+                        <ul class="filter-option-grid d-none d-sm-flex">
+                          <li class="nav-item d-none d-sm-flex">
+                            <button class="nav-link" data-grid="2">
+                              <img src="../assets/icons/svg/filters/1.svg" class="filter-icon">
+                            </button>
+                          </li>
+                          <li class="nav-item d-none d-sm-flex">
+                            <button class="nav-link" data-grid="3">
+                              <img src="../assets/icons/svg/filters/2.svg" class="filter-icon">
+                            </button>
+                          </li>
+                          <li class="nav-item d-none d-xl-flex">
+                            <button class="nav-link active" data-grid="4">
+                              <img src="../assets/icons/svg/filters/3.svg" class="filter-icon">
+                            </button>
+                          </li>
+                          <li class="nav-item d-none d-sm-flex">
+                            <button class="nav-link" data-grid="list">
+                              <img src="../assets/icons/svg/filters/3-full.svg" class="filter-icon">
+                            </button>
+                          </li>
+                        </ul>
+                      </div> -->
+                    </div>
+
+                    <p>products works!</p>
                 </div>
             </div>
         </div>

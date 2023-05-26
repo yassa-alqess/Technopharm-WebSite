@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { MatDrawer } from '@angular/material/sidenav';
+import { Component, inject } from '@angular/core';
+import { SidebarContent } from 'core/enums';
+import { SidebarToggleService } from 'core/services/sidebar-toggle/sidebar-toggle.service';
 
 @Component({
   selector: 'del-header',
@@ -25,7 +26,12 @@ export class HeaderComponent {
 
   searchValue = "";
 
-  @Input() drawer!: MatDrawer;
+  sidebarToggleService = inject(SidebarToggleService);
+
+  drawerToggle() {
+    this.sidebarToggleService.sidebarContent.next(SidebarContent.headerCategories);
+    this.sidebarToggleService.drawer.toggle();
+  }
 
   onSearch() {
     console.log(this.searchValue);

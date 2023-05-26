@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MatDrawer } from '@angular/material/sidenav';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { SidebarToggleService } from 'core/services/sidebar-toggle/sidebar-toggle.service';
 import { Subject, filter, distinctUntilChanged, takeUntil } from 'rxjs';
 
 @Component({
@@ -12,7 +14,13 @@ export class LayoutComponent {
 
   private destroy$ = new Subject();
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+  @ViewChild('drawer') drawer!: MatDrawer;
+
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private sidebarToggleService: SidebarToggleService) {
+    setTimeout(() => {
+      this.sidebarToggleService.drawer = this.drawer;
+    });
+
     this.router.events.pipe(
       filter((event) => event instanceof NavigationEnd),
       distinctUntilChanged(),
