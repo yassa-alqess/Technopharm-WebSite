@@ -27,7 +27,10 @@
         "ADD_CART": "Add to Cart",
         "QUICK_VIEW": "Quick View",
         "BACK": "Back",
-        "FILTER_RESULT": "Filter Results"
+        "FILTER_RESULT": "Filter Results",
+        "SORT_RESULTS": "Sort Results",
+        "LOWEST_PRICE": "Lowest Price",
+        "HIGHEST_PRICe": "Highest Price"
     },
     "ERROR": {
         "404": "PAGE NOT FOUND",

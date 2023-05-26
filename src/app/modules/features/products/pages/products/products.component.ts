@@ -10,6 +10,17 @@ import { SidebarToggleService } from 'core/services/sidebar-toggle/sidebar-toggl
 export class ProductsComponent {
 
   sidebarToggleService = inject(SidebarToggleService);
+  activeFilterOption = 'col-xl-3';
+  filterOptions = [
+    {
+      optionCode: 'LowestPrice',
+      optionName: 'ACTIONS.LOWEST_PRICE',
+    },
+    {
+      optionCode: 'HighestPrice',
+      optionName: 'ACTIONS.HIGHEST_PRICe',
+    }
+  ];
 
   drawerToggle() {
     this.sidebarToggleService.sidebarContent.next(SidebarContent.sidebarCategories);

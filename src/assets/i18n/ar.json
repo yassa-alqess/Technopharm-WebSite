@@ -27,7 +27,10 @@
         "ADD_CART": "أضف إلى عربة التسوق",
         "QUICK_VIEW": "عرض سريع",
         "BACK": "الرجوع",
-        "FILTER_RESULT": "تصفية النتائج"
+        "FILTER_RESULT": "تصفية النتائج",
+        "SORT_RESULTS": "ترتيب النتائج",
+        "LOWEST_PRICE": "الأقل سعراً",
+        "HIGHEST_PRICe": "الأعلى سعراً"
     },
     "ERROR": {
         "404": "الصفحة غير موجودة",

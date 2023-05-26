@@ -8,6 +8,7 @@ import { ProductsComponent } from './pages/products/products.component';
 import { BaseSharedModule } from 'shared/sub-modules/base-shared/base-shared.module';
 import { CategorySidebarComponent } from 'shared/components/category-sidebar/category-sidebar.component';
 import { CategoryComponent } from 'shared/components/category/category.component';
+import { MenuModule } from 'shared/sub-modules/menu/menu.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CategoryComponent } from 'shared/components/category/category.component
     BaseSharedModule,
     MatSidenavModule,
     CategorySidebarComponent,
-    CategoryComponent
+    CategoryComponent,
+    MenuModule,
   ]
 })
 export class ProductsModule { }
