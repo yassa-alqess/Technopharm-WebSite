@@ -25,6 +25,7 @@ export class ProductComponent {
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
+    this.selectedProductImage = this.product.Images[0].Location;
     this.productRouterLink = `/products/${this.product.ItemCategoryCode}`;
   }
 

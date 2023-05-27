@@ -3,20 +3,22 @@
         <!-- Thumbnail -->
         <ul class="thumbnail-img d-flex align-items-center justify-content-center gap-3 bg-white m-0 p-2 position-absolute w-100">
             <li class="thumb bg-white border cursor-pointer overflow-hidden"
-                [ngClass]="{'border-primary': productImage.Location === selectedProductImage || product.Images[0].Location }"
-                (click)="selectedProductImage = productImage.Location" *ngFor="let productImage of product.Images; let i=index">
-                <img [src]="productImage.Location" [alt]="product.Description + '\'s Image'" />
+                [ngClass]="{'border-primary': productImage.Location === selectedProductImage }" (click)="selectedProductImage = productImage.Location"
+                *ngFor="let productImage of product.Images; let i=index">
+                <img class="p-1" [src]="productImage.Location" [alt]="product.Description + '\'s Image'"
+                     (error)="productImage.Location = 'assets/images/common/Product_Image_Placeholder.png'" />
             </li>
         </ul>
 
         <a [routerLink]="productRouterLink" class="primary-img d-block">
-            <img class="img-fluid bg-img" [src]="selectedProductImage || product.Images[0].Location" [alt]="product.Description + '\'s Image'" />
+            <img class="img-fluid bg-img" [src]="selectedProductImage || product.Images[0].Location" [alt]="product.Description + '\'s Image'"
+                 onerror="src = 'assets/images/common/Product_Image_Placeholder.png'" />
         </a>
 
         <!-- Arrow label -->
-        <!-- <span class="arrow-label-wrap position-absolute left-0" setRtl>
+        <span class="arrow-label-wrap position-absolute left-0" setRtl *ngIf="!product.AllowedToSell">
             <span class="arrow-label py-1 bg-pending d-inline-block text-white position-relative font-12">{{ 'SOLD_OUT' | translate }}</span>
-        </span> -->
+        </span>
 
         <!-- Rating -->
         <div class="rating py-2 d-inline-flex align-items-center gap-0 d-none">
@@ -59,7 +61,7 @@
                 </a>
             </li>
 
-            <li [placement]="isEnglish ? 'left' : 'right'" [ngbTooltip]="'ACTIONS.ADD_CART' | translate">
+            <li [placement]="isEnglish ? 'left' : 'right'" [ngbTooltip]="'ACTIONS.ADD_CART' | translate" *ngIf="product.AllowedToSell">
                 <a class="addtocart-btn d-flex align-items-center justify-content-center position-relative border-radius-50 box-shadow bg-white"
                    (click)="doAction('add-to-cart')">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="16"
