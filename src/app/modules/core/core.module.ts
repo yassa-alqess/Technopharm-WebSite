@@ -20,13 +20,16 @@ import { HeaderCategoriesComponent } from './components/header/components/header
 import { BaseSharedModule } from 'shared/sub-modules/base-shared/base-shared.module';
 import { BreadcrumbComponent } from 'shared/components';
 import { MenuModule } from 'shared/sub-modules/menu/menu.module';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { CategorySidebarComponent } from 'shared/components/category-sidebar/category-sidebar.component';
 
 const COMPONENTS = [
   LayoutComponent,
   HeaderComponent,
   HeaderTopComponent,
   HeaderCategoriesComponent,
-  FooterComponent
+  FooterComponent,
+  SidebarComponent
 ];
 
 const MATERIAL_MODULES = [
@@ -43,6 +46,7 @@ const MATERIAL_MODULES = [
     CommonModule,
     MenuModule,
     BreadcrumbComponent,
+    CategorySidebarComponent,
     BaseSharedModule,
     HttpClientModule,
     ToastrModule.forRoot(),

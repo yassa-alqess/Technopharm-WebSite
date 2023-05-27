@@ -7,12 +7,6 @@ declare interface HttpServiceBaseService {
   baseUrl: string;
 }
 
-export declare interface HttpServiceBaseCRUD {
-  add<T>(body: any): Observable<T>;
-  update<T>(body: any): Observable<T>;
-  remove(id: string): Observable<boolean>;
-}
-
 interface API_Config<T = any> {
   APIName?: string,
   body?: T,

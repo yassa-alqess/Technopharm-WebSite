@@ -20,7 +20,7 @@ interface IBreadCrumb {
 })
 export class BreadcrumbComponent {
   categoryRouterLink = '';
-  subCategoryQueryParam!: { subCategoryId: string; };
+  queryParamKeyName = '';
 
   categories!: Category[];
   selectedCategory!: Category;
@@ -93,6 +93,8 @@ export class BreadcrumbComponent {
     }
 
     categoriesSubsription?.unsubscribe();
+    this.queryParamKeyName = route.routeConfig && route.routeConfig.data ? route.routeConfig.data['queryParamKeyName'] : '';
+
     setTimeout(() => this.activeCategory = this._activeCategory as Category);
     return newBreadcrumbs;
   }
@@ -121,8 +123,8 @@ export class BreadcrumbComponent {
    */
   private get _activeCategory(): Category | null {
     if (!this.selectedCategory) return null;
-    const subCategoryId = this.activatedRoute.snapshot.queryParamMap.get('subCategoryId');
-    const subCategory = this.selectedCategory.ProductGroups?.find(category => category.Id === this.getCategoryId(subCategoryId)) as Category;
+    const queryParam = this.activatedRoute.snapshot.queryParamMap.get(this.queryParamKeyName),
+      subCategory = this.selectedCategory.ProductGroups?.find(category => category.Id === this.getCategoryId(queryParam)) as Category;
 
     if (subCategory) return subCategory;
 

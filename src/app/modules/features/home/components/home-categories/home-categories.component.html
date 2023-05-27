@@ -14,7 +14,7 @@
                 <ng-template swiperSlide let-category>
                     <div class="swiper-slide d-flex justify-content-center">
                         <div class="catagories-box bg-white">
-                            <a class="d-flex flex-column align-items-center h-100" [routerLink]="'/categories/' + category.Id.replaceAll(' ', '_')">
+                            <a class="d-flex flex-column align-items-center h-100" [routerLink]="'/products/' + category.Id.replaceAll(' ', '_')">
                                 <img class="img-fluid" [src]="category.Images[0].Location" loading="lazy" [alt]="category.Description" />
 
                                 <h4 class="m-0 font-20 text-dark py-2 text-capitalize">

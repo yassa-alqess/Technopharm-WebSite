@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from 'core/components/layout/layout.component';
 import { AuthGuard } from 'core/guards/auth/auth.guard';
+import { CategoriesResolver } from 'features/products/resolvers/categories/categories.resolver';
 
 const routes: Routes = [
   {
@@ -16,17 +17,50 @@ const routes: Routes = [
         loadChildren: () => import('./modules/features/home/home.module').then(m => m.HomeModule),
       },
       {
-        path: 'categories',
+        path: 'products',
         data: {
           breadcrumb: ''
         },
         children: [
           {
+            path: '', pathMatch: 'full', redirectTo: '/'
+          },
+          {
             path: ':categoryCode',
             data: {
               breadcrumb: ''
             },
-            loadChildren: () => import('./modules/features/categories/categories.module').then(m => m.CategoriesModule),
+            children: [
+              {
+                path: '',
+                data: {
+                  breadcrumb: ''
+                },
+                loadChildren: () => import('./modules/features/products/products.module').then(m => m.ProductsModule),
+              },
+              // {
+              //   path: 'product/:productId',
+              //   data: {
+              //     breadcrumb: ''
+              //   },
+              //   children: [
+              //     {
+              //       path: '', pathMatch: 'full', redirectTo: 'details'
+              //     },
+              //     {
+              //       path: 'details', // /products/${categoryCode}/product/${productId}/details?productName=''
+              //       data: {
+              //         breadcrumb: '',
+              //         categories: [],
+              //         queryParamKeyName: 'productName'
+              //       },
+              //       resolve: {
+              //         categories: CategoriesResolver
+              //       },
+              //     }
+              //   ]
+              // }
+            ]
           }
         ]
       },

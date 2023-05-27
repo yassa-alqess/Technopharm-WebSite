@@ -100,8 +100,8 @@
   border-width: .5px !important;
 }
 
-.title-border-bottom {
-  border-bottom: 2px solid $border-color;
+.border-bottom {
+  border-bottom: 1px solid $border-color;
 }
 
 .border-primary {
@@ -124,6 +124,11 @@
   &.default {
     border-color: $border-color !important;
   }
+
+  &.bottom {
+    border-inline: none !important;
+    border-top: none !important;
+  }
 }
 
 .border-radius-0 {
@@ -139,7 +144,7 @@
 }
 
 .border-radius-8 {
-  border-radius: 8px;
+  border-radius: 8px !important;
 }
 
 .border-radius-50 {

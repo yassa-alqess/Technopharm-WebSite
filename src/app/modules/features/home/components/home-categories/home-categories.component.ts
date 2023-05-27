@@ -17,6 +17,8 @@ export class HomeCategoriesComponent {
     spaceBetween: 1,
     slidesPerView: 1,
     pagination: false,
+    allowTouchMove: true,
+    mousewheel: false,
     navigation: {
       nextEl: ".categories-wrapper .swiper-next",
       prevEl: ".categories-wrapper .swiper-prev",
@@ -27,11 +29,13 @@ export class HomeCategoriesComponent {
         slidesPerView: 5,
         spaceBetween: 15,
         centeredSlides: false,
+        allowTouchMove: false,
       },
       685: {
         slidesPerView: 3,
         spaceBetween: 15,
         centeredSlides: false,
+        allowTouchMove: false,
       },
     }
   };
