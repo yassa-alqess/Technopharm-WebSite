@@ -98,4 +98,12 @@ export class CategorySidebarComponent {
 
     this.router.navigate([], { queryParams, relativeTo: this.activatedRoute });
   }
+
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    this.destroy$.next(true);
+    this.destroy$.complete();
+    this.destroy$.unsubscribe();
+  }
 }
