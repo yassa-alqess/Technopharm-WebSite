@@ -76,6 +76,8 @@ export class CategorySidebarComponent {
    * @description navigate to the selected category.
    */
   getSelectedCategory(selectedCategory: Category, navigate = true) {
+    if (!selectedCategory) return;
+
     this.selectedCategoryId = selectedCategory.Id as CategoryIDs;
     const routerLink = `/products`,
       categoryId = this.selectedCategoryId?.replaceAll(' ', '_'),

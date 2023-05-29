@@ -1,5 +1,5 @@
 <div class="home-wrapper">
-    <del-banner [slides]="banners"></del-banner>
+    <del-banner [slides]="banners" *ngIf="banners.length"></del-banner>
 
     <!-- home-categories -->
     <del-home-categories></del-home-categories>
