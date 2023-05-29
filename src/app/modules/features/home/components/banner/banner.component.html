@@ -1,5 +1,7 @@
-<swiper [slides]="slides" [config]="config">
+<swiper [slides]="slides" [config]="config" *ngIf="slides">
     <ng-template swiperSlide let-silder>
-        <img class="banner-image w-100 img-fluid cursor-pointer" loading="lazy" [src]="silder" alt="website banner" />
+        <a class="w-100 cursor-pointer" (click)="getHref(silder)" #bannerAnchor>
+            <img class="banner-image w-100 img-fluid" loading="lazy" [src]="silder.ImageView.Location" alt="website banner" />
+        </a>
     </ng-template>
 </swiper>

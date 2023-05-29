@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Advertisement } from 'core/interfaces';
 import { HomeService } from 'features/home/services/home/home.service';
 
 @Component({
@@ -7,19 +8,17 @@ import { HomeService } from 'features/home/services/home/home.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  banners: string[] = [];
+  banners: Advertisement[] = [];
 
   constructor(private homeService: HomeService) { }
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
-    this.getBanners();
+    this.getHomeBanners();
   }
 
-  getBanners() {
-    this.homeService.banners.subscribe(banners => {
-      this.banners = banners
-    })
+  getHomeBanners() {
+    this.homeService.banners.subscribe(banners => this.banners = banners);
   }
 }
