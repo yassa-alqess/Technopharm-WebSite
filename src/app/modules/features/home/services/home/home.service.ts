@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from 'core/services';
 import { catchError, map, of } from 'rxjs';
-import { AdvertisementsResponse, ProductResponse } from 'core/interfaces';
-import { BestSellerItems, Advertisements } from '../../../../../../assets/mock-data';
+import { AdvertisementsResponse, ProductResponse, OffersResponse } from 'core/interfaces';
+import { BestSellerItems, Advertisements, Offers } from '../../../../../../assets/mock-data';
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +25,18 @@ export class HomeService extends HttpService {
       catchError(() => {
         return of(BestSellerItems);
       }),
+    );
+  }
+
+  getOffers(body: { cardId: string; itemId: string; } = {
+    cardId: 'HOCT00555812',
+    itemId: 'DIS0000239',
+  }) {
+    return this.post<OffersResponse>({ APIName: 'PublishedOffersGetByCardId', body }).pipe(
+      map(response => response.PublishedOffersGetByCardIdResult),
+      catchError(() => {
+        return of(Offers);
+      })
     );
   }
 }

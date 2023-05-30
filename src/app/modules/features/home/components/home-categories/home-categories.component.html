@@ -17,7 +17,7 @@
                             <a class="d-flex flex-column align-items-center h-100" [routerLink]="'/products/' + category.Id.replaceAll(' ', '_')">
                                 <img class="img-fluid" [src]="category.Images[0].Location" loading="lazy" [alt]="category.Description" />
 
-                                <h4 class="m-0 font-20 text-dark py-2 text-capitalize">
+                                <h4 class="m-0 py-2 w-100 font-20 text-dark text-capitalize text-truncate">
                                     {{ isEnglish ? (category.Description | lowercase) : category.ArabicDescription }}
                                 </h4>
                             </a>
