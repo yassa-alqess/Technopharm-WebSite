@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Advertisement } from 'core/interfaces';
+import { Advertisement, Product } from 'core/interfaces';
 import { HomeService } from 'features/home/services/home/home.service';
 
 @Component({
@@ -9,6 +9,7 @@ import { HomeService } from 'features/home/services/home/home.service';
 })
 export class HomeComponent {
   banners: Advertisement[] = [];
+  bestSelerItems: Product[] = [];
 
   constructor(private homeService: HomeService) { }
 
@@ -16,9 +17,17 @@ export class HomeComponent {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     this.getHomeBanners();
+    this.getBestSellerItems();
   }
 
   getHomeBanners() {
-    this.homeService.banners.subscribe(banners => this.banners = banners);
+    this.homeService.getBanners().subscribe(banners => this.banners = banners);
+  }
+
+  /**
+   * get bestSellerItems from the server side
+   */
+  getBestSellerItems() {
+    this.homeService.getBestSellerItems().subscribe(bestSelerItems => this.bestSelerItems = bestSelerItems);
   }
 }

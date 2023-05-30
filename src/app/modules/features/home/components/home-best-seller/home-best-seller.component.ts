@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Product } from 'core/interfaces';
-import { HomeService } from 'features/home/services/home/home.service';
 import { SwiperOptions } from 'swiper';
 
 @Component({
@@ -9,7 +8,7 @@ import { SwiperOptions } from 'swiper';
   styleUrls: ['./home-best-seller.component.scss']
 })
 export class HomeBestSellerComponent {
-  bestSelerItems: Product[] = [];
+  @Input() bestSelerItems: Product[] = [];
 
   config: SwiperOptions = {
     loop: true,
@@ -37,21 +36,6 @@ export class HomeBestSellerComponent {
       },
     }
   };
-
-  constructor(private homeService: HomeService) { }
-
-  ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    this.getBestSellerItems();
-  }
-
-  /**
-   * get bestSellerItems from the server side
-   */
-  getBestSellerItems() {
-    this.homeService.bestSellerItems.subscribe(bestSelerItems => this.bestSelerItems = bestSelerItems);
-  }
 
   doAction(action: { type: string; productId: string; }) {
     if (action.type === 'favorites') return this.addToFavorites(action.productId);

@@ -9,15 +9,18 @@ import { BestSellerItems, Advertisements } from '../../../../../../assets/mock-d
 })
 export class HomeService extends HttpService {
 
-  get banners() {
-    return this.post<AdvertisementsResponse>({ APIName: 'AdvertisementsGetById' }).pipe(
+  getBanners(body: { id: string; } = { id: 'LOY' }) {
+    return this.post<AdvertisementsResponse>({ APIName: 'AdvertisementsGetById', body }).pipe(
       map((response) => response.AdvertisementsGetByIdResult),
       catchError(() => of(Advertisements))
     );
   }
 
-  get bestSellerItems() {
-    return this.post<ProductResponse>({ APIName: 'BestSellerItemsGet' }).pipe(
+  getBestSellerItems(body: { maxNumberOfItems: number, includeDetails: boolean; } = {
+    "maxNumberOfItems": 10,
+    "includeDetails": true
+  }) {
+    return this.post<ProductResponse>({ APIName: 'BestSellerItemsGet', body }).pipe(
       map(response => response.BestSellerItemsGetResult),
       catchError(() => {
         return of(BestSellerItems);
