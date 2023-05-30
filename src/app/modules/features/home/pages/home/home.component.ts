@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Advertisement, Product } from 'core/interfaces';
+import { Advertisement, Offer, Product } from 'core/interfaces';
 import { HomeService } from 'features/home/services/home/home.service';
 
 @Component({
@@ -10,6 +10,7 @@ import { HomeService } from 'features/home/services/home/home.service';
 export class HomeComponent {
   banners: Advertisement[] = [];
   bestSelerItems: Product[] = [];
+  offers: Offer[] = [];
 
   constructor(private homeService: HomeService) { }
 
@@ -18,6 +19,7 @@ export class HomeComponent {
     //Add 'implements OnInit' to the class.
     this.getHomeBanners();
     this.getBestSellerItems();
+    this.getOffers();
   }
 
   getHomeBanners() {
@@ -29,5 +31,12 @@ export class HomeComponent {
    */
   getBestSellerItems() {
     this.homeService.getBestSellerItems().subscribe(bestSelerItems => this.bestSelerItems = bestSelerItems);
+  }
+
+  /**
+   * get offers from the server side
+   */
+  getOffers() {
+    this.homeService.getOffers().subscribe(offers => this.offers = offers);
   }
 }

@@ -15,6 +15,7 @@ export class HomeBestSellerComponent {
     spaceBetween: 1,
     slidesPerView: 1,
     pagination: false,
+    mousewheel: false,
     allowTouchMove: true,
     navigation: {
       nextEl: ".best-seller-content .swiper-next",

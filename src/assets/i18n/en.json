@@ -22,6 +22,10 @@
         "SELLER": "Seller",
         "HINT": "There are different products of the available different categories"
     },
+    "OFFERS": {
+        "TITLE": "Offers",
+        "HINT": "There are special offers for the website's visitors"
+    },
     "ACTIONS": {
         "ADD_FAVOURITES": "Add to Favourites",
         "ADD_CART": "Add to Cart",
