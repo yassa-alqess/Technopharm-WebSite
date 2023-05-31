@@ -32,12 +32,15 @@ const routes: Routes = [
             },
             children: [
               {
-                path: '',
-                data: {
-                  breadcrumb: ''
-                },
-                loadChildren: () => import('./modules/features/products/products.module').then(m => m.ProductsModule),
+                path: '', pathMatch: 'full', redirectTo: '/'
               },
+              // {
+              //   path: '',
+              //   data: {
+              //     breadcrumb: ''
+              //   },
+              //   loadChildren: () => import('./modules/features/products/products.module').then(m => m.ProductsModule),
+              // },
               // {
               //   path: 'product/:productId',
               //   data: {
