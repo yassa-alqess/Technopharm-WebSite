@@ -1,7 +1,12 @@
 <div class="home-wrapper">
-    <del-banner [slides]="banners"></del-banner>
+    <del-banner [slides]="banners" *ngIf="banners.length"></del-banner>
 
-    <!-- 
-        Other HOME Components Here... 
-     -->
+    <!-- home-categories -->
+    <del-home-categories></del-home-categories>
+
+    <!-- home-best-seller -->
+    <del-home-best-seller [bestSelerItems]="bestSelerItems"></del-home-best-seller>
+
+    <!-- home-offers -->
+    <del-home-offers [offers]="offers"></del-home-offers>
 </div>

@@ -1,0 +1,32 @@
+@import "style";
+
+.categories-wrapper {
+    .categories-header {
+        h2 {
+            &.rtl {
+                flex-direction: row-reverse;
+            }
+        }
+
+        p {
+            max-width: 540px;
+        }
+    }
+
+    .categories-content {
+        .swiper-slide {
+            .catagories-box {
+                width: 240px;
+                border-radius: 10px;
+
+                img {
+                    border-top-left-radius: 10px;
+                    border-top-right-radius: 10px;
+                    aspect-ratio: 3 / 2;
+                    object-fit: cover;
+                    height: 190px;
+                }
+            }
+        }
+    }
+}

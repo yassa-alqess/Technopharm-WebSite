@@ -1,0 +1,55 @@
+<aside class="category-sidebar">
+    <div class="p-3 pb-0 d-block d-lg-none">
+        <div class="back-box py-2 px-3 mb-3 h-40 border-radius-8 d-flex align-items-center justify-content-between bg-primary text-white"
+             (click)="drawer.close()">
+            <span>{{ 'ACTIONS.BACK' | translate }}</span>
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="20">
+                <path
+                      d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z" />
+            </svg>
+        </div>
+    </div>
+
+    <div class="sidebar-box p-3 border default border-radius-8">
+        <!-- categories -->
+        <div class="categories pb-4" [ngClass]="{'border default bottom': subCategories.length}">
+            <div class="title position-relative">
+                <h4 class="fw-500 font-18 d-inline-block position-relative cursor-pointer m-0">
+                    {{ 'CATEGORIES.TITLE' | translate }}
+                    <span class="bg-primary-light w-100 h-50 d-block position-absolute"></span>
+                </h4>
+            </div>
+
+            <div class="filter-option mt-4">
+                <ul class="m-0 p-0 list-unstyled d-flex flex-column gap-3">
+                    <li *ngFor="let category of categories; let i=index">
+                        <del-category [category]="category" [isSelected]="selectedCategoryId === category.Id"
+                                      (selectedCategory)="getSelectedCategory($event);">
+                        </del-category>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- sub-categories -->
+        <div class="sub-categories mt-4" *ngIf="subCategories.length">
+            <div class="title position-relative">
+                <h4 class="fw-500 font-18 d-inline-block position-relative cursor-pointer m-0">
+                    {{ 'CATEGORIES.SUB_CATEGORIES' | translate }}
+                    <span class="bg-primary-light w-100 h-50 d-block position-absolute"></span>
+                </h4>
+            </div>
+
+            <div class="filter-option mt-4">
+                <ul class="m-0 p-0 list-unstyled d-flex flex-column gap-3">
+                    <li *ngFor="let subCategory of subCategories; let i=index">
+                        <del-category [category]="subCategory" [isSelected]="selectedSubCategoryId === subCategory.Id"
+                                      (selectedCategory)="selectedSubCategoryId = $event.Id; getSubSelectedCategory(); drawer ? drawer.close() : null">
+                        </del-category>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</aside>

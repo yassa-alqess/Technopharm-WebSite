@@ -1,15 +1,46 @@
 {
+    "APP_TITLE": "Delmar & Attalla",
     "APP_DISCOUNT": "Download the Delmar & Atallah app now, {{ mobileAppDiscountPercentage }}% discount.",
     "DOWNLOAD_APP": "Click here to download",
+    "RIGHTS": "All Rights Received ",
     "SEARCHBAR_PLACEHOLDER": "Search for a product...",
-    "USER_HEADER_LIST": {
-        "SIGN_IN": "Sign In",
-        "SIGN_OUT": "Sign Out",
-        "MY_ACCOUNT": "My Account"
-    },
-    "ALL_CATEGORIES": "All Categories",
     "HOME": "Home",
     "MAGAZINES": "Magazines",
+    "SOLD_OUT": "Sold Out",
+    "FOLLOW_US": "Follow us on",
+    "USER_HEADER_LIST": {
+        "SIGN_IN": "Sign In",
+        "REGISTER": "Register",
+        "MY_ACCOUNT": "My Account"
+    },
+    "CATEGORIES": {
+        "TITLE": "Categories",
+        "ALL_CATEGORIES": "All Categories",
+        "HINT": "There are different types of categories in which to shop",
+        "SUB_CATEGORIES": "Sub Categories"
+    },
+    "BEST_SELLER": {
+        "BEST": "Best",
+        "SELLER": "Seller",
+        "HINT": "There are different products of the available different categories"
+    },
+    "OFFERS": {
+        "TITLE": "Offers",
+        "HINT": "There are special offers for the website's visitors"
+    },
+    "ACTIONS": {
+        "ADD_FAVOURITES": "Add to Favourites",
+        "ADD_CART": "Add to Cart",
+        "QUICK_VIEW": "Quick View",
+        "BACK": "Back",
+        "FILTER_RESULT": "Filter Results",
+        "SORT_RESULTS": "Sort Results",
+        "LOWEST_PRICE": "Lowest Price",
+        "HIGHEST_PRICe": "Highest Price"
+    },
+    "EMPTY": {
+        "OFFERS": "There are no offers added right now."
+    },
     "ERROR": {
         "404": "PAGE NOT FOUND",
         "403": "FORBIDDEN",

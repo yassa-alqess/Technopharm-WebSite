@@ -1,0 +1,39 @@
+@import "style";
+
+::ng-deep .menu-item-hover {
+    .mdc-list-item__primary-text {
+        overflow: visible;
+        width: 100%;
+    }
+
+    .menu-item-text {
+        transform: translateX(0);
+        transition: all 0.3s ease;
+    }
+
+    a {
+
+        &:hover,
+        &.active {
+            .menu-item-text {
+                color: $primary !important;
+                transform: translateX(10px);
+                transition: all 0.3s ease;
+            }
+        }
+
+        &.rtl {
+
+            &:hover,
+            &.active {
+                .menu-item-text {
+                    transform: translateX(-10px);
+                }
+            }
+        }
+    }
+}
+
+::ng-deep mat-list-item {
+    --mdc-list-list-item-one-line-container-height: 40px;
+}

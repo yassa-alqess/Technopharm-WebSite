@@ -79,6 +79,9 @@ h6 {
   font-size: clamp(1.75rem, 3vw, 4rem) !important;
 }
 
+.fw-500 {
+  font-weight: 500;
+}
 
 *[class*="font-"] {
   line-height: 1.5;

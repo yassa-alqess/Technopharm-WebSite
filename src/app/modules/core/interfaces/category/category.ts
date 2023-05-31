@@ -1,4 +1,5 @@
 import { CategoryIDs, StaticCategoriesIDs } from "core/enums";
+import { Image } from "../image/image";
 
 export interface CategoryResponse {
     ItemCategoriesGetAllResult: Category[];
@@ -10,6 +11,7 @@ export interface Category {
     Description:       string;
     Images?:           Image[];
     ProductGroups?:    ProductGroup[];
+    route?:            string;
 }
 
 export interface ProductGroup {
@@ -19,22 +21,4 @@ export interface ProductGroup {
     Images:            Image[];
     ItemCategoryId:    CategoryIDs;
     Items:             any[];
-}
-
-interface Image {
-    Id:           CategoryIDs | string;
-    AvgColor:     string;
-    DisplayOrder: number;
-    Format:       string;
-    Image:        string;
-    ImgSize:      ImgSize;
-    LoadFromFile: boolean;
-    Location:     string;
-    LocationType: number;
-}
-
-interface ImgSize {
-    Width:            number;
-    Height:           number;
-    UseMinHorVerSize: boolean;
 }

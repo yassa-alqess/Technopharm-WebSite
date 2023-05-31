@@ -71,6 +71,10 @@
   background-color: $error-light !important;
 }
 
+.bg-pending {
+  background-color: $pending !important;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }
@@ -96,8 +100,12 @@
   border-width: .5px !important;
 }
 
-.title-border-bottom {
-  border-bottom: 2px solid $border-color;
+.border-top {
+  --bs-border-color: #{$border-color-dark};
+}
+
+.border-bottom {
+  border-bottom: 1px solid $border-color;
 }
 
 .border-primary {
@@ -113,8 +121,18 @@
 }
 
 .border {
-  border: 1px solid $border-color !important;
-  border-radius: 1px;
+  --bs-border-width: 1px;
+  --bs-border-style: solid;
+  --bs-border-color: transparent;
+
+  &.default {
+    border-color: $border-color !important;
+  }
+
+  &.bottom {
+    border-inline: none !important;
+    border-top: none !important;
+  }
 }
 
 .border-radius-0 {
@@ -130,7 +148,7 @@
 }
 
 .border-radius-8 {
-  border-radius: 8px;
+  border-radius: 8px !important;
 }
 
 .border-radius-50 {
@@ -182,5 +200,14 @@
 @include xlarge-screen {
   .container-lg {
     max-width: 1400px
+  }
+}
+
+.left-0 {
+  left: 0;
+
+  &.rtl {
+    left: unset;
+    right: 0;
   }
 }

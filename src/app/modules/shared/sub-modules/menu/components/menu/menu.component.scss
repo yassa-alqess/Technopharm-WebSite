@@ -1,0 +1,20 @@
+::ng-deep {
+    .mat-mdc-menu-content.mdc-list {
+        padding: 0;
+        min-width: 156px;
+    }
+
+    .mat-mdc-button {
+        --mat-mdc-button-persistent-ripple-color: transparent;
+    }
+
+    .mat-mdc-menu-content {
+        overflow: hidden;
+    }
+
+    del-menu {
+        a {
+            --bs-link-hover-color: initial;
+        }
+    }
+}

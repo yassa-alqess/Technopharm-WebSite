@@ -1,0 +1,5 @@
+<del-header-categories *ngIf="(sidebarContent | async) === SidebarContent.headerCategories"></del-header-categories>
+
+<div class="category-sidebar-drawer px-2" *ngIf="(sidebarContent | async) === SidebarContent.sidebarCategories">
+    <del-category-sidebar></del-category-sidebar>
+</div>

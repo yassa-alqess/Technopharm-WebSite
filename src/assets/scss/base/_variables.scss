@@ -1,19 +1,20 @@
 $primary: #B72227;
-$primary-light: rgba($primary, 0.25);;
+$primary-light: rgba($primary, 0.10);
 
 $secondary: #262834;
 $secondary-light: rgba($secondary, 0.25);
 
 $page-bg: rgba(229, 229, 229, 0.3);
 $border-color: #e8e8e8;
+$border-color-dark: #3a3d53;
 
 $white: white;
 $black: black;
 $light: #F4F4F5;
-$dark: #1F2937;
+$dark: #262834;
 
 $text-light: #d9d9d9;
-$middle: #9CA3AF;
+$middle: #7f8897;
 
 $success: #10B981;
 $success-light: rgba($success, 0.11);
@@ -21,11 +22,15 @@ $success-light: rgba($success, 0.11);
 $error: #EF4444;
 $error-light: rgba($error, 0.11);
 
-$pending: #F59E0B;
+$pending: #ffba00;
 $pending-light: rgba($pending, 0.11);
 
 :root {
     --translateX: -100%;
+    --primary: var(--#{$primary});
+    --primary-light: var(--#{$primary-light});
+    --secondary: var(--#{$secondary});
+    --secondary-light: var(--#{$secondary-light});
 }
 
 [dir="rtl"] {
