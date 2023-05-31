@@ -5,6 +5,11 @@ import { BaseSharedModule } from './sub-modules/base-shared/base-shared.module';
 // components - standalone
 import { BreadcrumbComponent, CheckboxComponent, PaginationComponent, ProductComponent } from './components';
 
+// modules
+import { DirectivesModule } from './sub-modules/directives/directives.module';
+import { MenuModule } from './sub-modules/menu/menu.module';
+import { SwiperModule } from './sub-modules/swiper/swiper.module';
+
 const STANDALONE_COMPONENTS = [
   PaginationComponent,
   CheckboxComponent,
@@ -12,11 +17,20 @@ const STANDALONE_COMPONENTS = [
   ProductComponent
 ];
 
+const MODULES = [
+  BaseSharedModule,
+  DirectivesModule,
+  MenuModule,
+  SwiperModule,
+];
+
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    BaseSharedModule,
+
+    // Modules
+    ...MODULES,
 
     // Components - standalone
     ...STANDALONE_COMPONENTS

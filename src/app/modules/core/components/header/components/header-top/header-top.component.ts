@@ -12,6 +12,7 @@ export class HeaderTopComponent {
   isEnglish = true;
   mobileAppDiscountPercentage = environment.mobileAppDiscountPercentage;
   mobileAppURL = environment.mobileAppURL;
+  hotLine = environment.hotLine;
 
   constructor(private translationService: TranslationService) {}
 

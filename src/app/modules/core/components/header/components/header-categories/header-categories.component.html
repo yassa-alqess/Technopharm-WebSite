@@ -40,7 +40,7 @@
                         <div [ngClass]="{'row': (category.ProductGroups?.length || 0) > maxItemCount }" matMenuContent
                              *ngIf="category.ProductGroups?.length">
 
-                            <del-menu-item matMenuContent [ngClass]="{'col-xl-4': (category.ProductGroups?.length || 0) > maxItemCount }"
+                            <del-menu-item [ngClass]="{'col-xl-4': (category.ProductGroups?.length || 0) > maxItemCount }"
                                            [routerLink]="getSubCategoryRouterLink(category.Id, ProductGroup.Id || null).routerLink"
                                            [queryParams]="getSubCategoryRouterLink(category.Id, ProductGroup.Id || null).queryParams"
                                            *ngFor="let ProductGroup of category.ProductGroups">
