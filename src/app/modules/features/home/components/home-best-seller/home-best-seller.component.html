@@ -1,4 +1,4 @@
-<section class="best-seller-wrapper p-0 pt-4 mt-4" *ngIf="bestSelerItems.length">
+<section class="best-seller-wrapper p-0 pt-4 mt-4">
     <div class="container-lg">
         <div class="d-flex flex-column align-items-center best-seller-header">
             <h2 class="m-0 text-dark font-24 d-flex align-items-center fw-bold" setRtl>
@@ -11,31 +11,33 @@
 
         <!-- best-seller-content -->
         <div class="best-seller-content position-relative mt-4" id="bestSeller">
-            <swiper [slides]="bestSelerItems" [config]="config">
-                <ng-template swiperSlide let-product>
-                    <del-product [product]="product" (action)="doAction($event)"></del-product>
-                </ng-template>
-            </swiper>
-
-            <div class="swiper-button w-100 h-100 position-absolute top-0 d-flex align-items-center justify-content-between">
-                <button class="d-flex justify-content-center align-items-center swiper-next" setRtl>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
-                        <path fill-rule="evenodd"
-                              d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
-                              clip-rule="evenodd" />
-                    </svg>
-                </button>
-
-                <button class="d-flex justify-content-center align-items-center swiper-prev" setRtl>
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
-                        <path fill-rule="evenodd"
-                              d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
-                              clip-rule="evenodd" />
-                    </svg>
-                </button>
-            </div>
-
-            <!-- <a href="shop-left-sidebar.html" class="btn-solid btn-sm mb-line center-button">عرض كل العروض </a> -->
+            <ng-container *ngIf="bestSelerItems.length">
+                <swiper [slides]="bestSelerItems" [config]="config">
+                    <ng-template swiperSlide let-product>
+                        <del-product [product]="product" (action)="doAction($event)"></del-product>
+                    </ng-template>
+                </swiper>
+    
+                <div class="swiper-button w-100 h-100 position-absolute top-0 d-flex align-items-center justify-content-between">
+                    <button class="d-flex justify-content-center align-items-center swiper-next" setRtl>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
+                            <path fill-rule="evenodd"
+                                  d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
+                                  clip-rule="evenodd" />
+                        </svg>
+                    </button>
+    
+                    <button class="d-flex justify-content-center align-items-center swiper-prev" setRtl>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
+                            <path fill-rule="evenodd"
+                                  d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
+                                  clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </div>
+    
+                <!-- <a href="shop-left-sidebar.html" class="btn-solid btn-sm mb-line center-button">عرض كل العروض </a> -->
+            </ng-container>
         </div>
     </div>
 </section>

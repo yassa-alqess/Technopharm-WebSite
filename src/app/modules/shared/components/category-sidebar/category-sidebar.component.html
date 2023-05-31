@@ -45,7 +45,7 @@
                 <ul class="m-0 p-0 list-unstyled d-flex flex-column gap-3">
                     <li *ngFor="let subCategory of subCategories; let i=index">
                         <del-category [category]="subCategory" [isSelected]="selectedSubCategoryId === subCategory.Id"
-                                      (selectedCategory)="selectedSubCategoryId = $event.Id; getSubSelectedCategory(); drawer.close()">
+                                      (selectedCategory)="selectedSubCategoryId = $event.Id; getSubSelectedCategory(); drawer ? drawer.close() : null">
                         </del-category>
                     </li>
                 </ul>

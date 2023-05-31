@@ -1,4 +1,4 @@
-<section class="offers-wrapper p-0 pt-4 mt-4" (isEnglish)="isEnglish = $event" *ngIf="offers.length">
+<section class="offers-wrapper p-0 pt-4 mt-4" (isEnglish)="isEnglish = $event">
     <div class="container-lg">
         <div class="d-flex flex-column align-items-center offers-header">
             <h2 class="m-0 text-dark font-24 d-flex align-items-center fw-bold" setRtl>
@@ -10,7 +10,7 @@
         </div>
 
         <div class="offers-content position-relative mt-4">
-            <div class="row d-none d-sm-flex">
+            <div class="row d-none d-sm-flex" *ngIf="offers.length; else offerEmptyState">
                 <div class="col-sm-6 col-lg-4 col-xl-3 gy-3" *ngFor="let offer of offers | slice: 0:sliceEndCount; let i=index">
                     <div class="offers-box bg-white">
                         <ng-template [ngTemplateOutlet]="offerRef" [ngTemplateOutletContext]="{ $implicit: offer }"></ng-template>
@@ -24,6 +24,17 @@
         </div>
     </div>
 </section>
+
+<ng-template #offerEmptyState>
+    <div class="empty-state d-flex flex-column align-items-center justify-content-center mt-5">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" class="text-primary">
+            <use [attr.xlink:href]="'assets/images/common/offers_empty.svg#offers_empty'"></use>
+        </svg>
+
+        <span class="text-middle mt-3 font-18">{{ 'EMPTY.OFFERS' | translate }}</span>
+    </div>
+</ng-template>
+
 
 <ng-template #OffersSwiper>
     <swiper [slides]="offers | slice: 0:6" [config]="config">

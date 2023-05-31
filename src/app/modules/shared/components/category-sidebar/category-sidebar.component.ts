@@ -96,7 +96,7 @@ export class CategorySidebarComponent {
       subCategoryRouterLink = subCategoryId,
       queryParams = { subCategoryId: subCategoryRouterLink };
 
-    if (!this.subCategories.map(subCategory => subCategory.Id).includes(subCategoryId)) return;
+    if (!this.subCategories.map(subCategory => subCategory.Id).includes(this.selectedSubCategoryId)) return;
 
     this.router.navigate([], { queryParams, relativeTo: this.activatedRoute });
   }
