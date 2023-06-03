@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BaseSharedModule } from './sub-modules/base-shared/base-shared.module';
+import { BaseSharedModule } from './sub-modules/base-shared';
 
 // components - standalone
 import { BreadcrumbComponent, ProductComponent, SubTitleComponent, TitleComponent } from './components';

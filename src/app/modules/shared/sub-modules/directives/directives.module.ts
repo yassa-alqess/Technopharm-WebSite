@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { IsEnglishDirective, RtlDirective } from '.';
+import { IsEnglishDirective } from './is-english/is-english.directive';
+import { RtlDirective } from './rtl/rtl.directive';
 
 const DIRECTIVES = [
   IsEnglishDirective,

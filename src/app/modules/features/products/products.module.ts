@@ -6,7 +6,7 @@ import { ProductsComponent } from './pages/products/products.component';
 import { CategoriesRoutingModule } from './products-routing.module';
 
 import { MenuModule } from 'shared/sub-modules/menu/menu.module';
-import { BaseSharedModule } from 'shared/sub-modules/base-shared/base-shared.module';
+import { BaseSharedModule } from 'shared/sub-modules/base-shared';
 import { CategoryComponent, CategorySidebarComponent, ProductComponent } from 'shared/components';
 
 @NgModule({

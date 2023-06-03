@@ -15,7 +15,7 @@ import { FooterComponent, HeaderComponent, LayoutComponent, SidebarComponent } f
 import { HeaderCategoriesComponent, HeaderTopComponent } from './components/header/components';
 
 import { MenuModule } from 'shared/sub-modules/menu/menu.module';
-import { BaseSharedModule } from 'shared/sub-modules/base-shared/base-shared.module';
+import { BaseSharedModule } from 'shared/sub-modules/base-shared';
 import { BreadcrumbComponent, CategorySidebarComponent } from 'shared/components';
 
 const COMPONENTS = [

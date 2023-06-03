@@ -6,7 +6,7 @@ import { CategoryIDs } from 'core/enums';
 import { Category, ProductGroup } from 'core/interfaces';
 import { CategoriesService } from 'core/services';
 import { SidebarToggleService } from 'core/services/sidebar-toggle/sidebar-toggle.service';
-import { BaseSharedModule } from 'shared/sub-modules/base-shared/base-shared.module';
+import { BaseSharedModule } from 'shared/sub-modules/base-shared';
 import { CategoryComponent } from '../category/category.component';
 import { TitleComponent } from '../title/title.component';
 
