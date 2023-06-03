@@ -1,18 +1,19 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+import { Subject, filter, distinctUntilChanged, takeUntil } from 'rxjs';
 import { CategoryIDs } from 'core/enums';
 import { Category, ProductGroup } from 'core/interfaces';
 import { CategoriesService } from 'core/services';
-import { Subject, filter, distinctUntilChanged, takeUntil } from 'rxjs';
+import { SidebarToggleService } from 'core/services/sidebar-toggle/sidebar-toggle.service';
 import { BaseSharedModule } from 'shared/sub-modules/base-shared/base-shared.module';
 import { CategoryComponent } from '../category/category.component';
-import { SidebarToggleService } from 'core/services/sidebar-toggle/sidebar-toggle.service';
+import { TitleComponent } from '../title/title.component';
 
 @Component({
   selector: 'del-category-sidebar',
   standalone: true,
-  imports: [CommonModule, CategoryComponent, BaseSharedModule],
+  imports: [CommonModule, CategoryComponent, TitleComponent, BaseSharedModule],
   templateUrl: './category-sidebar.component.html',
   styleUrls: ['./category-sidebar.component.scss']
 })

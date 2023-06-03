@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PaginationComponent } from './pagination.component';
+import { SubTitleComponent } from './sub-title.component';
 
-describe('PaginationComponent', () => {
-  let component: PaginationComponent;
-  let fixture: ComponentFixture<PaginationComponent>;
+describe('SubTitleComponent', () => {
+  let component: SubTitleComponent;
+  let fixture: ComponentFixture<SubTitleComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PaginationComponent ]
+      imports: [ SubTitleComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(PaginationComponent);
+    fixture = TestBed.createComponent(SubTitleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

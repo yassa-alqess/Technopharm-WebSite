@@ -5,7 +5,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './pages/home/home.component';
 
 import { BaseSharedModule } from 'shared/sub-modules/base-shared/base-shared.module';
-import { ProductComponent } from 'shared/components';
+import { ProductComponent, SubTitleComponent } from 'shared/components';
 
 import { BannerComponent, HomeCategoriesComponent, HomeBestSellerComponent, HomeOffersComponent } from './components';
 
@@ -21,7 +21,8 @@ import { BannerComponent, HomeCategoriesComponent, HomeBestSellerComponent, Home
     CommonModule,
     HomeRoutingModule,
     BaseSharedModule,
-    ProductComponent
+    ProductComponent,
+    SubTitleComponent
   ]
 })
 export class HomeModule { }
