@@ -6,7 +6,7 @@
                 {{ 'OFFERS.TITLE' | translate }}
             </h2>
 
-            <p class="m-0 mt-2 font-16 text-middle">{{ 'OFFERS.HINT' | translate }}</p>
+            <del-sub-title title="OFFERS.HINT"></del-sub-title>
         </div>
 
         <div class="offers-content position-relative mt-4">
@@ -31,7 +31,7 @@
             <use [attr.xlink:href]="'assets/images/common/offers_empty.svg#offers_empty'"></use>
         </svg>
 
-        <span class="text-middle mt-3 font-18">{{ 'EMPTY.OFFERS' | translate }}</span>
+        <del-sub-title title="EMPTY.OFFERS" fontSize="font-18"></del-sub-title>
     </div>
 </ng-template>
 
@@ -68,7 +68,8 @@
 
 <ng-template #offerRef let-offer>
     <a class="d-flex flex-column align-items-center h-100">
-        <img class="img-fluid" [src]="offer.Images[0].Location" loading="lazy" [alt]="offer.Description" />
+        <img class="img-fluid" [src]="offer.Images[0].Location" loading="lazy" [alt]="offer.Description"
+             (error)="offer.Images[0].Location = 'assets/images/common/Product_Image_Placeholder.png'" />
 
         <h4 class="m-0 font-20 text-dark py-2 text-capitalize">
             {{ isEnglish ? (offer.Description | lowercase) : offer.ArabicDescription }}

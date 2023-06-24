@@ -1,0 +1,9 @@
+.modal-container {
+    .modal-content {
+        .personal-info, .addresses {
+            &-title {
+                top: -1rem;
+            }
+        }
+    }
+}

@@ -55,6 +55,7 @@ export class ProductsComponent {
       includeDetails: true,
     };
 
+    document.querySelector('.mat-drawer-content')?.scrollTo({ top: 0, behavior: 'smooth' });
     this.productsService.getProducts(body).subscribe(products => this.products = products);
   }
 

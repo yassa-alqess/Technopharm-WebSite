@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, NavigationEnd, Params, Router } from '@angular/router';
 import { Category } from 'core/interfaces';
-import { BaseSharedModule } from 'shared/sub-modules/base-shared/base-shared.module';
+import { BaseSharedModule } from 'shared/sub-modules/base-shared';
 import { Subject, distinctUntilChanged, filter, takeUntil } from 'rxjs';
 
 interface IBreadCrumb {

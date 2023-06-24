@@ -5,7 +5,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from 'core/core.module';
-import { ErrorInterceptor, TokenInterceptor } from 'core/interceptors';
+import { ErrorInterceptor } from 'core/interceptors';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -19,11 +19,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CoreModule,
   ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptor,
-      multi: true
-    },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ErrorInterceptor,

@@ -14,12 +14,8 @@
     <div class="sidebar-box p-3 border default border-radius-8">
         <!-- categories -->
         <div class="categories pb-4" [ngClass]="{'border default bottom': subCategories.length}">
-            <div class="title position-relative">
-                <h4 class="fw-500 font-18 d-inline-block position-relative cursor-pointer m-0">
-                    {{ 'CATEGORIES.TITLE' | translate }}
-                    <span class="bg-primary-light w-100 h-50 d-block position-absolute"></span>
-                </h4>
-            </div>
+            <!-- categories title -->
+            <del-title title="CATEGORIES.TITLE"></del-title>
 
             <div class="filter-option mt-4">
                 <ul class="m-0 p-0 list-unstyled d-flex flex-column gap-3">
@@ -34,12 +30,8 @@
 
         <!-- sub-categories -->
         <div class="sub-categories mt-4" *ngIf="subCategories.length">
-            <div class="title position-relative">
-                <h4 class="fw-500 font-18 d-inline-block position-relative cursor-pointer m-0">
-                    {{ 'CATEGORIES.SUB_CATEGORIES' | translate }}
-                    <span class="bg-primary-light w-100 h-50 d-block position-absolute"></span>
-                </h4>
-            </div>
+            <!-- subCategories title -->
+            <del-title title="CATEGORIES.SUB_CATEGORIES"></del-title>
 
             <div class="filter-option mt-4">
                 <ul class="m-0 p-0 list-unstyled d-flex flex-column gap-3">

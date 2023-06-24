@@ -4,15 +4,21 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './pages/home/home.component';
 
-import { BaseSharedModule } from 'shared/sub-modules/base-shared/base-shared.module';
-import { ProductComponent } from 'shared/components';
+import { BaseSharedModule } from 'shared/sub-modules/base-shared';
+import { ProductComponent, SubTitleComponent } from 'shared/components';
 
-import { BannerComponent, HomeCategoriesComponent, HomeBestSellerComponent, HomeOffersComponent } from './components';
+import {
+  HomeAdsComponent,
+  HomeCategoriesComponent,
+  HomeBestSellerComponent,
+  HomeOffersComponent,
+  CompleteRegistrationComponent,
+} from './components';
 
 @NgModule({
   declarations: [
     HomeComponent,
-    BannerComponent,
+    HomeAdsComponent,
     HomeCategoriesComponent,
     HomeBestSellerComponent,
     HomeOffersComponent
@@ -21,7 +27,11 @@ import { BannerComponent, HomeCategoriesComponent, HomeBestSellerComponent, Home
     CommonModule,
     HomeRoutingModule,
     BaseSharedModule,
-    ProductComponent
+
+    // standalone components
+    ProductComponent,
+    SubTitleComponent,
+    CompleteRegistrationComponent
   ]
 })
 export class HomeModule { }

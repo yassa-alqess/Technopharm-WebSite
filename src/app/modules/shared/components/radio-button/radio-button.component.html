@@ -1,0 +1,9 @@
+<div class="radio-button-wrapper d-flex flex-column form-group m-0" [formGroup]="formGroup">
+    <label id="radiobutton">{{ label | translate }}</label>
+
+    <mat-radio-group class="d-flex align-items-center gap-3 mt-2" [formControlName]="controlName" aria-label="Select an option" aria-labelledby="radiobutton">
+        <mat-radio-button *ngFor="let option of options" [value]="option.id">
+            {{ option.text | translate }}
+        </mat-radio-button>
+    </mat-radio-group>
+</div>

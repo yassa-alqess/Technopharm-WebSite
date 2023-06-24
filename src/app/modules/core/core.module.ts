@@ -11,25 +11,20 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSidenavModule } from '@angular/material/sidenav';
 
-import { LayoutComponent } from './components/layout/layout.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { HeaderComponent } from './components/header/header.component';
-import { HeaderTopComponent } from './components/header/components/header-top/header-top.component';
-import { HeaderCategoriesComponent } from './components/header/components/header-categories/header-categories.component';
+import { FooterComponent, HeaderComponent, LayoutComponent, SidebarComponent } from './components';
+import { HeaderCategoriesComponent, HeaderTopComponent } from './components/header/components';
 
-import { BaseSharedModule } from 'shared/sub-modules/base-shared/base-shared.module';
-import { BreadcrumbComponent } from 'shared/components';
 import { MenuModule } from 'shared/sub-modules/menu/menu.module';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { CategorySidebarComponent } from 'shared/components/category-sidebar/category-sidebar.component';
+import { BaseSharedModule } from 'shared/sub-modules/base-shared';
+import { BreadcrumbComponent, CategorySidebarComponent } from 'shared/components';
 
 const COMPONENTS = [
   LayoutComponent,
+  FooterComponent,
+  SidebarComponent,
   HeaderComponent,
   HeaderTopComponent,
   HeaderCategoriesComponent,
-  FooterComponent,
-  SidebarComponent
 ];
 
 const MATERIAL_MODULES = [
