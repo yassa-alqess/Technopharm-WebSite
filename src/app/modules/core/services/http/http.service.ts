@@ -31,21 +31,21 @@ export abstract class HttpService implements HttpServiceBaseService {
   }
 
   post<T>(API_Config: API_Config) {
-    return this.http.post<T>(`${this.domainName}${this.baseUrl}${API_Config.APIName}`, API_Config.body, { params: API_Config.params })
+    return this.http.post<T>(`${this.domainName}${this.baseUrl}${API_Config.APIName}`, JSON.stringify(API_Config.body), { params: API_Config.params })
       .pipe(map(event => {
         return event;
       }));
   }
 
   put(API_Config: API_Config): Observable<boolean> {
-    return this.http.put<boolean>(`${this.domainName}${this.baseUrl}${API_Config.APIName}`, API_Config.body, { params: API_Config.params })
+    return this.http.put<boolean>(`${this.domainName}${this.baseUrl}${API_Config.APIName}`, JSON.stringify(API_Config.body), { params: API_Config.params })
       .pipe(map(event => {
         return event;
       }));
   }
 
   delete(API_Config: API_Config): Observable<boolean> {
-    return this.http.delete<boolean>(`${this.domainName}${this.baseUrl}${API_Config.APIName}`, { body: API_Config.body, params: API_Config.params })
+    return this.http.delete<boolean>(`${this.domainName}${this.baseUrl}${API_Config.APIName}`, { body: JSON.stringify(API_Config.body), params: API_Config.params })
       .pipe(map(event => {
         return event;
       }));

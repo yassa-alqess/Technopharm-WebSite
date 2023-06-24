@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from 'core/services';
 import { catchError, map, of } from 'rxjs';
-import { AdvertisementsResponse, ProductResponse, OffersResponse } from 'core/interfaces';
-import { BestSellerItems, Advertisements, Offers } from '../../../../../../assets/mock-data';
+import { AdvertisementsResponse, ProductResponse, OffersResponse, CityResponse, AreaResponse, Product } from 'core/interfaces';
+import { BestSellerItems, Advertisements, Offers, Cities, Areas } from '../../../../../../assets/mock-data';
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +20,8 @@ export class HomeService extends HttpService {
     "maxNumberOfItems": 10,
     "includeDetails": true
   }) {
-    return this.post<ProductResponse>({ APIName: 'BestSellerItemsGet', body }).pipe(
-      map(response => response.BestSellerItemsGetResult),
+    return this.post<Product[]>({ APIName: 'BestSellerItemsGet', body }).pipe(
+      map(response => response),
       catchError(() => {
         return of(BestSellerItems);
       }),
@@ -36,6 +36,24 @@ export class HomeService extends HttpService {
       map(response => response.PublishedOffersGetByCardIdResult),
       catchError(() => {
         return of(Offers);
+      })
+    );
+  }
+
+  getCities() {
+    return this.post<CityResponse>({ APIName: 'CitiesList' }).pipe(
+      map(response => response.CitiesListResult),
+      catchError(() => {
+        return of(Cities);
+      })
+    );
+  }
+
+  getAreas(body: { City: string; }) {
+    return this.post<AreaResponse>({ APIName: 'AreasList', body }).pipe(
+      map(response => response.AreasListResult),
+      catchError(() => {
+        return of(Areas);
       })
     );
   }

@@ -4,11 +4,11 @@ import { Advertisement } from 'core/interfaces';
 import { SwiperOptions } from 'swiper';
 
 @Component({
-  selector: 'del-banner',
-  templateUrl: './banner.component.html',
-  styleUrls: ['./banner.component.scss']
+  selector: 'del-home-ads',
+  templateUrl: './home-ads.component.html',
+  styleUrls: ['./home-ads.component.scss']
 })
-export class BannerComponent {
+export class HomeAdsComponent {
   config: SwiperOptions = {
     mousewheel: false,
     loop: true,

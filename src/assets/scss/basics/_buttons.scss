@@ -33,9 +33,9 @@ button {
     color: $primary;
   }
 
-  &.main {
-    background-color: $primary;
-    color: $white;
+  &.primary {
+    --mdc-filled-button-container-color: #{$primary};
+    --mdc-filled-button-label-text-color: #{$white};
   }
 
   &.light {

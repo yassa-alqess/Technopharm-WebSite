@@ -27,10 +27,10 @@ $pending-light: rgba($pending, 0.11);
 
 :root {
     --translateX: -100%;
-    --primary: var(--#{$primary});
-    --primary-light: var(--#{$primary-light});
-    --secondary: var(--#{$secondary});
-    --secondary-light: var(--#{$secondary-light});
+    --primary: #{$primary};
+    --primary-light: #{$primary-light};
+    --secondary: #{$secondary};
+    --secondary-light: #{$secondary-light};
 }
 
 [dir="rtl"] {

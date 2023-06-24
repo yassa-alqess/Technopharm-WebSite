@@ -1,0 +1,22 @@
+@import "style";
+
+::ng-deep del-datepicker {
+    .mat-mdc-form-field-appearance-legacy .mat-mdc-form-field-infix {
+        padding: 0.6375em 0;
+    
+        .mat-mdc-form-field-label-wrapper {
+            .mat-mdc-form-field-label {
+                margin: 0;
+                line-height: normal;
+            }
+        }
+    }
+
+    .mdc-text-field--outlined {
+        --mdc-theme-primary: #{$secondary};
+    }
+    
+    .mat-mdc-icon-button svg, .mat-mdc-icon-button img {
+        --mdc-icon-button-icon-size: 20px;
+    }
+}

@@ -3,6 +3,9 @@
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
 
+/* Importing ngx-toastr CSS file. */
+@import "ngx-toastr/toastr";
+
 html,
 body {
     height: 100%;
