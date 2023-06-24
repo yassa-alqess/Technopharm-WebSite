@@ -1,0 +1,1 @@
+export * from './validation-handler/validation-handler.pipe';

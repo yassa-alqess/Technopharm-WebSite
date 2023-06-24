@@ -1,0 +1,37 @@
+@import "style";
+
+$login-bg-height: 250px;
+
+:host::ng-deep {
+    height: 100%;
+
+    .login-wrapper {
+        .login-bg {
+            height: $login-bg-height;
+
+            @include medium-screen {
+                height: 100%;
+            }
+
+            img {
+                object-fit: cover;
+                width: 100%;
+            }
+        }
+
+        .verify-form {
+            transition: all .5s ease;
+
+            .ng-otp-input-wrapper {
+                .otp-input {
+                    margin: 0 !important;
+    
+                    &:not(:last-child) {
+                        margin-inline-end: 8px !important;
+                    }
+                }
+            }
+        }
+
+    }
+}

@@ -7,12 +7,18 @@ import { HomeComponent } from './pages/home/home.component';
 import { BaseSharedModule } from 'shared/sub-modules/base-shared';
 import { ProductComponent, SubTitleComponent } from 'shared/components';
 
-import { BannerComponent, HomeCategoriesComponent, HomeBestSellerComponent, HomeOffersComponent } from './components';
+import {
+  HomeAdsComponent,
+  HomeCategoriesComponent,
+  HomeBestSellerComponent,
+  HomeOffersComponent,
+  CompleteRegistrationComponent,
+} from './components';
 
 @NgModule({
   declarations: [
     HomeComponent,
-    BannerComponent,
+    HomeAdsComponent,
     HomeCategoriesComponent,
     HomeBestSellerComponent,
     HomeOffersComponent
@@ -21,8 +27,11 @@ import { BannerComponent, HomeCategoriesComponent, HomeBestSellerComponent, Home
     CommonModule,
     HomeRoutingModule,
     BaseSharedModule,
+
+    // standalone components
     ProductComponent,
-    SubTitleComponent
+    SubTitleComponent,
+    CompleteRegistrationComponent
   ]
 })
 export class HomeModule { }

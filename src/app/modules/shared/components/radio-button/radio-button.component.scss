@@ -1,0 +1,9 @@
+@import "style";
+
+.mat-mdc-radio-button.mat-accent {
+    --mdc-radio-selected-icon-color: #{$secondary};
+    --mat-mdc-radio-checked-ripple-color: #{$secondary};
+    --mdc-radio-selected-focus-icon-color: #{$secondary};
+    --mdc-radio-selected-hover-icon-color: #{$secondary};
+    --mdc-radio-selected-pressed-icon-color: #{$secondary};
+}

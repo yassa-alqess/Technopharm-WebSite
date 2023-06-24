@@ -1,16 +1,25 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef, ViewChild, inject } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Advertisement, Offer, Product } from 'core/interfaces';
 import { HomeService } from 'features/home/services/home/home.service';
 
 @Component({
   selector: 'del-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
+  dialog = inject(MatDialog);
+
   banners: Advertisement[] = [];
   bestSelerItems: Product[] = [];
   offers: Offer[] = [];
+
+  private get isUserExist() {
+    return localStorage.getItem("del-user-sign-up") === "false"; // true
+  }
+
+  @ViewChild("completeRegistration") completeRegistration!: TemplateRef<any>;
 
   constructor(private homeService: HomeService) { }
 
@@ -22,6 +31,20 @@ export class HomeComponent {
     this.getOffers();
   }
 
+  ngAfterViewInit(): void {
+    //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+    //Add 'implements AfterViewInit' to the class.
+    if (!this.isUserExist)
+      this.dialog.open(this.completeRegistration, {
+        autoFocus: false,
+        disableClose: true,
+        panelClass: ['medium', 'p-0'],
+      });
+  }
+
+  /**
+   * get getHomeBanners from the server side
+   */
   getHomeBanners() {
     this.homeService.getBanners().subscribe(banners => this.banners = banners);
   }

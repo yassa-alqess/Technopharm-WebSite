@@ -3,3 +3,5 @@ export * from './home-banners';
 export * from './home-best-seller-items';
 export * from './products';
 export * from './offers';
+export * from './cities';
+export * from './areas';

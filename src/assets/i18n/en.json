@@ -13,6 +13,38 @@
         "REGISTER": "Register",
         "MY_ACCOUNT": "My Account"
     },
+    "ACCOUNT": {
+        "SIGN_IN_HINT": "Please login and enjoy your shopping journey",
+        "REGISTER_HINT": "Please register to enjoy your shopping journey",
+        "MOBILE_NUMBER": "Mobile Number",
+        "GENERATE_OTP": "Generate OTP",
+        "BACK_TO_HOME": "Back to Home",
+        "OR": "OR",
+        "LOGIN_FB": "Sign in with Facebook",
+        "VERIFY": "Verify OTP",
+        "VERIFY_HINT": "Please enter the code which you received",
+        "RESEND_OTP": "Resend OTP",
+        "RECEIVED_OTP": "Didn't receive the OTP?",
+        "WRONG_OTP": "The OTP you have entered is wrong."
+    },
+    "COMPLETE_REGISTRATION": {
+        "TITLE": "Complete Registration",
+        "PERSONAL_INFO": "Personal Information",
+        "FIRST_NAME": "First Name",
+        "LAST_NAME": "Last Name",
+        "BIRTH_DATE": "Birthdate",
+        "EMAIL": "Email",
+        "GENDER": "Gender",
+        "MALE": "Male",
+        "FEMALE": "Female",
+        "ADDRESS": "Address",
+        "CITY": "City",
+        "AREA": "Area",
+        "HOUSE_NO": "Building Number",
+        "STREET": "Street Name",
+        "FLOOR_NO": "Floor Number",
+        "APARTMENT_NO": "Apartment Number"
+    },
     "CATEGORIES": {
         "TITLE": "Categories",
         "ALL_CATEGORIES": "All Categories",
@@ -36,7 +68,9 @@
         "FILTER_RESULT": "Filter Results",
         "SORT_RESULTS": "Sort Results",
         "LOWEST_PRICE": "Lowest Price",
-        "HIGHEST_PRICe": "Highest Price"
+        "HIGHEST_PRICe": "Highest Price",
+        "VERIFY": "Verify & Continue",
+        "COMPLETE": "Complete"
     },
     "EMPTY": {
         "OFFERS": "There are no offers added right now."
@@ -45,5 +79,14 @@
         "404": "PAGE NOT FOUND",
         "403": "FORBIDDEN",
         "401": "UNAUTHORIZED"
-    }
+    },
+    "required_validation": "This field is required.",
+    "min_validation": "Min Value ",
+    "max_validation": "Max Value ",
+    "minlength_validation": "Min Length ",
+    "maxlength_validation": "Max Length ",
+    "email_validation": "Email isn't valid.",
+    "arabicWord_validation": "Please enter arabic characters.",
+    "englishWord_validation": "Please enter english characters.",
+    "confirmPassword_validation": "Please enter the same password."
 }

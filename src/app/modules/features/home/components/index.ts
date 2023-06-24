@@ -1,4 +1,5 @@
-export { BannerComponent } from './banner/banner.component';
-export { HomeCategoriesComponent } from './home-categories/home-categories.component';
-export { HomeBestSellerComponent } from './home-best-seller/home-best-seller.component';
-export { HomeOffersComponent } from './home-offers/home-offers.component';
+export * from './home-ads/home-ads.component';
+export * from './home-categories/home-categories.component';
+export * from './home-best-seller/home-best-seller.component';
+export * from './home-offers/home-offers.component';
+export * from './complete-registration/complete-registration.component';

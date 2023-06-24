@@ -13,6 +13,37 @@
         "REGISTER": "إنشاء حساب",
         "MY_ACCOUNT": "حسابي"
     },
+    "ACCOUNT": {
+        "SIGN_IN_HINT": "من فضلك قم بتسجيل الدخول وتمتع برحلة الشراء",
+        "MOBILE_NUMBER": "رقم الموبايل",
+        "GENERATE_OTP": "إرسال رمز التحقق",
+        "BACK_TO_HOME": "الرجوع للرئيسية",
+        "OR": "أو",
+        "LOGIN_FB": "تسجيل الدخول عن طريق فيسبوك",
+        "VERIFY": "تحقق من رمز التحقق",
+        "VERIFY_HINT": "من فضلك إدخل الرمز الذي تلقيته",
+        "RESEND_OTP": "إعادة إرسال رمز التحقق",
+        "RECEIVED_OTP": "لم تستلم رمز التحقق؟",
+        "WRONG_OTP": "رمز التحقق الذي أدخلته خطأ"
+    },
+    "COMPLETE_REGISTRATION": {
+        "TITLE": "إكمال التسجيل",
+        "PERSONAL_INFO": "المعلومات الشخصية",
+        "FIRST_NAME": "الإسم الأول",
+        "LAST_NAME": "الإسم الأخير",
+        "BIRTH_DATE": "تاريخ الميلاد",
+        "EMAIL": "البريد الإلكتروني",
+        "GENDER": "الجنس",
+        "MALE": "ذكر",
+        "FEMALE": "أنثى",
+        "ADDRESS": "العنوان",
+        "CITY": "المحافظة",
+        "AREA": "المدينة",
+        "HOUSE_NO": "رقم المبنى",
+        "STREET": "إسم الشارع",
+        "FLOOR_NO": "رقم الدور",
+        "APARTMENT_NO": "رقم الشقة"
+    },
     "CATEGORIES": {
         "TITLE": "أقسام",
         "ALL_CATEGORIES": "كل الأقسام",
@@ -36,7 +67,9 @@
         "FILTER_RESULT": "تصفية النتائج",
         "SORT_RESULTS": "ترتيب النتائج",
         "LOWEST_PRICE": "الأقل سعراً",
-        "HIGHEST_PRICe": "الأعلى سعراً"
+        "HIGHEST_PRICe": "الأعلى سعراً",
+        "VERIFY": "تحقق وأكمل التسجبل",
+        "COMPLETE": "إستكمال"
     },
     "EMPTY": {
         "OFFERS": "لا توجد عروض مضافة الآن."
@@ -45,5 +78,14 @@
         "404": "الصفحة غير موجودة",
         "403": "محظور",
         "401": "غير مصرح لك بالدخول"
-    }
+    },
+    "required_validation": "هذا الحقل إجباري.",
+    "min_validation": "أقل قيمة ",
+    "max_validation": "أكبر قيمة ",
+    "minlength_validation": "الحد الأدنى ",
+    "maxlength_validation": "الحد الأقصى ",
+    "email_validation": "البريد الإلكترونى غير صحيح.",
+    "arabicWord_validation": "من فضلك إدخل حروف عربي.",
+    "englishWord_validation": "من فضلك إدخل حروف انجليزي.",
+    "confirmPassword_validation": "الرجاء إدخال نفس كلمة المرور."
 }

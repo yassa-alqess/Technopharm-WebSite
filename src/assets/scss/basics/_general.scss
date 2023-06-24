@@ -148,31 +148,45 @@ body {
   max-width: 90vw !important;
   max-height: 90vh !important;
 
-  .mat-dialog-container {
+  .mat-mdc-dialog-container {
     min-width: 90%;
     height: 90vh;
   }
 
-  .mat-dialog-actions {
+  .mat-mdc-dialog-actions {
     box-sizing: border-box;
     margin: 0;
     padding: 1rem 1.5rem;
   }
 
+  .modal-header {
+    --bs-modal-header-padding: 0;
+    --bs-modal-header-border-width: 1px;
+    --bs-modal-header-border-color: #{$text-light};
+    --bs-modal-inner-border-radius: .5rem;
+  }
+
+  .modal-footer {
+    --bs-modal-header-padding: 0;
+    --bs-modal-footer-border-width: 1px;
+    --bs-modal-footer-border-color: #{$text-light};
+    --bs-modal-inner-border-radius: .5rem;
+  }
+
   &.p-0 {
-    .mat-dialog-container {
+    .mat-mdc-dialog-container {
       padding: 0;
     }
   }
 
   &.overview {
-    .mat-dialog-content {
+    .mat-mdc-dialog-content {
       overflow: visible;
     }
   }
 
   &.small {
-    .mat-dialog-container {
+    .mat-mdc-dialog-container {
       @include small-screen {
         min-width: clamp(400px, 50vw, 400px);
         max-width: clamp(400px, 50vw, 400px);
@@ -182,7 +196,7 @@ body {
   }
 
   &.medium {
-    .mat-dialog-container {
+    .mat-mdc-dialog-container {
       @include small-screen {
         min-width: clamp(660px, 60vw, 660px);
         max-width: clamp(660px, 60vw, 660px);
@@ -192,7 +206,7 @@ body {
   }
 
   &.min-width {
-    .mat-dialog-container {
+    .mat-mdc-dialog-container {
       min-width: 90%;
 
       @include small-screen {
@@ -202,7 +216,7 @@ body {
   }
 
   &.default {
-    .mat-dialog-container {
+    .mat-mdc-dialog-container {
       min-width: 90%;
       height: 90vh;
 

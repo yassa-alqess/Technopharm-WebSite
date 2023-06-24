@@ -17,9 +17,7 @@ export class ErrorInterceptor implements HttpInterceptor {
         if (error.status === 401) {
           localStorage.removeItem('token');
           this.router.navigateByUrl('/');
-        }
-
-        if (error.status === 500) {
+        } else {
           this.alert.error(this.translation.instant('Internal Server Error'));
         }
 
