@@ -16,7 +16,7 @@ export class HomeComponent {
   offers: Offer[] = [];
 
   private get isUserExist() {
-    return localStorage.getItem("del-user-sign-up") === "false"; // true
+    return localStorage.getItem("del-user-sign-up") === "false" && localStorage.getItem('del-user-phone') !== null; // true
   }
 
   @ViewChild("completeRegistration") completeRegistration!: TemplateRef<any>;
