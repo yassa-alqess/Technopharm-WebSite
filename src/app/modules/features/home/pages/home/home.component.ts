@@ -16,7 +16,7 @@ export class HomeComponent {
   offers: Offer[] = [];
 
   private get isUserExist() {
-    return localStorage.getItem("del-user-sign-up") === "false" && localStorage.getItem('del-user-phone') !== null; // true
+    return localStorage.getItem("del-user-sign-up") === "false"; // true
   }
 
   @ViewChild("completeRegistration") completeRegistration!: TemplateRef<any>;
@@ -34,7 +34,7 @@ export class HomeComponent {
   ngAfterViewInit(): void {
     //Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
     //Add 'implements AfterViewInit' to the class.
-    if (!this.isUserExist)
+    if (!this.isUserExist && localStorage.getItem('del-user-phone') !== null)
       this.dialog.open(this.completeRegistration, {
         autoFocus: false,
         disableClose: true,
