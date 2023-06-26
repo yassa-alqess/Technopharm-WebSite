@@ -52,6 +52,10 @@ export class HomeCategoriesComponent {
    * get categories from the server side and add the static categories to its array
    */
   getCategories() {
-    this.categoriesService.categories.subscribe(categories => this.categories = categories);
+    this.categoriesService.categories.subscribe(categories => {
+      categories.map(category => category.Id.replaceAll(' ', '_'));
+
+      this.categories = categories;
+    });
   }
 }
