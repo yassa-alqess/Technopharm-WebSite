@@ -39,7 +39,7 @@
         <!-- quick actions -->
         <ul class="quick-actions position-absolute d-inline-flex flex-column gap-3 p-0" setRtl>
             <li [placement]="isEnglish ? 'left' : 'right'" [ngbTooltip]="'ACTIONS.ADD_FAVOURITES' | translate">
-                <a class="wishlist-btn d-flex align-items-center justify-content-center position-relative border-radius-50 box-shadow bg-white"
+                <a class="wishlist-btn d-flex align-items-center justify-content-center position-relative border-radius-50 box-shadow"
                    (click)="doAction('favorites')">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="16"
                          height="16">
@@ -50,7 +50,7 @@
             </li>
 
             <li [placement]="isEnglish ? 'left' : 'right'" [ngbTooltip]="'ACTIONS.QUICK_VIEW' | translate">
-                <a class="viewproduct-btn d-flex align-items-center justify-content-center position-relative border-radius-50 box-shadow bg-white"
+                <a class="viewproduct-btn d-flex align-items-center justify-content-center position-relative border-radius-50 box-shadow"
                    (click)="doAction('modal-view')">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="16"
                          height="16">
@@ -62,7 +62,7 @@
             </li>
 
             <li [placement]="isEnglish ? 'left' : 'right'" [ngbTooltip]="'ACTIONS.ADD_CART' | translate" *ngIf="product.AllowedToSell">
-                <a class="addtocart-btn d-flex align-items-center justify-content-center position-relative border-radius-50 box-shadow bg-white"
+                <a class="addtocart-btn d-flex align-items-center justify-content-center position-relative border-radius-50 box-shadow"
                    (click)="doAction('add-to-cart')">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="16"
                          height="16">
@@ -80,11 +80,7 @@
             <!-- sub category name -->
             <p class="text-capitalize text-middle font-14">
                 {{
-                  (categoriesService.getSubCategory(
-                    product.ItemCategoryCode,
-                    product.ProductGroupId
-                  ) | async)![isEnglish ? "Description" : "ArabicDescription"]
-                    | lowercase
+                    (isEnglish ? product.ItemSubCategory?.Description : product.ItemSubCategory?.ArabicDescription) | lowercase
                 }}
             </p>
 

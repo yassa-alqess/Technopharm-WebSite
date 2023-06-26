@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from 'core/services';
 import { catchError, map, of } from 'rxjs';
-import { AdvertisementsResponse, ProductResponse, OffersResponse, CityResponse, AreaResponse, Product } from 'core/interfaces';
+import { AdvertisementsResponse, OffersResponse, CityResponse, AreaResponse, Product } from 'core/interfaces';
 import { BestSellerItems, Advertisements, Offers, Cities, Areas } from '../../../../../../assets/mock-data';
 
 @Injectable({

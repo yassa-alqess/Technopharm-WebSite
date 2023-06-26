@@ -1,9 +1,8 @@
-import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { Product } from 'core/interfaces';
 import { BaseSharedModule } from 'shared/sub-modules/base-shared';
-import { CategoriesService } from 'core/services';
 
 @Component({
   selector: 'del-product',
@@ -14,7 +13,6 @@ import { CategoriesService } from 'core/services';
 })
 export class ProductComponent {
   isEnglish = false;
-  categoriesService = inject(CategoriesService);
   selectedProductImage = '';
   productRouterLink = '';
 

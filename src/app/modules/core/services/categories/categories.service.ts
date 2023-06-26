@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Category, CategoryResponse } from 'core/interfaces';
+import { Category, CategoryResponse, ProductGroup } from 'core/interfaces';
 import { HttpService } from '../http/http.service';
 import { BehaviorSubject, catchError, map, of } from 'rxjs';
 import { Categories } from '../../../../../assets/mock-data';
@@ -34,10 +34,8 @@ export class CategoriesService extends HttpService {
   }
 
   getSubCategory(categoryCode: CategoryIDs, subCategoryCode: string) {
-    return this.categories.pipe(map(categories => {
-      const category = categories.find(category => category.Id === categoryCode) as Category;
-
-      return category.ProductGroups?.find(each => each.Id === subCategoryCode) as Category;
+    return this.getByCategoryCode(categoryCode).pipe(map(category => {
+      return category?.ProductGroups?.find(each => each.Id === subCategoryCode) as ProductGroup;
     }));
   }
 }
