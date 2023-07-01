@@ -11,10 +11,13 @@ import { TranslateModule } from '@ngx-translate/core';
 import { DirectivesModule } from '../directives/directives.module';
 // SwiperModule
 import { SwiperModule } from '../swiper/swiper.module';
+// MenuModule
+import { MenuModule } from '../menu/menu.module';
 
 const MODULES = [
   DirectivesModule,
   SwiperModule,
+  MenuModule,
 
   FormsModule,
   RouterModule,

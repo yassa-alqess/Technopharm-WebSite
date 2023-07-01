@@ -107,6 +107,7 @@ export class BreadcrumbComponent {
    */
   getLabel(label: string): string {
     if (!this.categories) return label;
+    if (!this.categories.find(category => category.Id === label)) return label;
 
     this.selectedCategory = this.categories.find(category => category.Id === label) as Category;
 
