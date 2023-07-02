@@ -4,6 +4,7 @@ export * from './category-sidebar/category-sidebar.component';
 export * from './product/product.component';
 export * from './title/title.component';
 export * from './sub-title/sub-title.component';
+export * from './button/button.component';
 
 export * from './input-text/input-text.component';
 export * from './datepicker/datepicker.component';

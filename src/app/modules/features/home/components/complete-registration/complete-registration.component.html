@@ -124,10 +124,10 @@
 
     <div class="modal-footer w-100">
         <div class="d-flex justify-content-end w-100 py-2" mat-dialog-actions>
-            <button mat-flat-button type="submit" class="main-btn font-14 text-white px-4 primary" mat-dialog-close
-                    [disabled]="createAccountForm.invalid" (click)="createAccount()">
+            <del-button btnClass="primary text-white px-4" type="submit" mat-dialog-close [disabled]="createAccountForm.invalid"
+                        (onClick)="createAccount()">
                 {{ 'ACTIONS.COMPLETE' | translate }}
-            </button>
+            </del-button>
         </div>
     </div>
 </div>

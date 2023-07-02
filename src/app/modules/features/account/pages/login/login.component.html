@@ -22,15 +22,15 @@
                             </svg>
                         </del-input-text>
 
-                        <div class="actions d-flex flex-column px-2" actions>
-                            <button class="w-100 main-btn primary font-18 h-40" type="submit" mat-flat-button [disabled]="loginFormGroup.invalid">
+                        <div class="actions d-flex flex-column px-2">
+                            <del-button btnClass="primary font-18" type="submit" [disabled]="loginFormGroup.invalid">
                                 {{ 'ACCOUNT.GENERATE_OTP' | translate }}
-                            </button>
+                            </del-button>
 
                             <a routerLink="/">
-                                <button class="w-100 main-btn text-primary font-18 h-40 mt-3" type="submit" mat-flat-button>
+                                <del-button btnClass="text-primary font-18 mt-3">
                                     {{ 'ACCOUNT.BACK_TO_HOME' | translate }}
-                                </button>
+                                </del-button>
                             </a>
                         </div>
                     </form>
@@ -39,20 +39,20 @@
                         <div class="line my-4 position-relative w-100 text-center">
                             <span class="px-2 bg-white position-relative text-middle"> {{ 'ACCOUNT.OR' | translate }} </span>
                         </div>
-    
+
                         <div class="login-with-google">
                             <asl-google-signin-button type="standard" size="large" text="signin_with" [width]="width"
                                                       [locale]="languageCode"></asl-google-signin-button>
                         </div>
-    
+
                         <div class="login-with-facebook d-flex align-items-center justify-content-center mt-4" (click)="loginWithFB()">
-                            <div class="facebook-btn font-14 border-radius-4 d-flex align-items-center text-white"
-                                 [ngStyle]="{'width': width + 'px'}" [ngClass]="{'flex-row-reverse': languageCode === 'ar' }">
+                            <div class="facebook-btn font-14 border-radius-4 d-flex align-items-center text-white" [ngStyle]="{'width': width + 'px'}"
+                                 [ngClass]="{'flex-row-reverse': languageCode === 'ar' }">
                                 <svg class="svg-icon text-white" width="18" height="18" viewBox="0 0 18 18">
                                     <path d="M1.88 1C1.4 1 1 1.4 1 1.88v14.24c0 .48.4.88.88.88h7.67v-6.2H7.46V8.4h2.09V6.61c0-2.07 1.26-3.2 3.1-3.2.88 0 1.64.07 1.87.1v2.16h-1.29c-1 0-1.19.48-1.19 1.18V8.4h2.39l-.31 2.42h-2.08V17h4.08c.48 0 .88-.4.88-.88V1.88c0-.48-.4-.88-.88-.88H1.88z"
                                           fill="currentColor"></path>
                                 </svg>
-    
+
                                 <span class="w-100 text-center">
                                     {{ 'ACCOUNT.LOGIN_FB' | translate }}
                                 </span>
