@@ -3,25 +3,25 @@ import { CommonModule } from '@angular/common';
 import { MatSidenavModule } from '@angular/material/sidenav';
 
 import { ProductsComponent } from './pages/products/products.component';
+import { DetailsComponent } from './pages/details/details.component';
 import { CategoriesRoutingModule } from './products-routing.module';
 
-import { MenuModule } from 'shared/sub-modules/menu/menu.module';
 import { BaseSharedModule } from 'shared/sub-modules/base-shared';
-import { CategoryComponent, CategorySidebarComponent, ProductComponent } from 'shared/components';
+import { CategorySidebarComponent, ProductComponent, ProductDetailsComponent } from 'shared/components';
 
 @NgModule({
   declarations: [
     ProductsComponent,
+    DetailsComponent,
   ],
   imports: [
     CommonModule,
     CategoriesRoutingModule,
     BaseSharedModule,
     MatSidenavModule,
-    MenuModule,
     ProductComponent,
-    CategoryComponent,
     CategorySidebarComponent,
+    ProductDetailsComponent
   ]
 })
 export class ProductsModule { }

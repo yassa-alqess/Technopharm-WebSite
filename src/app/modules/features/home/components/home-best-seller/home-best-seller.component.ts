@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, TemplateRef, ViewChild, inject } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Product } from 'core/interfaces';
 import { SwiperOptions } from 'swiper';
 
@@ -8,8 +9,12 @@ import { SwiperOptions } from 'swiper';
   styleUrls: ['./home-best-seller.component.scss']
 })
 export class HomeBestSellerComponent {
-  @Input() bestSelerItems: Product[] = [];
+  private dialog = inject(MatDialog);
 
+  @Input() bestSelerItems: Product[] = [];
+  @ViewChild("productDetails") productDetails!: TemplateRef<any>;
+
+  product!: Product;
   config: SwiperOptions = {
     loop: true,
     spaceBetween: 1,
@@ -38,21 +43,26 @@ export class HomeBestSellerComponent {
     }
   };
 
-  doAction(action: { type: string; productId: string; }) {
-    if (action.type === 'favorites') return this.addToFavorites(action.productId);
-    if (action.type === 'modal-view') return this.viewProductAsModal(action.productId);
-    if (action.type === 'add-to-cart') return this.addToCart(action.productId);
+  doAction(action: { type: string; product: Product; }) {
+    this.product = action.product;
+
+    if (action.type === 'favorites') return this.addToFavorites(action.product);
+    if (action.type === 'modal-view') return this.viewProductAsModal();
+    if (action.type === 'add-to-cart') return this.addToCart(action.product);
   }
 
-  addToFavorites(productId: string) {
-    console.log('favorites', productId);
+  addToFavorites(product: Product) {
+    console.log('favorites', product);
   }
 
-  viewProductAsModal(productId: string) {
-    console.log('modal-view', productId);
+  viewProductAsModal() {
+    this.dialog.open(this.productDetails, {
+      autoFocus: false,
+      panelClass: ['medium', 'p-0'],
+    });
   }
 
-  addToCart(productId: string) {
-    console.log('add-to-cart', productId);
+  addToCart(product: Product) {
+    console.log('add-to-cart', product);
   }
 }
