@@ -1,0 +1,81 @@
+<div class="details-wrapper bg-white h-100" (isEnglish)="isEnglish = $event" *ngIf="product">
+    <div class="container-lg h-100">
+        <div class="row gx-3 gx-xl-4 view-product">
+            <div class="col-lg-7 gy-0">
+                <div class="slider-box sticky off-50 position-sticky">
+                    <div class="row g-2">
+                        <div class="col-2">
+                            <div class="thumbnail-box h-100">
+                                <swiper [slides]="product.Images" containerClass="thumbs-slider" [config]="thumbnailSwiperConfig">
+                                    <ng-template swiperSlide let-productImage>
+                                        <img class="d-block w-100 h-100 product-thumbnail-image img-fluid" [src]="productImage.Location" [alt]="product.Description + '\'s Image'"
+                                             (error)="productImage.Location = 'assets/images/common/Product_Image_Placeholder.png'" />
+                                    </ng-template>
+                                </swiper>
+                            </div>
+                        </div>
+
+                        <div class="col-10">
+                            <swiper [slides]="product.Images" [config]="productImageConfig" *ngIf="productImageConfig">
+                                <ng-template swiperSlide let-productImage>
+                                    <img class="d-block product-image img-fluid" [src]="productImage.Location" [alt]="product.Description + '\'s Image'"
+                                         (error)="productImage.Location = 'assets/images/common/Product_Image_Placeholder.png'" />
+                                </ng-template>
+                            </swiper>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5 gy-0">
+                <div class="product-detail-box">
+                    <h5 class="{{ isModalView ? 'font-20' : 'font-24' }}">{{ product.Description }}</h5>
+
+                    <span class="d-flex align-content-center font-18 fw-bold" *ngIf="!product.NewPrice">
+                        <span>{{ formatNumber(product.ItemPrice) }}</span>
+                    </span>
+
+                    <span class="d-flex align-content-center gap-3 font-18 fw-bold" *ngIf="product.NewPrice">
+                        <span>{{ formatNumber(product.NewPrice) }}</span>
+
+                        <del class="text-primary">{{ formatNumber(product.ItemPrice) }}</del>
+                    </span>
+
+                    <p class="text-middle my-3" dir="rtl">
+                        {{ product.Details }}
+                    </p>
+
+                    <div class="quantity">
+                        <del-title title="AVAILABLE_QUANTITY"></del-title>
+
+                        <div class="plus-minus mt-3 border-radius-4 p-1 d-inline-flex align-items-center bg-white text-center border default">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="20" class="sub cursor-pointer"
+                                 (click)="minus()">
+                                <path fill-rule="evenodd" d="M4 10a.75.75 0 01.75-.75h10.5a.75.75 0 010 1.5H4.75A.75.75 0 014 10z"
+                                      clip-rule="evenodd" />
+                            </svg>
+
+                            <input class="bg-white text-primary font-14 text-center" type="number" [value]="count" min="1" />
+
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="20" class="add cursor-pointer"
+                                 (click)="plus()">
+                                <path
+                                      d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="actions d-flex flex-column px-4 mt-4">
+                        <del-button btnClass="primary font-16 border-radius-4" (onClick)="addToCart()">
+                            {{ 'ACTIONS.ADD_CART' | translate }}
+                        </del-button>
+
+                        <del-button btnClass="text-primary font-16 border default border-radius-4 mt-3" (onClick)="addToFavourites()">
+                            {{ 'ACTIONS.ADD_FAVOURITES' | translate }}
+                        </del-button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

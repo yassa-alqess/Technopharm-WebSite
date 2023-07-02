@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, NavigationEnd, Params, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Params, Router, RouterModule } from '@angular/router';
 import { Category } from 'core/interfaces';
-import { BaseSharedModule } from 'shared/sub-modules/base-shared';
 import { Subject, distinctUntilChanged, filter, takeUntil } from 'rxjs';
+import { TranslateModule } from '@ngx-translate/core';
+import { DirectivesModule } from 'shared/sub-modules/directives/directives.module';
 
 interface IBreadCrumb {
   label: string,
@@ -14,7 +15,7 @@ interface IBreadCrumb {
 @Component({
   selector: 'del-breadcrumb',
   standalone: true,
-  imports: [CommonModule, BaseSharedModule],
+  imports: [CommonModule, TranslateModule, RouterModule, DirectivesModule],
   templateUrl: './breadcrumb.component.html',
   styleUrls: ['./breadcrumb.component.scss']
 })
@@ -107,6 +108,7 @@ export class BreadcrumbComponent {
    */
   getLabel(label: string): string {
     if (!this.categories) return label;
+    if (!this.categories.find(category => category.Id === label)) return label;
 
     this.selectedCategory = this.categories.find(category => category.Id === label) as Category;
 

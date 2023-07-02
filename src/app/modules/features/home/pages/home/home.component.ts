@@ -15,6 +15,7 @@ export class HomeComponent {
   categoriesService = inject(CategoriesService);
 
   banners: Advertisement[] = [];
+  categories: Category[] = [];
   bestSelerItems: Product[] = [];
   offers: Offer[] = [];
 
@@ -30,6 +31,7 @@ export class HomeComponent {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     this.getHomeBanners();
+    this.getCategories();
     this.getBestSellerItems();
     this.getOffers();
   }
@@ -50,6 +52,17 @@ export class HomeComponent {
    */
   getHomeBanners() {
     this.homeService.getBanners().subscribe(banners => this.banners = banners);
+  }
+
+  /**
+   * get categories from the server side and add the static categories to its array
+   */
+  getCategories() {
+    this.categoriesService.categories.subscribe(categories => {
+      categories.map(category => category.Id.replaceAll(' ', '_'));
+
+      this.categories = categories;
+    });
   }
 
   /**

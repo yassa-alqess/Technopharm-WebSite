@@ -6,14 +6,14 @@ import { CategoryIDs } from 'core/enums';
 import { Category, ProductGroup } from 'core/interfaces';
 import { CategoriesService } from 'core/services';
 import { SidebarToggleService } from 'core/services/sidebar-toggle/sidebar-toggle.service';
-import { BaseSharedModule } from 'shared/sub-modules/base-shared';
 import { CategoryComponent } from '../category/category.component';
 import { TitleComponent } from '../title/title.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'del-category-sidebar',
   standalone: true,
-  imports: [CommonModule, CategoryComponent, TitleComponent, BaseSharedModule],
+  imports: [CommonModule, CategoryComponent, TitleComponent, TranslateModule],
   templateUrl: './category-sidebar.component.html',
   styleUrls: ['./category-sidebar.component.scss']
 })

@@ -16,6 +16,13 @@
         }
     }
 
+    &.rtl {
+        .checkbox__checkmark {
+            left: unset;
+            right: 0;
+        }
+    }
+
     .checkbox__checkmark {
         top: 0px;
         left: 0;

@@ -5,7 +5,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './pages/home/home.component';
 
 import { BaseSharedModule } from 'shared/sub-modules/base-shared';
-import { ProductComponent, SubTitleComponent } from 'shared/components';
+import { ProductComponent, ProductDetailsComponent, SubTitleComponent } from 'shared/components';
 
 import {
   HomeAdsComponent,
@@ -31,7 +31,8 @@ import {
     // standalone components
     ProductComponent,
     SubTitleComponent,
-    CompleteRegistrationComponent
+    ProductDetailsComponent,
+    CompleteRegistrationComponent,
   ]
 })
 export class HomeModule { }

@@ -17,7 +17,7 @@
                         <del-product [product]="product" (action)="doAction($event)"></del-product>
                     </ng-template>
                 </swiper>
-    
+
                 <div class="swiper-button w-100 h-100 position-absolute top-0 d-flex align-items-center justify-content-between">
                     <button class="d-flex justify-content-center align-items-center swiper-next" setRtl>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
@@ -26,7 +26,7 @@
                                   clip-rule="evenodd" />
                         </svg>
                     </button>
-    
+
                     <button class="d-flex justify-content-center align-items-center swiper-prev" setRtl>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
                             <path fill-rule="evenodd"
@@ -35,9 +35,13 @@
                         </svg>
                     </button>
                 </div>
-    
+
                 <!-- <a href="shop-left-sidebar.html" class="btn-solid btn-sm mb-line center-button">عرض كل العروض </a> -->
             </ng-container>
         </div>
     </div>
 </section>
+
+<ng-template #productDetails>
+    <del-product-details class="d-block py-3" [isModalView]="true" [product]="product"></del-product-details>
+</ng-template>

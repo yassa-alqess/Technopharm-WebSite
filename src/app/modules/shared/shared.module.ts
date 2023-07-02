@@ -1,27 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BaseSharedModule } from './sub-modules/base-shared';
 
 // components - standalone
-import { BreadcrumbComponent, ProductComponent, SubTitleComponent, TitleComponent } from './components';
+import * as STANDALONE_COMPONENTS from './components';
 
 // modules
-import { DirectivesModule } from './sub-modules/directives/directives.module';
-import { MenuModule } from './sub-modules/menu/menu.module';
-import { SwiperModule } from './sub-modules/swiper/swiper.module';
-
-const STANDALONE_COMPONENTS = [
-  BreadcrumbComponent,
-  ProductComponent,
-  TitleComponent,
-  SubTitleComponent,
-];
+import { BaseSharedModule } from './sub-modules/base-shared';
 
 const MODULES = [
   BaseSharedModule,
-  DirectivesModule,
-  MenuModule,
-  SwiperModule,
 ];
 
 @NgModule({
@@ -33,7 +20,16 @@ const MODULES = [
     ...MODULES,
 
     // Components - standalone
-    ...STANDALONE_COMPONENTS
+    STANDALONE_COMPONENTS.BreadcrumbComponent,
+    STANDALONE_COMPONENTS.CategoryComponent,
+    STANDALONE_COMPONENTS.ProductComponent,
+    STANDALONE_COMPONENTS.TitleComponent,
+    STANDALONE_COMPONENTS.SubTitleComponent,
+
+    STANDALONE_COMPONENTS.InputTextComponent,
+    STANDALONE_COMPONENTS.DatepickerComponent,
+    STANDALONE_COMPONENTS.DropdownComponent,
+    STANDALONE_COMPONENTS.RadioButtonComponent,
   ],
   exports: []
 })
