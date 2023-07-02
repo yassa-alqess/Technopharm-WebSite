@@ -1,4 +1,4 @@
-import { FormGroup } from '@angular/forms';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { MatInputModule } from '@angular/material/input';
 import { Component, Input } from '@angular/core';
@@ -6,14 +6,14 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatFormFieldAppearance } from '@angular/material/form-field';
 import { MatDatepickerInputEvent, MatDatepickerModule } from '@angular/material/datepicker';
 
-import { BaseSharedModule } from 'shared/sub-modules/base-shared';
 import { ValidationHandlerPipe } from 'shared/sub-modules/pipes';
 import { format } from 'date-fns';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'del-datepicker',
   standalone: true,
-  imports: [CommonModule, BaseSharedModule, ValidationHandlerPipe, MatDatepickerModule, MatInputModule, MatNativeDateModule],
+  imports: [CommonModule, ReactiveFormsModule, TranslateModule, ValidationHandlerPipe, MatDatepickerModule, MatInputModule, MatNativeDateModule],
   templateUrl: './datepicker.component.html',
   styleUrls: ['./datepicker.component.scss']
 })

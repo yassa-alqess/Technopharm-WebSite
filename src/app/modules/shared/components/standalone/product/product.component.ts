@@ -1,13 +1,15 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
+import { RouterModule } from '@angular/router';
 import { Product } from 'core/interfaces';
-import { BaseSharedModule } from 'shared/sub-modules/base-shared';
+import { DirectivesModule } from 'shared/sub-modules/directives/directives.module';
 
 @Component({
   selector: 'del-product',
   standalone: true,
-  imports: [CommonModule, BaseSharedModule, NgbTooltipModule],
+  imports: [CommonModule, TranslateModule, RouterModule, DirectivesModule, NgbTooltipModule],
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss']
 })
@@ -34,7 +36,7 @@ export class ProductComponent {
   doAction(type: string) {
     this.action.emit({
       type,
-      productId: this.product.Id
+      product: this.product
     });
   }
 }

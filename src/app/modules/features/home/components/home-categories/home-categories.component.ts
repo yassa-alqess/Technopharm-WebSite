@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Category } from 'core/interfaces';
-import { CategoriesService } from 'core/services';
 import { SwiperOptions } from 'swiper';
 
 @Component({
@@ -9,8 +8,9 @@ import { SwiperOptions } from 'swiper';
   styleUrls: ['./home-categories.component.scss']
 })
 export class HomeCategoriesComponent {
+  @Input() categories: Category[] = [];
+
   isEnglish = false;
-  categories: Category[] = [];
 
   config: SwiperOptions = {
     loop: true,
@@ -39,23 +39,4 @@ export class HomeCategoriesComponent {
       },
     }
   };
-
-  constructor(private categoriesService: CategoriesService) { }
-
-  ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    this.getCategories();
-  }
-
-  /**
-   * get categories from the server side and add the static categories to its array
-   */
-  getCategories() {
-    this.categoriesService.categories.subscribe(categories => {
-      categories.map(category => category.Id.replaceAll(' ', '_'));
-
-      this.categories = categories;
-    });
-  }
 }

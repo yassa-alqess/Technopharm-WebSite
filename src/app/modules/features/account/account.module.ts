@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { MatButtonModule } from '@angular/material/button';
 import { FacebookLoginProvider, GoogleLoginProvider, GoogleSigninButtonModule, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
 import { NgOtpInputModule } from 'ng-otp-input';
 
@@ -9,7 +8,7 @@ import { AccountRoutingModule } from './account-routing.module';
 
 import { LoginComponent } from './pages/login/login.component';
 
-import { InputTextComponent, SubTitleComponent, TitleComponent } from 'shared/components';
+import { ButtonComponent, InputTextComponent, SubTitleComponent, TitleComponent } from 'shared/components';
 
 import { BaseSharedModule } from 'shared/sub-modules/base-shared';
 
@@ -29,10 +28,10 @@ import { VerifyComponent } from './pages/verify/verify.component';
     NgOtpInputModule,
 
     BaseSharedModule,
-    MatButtonModule,
     TitleComponent,
     SubTitleComponent,
-    InputTextComponent
+    InputTextComponent,
+    ButtonComponent
   ],
   providers: environment.enableSocialMediaLogin ? [
     {

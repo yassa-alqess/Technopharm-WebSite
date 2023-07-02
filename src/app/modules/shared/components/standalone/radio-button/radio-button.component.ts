@@ -1,13 +1,13 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatRadioModule } from '@angular/material/radio';
-import { BaseSharedModule } from 'shared/sub-modules/base-shared';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'del-radio-button',
   standalone: true,
-  imports: [CommonModule, BaseSharedModule, MatRadioModule],
+  imports: [CommonModule, ReactiveFormsModule, TranslateModule, MatRadioModule],
   templateUrl: './radio-button.component.html',
   styleUrls: ['./radio-button.component.scss']
 })

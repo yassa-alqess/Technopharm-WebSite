@@ -1,6 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, Component, ContentChild, Input, OnInit, TemplateRef, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Autoplay, Mousewheel, Navigation, Pagination, SwiperOptions } from 'swiper';
+import { Autoplay, Mousewheel, Navigation, Pagination, Scrollbar, SwiperOptions, Thumbs } from 'swiper';
 import { register } from 'swiper/element';
 import { SwiperDirective, SlideDirective } from '../../directives';
 
@@ -17,10 +17,11 @@ export class SwiperComponent implements OnInit {
 
   @Input() slides: any[] = [];
   @Input() config!: SwiperOptions;
-  @Input() class!: string;
+  @Input() slideClass!: string;
+  @Input() containerClass!: string;
 
   private _config: SwiperOptions = {
-    modules: [Navigation, Pagination, Mousewheel, Autoplay],
+    modules: [Navigation, Pagination, Mousewheel, Autoplay, Thumbs, Scrollbar],
     autoHeight: true,
     mousewheel: true,
     pagination: false,
