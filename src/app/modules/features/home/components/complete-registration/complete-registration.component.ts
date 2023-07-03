@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { format } from 'date-fns';
@@ -9,7 +8,7 @@ import { UserPayload } from 'core/interfaces';
 import { AuthService } from 'core/services/auth/auth.service';
 import { HomeService } from 'features/home/services/home/home.service';
 import { BaseSharedModule } from 'shared/sub-modules/base-shared';
-import { DatepickerComponent, InputTextComponent, DropdownComponent, RadioButtonComponent } from 'shared/components';
+import { DatepickerComponent, InputTextComponent, DropdownComponent, RadioButtonComponent, ButtonComponent } from 'shared/components';
 
 @Component({
   selector: 'del-complete-registration',
@@ -20,9 +19,9 @@ import { DatepickerComponent, InputTextComponent, DropdownComponent, RadioButton
     InputTextComponent,
     DatepickerComponent,
     RadioButtonComponent,
+    ButtonComponent,
     DropdownComponent,
     MatDialogModule,
-    MatButtonModule,
   ],
   templateUrl: './complete-registration.component.html',
   styleUrls: ['./complete-registration.component.scss']

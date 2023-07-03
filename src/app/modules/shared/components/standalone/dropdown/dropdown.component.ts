@@ -1,18 +1,19 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatSelect, MatSelectModule } from '@angular/material/select';
-import { FormGroup } from '@angular/forms';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldAppearance, MatFormFieldModule } from '@angular/material/form-field';
 
-import { BaseSharedModule } from 'shared/sub-modules/base-shared';
 import { ValidationHandlerPipe } from 'shared/sub-modules/pipes';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'del-dropdown',
   standalone: true,
   imports: [
     CommonModule,
-    BaseSharedModule,
+    TranslateModule,
+    ReactiveFormsModule,
     MatFormFieldModule,
     MatSelectModule,
     ValidationHandlerPipe

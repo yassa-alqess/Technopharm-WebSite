@@ -5,14 +5,15 @@
             <li class="thumb bg-white border cursor-pointer overflow-hidden"
                 [ngClass]="{'border-primary': productImage.Location === selectedProductImage }" (click)="selectedProductImage = productImage.Location"
                 *ngFor="let productImage of product.Images; let i=index">
-                <img class="p-1" [src]="productImage.Location" [alt]="product.Description + '\'s Image'"
-                     (error)="productImage.Location = 'assets/images/common/Product_Image_Placeholder.png'" />
+                <ng-template [ngTemplateOutlet]="productImageRef" [ngTemplateOutletContext]="{ $implicit: productImage }"></ng-template>
             </li>
         </ul>
 
-        <a [routerLink]="productRouterLink" class="primary-img d-block">
-            <img class="img-fluid bg-img" [src]="selectedProductImage || product.Images[0].Location" [alt]="product.Description + '\'s Image'"
-                 onerror="src = 'assets/images/common/Product_Image_Placeholder.png'" />
+        <a class="primary-img d-block" [routerLink]="productRouterLink"
+           [queryParams]="{ subCategoryId: product.ProductGroupId, productId: product.Id }">
+            <ng-template [ngTemplateOutlet]="productImageRef"
+                         [ngTemplateOutletContext]="{ $implicit: { Location: selectedProductImage || product.Images[0].Location } }">
+            </ng-template>
         </a>
 
         <!-- Arrow label -->
@@ -76,7 +77,8 @@
 
     <!-- Content Box -->
     <div class="content-box pt-2">
-        <a class="text-dark text-decoration-none" [routerLink]="productRouterLink">
+        <a class="text-dark text-decoration-none" [routerLink]="productRouterLink"
+           [queryParams]="{ subCategoryId: product.Description, productId: product.Id }">
             <!-- sub category name -->
             <p class="text-capitalize text-middle font-14">
                 {{
@@ -98,3 +100,8 @@
         </a>
     </div>
 </div>
+
+<ng-template #productImageRef let-productImage>
+    <img class="p-1" [src]="productImage.Location" [alt]="product.Description + '\'s Image'"
+         (error)="productImage.Location = 'assets/images/common/Product_Image_Placeholder.png'" />
+</ng-template>

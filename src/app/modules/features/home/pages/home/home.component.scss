@@ -1,0 +1,9 @@
+@import "style";
+
+.home-ads {
+    min-height: 300px;
+
+    @include normal-screen {
+        min-height: 600px;
+    }
+}

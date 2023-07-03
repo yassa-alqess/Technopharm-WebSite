@@ -1,13 +1,15 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
+import { RouterModule } from '@angular/router';
 import { Product } from 'core/interfaces';
-import { BaseSharedModule } from 'shared/sub-modules/base-shared';
+import { DirectivesModule } from 'shared/sub-modules/directives/directives.module';
 
 @Component({
   selector: 'del-product',
   standalone: true,
-  imports: [CommonModule, BaseSharedModule, NgbTooltipModule],
+  imports: [CommonModule, TranslateModule, RouterModule, DirectivesModule, NgbTooltipModule],
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss']
 })
@@ -24,7 +26,7 @@ export class ProductComponent {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     this.selectedProductImage = this.product.Images[0].Location;
-    this.productRouterLink = `/products/${this.product.ItemCategoryCode}`;
+    this.productRouterLink = `/products/${this.product.ItemCategoryCode}/product/${this.product.Description}/details`;
   }
 
   formatNumber(number: number) {
@@ -34,7 +36,7 @@ export class ProductComponent {
   doAction(type: string) {
     this.action.emit({
       type,
-      productId: this.product.Id
+      product: this.product
     });
   }
 }

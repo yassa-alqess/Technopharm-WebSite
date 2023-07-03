@@ -198,9 +198,13 @@ body {
   &.medium {
     .mat-mdc-dialog-container {
       @include small-screen {
-        min-width: clamp(660px, 60vw, 660px);
-        max-width: clamp(660px, 60vw, 660px);
+        min-width: clamp(500px, 60vw, 500px);
+        max-width: clamp(900px, 60vw, 900px);
         height: auto;
+      }
+
+      @include medium-screen {
+        min-width: clamp(700px, 60vw, 700px);
       }
     }
   }

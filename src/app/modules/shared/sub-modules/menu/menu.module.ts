@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatButtonModule } from '@angular/material/button';
+import { RouterModule } from '@angular/router';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatButtonModule } from '@angular/material/button';
 
-import { BaseSharedModule } from '../base-shared';
 import { MenuComponent, MenuItemComponent } from './components';
 
 const MATERIAL_MODULES = [
@@ -22,7 +22,7 @@ const COMPONENTS = [
   ],
   imports: [
     CommonModule,
-    BaseSharedModule,
+    RouterModule,
     ...MATERIAL_MODULES
   ],
   exports: [
