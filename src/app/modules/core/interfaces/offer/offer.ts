@@ -11,7 +11,7 @@ export interface Offer {
     Description:    string;
     Details:        string;
     ExpirationDate: string;
-    Images:         Image[];
+    Images:         Partial<Image>[];
     OfferDetails:   any[];
     OfferId:        string;
     OfferLines:     OfferLine[];
