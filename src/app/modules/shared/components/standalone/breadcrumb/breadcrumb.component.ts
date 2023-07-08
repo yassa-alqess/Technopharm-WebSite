@@ -24,7 +24,7 @@ export class BreadcrumbComponent {
   queryParamKeyName = '';
 
   categories!: Category[];
-  selectedCategory!: Category;
+  selectedCategory!: Category | undefined;
   activeCategory!: Category;
   isEnglish = false;
 
@@ -97,6 +97,7 @@ export class BreadcrumbComponent {
     this.queryParamKeyName = route.routeConfig && route.routeConfig.data ? route.routeConfig.data['queryParamKeyName'] : '';
 
     setTimeout(() => this.activeCategory = this._activeCategory as Category);
+    this.selectedCategory = undefined;
     return newBreadcrumbs;
   }
 

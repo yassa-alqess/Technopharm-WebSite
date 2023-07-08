@@ -51,10 +51,16 @@ const routes: Routes = [
       },
       {
         path: StaticCategoriesIDs.ABOUT.replace('_', '-').toLowerCase(),
+        data: {
+          breadcrumb: StaticCategoriesIDs.ABOUT
+        },
         loadComponent: () => import('./modules/features/about-us/about-us.component').then(m => m.AboutUsComponent)
       },
       {
         path: StaticCategoriesIDs.CONTACT.replace('_', '-').toLowerCase(),
+        data: {
+          breadcrumb: StaticCategoriesIDs.CONTACT
+        },
         loadComponent: () => import('./modules/features/contact-us/contact-us.component').then(m => m.ContactUsComponent)
       }
     ]
