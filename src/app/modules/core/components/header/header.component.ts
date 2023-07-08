@@ -20,7 +20,7 @@ export class HeaderComponent {
     },
     {
       menuItemName: 'USER_HEADER_LIST.MY_ACCOUNT',
-      menuItemRoute: 'account/my-account'
+      menuItemRoute: 'my-account'
     },
   ];
 
