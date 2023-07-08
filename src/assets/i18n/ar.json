@@ -29,6 +29,12 @@
         "RECEIVED_OTP": "لم تستلم رمز التحقق؟",
         "WRONG_OTP": "رمز التحقق الذي أدخلته خطأ"
     },
+    "MY_ACCOUNT": {
+        "MY_INFO": "بياناتي",
+        "ORDERS": "الطلبات",
+        "ADDRESSES": "العناوين",
+        "WALLET": "المحفظة"
+    },
     "COMPLETE_REGISTRATION": {
         "TITLE": "إكمال التسجيل",
         "PERSONAL_INFO": "المعلومات الشخصية",

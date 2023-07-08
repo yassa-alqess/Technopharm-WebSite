@@ -30,6 +30,12 @@
         "RECEIVED_OTP": "Didn't receive the OTP?",
         "WRONG_OTP": "The OTP you have entered is wrong."
     },
+    "MY_ACCOUNT": {
+        "MY_INFO": "My Information",
+        "ORDERS": "Orders",
+        "ADDRESSES": "Addresses",
+        "WALLET": "Wallet"
+    },
     "COMPLETE_REGISTRATION": {
         "TITLE": "Complete Registration",
         "PERSONAL_INFO": "Personal Information",
