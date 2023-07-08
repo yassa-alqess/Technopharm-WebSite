@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from 'core/components/layout/layout.component';
+import { StaticCategoriesIDs } from 'core/enums';
 import { AuthGuard } from 'core/guards/auth/auth.guard';
 
 const routes: Routes = [
@@ -41,6 +42,14 @@ const routes: Routes = [
           }
         ]
       },
+      {
+        path: StaticCategoriesIDs.ABOUT.replace('_', '-').toLowerCase(),
+        loadComponent: () => import('./modules/features/about-us/about-us.component').then(m => m.AboutUsComponent)
+      },
+      {
+        path: StaticCategoriesIDs.CONTACT.replace('_', '-').toLowerCase(),
+        loadComponent: () => import('./modules/features/contact-us/contact-us.component').then(m => m.ContactUsComponent)
+      }
     ]
   },
   {
