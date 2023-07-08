@@ -17,6 +17,13 @@ const routes: Routes = [
         loadChildren: () => import('./modules/features/home/home.module').then(m => m.HomeModule),
       },
       {
+        path: 'my-account',
+        data: {
+          breadcrumb: 'USER_HEADER_LIST.MY_ACCOUNT'
+        },
+        loadChildren: () => import('./modules/features/my-account/my-account.module').then(m => m.MyAccountModule),
+      },
+      {
         path: 'products',
         data: {
           breadcrumb: ''
