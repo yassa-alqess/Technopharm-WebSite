@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { AuthGuard } from 'core/guards/auth/auth.guard';
 import { MyAccountComponent } from './pages/my-account/my-account.component';
 
 import { InformationComponent, OrdersComponent, AddressesComponent, WalletComponent } from './components';
@@ -9,6 +10,7 @@ const routes: Routes = [
   {
     path: '',
     component: MyAccountComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: '', redirectTo: 'information', pathMatch: 'full'

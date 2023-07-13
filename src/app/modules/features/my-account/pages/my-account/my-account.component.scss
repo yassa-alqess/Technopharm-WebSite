@@ -1,5 +1,19 @@
 @import "style";
 
+.profile-box {
+    .img-box {
+        width: clamp(2rem, 3vw, 3.5rem);
+        height: auto;
+        border-radius: 100%;
+        border: 1px solid $black;
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
 ::ng-deep.my-account-tabs {
     ul {
         li .mat-mdc-tab-link {

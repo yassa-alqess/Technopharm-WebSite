@@ -13,6 +13,7 @@
     "CONTACT_US": "إتصل بنا",
     "USER_HEADER_LIST": {
         "SIGN_IN": "تسجيل الدخول",
+        "SIGN_OUT": "تسجيل الخروج",
         "REGISTER": "إنشاء حساب",
         "MY_ACCOUNT": "حسابي"
     },

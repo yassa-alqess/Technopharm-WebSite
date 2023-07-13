@@ -72,7 +72,7 @@ export class VerifyComponent {
     };
 
     this.authService.verifyPhone(body).subscribe((userResponse) => {
-      localStorage.setItem('del-user-sign-up', userResponse ? "false" : "true"); // create account from the pop-up in the home page.
+      localStorage.setItem('del-user-exist', userResponse ? "true" : "false"); // create account from the pop-up in the home page.
 
       localStorage.removeItem('del-otp');
       this.router.navigate(['/']);

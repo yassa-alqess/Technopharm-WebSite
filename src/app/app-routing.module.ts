@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from 'core/components/layout/layout.component';
 import { StaticCategoriesIDs } from 'core/enums';
-import { AuthGuard } from 'core/guards/auth/auth.guard';
+import { RootGuard } from 'core/guards/root/root.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
-    canActivate: [AuthGuard],
+    canActivate: [RootGuard],
     data: { breadcrumb: 'HOME' },
     children: [
       {

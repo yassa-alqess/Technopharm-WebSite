@@ -126,7 +126,7 @@ export class CompleteRegistrationComponent {
 
     // - User  already exists:
     this.authService.createAccount(body).subscribe(response => {
-      localStorage.setItem("del-user-sign-up", "false");
+      localStorage.setItem("del-user-exist", "true");
       console.log(response);
     });
   }
