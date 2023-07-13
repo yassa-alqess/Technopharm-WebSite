@@ -2,7 +2,7 @@
 
 ::ng-deep.my-account-tabs {
     ul {
-        li {
+        li .mat-mdc-tab-link {
             height: 40px !important;
             --mdc-tab-indicator-active-indicator-color: #{$primary};
 
@@ -29,7 +29,7 @@
                 .mdc-tab__text-label {
                     width: 100%;
 
-                    button {
+                    .nav-link {
                         width: 100%;
                         height: 40px !important;
                         display: flex;

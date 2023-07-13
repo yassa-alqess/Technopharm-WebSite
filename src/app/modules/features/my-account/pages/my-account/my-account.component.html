@@ -7,27 +7,33 @@
 
                     </div>
 
-                    <div class="my-account-tabs" mat-tab-nav-bar>
+                    <div class="my-account-tabs" mat-tab-nav-bar [tabPanel]="tabPanel">
                         <ul class="nav nav-tabs flex-column border-0 gap-2 w-100" id="myTab" role="tablist">
-                            <li class="nav-item p-0" role="tab" mat-tab-link setRtl (click)="getActiveTab(myAccountTab.tabKey)"
-                                *ngFor="let myAccountTab of myAccountTabs" [active]="activeTabKey === myAccountTab.tabKey">
-                                <button class="nav-link" [ngClass]="{'active': activeTabKey === myAccountTab.tabKey}" [id]="myAccountTab.tabKey"
-                                        type="button">
-                                    {{ myAccountTab.tabName | translate }}
+                            <li class="nav-item" role="tab" *ngFor="let myAccountTab of myAccountTabs">
+                                <a mat-tab-link setRtl class="p-0" [id]="myAccountTab.tabRoute" [routerLink]="myAccountTab.tabRoute" routerLinkActive
+                                   #matLink="routerLinkActive" [active]="matLink.isActive">
+                                    <div class="nav-link" [ngClass]="{'active': matLink.isActive}">
+                                        {{ myAccountTab.tabName | translate }}
 
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
-                                        <path fill-rule="evenodd"
-                                              d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
-                                              clip-rule="evenodd" />
-                                    </svg>
-                                </button>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
+                                            <path fill-rule="evenodd"
+                                                  d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"
+                                                  clip-rule="evenodd" />
+                                        </svg>
+                                    </div>
+                                </a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-8">
-                <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
+                <div class="p-3">
+                    <mat-tab-nav-panel #tabPanel>
+                        <router-outlet></router-outlet>
+                    </mat-tab-nav-panel>
+                </div>
             </div>
         </div>
     </div>
