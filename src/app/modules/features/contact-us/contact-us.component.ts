@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { BaseSharedModule } from 'shared/sub-modules/base-shared';
 import { ButtonComponent, InputTextComponent, TitleComponent } from 'shared/components';
+import { th } from 'date-fns/locale';
 
 @Component({
   selector: 'del-contact-us',
@@ -20,12 +21,18 @@ import { ButtonComponent, InputTextComponent, TitleComponent } from 'shared/comp
 export class ContactUsComponent {
   createContactForm!: FormGroup;
   fb = inject(FormBuilder);
+   
+  DelmarAddress: string ="المملكة العربية المتحدة ٫ شارع المدينة المنورة ٫ بجوار شركة جوالي"
+  DelmarMobile:  string ="+91 123 - 456 - 7890"
+  DelmarEmail:   string ="Delmar & Attalla@gmail.com"
+  OtherAddress:  string ="المملكة العربية المتحدة ٫ شارع المدينة المنورة ٫ بجوار شركة جواليs"
+  
 
   ngOnInit(): void {
-    this.initCreateContactForm();
+    this.initCreateContactUsForm();
   }
 
-  initCreateContactForm() {
+  initCreateContactUsForm() {
     this.createContactForm = this.fb.group({
       Email: ["", [Validators.required, Validators.email]],
       Name: [""],
@@ -34,20 +41,8 @@ export class ContactUsComponent {
     });
   }
 
-  createAccount() {
-    // let contactInfo = this.createContactForm.getRawValue();
-
-    // contactInfo.Name = `${contactInfo.FirstName} ${contactInfo.LastName}`;
-    // contactInfo.BirthDay = `/Date(${format(new Date(contactInfo.BirthDay), 'T')})/`;
-
-    // contactInfo.Addresses = [contactInfo.Addresses];
-
-    // const body: UserPayload = {
-    //   contact: {
-    //     ...this.authService.userContactPayload,
-    //     ...contactInfo,
-    //   }
-    // };
+  send() {
+        console.log(this.createContactForm)
   }
 
 }
