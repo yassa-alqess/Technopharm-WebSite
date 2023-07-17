@@ -10,7 +10,6 @@
     "FOLLOW_US": "تابعنا على",
     "AVAILABLE_QUANTITY": "الكمية المتاحة",
     "ABOUT_US": "نبذة عنا",
-    "CONTACT_US": "إتصل بنا",
     "USER_HEADER_LIST": {
         "SIGN_IN": "تسجيل الدخول",
         "REGISTER": "إنشاء حساب",
@@ -81,6 +80,20 @@
         "404": "الصفحة غير موجودة",
         "403": "محظور",
         "401": "غير مصرح لك بالدخول"
+    },
+    "CONTACT_US": {
+        "TITLE": "اتصل بنا",
+        "LEAVE_MESSAGE": "اترك رسالة لنا",
+        "NAME": "الاسم",
+        "NAME-PLACEHOLDER": "من فضلك قم بكتابة اسمك",
+        "EMAIL": "البريد الإلكتروني ",
+        "EMAIL_PLACEHOLDER": "من فضلك قم بكتابة البريد الإلكتروني   ",
+        "MOBILE_PHONE": "رقم الجوال        ",
+        "MESSAGE": "الرسالة",
+        "SEND": "ارسال",
+        "COMMUNICATE_WITH": "كن علي تواصل معنا",
+        "ADDRESS": "العنوان        ",
+        "OTHER_ADDRESSESE": "عناوين أخري"
     },
     "required_validation": "هذا الحقل إجباري.",
     "min_validation": "أقل قيمة ",

@@ -52,7 +52,7 @@ const routes: Routes = [
       {
         path: StaticCategoriesIDs.CONTACT.replace('_', '-').toLowerCase(),
         data: {
-          breadcrumb: StaticCategoriesIDs.CONTACT
+          breadcrumb: `${StaticCategoriesIDs.CONTACT}.TITLE`
         },
         loadComponent: () => import('./modules/features/contact-us/contact-us.component').then(m => m.ContactUsComponent)
       }
