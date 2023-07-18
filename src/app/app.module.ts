@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from 'core/core.module';
 import { ErrorInterceptor } from 'core/interceptors';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { OffersModule } from 'offers/offers.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     AppRoutingModule,
     CoreModule,
+    OffersModule
   ],
   providers: [
     {
