@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpService } from '../http/http.service';
 import { BehaviorSubject, Observable, catchError, map, of } from 'rxjs';
 import { User, UserPayload, UserResponse } from 'core/interfaces';
+import { format } from 'date-fns';
 
 interface OtpResponse {
   GenerateOtpResult: number;
@@ -32,6 +33,17 @@ export class AuthService extends HttpService {
       return value;
     }));
   }
+
+  genders = [
+    {
+      id: 1,
+      text: 'COMPLETE_REGISTRATION.MALE'
+    },
+    {
+      id: 2,
+      text: 'COMPLETE_REGISTRATION.FEMALE'
+    },
+  ];
 
   userContactPayload = {
     Id: "",
@@ -86,7 +98,10 @@ export class AuthService extends HttpService {
 
   verifyPhone(body: { [key: string]: string; }) {
     return this.post<UserResponse>({ APIName: 'VerifyPhone', body }).pipe(
-      map(response => response.VerifyPhoneResult),
+      map(response => {
+        if (response.VerifyPhoneResult) this.userDetails.next(response.VerifyPhoneResult);
+        return response.VerifyPhoneResult;
+      }),
     );
   }
 
@@ -110,5 +125,12 @@ export class AuthService extends HttpService {
     return this.post<any>({ APIName: 'ContactUpdate', body }).pipe(
       map(response => response)
     );
+  }
+
+  getBirthDay(birthDay: string) {
+    const date = birthDay.match(/(\((.*)\+)/);
+    if (!date) return '';
+
+    return format(new Date(Number(date.pop())), 'dd/MM/yyyy');
   }
 }

@@ -8,7 +8,7 @@ import { UserPayload } from 'core/interfaces';
 import { AuthService } from 'core/services/auth/auth.service';
 import { HomeService } from 'features/home/services/home/home.service';
 import { BaseSharedModule } from 'shared/sub-modules/base-shared';
-import { DatepickerComponent, InputTextComponent, DropdownComponent, RadioButtonComponent, ButtonComponent } from 'shared/components';
+import { InputTextComponent, DropdownComponent, ButtonComponent, AccountInfoFormComponent } from 'shared/components';
 
 @Component({
   selector: 'del-complete-registration',
@@ -16,34 +16,23 @@ import { DatepickerComponent, InputTextComponent, DropdownComponent, RadioButton
   imports: [
     CommonModule,
     BaseSharedModule,
+    MatDialogModule,
+    AccountInfoFormComponent,
     InputTextComponent,
-    DatepickerComponent,
-    RadioButtonComponent,
     ButtonComponent,
     DropdownComponent,
-    MatDialogModule,
   ],
   templateUrl: './complete-registration.component.html',
   styleUrls: ['./complete-registration.component.scss']
 })
 export class CompleteRegistrationComponent {
-  authService = inject(AuthService);
-  homeService = inject(HomeService);
-  fb = inject(FormBuilder);
+  private authService = inject(AuthService);
+  private homeService = inject(HomeService);
+  private fb = inject(FormBuilder);
 
   createAccountForm!: FormGroup;
 
   today = new Date();
-  genders = [
-    {
-      id: 1,
-      text: 'COMPLETE_REGISTRATION.MALE'
-    },
-    {
-      id: 2,
-      text: 'COMPLETE_REGISTRATION.FEMALE'
-    },
-  ];
   cities: { id: number | string; text: string; }[] = [];
   areas: { id: number | string; text: string; }[] = [];
 

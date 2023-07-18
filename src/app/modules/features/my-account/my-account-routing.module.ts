@@ -5,6 +5,8 @@ import { AuthGuard } from 'core/guards/auth/auth.guard';
 import { MyAccountComponent } from './pages/my-account/my-account.component';
 
 import { InformationComponent, OrdersComponent, AddressesComponent, WalletComponent } from './components';
+import { DialogComponent } from 'shared/components';
+import { EditAccountComponent } from './components/edit-account/edit-account.component';
 
 const routes: Routes = [
   {
@@ -17,7 +19,14 @@ const routes: Routes = [
       },
       {
         path: 'information',
-        component: InformationComponent
+        component: InformationComponent,
+        children: [
+          {
+            path: 'edit',
+            data: { component: EditAccountComponent, pageTitle: 'MY_ACCOUNT.EDIT_ACCOUNT' },
+            component: DialogComponent,
+          }
+        ]
       },
       {
         path: 'orders',

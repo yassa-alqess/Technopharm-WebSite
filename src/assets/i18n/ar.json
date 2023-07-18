@@ -34,11 +34,13 @@
         "MY_INFO": "بياناتي",
         "ORDERS": "الطلبات",
         "ADDRESSES": "العناوين",
-        "WALLET": "المحفظة"
+        "WALLET": "المحفظة",
+        "EDIT_ACCOUNT": "تعديل الحساب"
     },
     "COMPLETE_REGISTRATION": {
         "TITLE": "إكمال التسجيل",
         "PERSONAL_INFO": "المعلومات الشخصية",
+        "NAME": "الإسم بالكامل",
         "FIRST_NAME": "الإسم الأول",
         "LAST_NAME": "الإسم الأخير",
         "BIRTH_DATE": "تاريخ الميلاد",
@@ -79,7 +81,9 @@
         "LOWEST_PRICE": "الأقل سعراً",
         "HIGHEST_PRICe": "الأعلى سعراً",
         "VERIFY": "تحقق وأكمل التسجبل",
-        "COMPLETE": "إستكمال"
+        "COMPLETE": "إستكمال",
+        "CANCEL": "إلغاء",
+        "SAVE": "حفظ"
     },
     "EMPTY": {
         "OFFERS": "لا توجد عروض مضافة الآن."

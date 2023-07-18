@@ -1,1 +1,59 @@
-<p>information works!</p>
+<div class="information-wrapper">
+    <div class="d-flex align-items-center gap-3">
+        <h1 class="m-0 font-20 regular text-dark">{{ 'MY_ACCOUNT.MY_INFO' | translate }}</h1>
+
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+             class="text-middle cursor-pointer" width="20" height="20" routerLink="edit">
+            <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10" />
+        </svg>
+    </div>
+
+    <hr>
+
+    <div class="information-content" *ngIf="user">
+        <div class="row gy-3">
+            <!-- NAME -->
+            <div class="col-sm-6 col-lg-4">
+                <div class="d-flex flex-column">
+                    <h6 class="m-0 mb-1 font-14 regular text-middle">{{ 'COMPLETE_REGISTRATION.NAME' | translate }}</h6>
+                    <span class="font-16 text-dark fw-bold">{{ user.Name }}</span>
+                </div>
+            </div>
+
+            <!-- EMAIL -->
+            <div class="col-sm-6 col-lg-4">
+                <div class="d-flex flex-column">
+                    <h6 class="m-0 mb-1 font-14 regular text-middle">{{ 'COMPLETE_REGISTRATION.EMAIL' | translate }}</h6>
+                    <span class="font-16 text-dark fw-bold">{{ user.Email }}</span>
+                </div>
+            </div>
+
+            <!-- MOBILE_NUMBER -->
+            <div class="col-sm-6 col-lg-4">
+                <div class="d-flex flex-column">
+                    <h6 class="m-0 mb-1 font-14 regular text-middle">{{ 'ACCOUNT.MOBILE_NUMBER' | translate }}</h6>
+                    <span class="font-16 text-dark fw-bold">{{ user.MobilePhone }}</span>
+                </div>
+            </div>
+
+            <!-- GENDER -->
+            <div class="col-sm-6 col-lg-4" *ngIf="user.Gender">
+                <div class="d-flex flex-column">
+                    <h6 class="m-0 mb-1 font-14 regular text-middle">{{ 'COMPLETE_REGISTRATION.GENDER' | translate }}</h6>
+                    <span class="font-16 text-dark fw-bold">{{ genders[user.Gender] | translate }}</span>
+                </div>
+            </div>
+
+            <!-- BIRTH_DATE -->
+            <div class="col-sm-6 col-lg-4">
+                <div class="d-flex flex-column">
+                    <h6 class="m-0 mb-1 font-14 regular text-middle">{{ 'COMPLETE_REGISTRATION.BIRTH_DATE' | translate }}</h6>
+                    <span class="font-16 text-dark fw-bold">{{ getBirthDay(user.BirthDay) }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

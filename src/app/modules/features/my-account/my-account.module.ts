@@ -9,6 +9,9 @@ import { InformationComponent } from './components/information/information.compo
 import { OrdersComponent } from './components/orders/orders.component';
 import { AddressesComponent } from './components/addresses/addresses.component';
 import { WalletComponent } from './components/wallet/wallet.component';
+import { EditAccountComponent } from './components/edit-account/edit-account.component';
+import { AccountInfoFormComponent, ButtonComponent } from 'shared/components';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -16,13 +19,17 @@ import { WalletComponent } from './components/wallet/wallet.component';
     InformationComponent,
     OrdersComponent,
     AddressesComponent,
-    WalletComponent
+    WalletComponent,
+    EditAccountComponent
   ],
   imports: [
     CommonModule,
+    MyAccountRoutingModule,
     MatTabsModule,
     BaseSharedModule,
-    MyAccountRoutingModule
+    MatDialogModule,
+    ButtonComponent,
+    AccountInfoFormComponent,
   ]
 })
 export class MyAccountModule { }

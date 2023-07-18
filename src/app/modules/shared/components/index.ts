@@ -6,6 +6,8 @@ export * from './standalone/product-details/product-details.component';
 export * from './standalone/title/title.component';
 export * from './standalone/sub-title/sub-title.component';
 export * from './standalone/button/button.component';
+export * from './standalone/dialog/dialog.component';
+export * from './standalone/account-info-form/account-info-form.component';
 
 export * from './standalone/input-text/input-text.component';
 export * from './standalone/datepicker/datepicker.component';
