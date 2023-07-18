@@ -12,9 +12,9 @@ import { Config } from 'ng-otp-input/lib/models/config';
   styleUrls: ['./verify.component.scss']
 })
 export class VerifyComponent {
-  fb = inject(FormBuilder);
-  authService = inject(AuthService);
-  router = inject(Router);
+  private fb = inject(FormBuilder);
+  private authService = inject(AuthService);
+  private router = inject(Router);
 
   config: Config = {
     length: 6,

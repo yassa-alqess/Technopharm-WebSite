@@ -11,8 +11,8 @@ import { map } from 'rxjs';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  dialog = inject(MatDialog);
-  categoriesService = inject(CategoriesService);
+  private dialog = inject(MatDialog);
+  private categoriesService = inject(CategoriesService);
 
   banners: Advertisement[] = [];
   categories: Category[] = [];

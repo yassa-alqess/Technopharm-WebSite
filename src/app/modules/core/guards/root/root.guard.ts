@@ -7,8 +7,8 @@ import { Observable, catchError, map, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class RootGuard implements CanActivate {
-  categoriesService = inject(CategoriesService);
-  router = inject(Router);
+  private categoriesService = inject(CategoriesService);
+  private router = inject(Router);
 
   canActivate(
     route: ActivatedRouteSnapshot,
