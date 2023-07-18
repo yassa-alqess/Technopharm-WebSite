@@ -19,7 +19,7 @@ import { th } from 'date-fns/locale';
   styleUrls: ['./contact-us.component.scss']
 })
 export class ContactUsComponent {
-  createContactUsForm!: FormGroup;
+  contactUsForm!: FormGroup;
   fb = inject(FormBuilder);
 
   DelmarAddress: string = "المملكة العربية المتحدة ٫ شارع المدينة المنورة ٫ بجوار شركة جوالي";
@@ -29,11 +29,11 @@ export class ContactUsComponent {
 
 
   ngOnInit(): void {
-    this.initCreateContactUsForm();
+    this.initContactUsForm();
   }
 
-  initCreateContactUsForm() {
-    this.createContactUsForm = this.fb.group({
+  initContactUsForm() {
+    this.contactUsForm = this.fb.group({
       Email: ["", [Validators.required, Validators.email]],
       Name: [""],
       MobilePhone: [""],
@@ -42,7 +42,7 @@ export class ContactUsComponent {
   }
 
   send() {
-    console.log(this.createContactUsForm);
+    console.log(this.contactUsForm);
   }
 
 }
