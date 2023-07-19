@@ -55,15 +55,20 @@ const routes: Routes = [
           breadcrumb: StaticCategoriesIDs.CONTACT
         },
         loadComponent: () => import('./modules/features/contact-us/contact-us.component').then(m => m.ContactUsComponent)
-      }
+      },
+      {
+        path: 'offers',
+        data: {
+          breadcrumb: 'OFFERS.TITLE'
+        },
+        loadComponent: () => import('./modules/features/offers/offers.component').then(m => m.OffersComponent)
+      },
     ]
   },
   {
     path: 'account',
     loadChildren: () => import('./modules/features/account/account.module').then(m => m.AccountModule)
   },
-
-  { path: 'offers', loadChildren: () => import('./modules/offers/offers.module').then(m => m.OffersModule) },
   { path: 'error', loadChildren: () => import('./modules/features/error/error.module').then(m => m.ErrorModule) },
   { path: '**', redirectTo: '/error/404' }
 ];
