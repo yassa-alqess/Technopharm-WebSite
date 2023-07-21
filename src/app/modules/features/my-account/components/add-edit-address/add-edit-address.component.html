@@ -4,8 +4,8 @@
     </div>
 
     <div class="px-4 py-2 m-0 bg-light" mat-dialog-content>
-        <form method="post" [formGroup]="editAccountForm" *ngIf="editAccountForm">
-            <del-account-info-form [formGroup]="editAccountForm"></del-account-info-form>
+        <form method="post" [formGroup]="addressForm" *ngIf="addressForm">
+            <del-account-address-form [formGroup]="addressForm"></del-account-address-form>
         </form>
     </div>
 
@@ -14,7 +14,7 @@
             {{ 'ACTIONS.CANCEL' | translate }}
         </del-button>
 
-        <del-button btnClass="primary font-14 px-4" type="submit" [disabled]="editAccountForm.invalid" (onClick)="submit()">
+        <del-button btnClass="primary font-14 px-4" type="submit" [disabled]="addressForm.invalid" (onClick)="submit()">
             {{ 'ACTIONS.SAVE' | translate }}
         </del-button>
     </div>

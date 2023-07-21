@@ -36,7 +36,12 @@
         "ORDERS": "Orders",
         "ADDRESSES": "Addresses",
         "WALLET": "Wallet",
-        "EDIT_ACCOUNT": "Edit Account"
+        "EDIT_ACCOUNT": "Edit Account",
+        "ADDRESS": {
+            "TITLE": "Address",
+            "ADD": "Add Address",
+            "EDIT": "Edit Address"
+        }
     },
     "COMPLETE_REGISTRATION": {
         "TITLE": "Complete Registration",
@@ -52,6 +57,7 @@
         "ADDRESS": "Address",
         "CITY": "City",
         "AREA": "Area",
+        "COUNTRY": "Country",
         "HOUSE_NO": "Building Number",
         "STREET": "Street Name",
         "FLOOR_NO": "Floor Number",
@@ -84,7 +90,8 @@
         "VERIFY": "Verify & Continue",
         "COMPLETE": "Complete",
         "CANCEL": "Cancel",
-        "SAVE": "Save"
+        "SAVE": "Save",
+        "CONFIRM": "Confirm"
     },
     "EMPTY": {
         "OFFERS": "There are no offers added right now."
@@ -93,6 +100,10 @@
         "404": "PAGE NOT FOUND",
         "403": "FORBIDDEN",
         "401": "UNAUTHORIZED"
+    },
+    "DIALOG": {
+        "DELETE_CONFIRMATION": "Delete Confirmation",
+        "DELETE_MESSAGE": "Are you sure that you want to delete it?"
     },
     "required_validation": "This field is required.",
     "min_validation": "Min Value ",

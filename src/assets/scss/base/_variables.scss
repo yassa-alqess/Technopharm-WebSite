@@ -31,6 +31,7 @@ $pending-light: rgba($pending, 0.11);
     --primary-light: #{$primary-light};
     --secondary: #{$secondary};
     --secondary-light: #{$secondary-light};
+    --mdc-theme-primary: #{$primary};
 }
 
 [dir="rtl"] {

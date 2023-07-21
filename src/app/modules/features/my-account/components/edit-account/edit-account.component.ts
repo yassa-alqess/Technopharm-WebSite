@@ -64,8 +64,7 @@ export class EditAccountComponent {
     };
 
     this.authService.updateAccount(body).subscribe(() => {
-      this.authService.resetUserDetails();
-      this.authService.getAccount().subscribe();
+      this.authService.refreshUserDetails();
       this.dialogRef.close();
     });
   }

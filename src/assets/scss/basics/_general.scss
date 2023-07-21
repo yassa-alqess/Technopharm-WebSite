@@ -20,6 +20,10 @@ h6 {
   line-height: 1.5 !important;
 }
 
+svg {
+  outline: 0;
+}
+
 body {
   text-align: start;
   background-color: $page-bg;

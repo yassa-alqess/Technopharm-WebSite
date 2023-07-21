@@ -89,6 +89,11 @@ export class AuthService extends HttpService {
     this.userDetails.next(null);
   }
 
+  refreshUserDetails() {
+    this.resetUserDetails();
+    this.getAccount().subscribe();
+  }
+
   generateOTP(body: { [key: string]: string; }) {
     return this.post<OtpResponse>({ APIName: 'GenerateOtp', body }).pipe(
       map(response => response.GenerateOtpResult),

@@ -4,9 +4,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from 'core/guards/auth/auth.guard';
 import { MyAccountComponent } from './pages/my-account/my-account.component';
 
-import { InformationComponent, OrdersComponent, AddressesComponent, WalletComponent } from './components';
+import {
+  InformationComponent,
+  OrdersComponent,
+  AddressesComponent,
+  WalletComponent,
+  EditAccountComponent,
+  AddEditAddressComponent,
+} from './components';
 import { DialogComponent } from 'shared/components';
-import { EditAccountComponent } from './components/edit-account/edit-account.component';
 
 const routes: Routes = [
   {
@@ -20,6 +26,7 @@ const routes: Routes = [
       {
         path: 'information',
         component: InformationComponent,
+        data: { breadcrumb: 'MY_ACCOUNT.MY_INFO' },
         children: [
           {
             path: 'edit',
@@ -30,14 +37,35 @@ const routes: Routes = [
       },
       {
         path: 'orders',
+        data: { breadcrumb: 'MY_ACCOUNT.ORDERS' },
         component: OrdersComponent
       },
       {
         path: 'addresses',
-        component: AddressesComponent
+        data: { breadcrumb: 'MY_ACCOUNT.ADDRESSES' },
+        component: AddressesComponent,
+        children: [
+          {
+            path: 'add',
+            data: { component: AddEditAddressComponent, pageTitle: 'MY_ACCOUNT.ADDRESS.ADD', isEdit: false, },
+            component: DialogComponent,
+          },
+          {
+            path: 'edit',
+            children: [
+              { path: '', redirectTo: '/my-account/addresses', pathMatch: 'full' },
+              {
+                path: ':addressIndex',
+                data: { component: AddEditAddressComponent, pageTitle: 'MY_ACCOUNT.ADDRESS.EDIT', isEdit: true },
+                component: DialogComponent,
+              }
+            ]
+          }
+        ]
       },
       {
         path: 'wallet',
+        data: { breadcrumb: 'MY_ACCOUNT.WALLET' },
         component: WalletComponent
       }
     ]
