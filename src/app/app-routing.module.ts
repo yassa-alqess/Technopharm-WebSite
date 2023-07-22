@@ -62,7 +62,14 @@ const routes: Routes = [
           breadcrumb: StaticCategoriesIDs.CONTACT
         },
         loadComponent: () => import('./modules/features/contact-us/contact-us.component').then(m => m.ContactUsComponent)
-      }
+      },
+      {
+        path: 'offers',
+        data: {
+          breadcrumb: 'OFFERS.TITLE'
+        },
+        loadComponent: () => import('./modules/features/offers/offers.component').then(m => m.OffersComponent)
+      },
     ]
   },
   {
