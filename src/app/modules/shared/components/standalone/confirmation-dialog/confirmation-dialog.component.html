@@ -1,0 +1,19 @@
+<div class="modal-container d-flex flex-column">
+  <div class="modal-header bg-header" mat-dialog-header>
+    <h1 class="m-0 p-0 font-18 regular text-dark" mat-dialog-title>{{ pageTitle | translate }}</h1>
+  </div>
+
+  <div class="px-4 py-2 m-0" mat-dialog-content>
+    <p class="m-0 font-16 text-danger">{{ pageMessage | translate }}</p>
+  </div>
+
+  <div class="modal-footer w-100 d-flex justify-content-end gap-3" mat-dialog-actions>
+    <del-button btnClass="primary font-14 px-4" (click)="close()">
+      {{ 'ACTIONS.CONFIRM' | translate }}
+    </del-button>
+
+    <del-button btnClass="text-primary font-14 px-4" mat-dialog-close>
+      {{ 'ACTIONS.CANCEL' | translate }}
+    </del-button>
+  </div>
+</div>

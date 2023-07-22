@@ -1,12 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
-import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'del-button',
   standalone: true,
-  imports: [CommonModule, TranslateModule, MatButtonModule],
+  imports: [CommonModule, MatButtonModule],
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss']
 })
