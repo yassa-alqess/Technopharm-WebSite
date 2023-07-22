@@ -156,7 +156,8 @@ body {
     --mdc-dialog-subhead-font: "Cairo";
 
     min-width: 90%;
-    height: 90vh;
+    max-height: 90vh;
+    height: max-content;
   }
 
   .mat-mdc-dialog-actions {
