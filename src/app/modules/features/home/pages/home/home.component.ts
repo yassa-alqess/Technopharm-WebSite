@@ -11,8 +11,8 @@ import { map } from 'rxjs';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  dialog = inject(MatDialog);
-  categoriesService = inject(CategoriesService);
+  private dialog = inject(MatDialog);
+  private categoriesService = inject(CategoriesService);
 
   banners: Advertisement[] = [];
   categories: Category[] = [];
@@ -20,7 +20,7 @@ export class HomeComponent {
   offers: Offer[] = [];
 
   private get isUserExist() {
-    return localStorage.getItem("del-user-sign-up") === "false"; // true
+    return localStorage.getItem("del-user-exist") === "true"; // true
   }
 
   @ViewChild("completeRegistration") completeRegistration!: TemplateRef<any>;
