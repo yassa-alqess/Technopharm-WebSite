@@ -1,10 +1,9 @@
-import { Component, TemplateRef, ViewChild, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Offer } from 'core/interfaces';
 import { HomeService } from 'features/home/services/home/home.service';
 import { BaseSharedModule } from 'shared/sub-modules/base-shared';
 import { SubTitleComponent } from 'shared/components';
-import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'del-offers',
@@ -25,7 +24,6 @@ export class OffersComponent {
 
   getOffers() {
     this.homeService.getOffers().subscribe(offers => this.offers = offers);
-    console.log(this.offers);
   }
 
   setOfferPlaceholderImage(offer: Offer) {
@@ -40,5 +38,4 @@ export class OffersComponent {
       ];
     }
   }
-
 }

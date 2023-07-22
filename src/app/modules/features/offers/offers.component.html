@@ -1,18 +1,14 @@
-
-    <div class="container-lg">
-        <div class="offers-content position-relative mt-4">
-            <div class="row d-none d-sm-flex" *ngIf="offers.length; else offerEmptyState">
-                <div class="col-sm-6 col-lg-4 col-xl-3 gy-3" *ngFor="let offer of offers  let i=index">
-                    <div class="offers-box bg-white">
-                        <ng-template [ngTemplateOutlet]="offerRef" [ngTemplateOutletContext]="{ $implicit: offer }"></ng-template>
-                    </div>
+<div class="container-lg" (isEnglish)="isEnglish = $event">
+    <div class="offers-content position-relative mt-4">
+        <div class="row d-none d-sm-flex" *ngIf="offers.length; else offerEmptyState">
+            <div class="col-sm-6 col-lg-4 col-xl-3 gy-3" *ngFor="let offer of offers  let i=index">
+                <div class="offers-box bg-white">
+                    <ng-template [ngTemplateOutlet]="offerRef" [ngTemplateOutletContext]="{ $implicit: offer }"></ng-template>
                 </div>
             </div>
-
-           
         </div>
     </div>
-
+</div>
 
 <ng-template #offerEmptyState>
     <div class="empty-state d-flex flex-column align-items-center justify-content-center mt-5">
@@ -30,8 +26,7 @@
              (error)="setOfferPlaceholderImage(offer); offerImage.style.objectFit = 'contain'" />
 
         <h4 class="m-0 font-20 text-dark py-2 text-capitalize">
-            {{ isEnglish ? (offer.Description | lowercase) : offer.ArabicDescription }}
+            {{ isEnglish ? (offer.Description | lowercase) : (offer.ArabicDescription || offer.Description) }}
         </h4>
     </a>
 </ng-template>
-

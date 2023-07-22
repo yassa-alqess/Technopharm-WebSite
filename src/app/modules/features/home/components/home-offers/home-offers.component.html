@@ -72,7 +72,7 @@
              (error)="setOfferPlaceholderImage(offer); offerImage.style.objectFit = 'contain'" />
 
         <h4 class="m-0 font-20 text-dark py-2 text-capitalize">
-            {{ isEnglish ? (offer.Description | lowercase) : offer.ArabicDescription }}
+            {{ isEnglish ? (offer.Description | lowercase) : (offer.ArabicDescription || offer.Description) }}
         </h4>
     </a>
 </ng-template>
