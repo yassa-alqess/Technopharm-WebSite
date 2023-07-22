@@ -8,7 +8,8 @@
                             <div class="thumbnail-box h-100">
                                 <swiper [slides]="product.Images" containerClass="thumbs-slider" [config]="thumbnailSwiperConfig">
                                     <ng-template swiperSlide let-productImage>
-                                        <img class="d-block w-100 h-100 product-thumbnail-image img-fluid" [src]="productImage.Location" [alt]="product.Description + '\'s Image'"
+                                        <img class="d-block w-100 h-100 product-thumbnail-image img-fluid" [src]="productImage.Location"
+                                             [alt]="product.Description + '\'s Image'"
                                              (error)="productImage.Location = 'assets/images/common/Product_Image_Placeholder.png'" />
                                     </ng-template>
                                 </swiper>
@@ -18,7 +19,8 @@
                         <div class="col-10">
                             <swiper [slides]="product.Images" [config]="productImageConfig" *ngIf="productImageConfig">
                                 <ng-template swiperSlide let-productImage>
-                                    <img class="d-block product-image img-fluid" [src]="productImage.Location" [alt]="product.Description + '\'s Image'"
+                                    <img class="d-block product-image img-fluid" [src]="productImage.Location"
+                                         [alt]="product.Description + '\'s Image'"
                                          (error)="productImage.Location = 'assets/images/common/Product_Image_Placeholder.png'" />
                                 </ng-template>
                             </swiper>
@@ -29,7 +31,7 @@
 
             <div class="col-lg-5 gy-0">
                 <div class="product-detail-box">
-                    <h5 class="{{ isModalView ? 'font-20' : 'font-24' }}">{{ product.Description }}</h5>
+                    <h2 class="{{ isModalView ? 'font-20' : 'font-24' }}">{{ product.Description }}</h2>
 
                     <span class="d-flex align-content-center font-18 fw-bold" *ngIf="!product.NewPrice">
                         <span>{{ formatNumber(product.ItemPrice) }}</span>
@@ -55,7 +57,8 @@
                                       clip-rule="evenodd" />
                             </svg>
 
-                            <input class="bg-white text-primary font-14 text-center" type="number" [value]="count" min="1" />
+                            <input class="bg-white text-primary font-14 text-center" aria-label="Product Quantity" type="number" [value]="count"
+                                   min="1" />
 
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="20" class="add cursor-pointer"
                                  (click)="plus()">

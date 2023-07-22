@@ -8,5 +8,6 @@ import { Component, Input } from '@angular/core';
 export class MenuComponent {
   @Input() btnClass = '';
   @Input() menuClass = '';
+  @Input() btnAriaLabel = '';
   @Input() isMenuTrigger = true;
 }

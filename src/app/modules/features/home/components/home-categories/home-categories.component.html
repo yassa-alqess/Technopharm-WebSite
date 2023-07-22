@@ -18,9 +18,9 @@
                                 <a class="d-flex flex-column align-items-center h-100" [routerLink]="'/products/' + category.Id">
                                     <img class="img-fluid" [src]="category.Images[0].Location" loading="lazy" [alt]="category.Description" />
 
-                                    <h4 class="m-0 py-2 w-100 font-20 text-dark text-capitalize text-truncate">
+                                    <h1 class="m-0 py-2 w-100 font-20 text-dark text-capitalize text-truncate">
                                         {{ isEnglish ? (category.Description | lowercase) : category.ArabicDescription }}
-                                    </h4>
+                                    </h1>
                                 </a>
                             </div>
                         </div>
@@ -28,7 +28,7 @@
                 </swiper>
 
                 <div class="swiper-button w-100 h-100 position-absolute top-0 d-flex align-items-center justify-content-between">
-                    <button class="d-flex justify-content-center align-items-center swiper-next" setRtl>
+                    <button class="d-flex justify-content-center align-items-center swiper-next" aria-label="Swiper Next Button" setRtl>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
                             <path fill-rule="evenodd"
                                   d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
@@ -36,7 +36,7 @@
                         </svg>
                     </button>
 
-                    <button class="d-flex justify-content-center align-items-center swiper-prev" setRtl>
+                    <button class="d-flex justify-content-center align-items-center swiper-prev" aria-label="Swiper Previous Button" setRtl>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
                             <path fill-rule="evenodd"
                                   d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"

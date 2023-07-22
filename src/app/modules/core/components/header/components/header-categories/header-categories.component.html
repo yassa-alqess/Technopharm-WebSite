@@ -34,9 +34,14 @@
                     <del-menu menuClass="mt-2 box-shadow categories-menu" btnClass="h-40 justify-content-start justify-content-xl-center"
                               [isMenuTrigger]="category.ProductGroups?.length ? true : false">
                         <a matMenuLabel class="d-flex font-16 text-capitalize" [ngClass]="{'text-primary': isActiveCategory(category.Id)}"
-                           [routerLink]="category.route ? category.route : null" routerLinkActive="text-primary">
+                           [routerLink]="category.route" routerLinkActive="text-primary" *ngIf="category.route">
                             {{ isEnglish ? category.Description : category.ArabicDescription }}
                         </a>
+
+                        <span matMenuLabel class="d-flex font-16 text-capitalize" [ngClass]="{'text-primary': isActiveCategory(category.Id)}"
+                              routerLinkActive="text-primary" *ngIf="!category.route">
+                            {{ isEnglish ? category.Description : category.ArabicDescription }}
+                        </span>
 
                         <div [ngClass]="{'row': (category.ProductGroups?.length || 0) > maxItemCount }" matMenuContent
                              *ngIf="category.ProductGroups?.length">
