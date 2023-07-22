@@ -113,7 +113,7 @@
         "SEND": "Send",
         "COMMUNICATE_WITH": "Get in touch with us",
         "ADDRESS": "Address",
-        "OTHER_ADDRESSESE": "Other addresses"
+        "OTHER_ADDRESS": "Other addresses"
     },
     "DIALOG": {
         "DELETE_CONFIRMATION": "Delete Confirmation",

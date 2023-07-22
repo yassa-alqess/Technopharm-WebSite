@@ -6,7 +6,7 @@
         <input matInput [id]="controlName" [formControlName]="controlName" [type]="contentType" *ngIf="inputType === 'textbox'" min="0" style="height: 20px;"
                (keydown)="formGroup.get(controlName)?.markAsTouched()" [readonly]="readonly">
 
-        <textarea matInput [id]="controlName" [formControlName]="controlName" [readonly]="readonly"
+        <textarea matInput [id]="controlName" [formControlName]="controlName" [readonly]="readonly" [rows]="textareaRows"
                   (keydown)="formGroup.get(controlName)?.markAsTouched()" *ngIf="inputType === 'textarea'">
         </textarea>
 

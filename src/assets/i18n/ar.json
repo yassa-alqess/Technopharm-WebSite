@@ -100,18 +100,18 @@
         "401": "غير مصرح لك بالدخول"
     },
     "CONTACT_US": {
-        "TITLE": "اتصل بنا",
-        "LEAVE_MESSAGE": "اترك رسالة لنا",
-        "NAME": "الاسم",
-        "NAME-PLACEHOLDER": "من فضلك قم بكتابة اسمك",
+        "TITLE": "إتصل بنا",
+        "LEAVE_MESSAGE": "أُترك رسالة لنا",
+        "NAME": "الإسم",
+        "NAME-PLACEHOLDER": "من فضلك قم بكتابة إسمك",
         "EMAIL": "البريد الإلكتروني ",
         "EMAIL_PLACEHOLDER": "من فضلك قم بكتابة البريد الإلكتروني   ",
         "MOBILE_PHONE": "رقم الجوال        ",
         "MESSAGE": "الرسالة",
-        "SEND": "ارسال",
-        "COMMUNICATE_WITH": "كن علي تواصل معنا",
+        "SEND": "إرسال",
+        "COMMUNICATE_WITH": "كُنّْ على تواصل معنا",
         "ADDRESS": "العنوان        ",
-        "OTHER_ADDRESSESE": "عناوين أخري"
+        "OTHER_ADDRESS": "عناوين أُخرى"
     },
     "DIALOG": {
         "DELETE_CONFIRMATION": "تأكيد الحذف",
