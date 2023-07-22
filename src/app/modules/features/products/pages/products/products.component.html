@@ -75,7 +75,7 @@
           <div class="products-content mt-3">
             <div class="row">
               <div [class]="activeFilterOption" [ngClass]="{'mt-3': true}" *ngFor="let product of products; let i=index">
-                <del-product [product]="product" (action)="doAction($event)"></del-product>
+                <del-product [product]="product" (action)="doAction($event, product)"></del-product>
               </div>
             </div>
           </div>
@@ -84,3 +84,7 @@
     </div>
   </div>
 </section>
+
+<ng-template #productDetails>
+  <del-product-details class="d-block py-3" [isModalView]="true" [product]="product"></del-product-details>
+</ng-template>

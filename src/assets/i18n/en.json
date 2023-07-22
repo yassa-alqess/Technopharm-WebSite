@@ -13,6 +13,7 @@
     "CONTACT_US": "Contact Us",
     "USER_HEADER_LIST": {
         "SIGN_IN": "Sign In",
+        "SIGN_OUT": "Sign Out",
         "REGISTER": "Register",
         "MY_ACCOUNT": "My Account"
     },
@@ -30,9 +31,22 @@
         "RECEIVED_OTP": "Didn't receive the OTP?",
         "WRONG_OTP": "The OTP you have entered is wrong."
     },
+    "MY_ACCOUNT": {
+        "MY_INFO": "My Information",
+        "ORDERS": "Orders",
+        "ADDRESSES": "Addresses",
+        "WALLET": "Wallet",
+        "EDIT_ACCOUNT": "Edit Account",
+        "ADDRESS": {
+            "TITLE": "Address",
+            "ADD": "Add Address",
+            "EDIT": "Edit Address"
+        }
+    },
     "COMPLETE_REGISTRATION": {
         "TITLE": "Complete Registration",
         "PERSONAL_INFO": "Personal Information",
+        "NAME": "Full Name",
         "FIRST_NAME": "First Name",
         "LAST_NAME": "Last Name",
         "BIRTH_DATE": "Birthdate",
@@ -43,6 +57,7 @@
         "ADDRESS": "Address",
         "CITY": "City",
         "AREA": "Area",
+        "COUNTRY": "Country",
         "HOUSE_NO": "Building Number",
         "STREET": "Street Name",
         "FLOOR_NO": "Floor Number",
@@ -73,7 +88,10 @@
         "LOWEST_PRICE": "Lowest Price",
         "HIGHEST_PRICe": "Highest Price",
         "VERIFY": "Verify & Continue",
-        "COMPLETE": "Complete"
+        "COMPLETE": "Complete",
+        "CANCEL": "Cancel",
+        "SAVE": "Save",
+        "CONFIRM": "Confirm"
     },
     "EMPTY": {
         "OFFERS": "There are no offers added right now."
@@ -82,6 +100,10 @@
         "404": "PAGE NOT FOUND",
         "403": "FORBIDDEN",
         "401": "UNAUTHORIZED"
+    },
+    "DIALOG": {
+        "DELETE_CONFIRMATION": "Delete Confirmation",
+        "DELETE_MESSAGE": "Are you sure that you want to delete it?"
     },
     "required_validation": "This field is required.",
     "min_validation": "Min Value ",
