@@ -1,0 +1,32 @@
+<div class="container-lg" (isEnglish)="isEnglish = $event">
+    <div class="offers-content position-relative mt-4">
+        <div class="row d-none d-sm-flex" *ngIf="offers.length; else offerEmptyState">
+            <div class="col-sm-6 col-lg-4 col-xl-3 gy-3" *ngFor="let offer of offers  let i=index">
+                <div class="offers-box bg-white">
+                    <ng-template [ngTemplateOutlet]="offerRef" [ngTemplateOutletContext]="{ $implicit: offer }"></ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #offerEmptyState>
+    <div class="empty-state d-flex flex-column align-items-center justify-content-center mt-5">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" class="text-primary">
+            <use [attr.xlink:href]="'assets/images/common/offers_empty.svg#offers_empty'"></use>
+        </svg>
+
+        <del-sub-title title="EMPTY.OFFERS" fontSize="font-18"></del-sub-title>
+    </div>
+</ng-template>
+
+<ng-template #offerRef let-offer>
+    <a class="d-flex flex-column align-items-center h-100">
+        <img class="img-fluid" [src]="offer.Images[0]?.Location" loading="lazy" [alt]="offer.Description" #offerImage
+             (error)="setOfferPlaceholderImage(offer); offerImage.style.objectFit = 'contain'" />
+
+        <h4 class="m-0 font-20 text-dark py-2 text-capitalize">
+            {{ isEnglish ? (offer.Description | lowercase) : (offer.ArabicDescription || offer.Description) }}
+        </h4>
+    </a>
+</ng-template>

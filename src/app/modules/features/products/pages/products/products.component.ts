@@ -1,10 +1,11 @@
-import { Component, inject } from '@angular/core';
+import { Component, TemplateRef, ViewChild, inject } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { SidebarContent } from 'core/enums';
 import { ProductsService } from 'features/products/services/products/products.service';
 import { SidebarToggleService } from 'core/services/sidebar-toggle/sidebar-toggle.service';
 import { Product, ProductsPayload } from 'core/interfaces';
 import { Subject, distinctUntilChanged, filter, takeUntil } from 'rxjs';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'del-products',
@@ -13,12 +14,14 @@ import { Subject, distinctUntilChanged, filter, takeUntil } from 'rxjs';
 })
 export class ProductsComponent {
   private destroy$ = new Subject();
+  private dialog = inject(MatDialog);
 
   sidebarToggleService = inject(SidebarToggleService);
   activeFilterOption = '';
   pageNumber = 1;
   pageSize = 12;
   products: Product[] = [];
+  product!: Product;
   filterOptions = [
     {
       optionCode: 'LowestPrice',
@@ -29,6 +32,8 @@ export class ProductsComponent {
       optionName: 'ACTIONS.HIGHEST_PRICe',
     }
   ];
+
+  @ViewChild("productDetails") productDetails!: TemplateRef<any>;
 
   constructor(private productsService: ProductsService, private activatedRoute: ActivatedRoute, private router: Router) {
     router.events.pipe(
@@ -64,9 +69,9 @@ export class ProductsComponent {
     this.sidebarToggleService.drawer.toggle();
   }
 
-  doAction(action: { type: string; productId: string; }) {
+  doAction(action: { type: string; productId: string; }, product: Product) {
     if (action.type === 'favorites') return this.addToFavorites(action.productId);
-    if (action.type === 'modal-view') return this.viewProductAsModal(action.productId);
+    if (action.type === 'modal-view') return this.viewProductAsModal(product);
     if (action.type === 'add-to-cart') return this.addToCart(action.productId);
   }
 
@@ -74,8 +79,12 @@ export class ProductsComponent {
     console.log('favorites', productId);
   }
 
-  viewProductAsModal(productId: string) {
-    console.log('modal-view', productId);
+  viewProductAsModal(product: Product) {
+    this.product = product;
+    this.dialog.open(this.productDetails, {
+      autoFocus: false,
+      panelClass: ['medium', 'p-0'],
+    });
   }
 
   addToCart(productId: string) {

@@ -20,6 +20,10 @@ h6 {
   line-height: 1.5 !important;
 }
 
+svg {
+  outline: 0;
+}
+
 body {
   text-align: start;
   background-color: $page-bg;
@@ -149,6 +153,8 @@ body {
   max-height: 90vh !important;
 
   .mat-mdc-dialog-container {
+    --mdc-dialog-subhead-font: "Cairo";
+
     min-width: 90%;
     height: 90vh;
   }
@@ -156,18 +162,23 @@ body {
   .mat-mdc-dialog-actions {
     box-sizing: border-box;
     margin: 0;
-    padding: 1rem 1.5rem;
   }
 
   .modal-header {
-    --bs-modal-header-padding: 0;
+    --bs-modal-header-padding: 1rem;
     --bs-modal-header-border-width: 1px;
     --bs-modal-header-border-color: #{$text-light};
     --bs-modal-inner-border-radius: .5rem;
+
+    .mat-mdc-dialog-title {
+      &::before {
+        height: 0;
+      }
+    }
   }
 
   .modal-footer {
-    --bs-modal-header-padding: 0;
+    --bs-modal-padding: 1rem;
     --bs-modal-footer-border-width: 1px;
     --bs-modal-footer-border-color: #{$text-light};
     --bs-modal-inner-border-radius: .5rem;

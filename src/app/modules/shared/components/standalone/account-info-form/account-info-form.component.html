@@ -1,0 +1,53 @@
+<div class="row mt-3">
+    <!-- FirstName -->
+    <div class="col-md-6">
+        <del-input-text [formGroup]="formGroup" controlName="FirstName" appearance="outline"
+                        [label]="'COMPLETE_REGISTRATION.FIRST_NAME' | translate">
+        </del-input-text>
+    </div>
+
+    <!-- LastName -->
+    <div class="col-md-6">
+        <del-input-text [formGroup]="formGroup" controlName="LastName" appearance="outline"
+                        [label]="'COMPLETE_REGISTRATION.LAST_NAME' | translate">
+        </del-input-text>
+    </div>
+
+    <!-- MOBILE_NUMBER -->
+    <div class="col-12">
+        <del-input-text [formGroup]="formGroup" contentType="number" controlName="Phone" appearance="outline"
+                        [label]="'ACCOUNT.MOBILE_NUMBER' | translate">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                 width="20" height="20" matPrefix>
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+            </svg>
+        </del-input-text>
+    </div>
+
+    <!-- EMAIL -->
+    <div class="col-md-6">
+        <del-input-text [formGroup]="formGroup" contentType="email" controlName="Email" appearance="outline"
+                        [label]="'COMPLETE_REGISTRATION.EMAIL' | translate">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                 width="20" height="20" matPrefix>
+                <path stroke-linecap="round"
+                      d="M16.5 12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 10-2.636 6.364M16.5 12V8.25" />
+            </svg>
+        </del-input-text>
+    </div>
+
+    <!-- BIRTH_DATE -->
+    <div class="col-md-6">
+        <del-datepicker [formGroup]="formGroup" [maxDate]="today" controlName="BirthDay"
+                        [label]="'COMPLETE_REGISTRATION.BIRTH_DATE' | translate">
+        </del-datepicker>
+    </div>
+
+    <!-- GENDER -->
+    <div class="col-12">
+        <del-radio-button [formGroup]="formGroup" controlName="Gender" [options]="genders"
+                          [label]="'COMPLETE_REGISTRATION.GENDER' | translate">
+        </del-radio-button>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="row mt-3">
+    <!-- City -->
+    <div class="col-md-6">
+        <del-dropdown [formGroup]="formGroup" controlName="City" [options]="cities"
+                      [label]="'COMPLETE_REGISTRATION.CITY' | translate" (selected)="getAreas($event)">
+        </del-dropdown>
+    </div>
+
+    <!-- Area -->
+    <div class="col-md-6" *ngIf="areas.length">
+        <del-dropdown [formGroup]="formGroup" controlName="Area" [options]="areas"
+                      [label]="'COMPLETE_REGISTRATION.AREA' | translate">
+        </del-dropdown>
+    </div>
+
+    <!-- HouseNo -->
+    <div class="col-md-6">
+        <del-input-text [formGroup]="formGroup" controlName="HouseNo" appearance="outline"
+                        [label]="'COMPLETE_REGISTRATION.HOUSE_NO' | translate">
+        </del-input-text>
+    </div>
+
+    <!-- Street -->
+    <div class="col-md-6">
+        <del-input-text [formGroup]="formGroup" controlName="Street" appearance="outline"
+                        [label]="'COMPLETE_REGISTRATION.STREET' | translate">
+        </del-input-text>
+    </div>
+
+    <!-- FloorNo -->
+    <div class="col-md-6">
+        <del-input-text [formGroup]="formGroup" controlName="FloorNo" appearance="outline"
+                        [label]="'COMPLETE_REGISTRATION.FLOOR_NO' | translate">
+        </del-input-text>
+    </div>
+
+    <!-- ApartmentNo -->
+    <div class="col-md-6">
+        <del-input-text [formGroup]="formGroup" controlName="ApartmentNo" appearance="outline"
+                        [label]="'COMPLETE_REGISTRATION.APARTMENT_NO' | translate">
+        </del-input-text>
+    </div>
+</div>
