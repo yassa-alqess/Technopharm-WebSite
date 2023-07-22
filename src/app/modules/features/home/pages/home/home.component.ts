@@ -1,7 +1,9 @@
 import { Component, TemplateRef, ViewChild, inject } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Advertisement, Offer, Product } from 'core/interfaces';
+import { Advertisement, Category, Offer, Product, ProductGroup } from 'core/interfaces';
+import { CategoriesService } from 'core/services';
 import { HomeService } from 'features/home/services/home/home.service';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'del-home',
@@ -9,14 +11,16 @@ import { HomeService } from 'features/home/services/home/home.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  dialog = inject(MatDialog);
+  private dialog = inject(MatDialog);
+  private categoriesService = inject(CategoriesService);
 
   banners: Advertisement[] = [];
+  categories: Category[] = [];
   bestSelerItems: Product[] = [];
   offers: Offer[] = [];
 
   private get isUserExist() {
-    return localStorage.getItem("del-user-sign-up") === "false"; // true
+    return localStorage.getItem("del-user-exist") === "true"; // true
   }
 
   @ViewChild("completeRegistration") completeRegistration!: TemplateRef<any>;
@@ -27,6 +31,7 @@ export class HomeComponent {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     this.getHomeBanners();
+    this.getCategories();
     this.getBestSellerItems();
     this.getOffers();
   }
@@ -50,10 +55,33 @@ export class HomeComponent {
   }
 
   /**
+   * get categories from the server side and add the static categories to its array
+   */
+  getCategories() {
+    this.categoriesService.categories.subscribe(categories => {
+      categories.map(category => category.Id.replaceAll(' ', '_'));
+
+      this.categories = categories;
+    });
+  }
+
+  /**
    * get bestSellerItems from the server side
    */
   getBestSellerItems() {
-    this.homeService.getBestSellerItems().subscribe(bestSelerItems => this.bestSelerItems = bestSelerItems);
+    this.homeService.getBestSellerItems().subscribe(bestSelerItems => {
+      const categories$ = this.categoriesService.categories.pipe(map(categories => {
+        bestSelerItems.map(product => {
+          const category = categories.find(category => category.Id === product.ItemCategoryCode) as Category;
+
+          product.ItemSubCategory = category?.ProductGroups?.find(each => each.Id === product.ProductGroupId) as ProductGroup;
+        });
+      })).subscribe(() => {
+        this.bestSelerItems = bestSelerItems;
+
+        setTimeout(() => categories$.unsubscribe());
+      });
+    });
   }
 
   /**

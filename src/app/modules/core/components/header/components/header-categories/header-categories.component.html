@@ -31,9 +31,10 @@
 
                 <!-- Categories -->
                 <mat-list-item role="listitem" class="px-1 overflow-visible" *ngFor="let category of categories">
-                    <del-menu menuClass="mt-2 box-shadow categories-menu" btnClass="h-40 justify-content-start justify-content-xl-center">
+                    <del-menu menuClass="mt-2 box-shadow categories-menu" btnClass="h-40 justify-content-start justify-content-xl-center"
+                              [isMenuTrigger]="category.ProductGroups?.length ? true : false">
                         <a matMenuLabel class="d-flex font-16 text-capitalize" [ngClass]="{'text-primary': isActiveCategory(category.Id)}"
-                              [routerLink]="category.route ? category.route : null" routerLinkActive="text-primary">
+                           [routerLink]="category.route ? category.route : null" routerLinkActive="text-primary">
                             {{ isEnglish ? category.Description : category.ArabicDescription }}
                         </a>
 
@@ -47,6 +48,13 @@
                                 {{ isEnglish ? (ProductGroup.Description | lowercase) : ProductGroup.ArabicDescription }}
                             </del-menu-item>
                         </div>
+                    </del-menu>
+                </mat-list-item>
+
+                <!--Offers-->
+                <mat-list-item role="listitem" class="px-1 overflow-visible" *ngIf="categories.length">
+                    <del-menu menuClass="mt-2" btnClass="h-40 " [isMenuTrigger]="false">
+                        <a matMenuLabel class="d-flex font-16" routerLink="offers">{{ "OFFERS.TITLE" | translate }}</a>
                     </del-menu>
                 </mat-list-item>
 

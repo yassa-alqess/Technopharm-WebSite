@@ -38,4 +38,19 @@ export class HomeOffersComponent {
   private get isMediumScreen() {
     return innerWidth >= 576 && innerWidth < 992;
   }
+
+  setOfferPlaceholderImage(offer: Offer) {
+    const placeholderImage = 'assets/images/common/Product_Image_Placeholder.png';
+    if (offer.Images.length) {
+      offer.Images[0].Location = placeholderImage;
+    } else {
+      offer.Images = [
+        {
+          Location: placeholderImage,
+        }
+      ]    
+    }
+
+    return offer;
+  }
 }

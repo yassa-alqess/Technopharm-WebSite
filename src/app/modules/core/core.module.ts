@@ -14,7 +14,6 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { FooterComponent, HeaderComponent, LayoutComponent, SidebarComponent } from './components';
 import { HeaderCategoriesComponent, HeaderTopComponent } from './components/header/components';
 
-import { MenuModule } from 'shared/sub-modules/menu/menu.module';
 import { BaseSharedModule } from 'shared/sub-modules/base-shared';
 import { BreadcrumbComponent, CategorySidebarComponent } from 'shared/components';
 
@@ -39,7 +38,6 @@ const MATERIAL_MODULES = [
   imports: [
     ...MATERIAL_MODULES,
     CommonModule,
-    MenuModule,
     BreadcrumbComponent,
     CategorySidebarComponent,
     BaseSharedModule,

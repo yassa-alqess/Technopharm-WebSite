@@ -1,0 +1,21 @@
+<div class="modal-container d-flex flex-column">
+    <div class="modal-header bg-header" mat-dialog-header>
+        <h1 class="m-0 p-0 font-22 regular text-primary" mat-dialog-title>{{ pageTitle | translate }}</h1>
+    </div>
+
+    <div class="px-4 py-2 m-0 bg-light" mat-dialog-content>
+        <form method="post" [formGroup]="addressForm" *ngIf="addressForm">
+            <del-account-address-form [formGroup]="addressForm"></del-account-address-form>
+        </form>
+    </div>
+
+    <div class="modal-footer w-100 d-flex justify-content-end gap-3" mat-dialog-actions>
+        <del-button btnClass="text-primary font-14" mat-dialog-close>
+            {{ 'ACTIONS.CANCEL' | translate }}
+        </del-button>
+
+        <del-button btnClass="primary font-14 px-4" type="submit" [disabled]="addressForm.invalid" (onClick)="submit()">
+            {{ 'ACTIONS.SAVE' | translate }}
+        </del-button>
+    </div>
+</div>

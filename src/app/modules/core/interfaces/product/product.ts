@@ -1,10 +1,17 @@
 import { CategoryIDs } from "core/enums";
+import { ProductGroup } from "../category/category";
 
-export interface ProductResponse {
-    BestSellerItemsGetResult: Product[];
-}
 export interface ProductsResponse {
     ItemsPageResult: Product[];
+}
+
+export interface ProductResponse {
+    ItemGetByIdResult: Product;
+}
+
+export interface ProductPayload {
+    itemId:     string,
+    storeId:    string
 }
 
 export interface ProductsPayload {
@@ -31,6 +38,7 @@ export interface Product {
     ItemAttributes:         any[];
     ItemCategoryCode:       CategoryIDs;
     ItemFamilyCode:         string;
+    ItemSubCategory?:       ProductGroup;
     ItemPrice:              number;
     NewPrice:               number | null;
     Price:                  string;

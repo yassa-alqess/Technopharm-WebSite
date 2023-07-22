@@ -1,15 +1,13 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { format } from 'date-fns';
 
 import { UserPayload } from 'core/interfaces';
 import { AuthService } from 'core/services/auth/auth.service';
-import { HomeService } from 'features/home/services/home/home.service';
 import { BaseSharedModule } from 'shared/sub-modules/base-shared';
-import { DatepickerComponent, InputTextComponent, DropdownComponent, RadioButtonComponent } from 'shared/components';
+import { InputTextComponent, DropdownComponent, ButtonComponent, AccountInfoFormComponent, AccountAddressFormComponent } from 'shared/components';
 
 @Component({
   selector: 'del-complete-registration',
@@ -17,36 +15,21 @@ import { DatepickerComponent, InputTextComponent, DropdownComponent, RadioButton
   imports: [
     CommonModule,
     BaseSharedModule,
-    InputTextComponent,
-    DatepickerComponent,
-    RadioButtonComponent,
-    DropdownComponent,
     MatDialogModule,
-    MatButtonModule,
+    AccountInfoFormComponent,
+    AccountAddressFormComponent,
+    InputTextComponent,
+    ButtonComponent,
+    DropdownComponent,
   ],
   templateUrl: './complete-registration.component.html',
   styleUrls: ['./complete-registration.component.scss']
 })
 export class CompleteRegistrationComponent {
-  authService = inject(AuthService);
-  homeService = inject(HomeService);
-  fb = inject(FormBuilder);
+  private authService = inject(AuthService);
+  private fb = inject(FormBuilder);
 
   createAccountForm!: FormGroup;
-
-  today = new Date();
-  genders = [
-    {
-      id: 1,
-      text: 'COMPLETE_REGISTRATION.MALE'
-    },
-    {
-      id: 2,
-      text: 'COMPLETE_REGISTRATION.FEMALE'
-    },
-  ];
-  cities: { id: number | string; text: string; }[] = [];
-  areas: { id: number | string; text: string; }[] = [];
 
   get Addresses() {
     return this.createAccountForm.get('Addresses') as FormGroup;
@@ -56,7 +39,6 @@ export class CompleteRegistrationComponent {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     this.initCreateAccountForm();
-    this.getCities();
   }
 
   initCreateAccountForm() {
@@ -65,16 +47,17 @@ export class CompleteRegistrationComponent {
       LastName: ["", [Validators.required]],
       Email: ["", [Validators.required, Validators.email]],
       Name: [""],
-      Phone: [{ value: this.authService.userPhone, disabled: true }],
-      MobilePhone: [{ value: this.authService.userPhone, disabled: true }],
-      UserName: [{ value: this.authService.userPhone, disabled: true }],
-      Password: [{ value: this.authService.userPhone, disabled: true }],
+      Phone: [this.authService.userPhone],
+      MobilePhone: [this.authService.userPhone],
+      UserName: [this.authService.userPhone],
+      Password: [this.authService.userPhone],
       BirthDay: ["", [Validators.required]],
       Gender: [null, [Validators.required]],
       Addresses: this.fb.group({
         Id: "",
-        PhoneNumber: [{ value: this.authService.userPhone, disabled: true }],
-        CellPhoneNumber: [{ value: this.authService.userPhone, disabled: true }],
+        Number: [this.authService.userPhone],
+        PhoneNumber: [this.authService.userPhone],
+        CellPhoneNumber: [this.authService.userPhone],
         ApartmentNo: [""],
         FloorNo: [""],
         Street: ["", [Validators.required]],
@@ -87,26 +70,6 @@ export class CompleteRegistrationComponent {
         Address1: "",
         Address2: "",
       }),
-    });
-  }
-
-  getCities() {
-    this.homeService.getCities().subscribe(cities => {
-      this.cities = cities.map(each => ({
-        id: each.City,
-        text: each.City
-      }));
-
-      this.Addresses.get('Country')?.setValue(cities[0].Country);
-    });
-  }
-
-  getAreas(City: string) {
-    this.homeService.getAreas({ City }).subscribe(areas => {
-      this.areas = areas.map(each => ({
-        id: each.Area,
-        text: each.Area
-      }));
     });
   }
 
@@ -127,7 +90,7 @@ export class CompleteRegistrationComponent {
 
     // - User  already exists:
     this.authService.createAccount(body).subscribe(response => {
-      localStorage.setItem("del-user-sign-up", "false");
+      localStorage.setItem("del-user-exist", "true");
       console.log(response);
     });
   }

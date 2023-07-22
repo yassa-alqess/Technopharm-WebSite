@@ -1,6 +1,0 @@
-<label class="checkboxes position-relative cursor-pointer" [ngClass]="{'active': isSelected}" (click)="select()" (isEnglish)="isEnglish = $event">
-    <span class="checkbox__checkmark position-absolute border default border-radius-50"></span>
-    <span class="checkbox__body text-capitalize">
-        {{ isEnglish ? (category.Description | lowercase) : category.ArabicDescription }}
-    </span>
-</label>

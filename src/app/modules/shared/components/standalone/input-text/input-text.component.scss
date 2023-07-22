@@ -1,0 +1,44 @@
+@import "style";
+
+::ng-deep del-input-text {
+    .mat-mdc-form-field-icon-prefix {
+        padding: 0;
+    }
+
+    .mat-mdc-input-element {
+        --mdc-theme-primary: #{$primary};
+    }
+
+    .mdc-line-ripple {
+        &::after {
+            --mdc-theme-primary: #{$primary};
+        }
+    }
+
+    .mdc-text-field--outlined {
+        --mdc-theme-primary: #{$secondary};
+    }
+
+    .mat-mdc-form-field-has-icon-prefix .mat-mdc-text-field-wrapper {
+        --mat-mdc-form-field-label-offset-x: -10px;
+    }
+
+    .mdc-text-field--disabled .mdc-notched-outline__leading,
+    .mdc-text-field--disabled .mdc-notched-outline__notch,
+    .mdc-text-field--disabled .mdc-notched-outline__trailing {
+        border-color: rgba(0, 0, 0, 0.06) !important;
+    }
+
+    textarea {
+        min-height: 80px;
+        max-height: 100px;
+
+        &.mat-mdc-input-element {
+            line-height: 1.5;
+        }
+    }
+
+    .mat-mdc-form-field-error {
+        text-align: start;
+    }
+}

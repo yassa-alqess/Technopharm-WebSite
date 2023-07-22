@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { SidebarContent } from 'core/enums';
-import { SidebarToggleService } from 'core/services/sidebar-toggle/sidebar-toggle.service';
+import { AuthService, SidebarToggleService } from 'core/services';
 
 @Component({
   selector: 'del-header',
@@ -8,25 +8,49 @@ import { SidebarToggleService } from 'core/services/sidebar-toggle/sidebar-toggl
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
+  private sidebarToggleService = inject(SidebarToggleService);
+  private authService = inject(AuthService);
 
-  userMenuItems = [
-    {
-      menuItemName: 'USER_HEADER_LIST.SIGN_IN',
-      menuItemRoute: 'account/login'
-    },
-    {
-      menuItemName: 'USER_HEADER_LIST.REGISTER',
-      menuItemRoute: 'account/register'
-    },
-    {
-      menuItemName: 'USER_HEADER_LIST.MY_ACCOUNT',
-      menuItemRoute: 'account/my-account'
-    },
-  ];
+  private get isUserExist() {
+    return this.authService.isUserExist;
+  }
 
   searchValue = "";
+  userMenuItems!: any[];
 
-  sidebarToggleService = inject(SidebarToggleService);
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    const myAccountTab = {
+      menuItemName: 'USER_HEADER_LIST.MY_ACCOUNT',
+      menuItemRoute: 'my-account'
+    };
+
+    if (this.isUserExist) {
+      this.userMenuItems = [
+        {
+          menuItemName: 'USER_HEADER_LIST.SIGN_OUT',
+          menuItemRoute: 'account/login',
+          onClick: () => {
+            localStorage.clear();
+          }
+        },
+        myAccountTab
+      ];
+    } else {
+      this.userMenuItems = [
+        {
+          menuItemName: 'USER_HEADER_LIST.SIGN_IN',
+          menuItemRoute: 'account/login'
+        },
+        {
+          menuItemName: 'USER_HEADER_LIST.REGISTER',
+          menuItemRoute: 'account/register'
+        },
+        myAccountTab
+      ];
+    }
+  }
 
   drawerToggle() {
     this.sidebarToggleService.sidebarContent.next(SidebarContent.headerCategories);

@@ -1,0 +1,21 @@
+@import "style";
+
+::ng-deep del-dropdown {
+    .mdc-text-field--outlined {
+        --mdc-theme-primary: #{$secondary};
+    }
+
+    .mat-form-field-appearance-outline {
+        &.mat-focused {
+            &.mat-primary {
+                .mat-mdc-select-arrow {
+                    color: #{$secondary} !important;
+                }
+            }
+        }
+    }
+}
+
+::ng-deep .mat-primary .mat-pseudo-checkbox-checked.mat-pseudo-checkbox-minimal::after {
+    color: #{$primary} !important;
+}

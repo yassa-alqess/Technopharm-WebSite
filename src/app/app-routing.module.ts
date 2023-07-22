@@ -1,20 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from 'core/components/layout/layout.component';
-import { AuthGuard } from 'core/guards/auth/auth.guard';
-import { CategoriesResolver } from 'features/products/resolvers/categories/categories.resolver';
+import { StaticCategoriesIDs } from 'core/enums';
+import { RootGuard } from 'core/guards/root/root.guard';
 
 const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
-    canActivate: [AuthGuard],
+    canActivate: [RootGuard],
     data: { breadcrumb: 'HOME' },
     children: [
       {
         path: '',
         data: { breadcrumbHidden: true },
         loadChildren: () => import('./modules/features/home/home.module').then(m => m.HomeModule),
+      },
+      {
+        path: 'my-account',
+        data: {
+          breadcrumb: 'USER_HEADER_LIST.MY_ACCOUNT'
+        },
+        loadChildren: () => import('./modules/features/my-account/my-account.module').then(m => m.MyAccountModule),
       },
       {
         path: 'products',
@@ -38,31 +45,30 @@ const routes: Routes = [
                 },
                 loadChildren: () => import('./modules/features/products/products.module').then(m => m.ProductsModule),
               },
-              // {
-              //   path: 'product/:productId',
-              //   data: {
-              //     breadcrumb: ''
-              //   },
-              //   children: [
-              //     {
-              //       path: '', pathMatch: 'full', redirectTo: 'details'
-              //     },
-              //     {
-              //       path: 'details', // /products/${categoryCode}/product/${productId}/details?productName=''
-              //       data: {
-              //         breadcrumb: '',
-              //         categories: [],
-              //         queryParamKeyName: 'productName'
-              //       },
-              //       resolve: {
-              //         categories: CategoriesResolver
-              //       },
-              //     }
-              //   ]
-              // }
             ]
           }
         ]
+      },
+      {
+        path: StaticCategoriesIDs.ABOUT.replace('_', '-').toLowerCase(),
+        data: {
+          breadcrumb: StaticCategoriesIDs.ABOUT
+        },
+        loadComponent: () => import('./modules/features/about-us/about-us.component').then(m => m.AboutUsComponent)
+      },
+      {
+        path: StaticCategoriesIDs.CONTACT.replace('_', '-').toLowerCase(),
+        data: {
+          breadcrumb: `${StaticCategoriesIDs.CONTACT}.TITLE`
+        },
+        loadComponent: () => import('./modules/features/contact-us/contact-us.component').then(m => m.ContactUsComponent)
+      },
+      {
+        path: 'offers',
+        data: {
+          breadcrumb: 'OFFERS.TITLE'
+        },
+        loadComponent: () => import('./modules/features/offers/offers.component').then(m => m.OffersComponent)
       },
     ]
   },

@@ -24,17 +24,15 @@
                         <div class="resend-top d-flex align-items-center justify-content-center my-3 gap-3">
                             <span>{{ "ACCOUNT.RECEIVED_OTP" | translate }}</span>
 
-                            <button class="main-btn text-primary font-16 h-40" type="button" mat-flat-button [disabled]="otpDisabled"
-                                    (click)="resendOTP()">
-                                {{ counter || ('ACCOUNT.RESEND_OTP' | translate) }}
-                            </button>
+                            <del-button btnClass="text-primary font-16" [disabled]="otpDisabled" (onClick)="resendOTP()">
+                                {{ 'ACCOUNT.RESEND_OTP' | translate }}
+                            </del-button>
                         </div>
 
                         <div class="actions d-flex flex-column px-2" actions>
-                            <button class="w-100 main-btn primary font-18 h-40 mt-3" type="submit" mat-flat-button
-                                    [disabled]="verifyFormGroup.invalid">
-                                {{ 'ACTIONS.VERIFY' | translate }}
-                            </button>
+                            <del-button btnClass="primary font-18 mt-3" type="submit" [disabled]="verifyFormGroup.invalid">
+                                {{ 'ACCOUNT.VERIFY' | translate }}
+                            </del-button>
                         </div>
                     </form>
                 </div>

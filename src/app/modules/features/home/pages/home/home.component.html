@@ -1,9 +1,11 @@
 <div class="home-wrapper">
     <!-- home-ads -->
-    <del-home-ads [slides]="banners" *ngIf="banners.length"></del-home-ads>
+    <div class="home-ads">
+        <del-home-ads [slides]="banners" *ngIf="banners.length"></del-home-ads>
+    </div>
 
     <!-- home-categories -->
-    <del-home-categories></del-home-categories>
+    <del-home-categories [categories]="categories"></del-home-categories>
 
     <!-- home-best-seller -->
     <del-home-best-seller [bestSelerItems]="bestSelerItems"></del-home-best-seller>

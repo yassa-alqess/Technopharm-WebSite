@@ -24,13 +24,13 @@ export class HeaderCategoriesComponent {
         Id: StaticCategoriesIDs.ABOUT,
         Description: "About Us",
         ArabicDescription: "نبذة عنا",
-        route: StaticCategoriesIDs.ABOUT.toLowerCase()
+        route: StaticCategoriesIDs.ABOUT.replace('_', '-').toLowerCase()
       },
       {
         Id: StaticCategoriesIDs.CONTACT,
         Description: "Contact Us",
         ArabicDescription: "إتصل بنا",
-        route: StaticCategoriesIDs.CONTACT.toLowerCase()
+        route: StaticCategoriesIDs.CONTACT.replace('_', '-').toLowerCase()
       }
     ];
   }
