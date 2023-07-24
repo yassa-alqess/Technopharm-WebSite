@@ -23,6 +23,7 @@ export class InputTextComponent {
   @Input() contentType = 'text';
   @Input() appearance!: MatFormFieldAppearance;
   @Input() readonly = false;
+  @Input() textareaRows = '';
 
   constructor() { }
 

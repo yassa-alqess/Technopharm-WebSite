@@ -29,7 +29,16 @@
         border-color: rgba(0, 0, 0, 0.06) !important;
     }
 
-    textarea.mat-mdc-input-element {
-        line-height: 1.5;
+    textarea {
+        min-height: 80px;
+        max-height: 100px;
+
+        &.mat-mdc-input-element {
+            line-height: 1.5;
+        }
+    }
+
+    .mat-mdc-form-field-error {
+        text-align: start;
     }
 }

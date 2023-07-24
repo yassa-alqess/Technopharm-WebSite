@@ -12,6 +12,7 @@
     "ABOUT_US": "نبذة عنا",
     "USER_HEADER_LIST": {
         "SIGN_IN": "تسجيل الدخول",
+        "SIGN_OUT": "تسجيل الخروج",
         "REGISTER": "إنشاء حساب",
         "MY_ACCOUNT": "حسابي"
     },
@@ -28,9 +29,22 @@
         "RECEIVED_OTP": "لم تستلم رمز التحقق؟",
         "WRONG_OTP": "رمز التحقق الذي أدخلته خطأ"
     },
+    "MY_ACCOUNT": {
+        "MY_INFO": "بياناتي",
+        "ORDERS": "الطلبات",
+        "ADDRESSES": "العناوين",
+        "WALLET": "المحفظة",
+        "EDIT_ACCOUNT": "تعديل الحساب",
+        "ADDRESS": {
+            "TITLE": "عنوان",
+            "ADD": "إضافة عنوان",
+            "EDIT": "تعديل عنوان"
+        }
+    },
     "COMPLETE_REGISTRATION": {
         "TITLE": "إكمال التسجيل",
         "PERSONAL_INFO": "المعلومات الشخصية",
+        "NAME": "الإسم بالكامل",
         "FIRST_NAME": "الإسم الأول",
         "LAST_NAME": "الإسم الأخير",
         "BIRTH_DATE": "تاريخ الميلاد",
@@ -41,6 +55,7 @@
         "ADDRESS": "العنوان",
         "CITY": "المحافظة",
         "AREA": "المدينة",
+        "COUNTRY": "البلد",
         "HOUSE_NO": "رقم المبنى",
         "STREET": "إسم الشارع",
         "FLOOR_NO": "رقم الدور",
@@ -58,7 +73,7 @@
         "HINT": "هناك منتجات مختلفة من الأقسام المختلفة المتاحة"
     },
     "OFFERS": {
-        "TITLE": "عروض",
+        "TITLE": "العروض",
         "HINT": "هناك عروض خاصة لزوار الموقع"
     },
     "ACTIONS": {
@@ -71,7 +86,10 @@
         "LOWEST_PRICE": "الأقل سعراً",
         "HIGHEST_PRICe": "الأعلى سعراً",
         "VERIFY": "تحقق وأكمل التسجبل",
-        "COMPLETE": "إستكمال"
+        "COMPLETE": "إستكمال",
+        "CANCEL": "إلغاء",
+        "SAVE": "حفظ",
+        "CONFIRM": "تأكيد"
     },
     "EMPTY": {
         "OFFERS": "لا توجد عروض مضافة الآن."
@@ -82,18 +100,22 @@
         "401": "غير مصرح لك بالدخول"
     },
     "CONTACT_US": {
-        "TITLE": "اتصل بنا",
-        "LEAVE_MESSAGE": "اترك رسالة لنا",
-        "NAME": "الاسم",
-        "NAME-PLACEHOLDER": "من فضلك قم بكتابة اسمك",
+        "TITLE": "إتصل بنا",
+        "LEAVE_MESSAGE": "أُترك رسالة لنا",
+        "NAME": "الإسم",
+        "NAME-PLACEHOLDER": "من فضلك قم بكتابة إسمك",
         "EMAIL": "البريد الإلكتروني ",
         "EMAIL_PLACEHOLDER": "من فضلك قم بكتابة البريد الإلكتروني   ",
         "MOBILE_PHONE": "رقم الجوال        ",
         "MESSAGE": "الرسالة",
-        "SEND": "ارسال",
-        "COMMUNICATE_WITH": "كن علي تواصل معنا",
+        "SEND": "إرسال",
+        "COMMUNICATE_WITH": "كُنّْ على تواصل معنا",
         "ADDRESS": "العنوان        ",
-        "OTHER_ADDRESSESE": "عناوين أخري"
+        "OTHER_ADDRESS": "عناوين أُخرى"
+    },
+    "DIALOG": {
+        "DELETE_CONFIRMATION": "تأكيد الحذف",
+        "DELETE_MESSAGE": "هل أنت متأكد أنك تريد حذفه؟"
     },
     "required_validation": "هذا الحقل إجباري.",
     "min_validation": "أقل قيمة ",

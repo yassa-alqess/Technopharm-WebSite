@@ -12,9 +12,9 @@ import { Config } from 'ng-otp-input/lib/models/config';
   styleUrls: ['./verify.component.scss']
 })
 export class VerifyComponent {
-  fb = inject(FormBuilder);
-  authService = inject(AuthService);
-  router = inject(Router);
+  private fb = inject(FormBuilder);
+  private authService = inject(AuthService);
+  private router = inject(Router);
 
   config: Config = {
     length: 6,
@@ -72,7 +72,7 @@ export class VerifyComponent {
     };
 
     this.authService.verifyPhone(body).subscribe((userResponse) => {
-      localStorage.setItem('del-user-sign-up', userResponse ? "false" : "true"); // create account from the pop-up in the home page.
+      localStorage.setItem('del-user-exist', userResponse ? "true" : "false"); // create account from the pop-up in the home page.
 
       localStorage.removeItem('del-otp');
       this.router.navigate(['/']);

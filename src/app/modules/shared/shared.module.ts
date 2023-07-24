@@ -25,6 +25,8 @@ const MODULES = [
     STANDALONE_COMPONENTS.ProductComponent,
     STANDALONE_COMPONENTS.TitleComponent,
     STANDALONE_COMPONENTS.SubTitleComponent,
+    STANDALONE_COMPONENTS.AccountInfoFormComponent,
+    STANDALONE_COMPONENTS.AccountAddressFormComponent,
 
     STANDALONE_COMPONENTS.InputTextComponent,
     STANDALONE_COMPONENTS.DatepickerComponent,
