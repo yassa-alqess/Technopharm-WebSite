@@ -22,6 +22,7 @@ export class ContactUsComponent {
   private fb = inject(FormBuilder);
 
   contactUsForm!: FormGroup;
+  showContactUsForm = false;
 
   mainAddress = {
     name: 'المملكة العربية المتحدة ٫ شارع المدينة المنورة ٫ بجوار شركة جوالي',
