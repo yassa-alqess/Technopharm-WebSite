@@ -1,51 +1,53 @@
 <section class="contact-section">
   <div class="container-lg">
-    <div class="row gy-lg-0 gx-0 gx-lg-4 justify-content-around">
-      <div class="col-lg-6">
-        <!-- Reply From Section Start -->
-        <div class="replay-form border default border-radius-8 p-3" id="replaySection">
-          <div class="contact-us-title">
-            <del-title title="CONTACT_US.LEAVE_MESSAGE" fontSize="font-22"></del-title>
+    <div class="row gy-lg-0 gx-0 gx-lg-4" [ngClass]="{'justify-content-around': showContactUsForm}">
+      <ng-container *ngIf="showContactUsForm">
+        <div class="col-lg-6">
+          <!-- Reply From Section Start -->
+          <div class="replay-form border default border-radius-8 p-3" id="replaySection">
+            <div class="contact-us-title">
+              <del-title title="CONTACT_US.LEAVE_MESSAGE" fontSize="font-22"></del-title>
+            </div>
+  
+            <form class="row g-12 g-sm-12 mt-4" [formGroup]="contactUsForm" (ngSubmit)="send()" *ngIf="contactUsForm">
+              <!-- NAME -->
+              <div class="col-sm-12">
+                <del-input-text [formGroup]="contactUsForm" controlName="Name" appearance="outline" [ariaPlaceholder]="'CONTACT_US.NAME_PLACEHOLDER'"
+                                [label]="'CONTACT_US.NAME' | translate">
+                </del-input-text>
+              </div>
+  
+              <!-- EMAIL -->
+              <div class="col-sm-6">
+                <del-input-text [formGroup]="contactUsForm" controlName="Email" appearance="outline" contentType="email"
+                                [ariaPlaceholder]="'CONTACT_US.EMAIL_PLACEHOLDER'" [label]="'CONTACT_US.EMAIL' | translate">
+                </del-input-text>
+              </div>
+  
+              <!-- MOBILE_PHONE -->
+              <div class="col-sm-6">
+                <del-input-text [formGroup]="contactUsForm" controlName="MobilePhone" appearance="outline"
+                                [ariaPlaceholder]="'CONTACT_US.MOBILE_PLACEHOLDER'" [label]="'CONTACT_US.MOBILE_PHONE' | translate">
+                </del-input-text>
+              </div>
+  
+              <!-- MESSAGE -->
+              <div class="col-12">
+                <del-input-text [formGroup]="contactUsForm" controlName="Message" appearance="outline" [label]="'CONTACT_US.MESSAGE' | translate"
+                                inputType="textarea" textareaRows="4">
+                </del-input-text>
+              </div>
+  
+              <div class="col-12 text-end">
+                <del-button btnClass="primary text-white border-radius-4 font-18 px-4 bg-primary" type="submit">
+                  {{ "CONTACT_US.SEND" | translate }}
+                </del-button>
+              </div>
+            </form>
           </div>
-
-          <form class="row g-12 g-sm-12 mt-4" [formGroup]="contactUsForm" (ngSubmit)="send()" *ngIf="contactUsForm">
-            <!-- NAME -->
-            <div class="col-sm-12">
-              <del-input-text [formGroup]="contactUsForm" controlName="Name" appearance="outline" [ariaPlaceholder]="'CONTACT_US.NAME_PLACEHOLDER'"
-                              [label]="'CONTACT_US.NAME' | translate">
-              </del-input-text>
-            </div>
-
-            <!-- EMAIL -->
-            <div class="col-sm-6">
-              <del-input-text [formGroup]="contactUsForm" controlName="Email" appearance="outline" contentType="email"
-                              [ariaPlaceholder]="'CONTACT_US.EMAIL_PLACEHOLDER'" [label]="'CONTACT_US.EMAIL' | translate">
-              </del-input-text>
-            </div>
-
-            <!-- MOBILE_PHONE -->
-            <div class="col-sm-6">
-              <del-input-text [formGroup]="contactUsForm" controlName="MobilePhone" appearance="outline"
-                              [ariaPlaceholder]="'CONTACT_US.MOBILE_PLACEHOLDER'" [label]="'CONTACT_US.MOBILE_PHONE' | translate">
-              </del-input-text>
-            </div>
-
-            <!-- MESSAGE -->
-            <div class="col-12">
-              <del-input-text [formGroup]="contactUsForm" controlName="Message" appearance="outline" [label]="'CONTACT_US.MESSAGE' | translate"
-                              inputType="textarea" textareaRows="4">
-              </del-input-text>
-            </div>
-
-            <div class="col-12 text-end">
-              <del-button btnClass="primary text-white border-radius-4 font-18 px-4 bg-primary" type="submit">
-                {{ "CONTACT_US.SEND" | translate }}
-              </del-button>
-            </div>
-          </form>
+          <!-- Reply From Section End -->
         </div>
-        <!-- Reply From Section End -->
-      </div>
+      </ng-container>
 
       <!-- COMMUNICATE_WITH -->
       <div class="col-lg-6 mt-4 mt-lg-0">
