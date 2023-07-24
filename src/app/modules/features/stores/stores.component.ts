@@ -1,26 +1,22 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BaseSharedModule } from 'shared/sub-modules/base-shared';
-import { TitleComponent } from 'shared/components';
+import { TranslateModule } from '@ngx-translate/core';
+
 import { HomeService } from 'features/home/services/home/home.service';
-import { Store } from 'core/interfaces/store/sore';
+import { Store } from 'core/interfaces';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'del-stores',
   standalone: true,
-  imports:
-    [CommonModule,
-      BaseSharedModule,
-      TitleComponent
-    ],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './stores.component.html',
   styleUrls: ['./stores.component.scss']
 })
 export class StoresComponent {
-
   private homeervice = inject(HomeService);
 
-  isEnglish = false;
+  hotLine = environment.hotLine;
   stores: Store[] = [];
 
   ngOnInit() {
@@ -32,16 +28,15 @@ export class StoresComponent {
   }
 
   setStorePlaceholderImage(store: Store) {
-    const placeholderImage = 'assets/images/common/Product_Image_Placeholder.png';
+    const placeholderImage = 'assets/images/common/Pharmacy_Image_Placeholder.png';
     if (store.Images.length) {
       store.Images[0].Location = placeholderImage;
+    } else {
+      store.Images = [
+        {
+          Location: placeholderImage,
+        }
+      ];
     }
-    // else {
-    //   store.Images = [
-    //     {
-    //       Location: placeholderImage,
-    //     }
-    //   ];
-    // }
   }
 }

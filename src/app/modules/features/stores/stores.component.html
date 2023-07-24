@@ -1,61 +1,67 @@
 <div class="container-lg">
-    <div class="blog-wrap">
-        <div class="row g-3 g-xxl-4">
-            <div class="col-sm-6 col-lg-4 mt-3" *ngFor="let store of stores  let i=index">
-                <div class="blog-box blog-grid border default border-radius-8 ">
-
-                    <div class="content-box">
-
-                        <div class="Stores-box bg-white">
-                            <ng-template [ngTemplateOutlet]="storeRef" [ngTemplateOutletContext]="{ $implicit: store }"></ng-template>
-                        </div>
-
-                    </div>
-                </div>
+    <div class="row g-3 g-xxl-4">
+        <div class="col-sm-6 col-lg-3 mt-3" *ngFor="let store of stores; let i = index">
+            <div class="stores-box border default border-radius-8 bg-white box-shadow">
+                <ng-template [ngTemplateOutlet]="storeRef" [ngTemplateOutletContext]="{ $implicit: store }"></ng-template>
             </div>
-
         </div>
     </div>
-
 </div>
 
 <ng-template #storeRef let-store>
-    <div class="d-flex flex-column  ">
-        <img class="img" [src]="store.Images[0]?.Location" loading="lazy" [alt]="store.Address.City" #storeImage
-             (error)="setStorePlaceholderImage(store); storeImage.style.objectFit = 'contain'" style="max-height: 200px; width: 100%;" />
+    <div class="d-flex flex-column align-items-center h-100">
+        <img class="img-fluid store-img" [src]="store.Images[0]?.Location" loading="lazy" [alt]="store.Address.City" #storeImage
+             (error)="setStorePlaceholderImage(store); storeImage.style.objectFit = 'contain'; storeImage.style.borderBottom = '1px solid #d9d9d9'" />
 
-        <div class="p-3">
-            <del-title [title]="store.Description" fontSize="font-22"></del-title>
-            <p class="truncate-2 mt-2 text-secondary"> {{ store.Address.Address1 }}</p>
-            <hr class="text-middle ">
+        <div class="w-100 p-3">
+            <h1 class="m-0 w-100 font-20 text-dark text-capitalize text-truncate">
+                {{ store.Description }}
+            </h1>
+
+            <p class="address m-0 mt-2 font-14 text-middle">{{ store.Address.Address1 }}</p>
         </div>
     </div>
 
-    <div class="share-box d-flex justify-content-between p-3">
+    <hr class="text-middle m-0" />
 
-        <div class="action-box">
-            <span class="mt-3 fw-700 text-primary">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                     stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone">
-                    <path
-                          d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                    </path>
-                </svg>19955
-            </span>
-        </div>
+    <div class="share-box d-flex align-items-center justify-content-between p-3">
+        <a class="action-box d-flex align-items-center gap-2 text-primary font-14 fw-bold" [href]="'tel:'+ hotLine">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone">
+                <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                </path>
+            </svg>
 
-        <div class="sender-box d-flex ">
-            <div class="sender-details">
-                <a href="https://www.google.com/maps/search/delmar+pharmacy/@30.1488773,31.3575667,13z?entry=ttu" target="_blank">
-                    <p class="font-18 fw-700 m-2 mt-0">الموقع علي الخريطة</p>
-                </a>
-            </div>
-            <div class="map-img ">
-                <a href="https://www.google.com/maps/search/delmar+pharmacy/@30.1488773,31.3575667,13z?entry=ttu" target="_blank">
-                    <img src="../assets/images/avatar/google-maps.svg" alt="avatar">
-                </a>
-            </div>
+            {{ hotLine }}
+        </a>
 
+        <div class="sender-box">
+            <a class="sender-details d-flex align-items-center gap-2 text-dark font-14" target="_blank"
+               href="https://www.google.com/maps/search/?api=1&query={{ store.Latitude }},{{ store.Longitude }}">
+                <p class=" m-0">{{ 'LOCATION_ON_MAP' | translate }}</p>
+
+                <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 512.001 512.001"
+                     viewBox="0 0 512.001 512.001" width="24" height="auto">
+                    <path d="M480.001 192v266.667a51.622 51.622 0 0 1-8.96 29.44 49.355 49.355 0 0 1-6.613 8.32L252.801 284.8l-7.467-7.467 145.707-145.707 9.173 5.76 74.667 45.44a10.817 10.817 0 0 1 5.12 9.174z"
+                          style="fill:#cfd8dc" />
+                    <path d="M391.041 131.627 237.868 284.8 26.241 496.427a49.304 49.304 0 0 1-6.613-8.32 51.622 51.622 0 0 1-8.96-29.44V117.333C10.668 87.878 34.546 64 64.001 64h213.333a12.66 12.66 0 0 1 5.547 1.493l98.987 60.373 9.173 5.761z"
+                          style="fill:#4caf50" />
+                    <path d="M464.428 496.427a49.036 49.036 0 0 1-8.32 6.613 51.607 51.607 0 0 1-29.44 8.96H64.001a51.607 51.607 0 0 1-29.44-8.96 49.086 49.086 0 0 1-8.32-6.613L237.868 284.8l7.467-7.467 7.467 7.467 211.626 211.627z"
+                          style="fill:#2196f3" />
+                    <path d="M471.041 488.107a46.81 46.81 0 0 1-14.933 14.933L237.868 284.8c-4.082-4.165-4.014-10.851.151-14.933 4.106-4.024 10.676-4.024 14.782 0l218.24 218.24z"
+                          style="fill:#fafafa" />
+                    <path d="M400.215 137.387 252.801 284.8 34.561 503.04a46.81 46.81 0 0 1-14.933-14.933l362.24-362.24 18.347 11.52z"
+                          style="fill:#ffc107" />
+                    <path d="M106.668 192c-23.564 0-42.667-19.103-42.667-42.667s19.103-42.667 42.667-42.667 42.667 19.103 42.667 42.667S130.232 192 106.668 192zm0-64c-11.782 0-21.333 9.551-21.333 21.333s9.551 21.333 21.333 21.333 21.333-9.551 21.333-21.333S118.45 128 106.668 128z"
+                          style="fill:#fafafa" />
+                    <path d="M149.335 128h-42.667c-5.891 0-10.667-4.776-10.667-10.667s4.776-10.667 10.667-10.667h42.667c5.891 0 10.667 4.776 10.667 10.667S155.226 128 149.335 128zm-42.667 149.333c-26.342 3.08-50.193-15.778-53.273-42.12-.021-.182-.042-.364-.061-.546 0-19.947 18.944-33.408 56.363-40.149a30.035 30.035 0 0 1-3.029-13.184c0-5.891 4.776-10.667 10.667-10.667s10.667 4.776 10.667 10.667c0 4.843 4.416 9.429 11.669 16.448a51.2 51.2 0 0 1 20.331 36.885c-.001 37.504-25.601 42.666-53.334 42.666zm18.773-63.616c-37.376 4.715-50.773 14.144-50.773 20.949 0 4.267 5.696 21.333 32 21.333 30.571 0 32-7.317 32-21.333 0-7.466-4.971-12.949-13.227-20.949z"
+                          style="fill:#fafafa" />
+                    <path d="M384.001 0C319.234.082 266.75 52.566 266.668 117.333c.035 6.445.671 12.873 1.899 19.2a114.426 114.426 0 0 0 18.069 46.208c4.949 8.533 10.667 17.408 16.704 26.88a436.136 436.136 0 0 1 70.208 165.845c1.172 5.773 6.803 9.503 12.576 8.331a10.667 10.667 0 0 0 8.331-8.331 436.136 436.136 0 0 1 70.187-165.867c6.08-9.451 11.755-18.261 16.277-26.176a115.65 115.65 0 0 0 18.475-46.699 105.12 105.12 0 0 0 1.941-19.392C501.252 52.566 448.769.082 384.001 0z"
+                          style="fill:#f44336" />
+                    <circle cx="384.001" cy="117.333" r="53.333" style="fill:#c62828" />
+                </svg>
+            </a>
         </div>
     </div>
 </ng-template>

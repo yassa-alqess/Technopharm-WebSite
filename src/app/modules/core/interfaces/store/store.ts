@@ -13,7 +13,7 @@ export interface Store {
     Description: string;
     Distance: number;
     FunctionalityProfileId: null;
-    Images: Image[];
+    Images: Partial<Image>[];
     IsClickAndCollect: boolean;
     Latitude: number;
     Longitude: number;
@@ -24,7 +24,7 @@ export interface Store {
     UseDefaultCustomer: null;
 }
 
-export interface Address {
+interface Address {
     Address1: string;
     Address2: string;
     ApartmentNo: string;
@@ -44,8 +44,7 @@ export interface Address {
     Type: number;
 }
 
-export interface Currency {
-    __type: Type;
+interface Currency {
     Id: string;
     AmountRoundingMethod: number;
     Culture: string;
@@ -61,11 +60,7 @@ export interface Currency {
     ThousandSeparator: string;
 }
 
-export enum Type {
-    UnknownCurrencyHTTPLsretailCOMLSOmniServiceBase2017 = "UnknownCurrency:http://lsretail.com/LSOmniService/Base/2017",
-}
-
-export interface Image {
+interface Image {
     Id: string;
     AvgColor: string;
     DisplayOrder: number;
@@ -77,7 +72,7 @@ export interface Image {
     LocationType: number;
 }
 
-export interface ImgSize {
+interface ImgSize {
     Height: number;
     UseMinHorVerSize: boolean;
     Width: number;

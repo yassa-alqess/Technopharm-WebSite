@@ -1,0 +1,19 @@
+.stores-box {
+    img.store-img {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        aspect-ratio: 3 / 2;
+        object-fit: cover;
+        min-height: 216px;
+        max-height: 250px;
+    }
+
+    .address {
+        height: 60px;
+        direction: rtl;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+}

@@ -56,26 +56,32 @@
                     </del-menu>
                 </mat-list-item>
 
-                <!--Offers-->
-                <mat-list-item role="listitem" class="px-1 overflow-visible" *ngIf="categories.length">
-                    <del-menu menuClass="mt-2" btnClass="h-40 " [isMenuTrigger]="false">
-                        <a matMenuLabel class="d-flex font-16" routerLink="offers">{{ "OFFERS.TITLE" | translate }}</a>
-                    </del-menu>
-                </mat-list-item>
-
-                <!--Stores-->
-                <mat-list-item role="listitem" class="px-1 overflow-visible" *ngIf="categories.length">
-                    <del-menu menuClass="mt-2" btnClass="h-40 " [isMenuTrigger]="false">
-                        <a matMenuLabel class="d-flex font-16" routerLink="stores">{{ "STORES" | translate }}</a>
-                    </del-menu>
-                </mat-list-item>
-
-                <!-- Magazine -->
-                <mat-list-item role="listitem" class="px-1 overflow-visible" *ngIf="categories.length">
-                    <del-menu menuClass="mt-2" btnClass="h-40" [isMenuTrigger]="false">
-                        <a matMenuLabel class="d-flex font-16" [href]="magazineURL" target="_blank">{{ "MAGAZINES" | translate }}</a>
-                    </del-menu>
-                </mat-list-item>
+                <ng-container *ngIf="categories.length">
+                    <!--Offers-->
+                    <mat-list-item role="listitem" class="px-1 overflow-visible">
+                        <del-menu menuClass="mt-2" btnClass="h-40" [isMenuTrigger]="false">
+                            <a matMenuLabel class="d-flex font-16" routerLink="offers" routerLinkActive="text-primary">
+                                {{ "OFFERS.TITLE" | translate }}
+                            </a>
+                        </del-menu>
+                    </mat-list-item>
+    
+                    <!--Stores-->
+                    <mat-list-item role="listitem" class="px-1 overflow-visible">
+                        <del-menu menuClass="mt-2" btnClass="h-40" [isMenuTrigger]="false">
+                            <a matMenuLabel class="d-flex font-16" routerLink="stores" routerLinkActive="text-primary">
+                                {{ "STORES" | translate }}
+                            </a>
+                        </del-menu>
+                    </mat-list-item>
+    
+                    <!-- Magazine -->
+                    <mat-list-item role="listitem" class="px-1 overflow-visible">
+                        <del-menu menuClass="mt-2" btnClass="h-40" [isMenuTrigger]="false">
+                            <a matMenuLabel class="d-flex font-16" [href]="magazineURL" target="_blank">{{ "MAGAZINES" | translate }}</a>
+                        </del-menu>
+                    </mat-list-item>
+                </ng-container>
             </mat-list>
         </div>
     </div>
