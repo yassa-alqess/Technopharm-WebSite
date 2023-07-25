@@ -61,7 +61,7 @@
                     <!-- Favorite -->
                     <mat-list-item role="listitem" class="px-1 overflow-visible item-border">
                         <del-menu menuClass="mt-2" btnClass="w-max" btnAriaLabel="Favorite">
-                            <div matMenuLabel matBadge="4" matBadgePosition="after" matBadgeSize="small" matBadgeColor="warn">
+                            <div matMenuLabel matBadge="4" matBadgePosition="after" matBadgeSize="small" matBadgeColor="warn" routerLink="favorits">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                                      width="24" height="24">
                                     <path stroke-linecap="round" stroke-linejoin="round"
@@ -69,8 +69,8 @@
                                 </svg>
                             </div>
 
-                            <div matMenuContent>
-                                <del-menu-item matMenuContent routerLink="favorites"></del-menu-item>
+                            <div matMenuContent >
+                                <!-- <del-menu-item matMenuContent routerLink="favorits" routerLinkActive="text-primary"></del-menu-item> -->
                             </div>
                         </del-menu>
                     </mat-list-item>
