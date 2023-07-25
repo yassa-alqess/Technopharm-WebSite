@@ -1,3 +1,5 @@
+@import "style";
+
 .stores-box {
     img.store-img {
         border-top-left-radius: 10px;
@@ -15,5 +17,15 @@
         display: -webkit-box;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
+        cursor: pointer;
+    }
+
+    .storeHeader {
+        color: $dark ;
+    }
+
+    .storeHeader:hover {
+        color: $primary;
+        cursor: pointer;
     }
 }
