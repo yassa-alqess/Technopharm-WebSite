@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from 'core/services';
 import { catchError, map, of } from 'rxjs';
-import { AdvertisementsResponse, OffersResponse, CityResponse, AreaResponse, Product } from 'core/interfaces';
+import { AdvertisementsResponse, OffersResponse, CityResponse, AreaResponse, Product, StoresResponse } from 'core/interfaces';
 import { BestSellerItems, Advertisements, Offers, Cities, Areas } from '../../../../../../assets/mock-data';
 
 @Injectable({
@@ -55,6 +55,12 @@ export class HomeService extends HttpService {
       catchError(() => {
         return of(Areas);
       })
+    );
+  }
+
+  getStores() {
+    return this.post<StoresResponse>({ APIName: 'StoresGetAll' }).pipe(
+      map(response => response.StoresGetAllResult),
     );
   }
 }

@@ -9,7 +9,9 @@
     "SOLD_OUT": "نفذت الكمية",
     "FOLLOW_US": "تابعنا على",
     "AVAILABLE_QUANTITY": "الكمية المتاحة",
+    "STORES": "الفروع",
     "ABOUT_US": "نبذة عنا",
+    "LOCATION_ON_MAP": "الموقع علي الخريطة",
     "USER_HEADER_LIST": {
         "SIGN_IN": "تسجيل الدخول",
         "SIGN_OUT": "تسجيل الخروج",

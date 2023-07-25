@@ -70,6 +70,13 @@ const routes: Routes = [
         },
         loadComponent: () => import('./modules/features/offers/offers.component').then(m => m.OffersComponent)
       },
+      {
+        path: 'stores',
+        data: {
+          breadcrumb: 'STORES'
+        },
+        loadComponent: () => import('./modules/features/stores/stores.component').then(m => m.StoresComponent)
+      }
     ]
   },
   {
