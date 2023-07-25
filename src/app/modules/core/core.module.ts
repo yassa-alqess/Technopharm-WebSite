@@ -24,6 +24,7 @@ const COMPONENTS = [
   HeaderComponent,
   HeaderTopComponent,
   HeaderCategoriesComponent,
+  
 ];
 
 const MATERIAL_MODULES = [

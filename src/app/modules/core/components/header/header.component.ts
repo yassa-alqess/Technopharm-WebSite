@@ -1,6 +1,8 @@
 import { Component, inject } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { SidebarContent } from 'core/enums';
 import { AuthService, SidebarToggleService } from 'core/services';
+import { FavoriteComponent } from 'features/favorite/pages/favorite/favorite.component';
 
 @Component({
   selector: 'del-header',
@@ -10,6 +12,7 @@ import { AuthService, SidebarToggleService } from 'core/services';
 export class HeaderComponent {
   private sidebarToggleService = inject(SidebarToggleService);
   private authService = inject(AuthService);
+
 
   private get isUserExist() {
     return this.authService.isUserExist;

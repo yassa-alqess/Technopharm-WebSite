@@ -24,6 +24,13 @@ const routes: Routes = [
         loadChildren: () => import('./modules/features/my-account/my-account.module').then(m => m.MyAccountModule),
       },
       {
+        path: 'favorits',
+        data: {
+          breadcrumb: 'FAVORITE'
+        },
+        loadChildren: () => import('./modules/features/favorite/favorite.module').then(m => m.FavorietModule),
+      },
+      {
         path: 'products',
         data: {
           breadcrumb: ''
