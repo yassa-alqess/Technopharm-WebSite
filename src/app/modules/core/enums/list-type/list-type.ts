@@ -1,4 +1,4 @@
 export enum ListType {
-    Basket = "0",
-    Wish = "1"
+    Basket = 0,
+    Wish = 1
 }

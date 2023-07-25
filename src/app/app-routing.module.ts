@@ -24,13 +24,6 @@ const routes: Routes = [
         loadChildren: () => import('./modules/features/my-account/my-account.module').then(m => m.MyAccountModule),
       },
       {
-        path: 'favorits',
-        data: {
-          breadcrumb: 'FAVORITE'
-        },
-        loadChildren: () => import('./modules/features/favorite/favorite.module').then(m => m.FavorietModule),
-      },
-      {
         path: 'products',
         data: {
           breadcrumb: ''
@@ -83,7 +76,14 @@ const routes: Routes = [
           breadcrumb: 'STORES'
         },
         loadComponent: () => import('./modules/features/stores/stores.component').then(m => m.StoresComponent)
-      }
+      },
+      {
+        path: 'favorites',
+        data: {
+          breadcrumb: 'FAVORITE'
+        },
+        loadChildren: () => import('./modules/features/favorite/favorite.module').then(m => m.FavoriteModule),
+      },
     ]
   },
   {

@@ -11,7 +11,8 @@ export interface Favorite {
     CreateDate:      string;
     Description:     string;
     ExternalType:    number;
-    Items:           Item[];
+    Item:            FavoriteItem;
+    Items:           FavoriteItem[];
     ListType:        number;
     PointAmount:     number;
     PublishedOffers: any[];
@@ -30,7 +31,7 @@ export interface Favorite {
     Status: number;
 }
 
-export interface Item {
+export interface FavoriteItem {
     Id:                       string;
     Amount:                   number;
     BarcodeId:                string;
@@ -55,7 +56,7 @@ export interface Item {
     VariantRegistration:      VariantRegistration;
 }
 
-export interface Image {
+interface Image {
     Id:           string;
     AvgColor:     string;
     DisplayOrder: number;
@@ -67,13 +68,13 @@ export interface Image {
     LocationType: number;
 }
 
-export interface ImgSize {
+interface ImgSize {
     Height:           number;
     UseMinHorVerSize: boolean;
     Width:            number;
 }
 
-export interface VariantRegistration {
+interface VariantRegistration {
     Id:            string;
     Dimension1:    string;
     Dimension2:    string;

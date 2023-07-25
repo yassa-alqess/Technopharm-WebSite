@@ -9,13 +9,17 @@ import { ListType } from 'core/enums/list-type/list-type';
 })
 export class FavoriteService extends HttpService {
 
-  getFavorits(body:{cardId:string , includeLines:boolean,listType:ListType}={
-    "cardId":"HOCT00638478",
-    "includeLines":true,
-    "listType":ListType.Wish
-  } ){
-      return this.post<FavoriteResponse>({APIName:'OneListGetByCardId',body}).pipe(
-        map(response=>response.OneListGetByCardIdResult)
-      )
+  getFavorites(body: { cardId: string, includeLines: boolean, listType?: ListType; }) {
+    body.listType = ListType.Wish;
+
+    return this.post<FavoriteResponse>({ APIName: 'OneListGetByCardId', body }).pipe(
+      map(response => {
+        response.OneListGetByCardIdResult.forEach(each => {
+          if (each.Items.length) each.Item = each.Items[0];
+        });
+
+        return response.OneListGetByCardIdResult;
+      })
+    );
   }
 }
