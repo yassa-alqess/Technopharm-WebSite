@@ -19,11 +19,13 @@ export class FavoriteService extends HttpService {
           const product = each.Items[0];
           if (each.Items.length) {
             each.Item = {
-              Id: product.Id,
+              Id: product.ItemId,
               Description: product.ItemDescription,
-              Price: `${product.Price}`,
               Images: [product.Image],
               ItemPrice: product.Price,
+              ItemCategoryCode: product.ItemCategoryCode,
+              ProductGroupId: product.ProductGroupId,
+              AllowedToSell: true,
             } as Product;
           }
 

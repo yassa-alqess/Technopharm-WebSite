@@ -80,9 +80,9 @@
         <a class="text-dark text-decoration-none" [routerLink]="productRouterLink"
            [queryParams]="{ subCategoryId: product.Description, productId: product.Id }">
             <!-- sub category name -->
-            <p class="text-capitalize text-middle font-14">
+            <p class="text-capitalize text-middle font-14" *ngIf="product.ItemSubCategory">
                 {{
-                    (isEnglish ? product.ItemSubCategory?.Description : product.ItemSubCategory?.ArabicDescription) | lowercase
+                    (isEnglish ? product.ItemSubCategory.Description : product.ItemSubCategory.ArabicDescription) | lowercase
                 }}
             </p>
 
