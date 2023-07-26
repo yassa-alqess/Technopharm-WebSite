@@ -3,6 +3,7 @@ import { HttpService } from 'core/services';
 import { FavoriteResponse } from 'core/interfaces/favorite/favotite';
 import { map } from 'rxjs';
 import { ListType } from 'core/enums/list-type/list-type';
+import { Product } from 'core/interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,18 @@ export class FavoriteService extends HttpService {
     return this.post<FavoriteResponse>({ APIName: 'OneListGetByCardId', body }).pipe(
       map(response => {
         response.OneListGetByCardIdResult.forEach(each => {
-          if (each.Items.length) each.Item = each.Items[0];
+          const product = each.Items[0];
+          if (each.Items.length) {
+            each.Item = {
+              Id: product.Id,
+              Description: product.ItemDescription,
+              Price: `${product.Price}`,
+              Images: [product.Image],
+              ItemPrice: product.Price,
+            } as Product;
+          }
+
+          return each;
         });
 
         return response.OneListGetByCardIdResult;
