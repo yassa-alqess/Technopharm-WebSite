@@ -1,10 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { SidebarContent } from 'core/enums';
-import { User } from 'core/interfaces';
+import { Product, User } from 'core/interfaces';
 import { Favorite } from 'core/interfaces/favorite/favotite';
 import { AuthService, SidebarToggleService } from 'core/services';
 import { FavoriteService } from 'features/favorite/services/favorite.service';
-
 
 @Component({
   selector: 'del-header',
@@ -83,5 +82,9 @@ export class HeaderComponent {
 
   onSearch() {
     console.log(this.searchValue);
+  }
+
+  removeFavoriteProduct(item: Product) {
+    console.log(item);
   }
 }
