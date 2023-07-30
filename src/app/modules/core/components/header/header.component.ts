@@ -1,8 +1,10 @@
 import { Component, inject } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
 import { SidebarContent } from 'core/enums';
+import { User } from 'core/interfaces';
+import { Favorite } from 'core/interfaces/favorite/favotite';
 import { AuthService, SidebarToggleService } from 'core/services';
-import { FavoriteComponent } from 'features/favorite/pages/favorite/favorite.component';
+import { FavoriteService } from 'features/favorite/services/favorite.service';
+
 
 @Component({
   selector: 'del-header',
@@ -12,14 +14,17 @@ import { FavoriteComponent } from 'features/favorite/pages/favorite/favorite.com
 export class HeaderComponent {
   private sidebarToggleService = inject(SidebarToggleService);
   private authService = inject(AuthService);
-
+  private favoriteService = inject(FavoriteService);
 
   private get isUserExist() {
     return this.authService.isUserExist;
   }
 
   searchValue = "";
+  maxItemsToShow = 3;
   userMenuItems!: any[];
+  favorites: Favorite[] = [];
+  user!: User | null;
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
@@ -53,6 +58,20 @@ export class HeaderComponent {
         myAccountTab
       ];
     }
+    this.getFavorites();
+  }
+  getFavorites() {
+    console.log(this.user);
+
+    const body = {
+      cardId: 'HOCT00638478',
+      includeLines: true,
+    };
+
+    this.favoriteService.getFavorites(body).subscribe(favorites => {
+      this.favorites = favorites.filter(each => each.Item);
+      console.log(this.favorites);
+    });
   }
 
   drawerToggle() {

@@ -4,7 +4,7 @@
     "DOWNLOAD_APP": "Click here to download",
     "RIGHTS": "All Rights Received ",
     "SEARCHBAR_PLACEHOLDER": "Search for a product...",
-    "FAVORITE":"Favorite",
+    "FAVORITE": "Favorite",
     "HOME": "Home",
     "MAGAZINES": "Magazines",
     "SOLD_OUT": "Sold Out",
@@ -97,7 +97,7 @@
     },
     "EMPTY": {
         "OFFERS": "There are no offers added right now.",
-        "FAVORITE":"There are no Favorites added right now."
+        "FAVORITE": "There are no Favorites added right now."
     },
     "ERROR": {
         "404": "PAGE NOT FOUND",
@@ -131,5 +131,6 @@
     "email_validation": "Email isn't valid.",
     "arabicWord_validation": "Please enter arabic characters.",
     "englishWord_validation": "Please enter english characters.",
-    "confirmPassword_validation": "Please enter the same password."
+    "confirmPassword_validation": "Please enter the same password.",
+    "SHOWMORE": "Show More"
 }

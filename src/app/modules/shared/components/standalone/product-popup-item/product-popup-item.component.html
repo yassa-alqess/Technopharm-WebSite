@@ -1,0 +1,27 @@
+<div class="card-wrap custom-scroll">
+
+    <div class="cart-card media d-flex bg-light ">
+        <div>
+            <a href="product.html">
+                <img class="p-2" [src]="item.Images[0].Location" [alt]="item.Description + '\'s Image'"
+                     error="item.Images[0].Location = 'assets/images/common/Product_Image_Placeholder.png'" width="80px" height="90px" />
+            </a>
+        </div>
+        <div class="media-body">
+            <a class="remove-cart ">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" width="20px"
+                     height="20px">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+
+            </a>
+            <p class="text-dark font-12 m-1 p-2">{{item.Description}}</p>
+
+            <span class="text-primary font-14">
+                {{item.ItemPrice}}
+                جنيه
+            </span>
+        </div>
+    </div>
+
+</div>
