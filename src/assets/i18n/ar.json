@@ -92,7 +92,8 @@
         "COMPLETE": "إستكمال",
         "CANCEL": "إلغاء",
         "SAVE": "حفظ",
-        "CONFIRM": "تأكيد"
+        "CONFIRM": "تأكيد",
+        "SHOW_MORE": "عرض المزيد"
     },
     "EMPTY": {
         "OFFERS": "لا توجد عروض مضافة الآن.",
@@ -129,6 +130,5 @@
     "email_validation": "البريد الإلكترونى غير صحيح.",
     "arabicWord_validation": "من فضلك إدخل حروف عربي.",
     "englishWord_validation": "من فضلك إدخل حروف انجليزي.",
-    "confirmPassword_validation": "الرجاء إدخال نفس كلمة المرور.",
-    "SHOWMORE": " عرض المزيد"
+    "confirmPassword_validation": "الرجاء إدخال نفس كلمة المرور."
 }

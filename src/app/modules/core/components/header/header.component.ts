@@ -58,8 +58,10 @@ export class HeaderComponent {
         myAccountTab
       ];
     }
+
     this.getFavorites();
   }
+
   getFavorites() {
     console.log(this.user);
 

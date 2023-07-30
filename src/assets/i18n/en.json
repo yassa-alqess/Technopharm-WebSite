@@ -93,7 +93,8 @@
         "COMPLETE": "Complete",
         "CANCEL": "Cancel",
         "SAVE": "Save",
-        "CONFIRM": "Confirm"
+        "CONFIRM": "Confirm",
+        "SHOW_MORE": "Show More"
     },
     "EMPTY": {
         "OFFERS": "There are no offers added right now.",
@@ -131,6 +132,5 @@
     "email_validation": "Email isn't valid.",
     "arabicWord_validation": "Please enter arabic characters.",
     "englishWord_validation": "Please enter english characters.",
-    "confirmPassword_validation": "Please enter the same password.",
-    "SHOWMORE": "Show More"
+    "confirmPassword_validation": "Please enter the same password."
 }

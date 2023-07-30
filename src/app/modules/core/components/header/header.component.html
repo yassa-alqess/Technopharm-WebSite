@@ -69,20 +69,18 @@
                                 </svg>
                             </div>
 
-                            <div matMenuContent>
-                                <div class="p-3" *ngFor="let favorite of favorites.slice(0, maxItemsToShow)">
-                                    <del-product-popup-item [item]="favorite.Item"></del-product-popup-item>
+                            <div class="p-3" matMenuContent>
+                                <div class="d-flex flex-column gap-3">
+                                    <ng-container *ngFor="let favorite of favorites.slice(0, maxItemsToShow)">
+                                        <del-product-popup-item [item]="favorite.Item"></del-product-popup-item>                                        
+                                    </ng-container>
                                 </div>
-                                <div class="p-3">
-                                    <del-button btnClass="primary text-white border-radius-4 font-18 px-4 bg-primary" routerLink="/favorites">
-                                        {{"SHOWMORE"|translate}}
-                                    </del-button>
-                                </div>
+
+                                <del-button btnClass="primary text-white font-16 h-40 bg-primary mt-3" routerLink="/favorites">
+                                    {{ "ACTIONS.SHOW_MORE" | translate }}
+                                </del-button>
                             </div>
-
                         </del-menu>
-
-
                     </mat-list-item>
 
                     <!-- Cart -->
