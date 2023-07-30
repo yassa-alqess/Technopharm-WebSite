@@ -1,4 +1,4 @@
-<div class="item-card d-flex align-items-center gap-2 p-2 bg-light">
+<div class="item-card d-flex align-items-center gap-2 p-2 bg-light" (isEnglish)="isEnglish = $event">
     <img [src]="item.Images[0].Location" [alt]="item.Description + '\'s Image'"
          (error)="item.Images[0].Location = 'assets/images/common/Product_Image_Placeholder.png'" width="70px" height="60px" />
 

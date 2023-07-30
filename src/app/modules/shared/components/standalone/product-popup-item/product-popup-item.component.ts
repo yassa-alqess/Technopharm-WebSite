@@ -1,13 +1,14 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from 'core/interfaces';
+import { DirectivesModule } from 'shared/sub-modules/directives/directives.module';
 
 @Component({
   selector: 'del-product-popup-item',
   standalone: true,
   templateUrl: './product-popup-item.component.html',
   styleUrls: ['./product-popup-item.component.scss'],
-  imports: [CommonModule]
+  imports: [CommonModule, DirectivesModule]
 })
 export class ProductPopupItemComponent {
   @Input() item!: Product;
