@@ -65,7 +65,7 @@
                             </a>
                         </del-menu>
                     </mat-list-item>
-    
+
                     <!--Stores-->
                     <mat-list-item role="listitem" class="px-1 overflow-visible">
                         <del-menu menuClass="mt-2" btnClass="h-40" [isMenuTrigger]="false">
@@ -74,11 +74,12 @@
                             </a>
                         </del-menu>
                     </mat-list-item>
-    
+
                     <!-- Magazine -->
                     <mat-list-item role="listitem" class="px-1 overflow-visible">
                         <del-menu menuClass="mt-2" btnClass="h-40" [isMenuTrigger]="false">
-                            <a matMenuLabel class="d-flex font-16" [href]="magazineURL" target="_blank">{{ "MAGAZINES" | translate }}</a>
+                            <a matMenuLabel class="d-flex font-16" routerLink="magazines" routerLinkActive="text-primary">
+                                {{ "MAGAZINES" | translate }}</a>
                         </del-menu>
                     </mat-list-item>
                 </ng-container>
