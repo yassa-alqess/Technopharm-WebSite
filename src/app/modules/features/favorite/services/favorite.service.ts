@@ -135,7 +135,6 @@ export class FavoriteService extends HttpService {
         TotalDiscAmount: 0,
         TotalNetAmount: 0,
         TotalTaxAmount: 0,
-
       },
       calculate: true
     };
