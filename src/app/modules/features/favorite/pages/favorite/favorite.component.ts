@@ -1,10 +1,7 @@
 import { Component, TemplateRef, ViewChild, inject } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { Product, User } from 'core/interfaces';
-import { Favorite } from 'core/interfaces/favorite/favotite';
-import { AuthService } from 'core/services';
+import { Product } from 'core/interfaces';
 import { FavoriteService } from 'features/favorite/services/favorite.service';
-import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'del-favorite',
@@ -12,37 +9,14 @@ import { Subject, takeUntil } from 'rxjs';
   styleUrls: ['./favorite.component.scss']
 })
 export class FavoriteComponent {
-  private authService = inject(AuthService);
   private favoriteService = inject(FavoriteService);
   private dialog = inject(MatDialog);
-  private destroy$ = new Subject();
 
   isEnglish = false;
-  favorites: Favorite[] = [];
-  user!: User | null;
   product!: Product;
+  favorites = this.favoriteService.favorites$;
+
   @ViewChild("productDetails") productDetails!: TemplateRef<any>;
-
-  ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    this.authService.userDetails$.pipe(takeUntil(this.destroy$)).subscribe(user => this.user = user);
-    this.getFavorites();
-  }
-
-  getFavorites() {
-    console.log(this.user);
-
-    const body = {
-      cardId: 'HOCT00638478',
-      includeLines: true,
-    };
-
-    this.favoriteService.getFavorites(body).subscribe(favorites => {
-      this.favorites = favorites.filter(each => each.Item);
-      console.log(this.favorites);
-    });
-  }
 
   doAction(action: { type: string; product: Product; }) {
     this.product = action.product;
@@ -53,7 +27,7 @@ export class FavoriteComponent {
   }
 
   addToFavorites(product: Product) {
-    console.log('favorites', product);
+    this.favoriteService.add(product);
   }
 
   viewProductAsModal() {
@@ -65,13 +39,5 @@ export class FavoriteComponent {
 
   addToCart(product: Product) {
     console.log('add-to-cart', product);
-  }
-
-  ngOnDestroy(): void {
-    //Called once, before the instance is destroyed.
-    //Add 'implements OnDestroy' to the class.
-    this.destroy$.next(true);
-    this.destroy$.complete();
-    this.destroy$.unsubscribe();
   }
 }

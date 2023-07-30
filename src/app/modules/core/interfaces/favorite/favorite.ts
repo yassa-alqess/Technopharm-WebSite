@@ -7,14 +7,19 @@ export interface FavoriteResponse {
     OneListGetByCardIdResult: Favorite[];
 }
 
+export interface FavoritePayload {
+    oneList: Favorite;
+    calculate?: boolean;
+}
+
 export interface Favorite {
-    Id:              string;
+    Id?:             string;
     CardId:          string;
     CardLinks:       CardLink[];
-    CreateDate:      string;
+    CreateDate?:     string;
     Description:     string;
     ExternalType:    number;
-    Item:            Product;
+    Item?:           Product;
     Items:           FavoriteItem[];
     ListType:        number;
     PointAmount:     number;
@@ -34,11 +39,11 @@ export interface Favorite {
     Status: number;
 }
 
-export interface FavoriteItem {
-    Id:                       string;
+interface FavoriteItem {
+    Id?:                      string;
     Amount:                   number;
     BarcodeId:                string;
-    CreateDate:               string;
+    CreateDate?:              string;
     Detail:                   string;
     DiscountAmount:           number;
     DiscountPercent:          number;
@@ -54,11 +59,11 @@ export interface FavoriteItem {
     Price:                    number;
     Quantity:                 number;
     TaxAmount:                number;
-    UnitOfMeasureDescription: null;
+    UnitOfMeasureDescription: string | null;
     UnitOfMeasureId:          string;
     VariantDescription:       string;
     VariantId:                string;
-    VariantRegistration:      VariantRegistration;
+    VariantRegistration:      VariantRegistration | null;
 }
 
 interface VariantRegistration {

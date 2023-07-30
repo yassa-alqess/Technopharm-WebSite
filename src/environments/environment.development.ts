@@ -1,7 +1,7 @@
 export const environment = {
     production: false,
     enableSocialMediaLogin: false,
-    wihtUserRootGuard: false,
+    wihtUserRootGuard: true,
     defaultLang: 'en',
     hotLine: 19955,
     email: 'INFO@delmar-attalla.com',

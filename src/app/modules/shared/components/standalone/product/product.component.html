@@ -86,7 +86,7 @@
                 }}
             </p>
 
-            <h2 class="font-18 text-truncate">{{ product.Description }}</h2>
+            <h2 class="font-18 text-truncate" [title]="product.Description">{{ product.Description }}</h2>
 
             <span class="d-flex align-content-center font-18 fw-bold" *ngIf="!product.NewPrice">
                 <span>{{ formatNumber(product.ItemPrice) }}</span>
@@ -102,6 +102,6 @@
 </div>
 
 <ng-template #productImageRef let-productImage>
-    <img class="p-1" [src]="productImage.Location" [alt]="product.Description + '\'s Image'"
+    <img class="p-1" [src]="productImage.Location" [alt]="product?.Description + '\'s Image'"
          (error)="productImage.Location = 'assets/images/common/Product_Image_Placeholder.png'" />
 </ng-template>

@@ -18,13 +18,15 @@ export class ProductComponent {
   selectedProductImage = '';
   productRouterLink = '';
 
-  @Input() product!: Product;
+  @Input() product!: Product | undefined;
 
   @Output() action = new EventEmitter();
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
+    if (!this.product) return;
+
     this.selectedProductImage = this.product.Images[0].Location;
     this.productRouterLink = `/products/${this.product.ItemCategoryCode}/product/${this.product.Description}/details`;
   }
@@ -34,9 +36,6 @@ export class ProductComponent {
   }
 
   doAction(type: string) {
-    this.action.emit({
-      type,
-      product: this.product
-    });
+    this.action.emit(type);
   }
 }

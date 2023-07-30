@@ -98,7 +98,7 @@
     },
     "EMPTY": {
         "OFFERS": "There are no offers added right now.",
-        "FAVORITE": "There are no Favorites added right now."
+        "FAVORITE": "There are no favorites added right now."
     },
     "ERROR": {
         "404": "PAGE NOT FOUND",

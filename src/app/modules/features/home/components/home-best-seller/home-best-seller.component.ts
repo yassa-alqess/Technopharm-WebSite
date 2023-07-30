@@ -1,6 +1,7 @@
 import { Component, Input, TemplateRef, ViewChild, inject } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Product } from 'core/interfaces';
+import { FavoriteService } from 'features/favorite/services/favorite.service';
 import { SwiperOptions } from 'swiper';
 
 @Component({
@@ -10,6 +11,7 @@ import { SwiperOptions } from 'swiper';
 })
 export class HomeBestSellerComponent {
   private dialog = inject(MatDialog);
+  private favoriteService = inject(FavoriteService);
 
   @Input() bestSelerItems: Product[] = [];
   @ViewChild("productDetails") productDetails!: TemplateRef<any>;
@@ -52,7 +54,7 @@ export class HomeBestSellerComponent {
   }
 
   addToFavorites(product: Product) {
-    console.log('favorites', product);
+    this.favoriteService.add(product);
   }
 
   viewProductAsModal() {

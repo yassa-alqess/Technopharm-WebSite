@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { SidebarContent } from 'core/enums';
-import { Product, User } from 'core/interfaces';
-import { Favorite } from 'core/interfaces/favorite/favotite';
+import { Favorite } from 'core/interfaces/favorite/favorite';
 import { AuthService, SidebarToggleService } from 'core/services';
 import { FavoriteService } from 'features/favorite/services/favorite.service';
 
@@ -20,10 +19,8 @@ export class HeaderComponent {
   }
 
   searchValue = "";
-  maxItemsToShow = 3;
   userMenuItems!: any[];
-  favorites: Favorite[] = [];
-  user!: User | null;
+  favorites = this.favoriteService.favorites$;
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
@@ -57,22 +54,6 @@ export class HeaderComponent {
         myAccountTab
       ];
     }
-
-    this.getFavorites();
-  }
-
-  getFavorites() {
-    console.log(this.user);
-
-    const body = {
-      cardId: 'HOCT00638478',
-      includeLines: true,
-    };
-
-    this.favoriteService.getFavorites(body).subscribe(favorites => {
-      this.favorites = favorites.filter(each => each.Item);
-      console.log(this.favorites);
-    });
   }
 
   drawerToggle() {
@@ -84,7 +65,7 @@ export class HeaderComponent {
     console.log(this.searchValue);
   }
 
-  removeFavoriteProduct(item: Product) {
+  removeFavoriteProduct(item: Favorite) {
     console.log(item);
   }
 }

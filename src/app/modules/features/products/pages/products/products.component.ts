@@ -1,11 +1,12 @@
 import { Component, TemplateRef, ViewChild, inject } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { SidebarContent } from 'core/enums';
-import { ProductsService } from 'features/products/services/products/products.service';
-import { SidebarToggleService } from 'core/services/sidebar-toggle/sidebar-toggle.service';
-import { Product, ProductsPayload } from 'core/interfaces';
-import { Subject, distinctUntilChanged, filter, takeUntil } from 'rxjs';
 import { MatDialog } from '@angular/material/dialog';
+import { Subject, distinctUntilChanged, filter, takeUntil } from 'rxjs';
+import { SidebarContent } from 'core/enums';
+import { Product, ProductsPayload } from 'core/interfaces';
+import { ProductsService } from 'features/products/services/products/products.service';
+import { FavoriteService } from 'features/favorite/services/favorite.service';
+import { SidebarToggleService } from 'core/services/sidebar-toggle/sidebar-toggle.service';
 
 @Component({
   selector: 'del-products',
@@ -15,6 +16,7 @@ import { MatDialog } from '@angular/material/dialog';
 export class ProductsComponent {
   private destroy$ = new Subject();
   private dialog = inject(MatDialog);
+  private favoriteService = inject(FavoriteService);
 
   sidebarToggleService = inject(SidebarToggleService);
   activeFilterOption = '';
@@ -69,14 +71,14 @@ export class ProductsComponent {
     this.sidebarToggleService.drawer.toggle();
   }
 
-  doAction(action: { type: string; productId: string; }, product: Product) {
-    if (action.type === 'favorites') return this.addToFavorites(action.productId);
-    if (action.type === 'modal-view') return this.viewProductAsModal(product);
-    if (action.type === 'add-to-cart') return this.addToCart(action.productId);
+  doAction(actionType: string, product: Product) {
+    if (actionType === 'favorites') return this.addToFavorites(product);
+    if (actionType === 'modal-view') return this.viewProductAsModal(product);
+    if (actionType === 'add-to-cart') return this.addToCart(product);
   }
 
-  addToFavorites(productId: string) {
-    console.log('favorites', productId);
+  addToFavorites(product: Product) {
+    this.favoriteService.add(product);
   }
 
   viewProductAsModal(product: Product) {
@@ -87,8 +89,8 @@ export class ProductsComponent {
     });
   }
 
-  addToCart(productId: string) {
-    console.log('add-to-cart', productId);
+  addToCart(product: Product) {
+    console.log('add-to-cart', product);
   }
 
   sort(sortOptionCode: string) {

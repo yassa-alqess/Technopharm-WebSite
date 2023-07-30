@@ -15,7 +15,7 @@ import { FooterComponent, HeaderComponent, LayoutComponent, SidebarComponent } f
 import { HeaderCategoriesComponent, HeaderTopComponent } from './components/header/components';
 
 import { BaseSharedModule } from 'shared/sub-modules/base-shared';
-import { BreadcrumbComponent, CategorySidebarComponent, ProductPopupItemComponent } from 'shared/components';
+import { BreadcrumbComponent, CategorySidebarComponent, ProductPopupItemComponent, SubTitleComponent } from 'shared/components';
 import { ButtonComponent } from "../shared/components/standalone/button/button.component";
 
 const COMPONENTS = [
@@ -43,6 +43,8 @@ const MATERIAL_MODULES = [
     BreadcrumbComponent,
     CategorySidebarComponent,
     ProductPopupItemComponent,
+    ButtonComponent,
+    SubTitleComponent,
     BaseSharedModule,
     HttpClientModule,
     ToastrModule.forRoot(),
@@ -53,7 +55,6 @@ const MATERIAL_MODULES = [
         deps: [HttpClient]
       }
     }),
-    ButtonComponent
   ]
 })
 export class CoreModule { }
