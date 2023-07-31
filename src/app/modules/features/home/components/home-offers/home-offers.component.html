@@ -6,7 +6,7 @@
                 {{ 'OFFERS.TITLE' | translate }}
             </h2>
 
-            <del-sub-title title="OFFERS.HINT"></del-sub-title>
+            <del-sub-title title="OFFERS.HINT" *ngIf="offers.length"></del-sub-title>
         </div>
 
         <div class="offers-content position-relative mt-4">

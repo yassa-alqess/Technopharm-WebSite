@@ -14,7 +14,7 @@ export class HomeCategoriesComponent {
 
   config: SwiperOptions = {
     loop: true,
-    spaceBetween: 1,
+    spaceBetween: 15,
     slidesPerView: 1,
     pagination: false,
     allowTouchMove: true,
@@ -27,13 +27,11 @@ export class HomeCategoriesComponent {
     breakpoints: {
       992: {
         slidesPerView: 5,
-        spaceBetween: 15,
         centeredSlides: false,
         allowTouchMove: false,
       },
       685: {
         slidesPerView: 3,
-        spaceBetween: 15,
         centeredSlides: false,
         allowTouchMove: false,
       },

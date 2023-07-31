@@ -1,5 +1,5 @@
 <div class="container-lg mt-5">
-    <div class="row g-3 g-xxl-4">
+    <div class="row g-3 g-lg-4">
         <div class="col-sm-6 col-lg-3 mt-3" *ngFor="let magazine of magazines; let i = index">
             <div class="magazines-box w-100 border-radius-8 bg-white box-shadow">
                 <ng-template [ngTemplateOutlet]="magazineRef" [ngTemplateOutletContext]="{ $implicit: magazine }"></ng-template>

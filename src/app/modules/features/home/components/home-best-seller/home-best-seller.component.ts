@@ -19,7 +19,7 @@ export class HomeBestSellerComponent {
   product!: Product;
   config: SwiperOptions = {
     loop: true,
-    spaceBetween: 1,
+    spaceBetween: 15,
     slidesPerView: 1,
     pagination: false,
     mousewheel: false,
@@ -32,13 +32,11 @@ export class HomeBestSellerComponent {
     breakpoints: {
       992: {
         slidesPerView: 5,
-        spaceBetween: 15,
         centeredSlides: false,
         allowTouchMove: false,
       },
       685: {
         slidesPerView: 3,
-        spaceBetween: 15,
         centeredSlides: false,
         allowTouchMove: false,
       },
