@@ -7,16 +7,11 @@ import { AppComponent } from './app.component';
 import { CoreModule } from 'core/core.module';
 import { ErrorInterceptor } from 'core/interceptors';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoaderSpinnerComponent } from "./modules/shared/components/standalone/loader-spinner/loader-spinner.component";
 
 @NgModule({
   declarations: [
     AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    CoreModule,
   ],
   providers: [
     {
@@ -25,6 +20,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       multi: true
     }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    CoreModule,
+    LoaderSpinnerComponent
+  ]
 })
 export class AppModule { }

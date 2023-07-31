@@ -1,0 +1,59 @@
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 0 6px;
+    opacity: 1;
+}
+
+
+#circle1 {
+    background-color: #3498db;
+    animation: wave 1.4s linear infinite;
+}
+
+#circle2 {
+    background-color: #e74c3c;
+    animation: wave 1.4s linear infinite 0.25s;
+}
+
+#circle3 {
+    background-color: #2ecc71;
+    animation: wave 1.4s linear infinite 0.5s;
+}
+
+#circle4 {
+    background-color: #f39c12;
+    animation: wave 1.4s linear infinite 0.75s;
+}
+
+@keyframes wave {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    20%,
+    70% {
+        transform: translateY(-30px);
+    }
+
+    40% {
+        transform: translateY(0);
+    }
+}
