@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { timer } from 'rxjs';
+
+import { LoadingService } from 'core/services/loading/loading.service';
 
 @Component({
   selector: 'del-loader-spinner',
@@ -10,5 +11,6 @@ import { timer } from 'rxjs';
   styleUrls: ['./loader-spinner.component.scss']
 })
 export class LoaderSpinnerComponent {
+  loading = inject(LoadingService).loadingSub;
 
 }
