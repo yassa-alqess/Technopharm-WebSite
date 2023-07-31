@@ -15,7 +15,8 @@ import { FooterComponent, HeaderComponent, LayoutComponent, SidebarComponent } f
 import { HeaderCategoriesComponent, HeaderTopComponent } from './components/header/components';
 
 import { BaseSharedModule } from 'shared/sub-modules/base-shared';
-import { BreadcrumbComponent, CategorySidebarComponent } from 'shared/components';
+import { BreadcrumbComponent, CategorySidebarComponent, ProductPopupItemComponent, SubTitleComponent } from 'shared/components';
+import { ButtonComponent } from "../shared/components/standalone/button/button.component";
 
 const COMPONENTS = [
   LayoutComponent,
@@ -35,11 +36,15 @@ const MATERIAL_MODULES = [
 
 @NgModule({
   declarations: [...COMPONENTS],
+  providers: [TranslateService],
   imports: [
     ...MATERIAL_MODULES,
     CommonModule,
     BreadcrumbComponent,
     CategorySidebarComponent,
+    ProductPopupItemComponent,
+    ButtonComponent,
+    SubTitleComponent,
     BaseSharedModule,
     HttpClientModule,
     ToastrModule.forRoot(),
@@ -49,9 +54,8 @@ const MATERIAL_MODULES = [
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
-  ],
-  providers: [TranslateService]
+    }),
+  ]
 })
 export class CoreModule { }
 

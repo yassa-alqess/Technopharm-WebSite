@@ -39,9 +39,10 @@
 
         <!-- quick actions -->
         <ul class="quick-actions position-absolute d-inline-flex flex-column gap-3 p-0" setRtl>
-            <li [placement]="isEnglish ? 'left' : 'right'" [ngbTooltip]="'ACTIONS.ADD_FAVOURITES' | translate">
+            <li [placement]="isEnglish ? 'left' : 'right'"
+                [ngbTooltip]="(product.isFavorite ? 'ACTIONS.REMOVE_FAVOURITES' : 'ACTIONS.ADD_FAVOURITES') | translate">
                 <a class="wishlist-btn d-flex align-items-center justify-content-center position-relative border-radius-50 box-shadow"
-                   (click)="doAction('favorites')">
+                   [ngClass]="{'active': product.isFavorite}" (click)="doAction(product.isFavorite ? 'remove-favorite' : 'add-favorite')">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="16"
                          height="16">
                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -80,13 +81,13 @@
         <a class="text-dark text-decoration-none" [routerLink]="productRouterLink"
            [queryParams]="{ subCategoryId: product.Description, productId: product.Id }">
             <!-- sub category name -->
-            <p class="text-capitalize text-middle font-14">
+            <p class="text-capitalize text-middle font-14" *ngIf="product.ItemSubCategory">
                 {{
-                    (isEnglish ? product.ItemSubCategory?.Description : product.ItemSubCategory?.ArabicDescription) | lowercase
+                    (isEnglish ? product.ItemSubCategory.Description : product.ItemSubCategory.ArabicDescription) | lowercase
                 }}
             </p>
 
-            <h2 class="font-18 text-truncate">{{ product.Description }}</h2>
+            <h2 class="font-18 text-truncate" [ngbTooltip]="product.Description">{{ product.Description }}</h2>
 
             <span class="d-flex align-content-center font-18 fw-bold" *ngIf="!product.NewPrice">
                 <span>{{ formatNumber(product.ItemPrice) }}</span>
@@ -102,6 +103,6 @@
 </div>
 
 <ng-template #productImageRef let-productImage>
-    <img class="p-1" [src]="productImage.Location" [alt]="product.Description + '\'s Image'"
+    <img class="p-1" [src]="productImage.Location" [alt]="product?.Description + '\'s Image'"
          (error)="productImage.Location = 'assets/images/common/Product_Image_Placeholder.png'" />
 </ng-template>

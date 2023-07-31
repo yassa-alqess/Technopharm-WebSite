@@ -1,6 +1,7 @@
 import { Component, Input, TemplateRef, ViewChild, inject } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Product } from 'core/interfaces';
+import { FavoriteService } from 'features/favorite/services/favorite.service';
 import { SwiperOptions } from 'swiper';
 
 @Component({
@@ -10,6 +11,7 @@ import { SwiperOptions } from 'swiper';
 })
 export class HomeBestSellerComponent {
   private dialog = inject(MatDialog);
+  private favoriteService = inject(FavoriteService);
 
   @Input() bestSelerItems: Product[] = [];
   @ViewChild("productDetails") productDetails!: TemplateRef<any>;
@@ -43,16 +45,23 @@ export class HomeBestSellerComponent {
     }
   };
 
-  doAction(action: { type: string; product: Product; }) {
-    this.product = action.product;
+  doAction(actionType: string, product: Product) {
+    this.product = product;
 
-    if (action.type === 'favorites') return this.addToFavorites(action.product);
-    if (action.type === 'modal-view') return this.viewProductAsModal();
-    if (action.type === 'add-to-cart') return this.addToCart(action.product);
+    if (actionType === 'add-favorite') return this.addToFavorites(product);
+    if (actionType === 'remove-favorite') return this.removeToFavorites(product);
+    if (actionType === 'modal-view') return this.viewProductAsModal();
+    if (actionType === 'add-to-cart') return this.addToCart(product);
   }
 
   addToFavorites(product: Product) {
-    console.log('favorites', product);
+    this.favoriteService.add(product, () => {
+      product.isFavorite = true;
+    });
+  }
+
+  removeToFavorites(product: Product) {
+    console.log('remove-favorite');
   }
 
   viewProductAsModal() {
