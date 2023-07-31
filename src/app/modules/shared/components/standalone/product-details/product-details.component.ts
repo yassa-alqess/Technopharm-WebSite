@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Product } from 'core/interfaces';
 import { SwiperOptions } from 'swiper';
@@ -7,6 +7,7 @@ import { ButtonComponent } from '../button/button.component';
 import { DirectivesModule } from 'shared/sub-modules/directives/directives.module';
 import { SwiperModule } from 'shared/sub-modules/swiper/swiper.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { FavoriteService } from 'features/favorite/services/favorite.service';
 
 @Component({
   selector: 'del-product-details',
@@ -16,6 +17,8 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrls: ['./product-details.component.scss']
 })
 export class ProductDetailsComponent {
+  private favoriteService = inject(FavoriteService);
+
   @Input() isModalView = false;
   @Input() product!: Product;
 
@@ -60,7 +63,13 @@ export class ProductDetailsComponent {
   }
 
   addToFavourites() {
-    console.log('favorites');
+    this.favoriteService.add(this.product, () => {
+      this.product.isFavorite = true;
+    });
+  }
+
+  removeFromFavourites() {
+    console.log('remove-favorite');
   }
 
   formatNumber(number: number) {

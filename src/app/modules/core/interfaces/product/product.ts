@@ -35,6 +35,7 @@ export interface Product {
     GrossWeight:            number;
     Images:                 Image[];
     IsDeleted:              boolean;
+    isFavorite?:            boolean;
     ItemAttributes:         any[];
     ItemCategoryCode:       CategoryIDs;
     ItemFamilyCode:         string;

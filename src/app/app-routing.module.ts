@@ -76,7 +76,15 @@ const routes: Routes = [
           breadcrumb: 'STORES'
         },
         loadComponent: () => import('./modules/features/stores/stores.component').then(m => m.StoresComponent)
-      }, {
+      },
+      {
+        path: 'favorites',
+        data: {
+          breadcrumb: 'FAVORITE'
+        },
+        loadChildren: () => import('./modules/features/favorite/favorite.module').then(m => m.FavoriteModule),
+      },
+      {
         path: 'magazines',
         data: {
           breadcrumb: 'MAGAZINES'

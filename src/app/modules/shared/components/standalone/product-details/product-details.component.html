@@ -73,8 +73,9 @@
                             {{ 'ACTIONS.ADD_CART' | translate }}
                         </del-button>
 
-                        <del-button btnClass="text-primary font-16 border default border-radius-4 mt-3" (onClick)="addToFavourites()">
-                            {{ 'ACTIONS.ADD_FAVOURITES' | translate }}
+                        <del-button btnClass="text-primary font-16 border default border-radius-4 mt-3"
+                                    (onClick)="product.isFavorite ? removeFromFavourites() : addToFavourites()">
+                            {{ (product.isFavorite ? 'ACTIONS.REMOVE_FAVOURITES' : 'ACTIONS.ADD_FAVOURITES') | translate }}
                         </del-button>
                     </div>
                 </div>

@@ -7,6 +7,7 @@ export * from './standalone/title/title.component';
 export * from './standalone/sub-title/sub-title.component';
 export * from './standalone/button/button.component';
 export * from './standalone/dialog/dialog.component';
+export * from './standalone/product-popup-item/product-popup-item.component';
 export * from './standalone/confirmation-dialog/confirmation-dialog.component';
 export * from './standalone/account-info-form/account-info-form.component';
 export * from './standalone/account-address-form/account-address-form.component';
