@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { MagazineService } from '../service/magazine.service';
+import { MagazineService } from '../../service/magazine.service';
 import { Magazine } from 'core/interfaces/magazine/magazine';
 
 @Component({
@@ -17,10 +17,10 @@ export class MagazineComponent {
   }
 
   getMagazine() {
-    this.magazineService.getMagazines().subscribe(magazine => this.magazines = magazine);
+    this.magazineService.magazines.subscribe(magazine => this.magazines = magazine);
   }
 
-  setStorePlaceholderImage(magazine: Magazine) {
+  setMagazinePlaceholderImage(magazine: Magazine) {
     const placeholderImage = 'assets/images/common/Pharmacy_Image_Placeholder.png';
     if (magazine.Image.length) {
       magazine.Image = placeholderImage;
@@ -28,5 +28,4 @@ export class MagazineComponent {
       magazine.Image = placeholderImage;
     }
   }
-
 }

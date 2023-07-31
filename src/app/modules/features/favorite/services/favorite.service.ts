@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { AuthService, HttpService } from 'core/services';
-import { BehaviorSubject, Subject, map, takeUntil } from 'rxjs';
+import { BehaviorSubject, map } from 'rxjs';
 import { ListType } from 'core/enums/list-type/list-type';
 import { Favorite, FavoritePayload, FavoriteResponse, Product } from 'core/interfaces';
 
@@ -10,8 +10,7 @@ import { Favorite, FavoritePayload, FavoriteResponse, Product } from 'core/inter
 export class FavoriteService extends HttpService {
   private authService = inject(AuthService);
   private favorites = new BehaviorSubject<Favorite[]>([]);
-  private destroy$ = new Subject();
-  private cardId = '';
+  private cardId = this.authService.cardId;
 
   get favorites$() {
     return this.favorites.asObservable();
@@ -20,15 +19,11 @@ export class FavoriteService extends HttpService {
   constructor() {
     super();
 
-    this.authService.userDetails$.pipe(takeUntil(this.destroy$)).subscribe(user => {
-      this.cardId = user?.Cards![0]?.Id as string; // 'HOCT00638478'
+    const body = {
+      cardId: this.cardId,
+    };
 
-      const body = {
-        cardId: this.cardId,
-      };
-  
-      this.getFavorites(body).subscribe(response => this.favorites.next(response));
-    });
+    this.getFavorites(body).subscribe(response => this.favorites.next(response));
   }
 
   getFavorites(body: { cardId: string, includeLines?: boolean, listType?: ListType; }) {
@@ -142,13 +137,5 @@ export class FavoriteService extends HttpService {
     };
 
     return this.post<any>({ APIName: 'OneListSave', body });
-  }
-
-  ngOnDestroy(): void {
-    //Called once, before the instance is destroyed.
-    //Add 'implements OnDestroy' to the class.
-    this.destroy$.next(true);
-    this.destroy$.complete();
-    this.destroy$.unsubscribe();
   }
 }

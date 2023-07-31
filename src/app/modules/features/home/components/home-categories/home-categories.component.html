@@ -14,11 +14,11 @@
                 <swiper [slides]="categories" [config]="config">
                     <ng-template swiperSlide let-category>
                         <div class="swiper-slide d-flex justify-content-center">
-                            <div class="catagories-box bg-white">
+                            <div class="catagories-box border-radius-8 bg-white">
                                 <a class="d-flex flex-column align-items-center h-100" [routerLink]="'/products/' + category.Id">
                                     <img class="img-fluid" [src]="category.Images[0].Location" loading="lazy" [alt]="category.Description" />
 
-                                    <h1 class="m-0 py-2 w-100 font-20 text-dark text-capitalize text-truncate">
+                                    <h1 class="m-0 py-2 w-100 font-20 text-dark text-capitalize text-truncate text-center">
                                         {{ isEnglish ? (category.Description | lowercase) : category.ArabicDescription }}
                                     </h1>
                                 </a>

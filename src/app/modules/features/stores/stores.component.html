@@ -1,7 +1,7 @@
 <div class="container-lg">
     <div class="row g-3 g-xxl-4">
         <div class="col-sm-6 col-lg-3 mt-3" *ngFor="let store of stores; let i = index">
-            <div class="stores-box border default border-radius-8 bg-white box-shadow">
+            <div class="stores-box border-radius-8 bg-white box-shadow">
                 <ng-template [ngTemplateOutlet]="storeRef" [ngTemplateOutletContext]="{ $implicit: store }"></ng-template>
             </div>
         </div>

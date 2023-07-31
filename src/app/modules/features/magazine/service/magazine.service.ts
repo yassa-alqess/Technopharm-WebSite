@@ -8,10 +8,9 @@ import { map } from 'rxjs';
 })
 export class MagazineService extends HttpService {
 
-  getMagazines() {
+  get magazines() {
     return this.post<MagazineResponse>({ APIName: 'MagazinesList' }).pipe(
       map(response => response.MagazinesListResult),
     );
   }
-
 }

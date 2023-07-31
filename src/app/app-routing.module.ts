@@ -89,7 +89,7 @@ const routes: Routes = [
         data: {
           breadcrumb: 'MAGAZINES'
         },
-        loadChildren: () => import('./modules/features/magazine/magazine/magazine.module').then(m => m.MagazineModule),
+        loadChildren: () => import('./modules/features/magazine/magazine.module').then(m => m.MagazineModule),
       },
     ]
   },
