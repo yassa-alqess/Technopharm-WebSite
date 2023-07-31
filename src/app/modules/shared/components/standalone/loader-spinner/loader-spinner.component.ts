@@ -10,7 +10,5 @@ import { timer } from 'rxjs';
   styleUrls: ['./loader-spinner.component.scss']
 })
 export class LoaderSpinnerComponent {
-  showSpinner = true;
-
 
 }
