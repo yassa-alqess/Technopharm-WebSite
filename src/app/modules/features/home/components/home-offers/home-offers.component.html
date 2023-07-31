@@ -12,7 +12,7 @@
         <div class="offers-content position-relative mt-4">
             <div class="row d-none d-sm-flex" *ngIf="offers.length; else offerEmptyState">
                 <div class="col-sm-6 col-lg-4 col-xl-3 gy-3" *ngFor="let offer of offers | slice: 0:sliceEndCount; let i=index">
-                    <div class="offers-box bg-white">
+                    <div class="offers-box border-radius-8 bg-white">
                         <ng-template [ngTemplateOutlet]="offerRef" [ngTemplateOutletContext]="{ $implicit: offer }"></ng-template>
                     </div>
                 </div>
@@ -40,7 +40,7 @@
     <swiper [slides]="offers | slice: 0:6" [config]="config">
         <ng-template swiperSlide let-offer>
             <div class="swiper-slide d-flex justify-content-center">
-                <div class="offers-box bg-white">
+                <div class="offers-box border-radius-8 bg-white">
                     <ng-template [ngTemplateOutlet]="offerRef" [ngTemplateOutletContext]="{ $implicit: offer }"></ng-template>
                 </div>
             </div>
@@ -67,7 +67,7 @@
 </ng-template>
 
 <ng-template #offerRef let-offer>
-    <a class="d-flex flex-column align-items-center h-100">
+    <a class="border-radius-8 d-flex flex-column align-items-center h-100">
         <img class="img-fluid" [src]="offer.Images[0]?.Location" loading="lazy" [alt]="offer.Description" #offerImage
              (error)="setOfferPlaceholderImage(offer); offerImage.style.objectFit = 'contain'" />
 

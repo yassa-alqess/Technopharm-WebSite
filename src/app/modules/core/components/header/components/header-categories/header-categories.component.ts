@@ -16,7 +16,6 @@ export class HeaderCategoriesComponent {
   isEnglish = true;
   categories: Category[] = [];
   maxItemCount = 10;
-  magazineURL = environment.magazineURL;
 
   private get staticCategories(): Category[] {
     return [

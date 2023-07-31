@@ -84,6 +84,13 @@ const routes: Routes = [
         },
         loadChildren: () => import('./modules/features/favorite/favorite.module').then(m => m.FavoriteModule),
       },
+      {
+        path: 'magazines',
+        data: {
+          breadcrumb: 'MAGAZINES'
+        },
+        loadChildren: () => import('./modules/features/magazine/magazine.module').then(m => m.MagazineModule),
+      },
     ]
   },
   {
