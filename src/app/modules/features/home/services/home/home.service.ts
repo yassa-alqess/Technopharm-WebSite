@@ -1,13 +1,15 @@
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { HttpService } from 'core/services';
 import { catchError, map, of } from 'rxjs';
 import { AdvertisementsResponse, OffersResponse, CityResponse, AreaResponse, Product, StoresResponse } from 'core/interfaces';
 import { BestSellerItems, Advertisements, Offers, Cities, Areas } from '../../../../../../assets/mock-data';
+import { FavoriteService } from 'features/favorite/services/favorite.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HomeService extends HttpService {
+  private favoriteService = inject(FavoriteService);
 
   getBanners(body: { id: string; } = { id: 'LOY' }) {
     return this.post<AdvertisementsResponse>({ APIName: 'AdvertisementsGetById', body }).pipe(
@@ -25,7 +27,17 @@ export class HomeService extends HttpService {
       catchError(() => {
         return of(BestSellerItems);
       }),
-    );
+    ).pipe(
+      map((products) => {
+        products.map(each => {
+          each.isFavorite = this.favoriteService.isItemFavorite(each);
+
+          return each;
+        });
+
+        return products;
+      })
+    );;
   }
 
   getOffers(body: { cardId: string; itemId: string; } = {

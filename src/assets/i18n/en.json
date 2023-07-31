@@ -4,6 +4,7 @@
     "DOWNLOAD_APP": "Click here to download",
     "RIGHTS": "All Rights Received ",
     "SEARCHBAR_PLACEHOLDER": "Search for a product...",
+    "FAVORITE": "Favorite",
     "HOME": "Home",
     "MAGAZINES": "Magazines",
     "SOLD_OUT": "Sold Out",
@@ -81,6 +82,7 @@
     },
     "ACTIONS": {
         "ADD_FAVOURITES": "Add to Favourites",
+        "REMOVE_FAVOURITES": "Remove from Favourites",
         "ADD_CART": "Add to Cart",
         "QUICK_VIEW": "Quick View",
         "BACK": "Back",
@@ -92,10 +94,12 @@
         "COMPLETE": "Complete",
         "CANCEL": "Cancel",
         "SAVE": "Save",
-        "CONFIRM": "Confirm"
+        "CONFIRM": "Confirm",
+        "SHOW_MORE": "Show More"
     },
     "EMPTY": {
-        "OFFERS": "There are no offers added right now."
+        "OFFERS": "There are no offers added right now.",
+        "FAVORITE": "There are no favorites added right now."
     },
     "ERROR": {
         "404": "PAGE NOT FOUND",
