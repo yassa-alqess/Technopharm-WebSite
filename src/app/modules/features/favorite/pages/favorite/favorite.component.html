@@ -3,7 +3,7 @@
         <ng-container *ngIf="(favorites | async)?.length; else favoriteEmptyState">
             <div class="row gy-3">
                 <div class="col-sm-6 col-lg-3" *ngFor="let favorite of (favorites | async)">
-                    <del-product [product]="favorite.Item" (action)="doAction($event)"></del-product>
+                    <del-product [product]="favorite.Item" (action)="doAction($event, favorite.Item)"></del-product>
                 </div>
             </div>
         </ng-container>

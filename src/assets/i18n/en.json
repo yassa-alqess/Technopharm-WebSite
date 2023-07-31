@@ -82,6 +82,7 @@
     },
     "ACTIONS": {
         "ADD_FAVOURITES": "Add to Favourites",
+        "REMOVE_FAVOURITES": "Remove from Favourites",
         "ADD_CART": "Add to Cart",
         "QUICK_VIEW": "Quick View",
         "BACK": "Back",

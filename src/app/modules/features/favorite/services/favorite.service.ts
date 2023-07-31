@@ -21,7 +21,7 @@ export class FavoriteService extends HttpService {
     super();
 
     this.authService.userDetails$.pipe(takeUntil(this.destroy$)).subscribe(user => {
-      this.cardId = 'HOCT00638478'; // user?.Cards![0]?.Id
+      this.cardId = user?.Cards![0]?.Id as string; // 'HOCT00638478'
 
       const body = {
         cardId: this.cardId,
@@ -50,6 +50,7 @@ export class FavoriteService extends HttpService {
               ItemCategoryCode: product.ItemCategoryCode,
               ProductGroupId: product.ProductGroupId,
               AllowedToSell: true,
+              isFavorite: true,
             } as Product;
           }
 
@@ -63,7 +64,7 @@ export class FavoriteService extends HttpService {
     );
   }
 
-  add(item: Product) {
+  add(item: Product, callBack?: () => void) {
     if (!this.isItemFavorite(item)) {
       const body = {
         cardId: this.cardId,
@@ -71,7 +72,8 @@ export class FavoriteService extends HttpService {
 
       this.addFavorite(item).subscribe(() => {
         this.resetFavorites();
-        this.getFavorites(body).subscribe(response => this.favorites.next(response));;
+        this.getFavorites(body).subscribe(response => this.favorites.next(response));
+        if (callBack) callBack();
       });
     }
   }
@@ -80,7 +82,7 @@ export class FavoriteService extends HttpService {
     this.favorites.next([]);
   }
 
-  private isItemFavorite(item: Product) {
+  isItemFavorite(item: Product) {
     const favoriteItems = this.favorites.value.filter(each => each.Item);
     return favoriteItems.some(favoriteItem => favoriteItem.Item?.Id === item.Id);
   }

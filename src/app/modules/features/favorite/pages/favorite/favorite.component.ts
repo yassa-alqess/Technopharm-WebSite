@@ -18,16 +18,18 @@ export class FavoriteComponent {
 
   @ViewChild("productDetails") productDetails!: TemplateRef<any>;
 
-  doAction(action: { type: string; product: Product; }) {
-    this.product = action.product;
+  doAction(actionType: string, product: Product | undefined) {
+    if (!product) return;
 
-    if (action.type === 'favorites') return this.addToFavorites(action.product);
-    if (action.type === 'modal-view') return this.viewProductAsModal();
-    if (action.type === 'add-to-cart') return this.addToCart(action.product);
+    this.product = product;
+
+    if (actionType === 'remove-favorite') return this.removeToFavorites(product);
+    if (actionType === 'modal-view') return this.viewProductAsModal();
+    if (actionType === 'add-to-cart') return this.addToCart(product);
   }
 
-  addToFavorites(product: Product) {
-    this.favoriteService.add(product);
+  removeToFavorites(product: Product) {
+    console.log('remove-favorite');
   }
 
   viewProductAsModal() {

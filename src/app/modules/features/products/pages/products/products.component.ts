@@ -72,13 +72,20 @@ export class ProductsComponent {
   }
 
   doAction(actionType: string, product: Product) {
-    if (actionType === 'favorites') return this.addToFavorites(product);
+    if (actionType === 'add-favorite') return this.addToFavorites(product);
+    if (actionType === 'remove-favorite') return this.removeToFavorites(product);
     if (actionType === 'modal-view') return this.viewProductAsModal(product);
     if (actionType === 'add-to-cart') return this.addToCart(product);
   }
 
   addToFavorites(product: Product) {
-    this.favoriteService.add(product);
+    this.favoriteService.add(product, () => {
+      product.isFavorite = true;
+    });
+  }
+
+  removeToFavorites(product: Product) {
+    console.log('remove-favorite');
   }
 
   viewProductAsModal(product: Product) {

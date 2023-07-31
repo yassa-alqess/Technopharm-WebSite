@@ -81,6 +81,7 @@
     },
     "ACTIONS": {
         "ADD_FAVOURITES": "أضف إلى المفضلة",
+        "REMOVE_FAVOURITES": "حذف من المفضلة",
         "ADD_CART": "أضف إلى عربة التسوق",
         "QUICK_VIEW": "عرض سريع",
         "BACK": "الرجوع",

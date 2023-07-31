@@ -6,7 +6,7 @@
 
     <div class="media-body d-flex align-items-center w-100">
         <a class="item-info w-100" [routerLink]="itemRouterLink" [queryParams]="{ subCategoryId: item.Description, productId: item.Id }">
-            <h6 class="item-title text-dark text-truncate m-0 font-14" [title]="item.Description">{{ item.Description }}</h6>
+            <h6 class="item-title text-dark text-truncate m-0 font-14" [ngbTooltip]="item.Description">{{ item.Description }}</h6>
 
             <span class="text-primary font-14">
                 {{ formatNumber(item.ItemPrice) }}

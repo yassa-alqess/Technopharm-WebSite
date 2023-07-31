@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 import { Product } from 'core/interfaces';
 import { DirectivesModule } from 'shared/sub-modules/directives/directives.module';
 import { RouterModule } from '@angular/router';
+import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'del-product-popup-item',
   standalone: true,
   templateUrl: './product-popup-item.component.html',
   styleUrls: ['./product-popup-item.component.scss'],
-  imports: [CommonModule, DirectivesModule, RouterModule]
+  imports: [CommonModule, DirectivesModule, RouterModule, NgbTooltipModule]
 })
 export class ProductPopupItemComponent {
   @Input() item!: Product | undefined;

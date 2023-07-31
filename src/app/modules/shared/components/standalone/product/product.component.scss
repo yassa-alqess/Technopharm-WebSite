@@ -126,7 +126,7 @@
                         transform: scale(0);
                     }
 
-                    &:hover {
+                    &:hover, &.active {
                         background-color: transparent;
 
                         &::after {

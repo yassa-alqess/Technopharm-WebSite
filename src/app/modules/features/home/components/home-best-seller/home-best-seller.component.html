@@ -14,7 +14,7 @@
             <ng-container *ngIf="bestSelerItems.length">
                 <swiper [slides]="bestSelerItems" [config]="config">
                     <ng-template swiperSlide let-product>
-                        <del-product [product]="product" (action)="doAction($event)"></del-product>
+                        <del-product [product]="product" (action)="doAction($event, product)"></del-product>
                     </ng-template>
                 </swiper>
 
