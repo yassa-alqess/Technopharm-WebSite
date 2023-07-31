@@ -11,6 +11,5 @@ import { LoadingService } from 'core/services/loading/loading.service';
   styleUrls: ['./loader-spinner.component.scss']
 })
 export class LoaderSpinnerComponent {
-  loading = inject(LoadingService).loadingSub;
-
+  isLoading = inject(LoadingService).isLoading;
 }

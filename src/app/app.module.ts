@@ -14,6 +14,14 @@ import { LoadingInterceptor } from 'core/interceptors/loading/loading.intercepto
   declarations: [
     AppComponent
   ],
+  bootstrap: [AppComponent],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    CoreModule,
+    LoaderSpinnerComponent
+  ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
@@ -26,13 +34,5 @@ import { LoadingInterceptor } from 'core/interceptors/loading/loading.intercepto
       multi: true
     }
   ],
-  bootstrap: [AppComponent],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    CoreModule,
-    LoaderSpinnerComponent
-  ]
 })
 export class AppModule { }

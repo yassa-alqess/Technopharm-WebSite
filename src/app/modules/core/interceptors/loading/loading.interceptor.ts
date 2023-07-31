@@ -4,9 +4,8 @@ import {
   HttpHandler,
   HttpEvent,
   HttpInterceptor,
-  HttpResponse
 } from '@angular/common/http';
-import { Observable, catchError, map } from 'rxjs';
+import { Observable, catchError, finalize } from 'rxjs';
 import { LoadingService } from 'core/services/loading/loading.service';
 
 @Injectable()
@@ -14,21 +13,15 @@ export class LoadingInterceptor implements HttpInterceptor {
 
   private loadingService = inject(LoadingService);
 
-  intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+  intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     this.loadingService.setLoading(true, request.url);
 
     return next.handle(request).pipe(
-      catchError((err: any) => {
+      catchError((error) => {
         this.loadingService.setLoading(false, request.url);
-        throw err;
+        throw error;
       }),
-      map((evt: HttpEvent<any>) => {
-        if (evt instanceof HttpResponse) {
-          this.loadingService.setLoading(false, request.url);
-        }
-
-        return evt;
-      })
+      finalize(() => this.loadingService.setLoading(false, request.url))
     );
   }
 }
