@@ -4,12 +4,12 @@ import { CommonModule } from '@angular/common';
 import { LoadingService } from 'core/services/loading/loading.service';
 
 @Component({
-  selector: 'del-loader-spinner',
+  selector: 'del-loading',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './loader-spinner.component.html',
-  styleUrls: ['./loader-spinner.component.scss']
+  templateUrl: './loading.component.html',
+  styleUrls: ['./loading.component.scss']
 })
-export class LoaderSpinnerComponent {
+export class LoadingComponent {
   isLoading = inject(LoadingService).isLoading;
 }

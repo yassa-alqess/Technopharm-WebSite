@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from 'core/core.module';
 import { ErrorInterceptor } from 'core/interceptors';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { LoaderSpinnerComponent } from "./modules/shared/components/standalone/loader-spinner/loader-spinner.component";
 import { LoadingInterceptor } from 'core/interceptors/loading/loading.interceptor';
+import { LoadingComponent } from 'shared/components';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { LoadingInterceptor } from 'core/interceptors/loading/loading.intercepto
     BrowserAnimationsModule,
     AppRoutingModule,
     CoreModule,
-    LoaderSpinnerComponent
+    LoadingComponent
   ],
   providers: [
     {
