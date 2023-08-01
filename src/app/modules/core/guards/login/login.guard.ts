@@ -7,7 +7,6 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class LoginGuard implements CanActivate {
-
   private authService = inject(AuthService);
   private router = inject(Router);
 
@@ -21,6 +20,4 @@ export class LoginGuard implements CanActivate {
 
     return true;
   }
-
-
 }

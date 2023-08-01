@@ -8,6 +8,9 @@ import { SidebarToggleService } from 'core/services/sidebar-toggle/sidebar-toggl
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
-  sidebarContent = inject(SidebarToggleService).sidebarContent;
+  private sidebarToggleService = inject(SidebarToggleService);
+
+  drawer = this.sidebarToggleService.drawer;
+  sidebarContent = this.sidebarToggleService.sidebarContent;
   SidebarContent = SidebarContent;
 }

@@ -4,7 +4,6 @@ import { CategoryIDs, StaticCategoriesIDs } from 'core/enums';
 import { Category } from 'core/interfaces';
 import { CategoriesService } from 'core/services';
 
-import { environment } from '../../../../../../../environments/environment';
 import { Router } from '@angular/router';
 
 @Component({
