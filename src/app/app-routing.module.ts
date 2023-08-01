@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from 'core/components/layout/layout.component';
 import { StaticCategoriesIDs } from 'core/enums';
+import { LoginGuard } from 'core/guards/login/login.guard';
 import { RootGuard } from 'core/guards/root/root.guard';
 
 const routes: Routes = [
@@ -94,6 +95,7 @@ const routes: Routes = [
     ]
   },
   {
+    canActivate: [LoginGuard],
     path: 'account',
     loadChildren: () => import('./modules/features/account/account.module').then(m => m.AccountModule)
   },
