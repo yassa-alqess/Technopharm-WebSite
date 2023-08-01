@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { VerifyComponent } from './pages/verify/verify.component';
+import { LoginGuard } from 'core/guards/login/login.guard';
 
 const routes: Routes = [
   {
@@ -14,6 +15,7 @@ const routes: Routes = [
   },
   {
     path: 'login',
+    canActivate: [LoginGuard],
     data: {
       title: 'USER_HEADER_LIST.SIGN_IN',
       subTitle: 'ACCOUNT.SIGN_IN_HINT'
