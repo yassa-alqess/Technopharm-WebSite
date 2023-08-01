@@ -15,15 +15,11 @@ export class LoginGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     if (this.authService.isUserExist) {
-      return this.authService.userDetails$.pipe(map(user => {
-        if (user) {
-          return true;
-        }
-        this.router.navigateByUrl('/');
-        return false;
-      }));
+      return true;
     }
     this.router.navigateByUrl('/');
     return false;
   }
+
+
 }
