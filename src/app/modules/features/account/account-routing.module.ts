@@ -15,7 +15,6 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    canActivate: [LoginGuard],
     data: {
       title: 'USER_HEADER_LIST.SIGN_IN',
       subTitle: 'ACCOUNT.SIGN_IN_HINT'
