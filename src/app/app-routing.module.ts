@@ -95,8 +95,8 @@ const routes: Routes = [
     ]
   },
   {
-    canActivate: [LoginGuard],
     path: 'account',
+    canActivate: [LoginGuard],
     loadChildren: () => import('./modules/features/account/account.module').then(m => m.AccountModule)
   },
   { path: 'error', loadChildren: () => import('./modules/features/error/error.module').then(m => m.ErrorModule) },
