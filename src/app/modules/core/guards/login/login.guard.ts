@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree } from '@angular/router';
 import { AuthService } from 'core/services';
-import { Observable, map, take } from 'rxjs';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -16,9 +16,10 @@ export class LoginGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     if (this.authService.isUserExist) {
       this.router.navigateByUrl('/');
+      return false;
     }
-    this.router.navigateByUrl('/');
-    return false;
+
+    return true;
   }
 
 
