@@ -28,6 +28,8 @@ export class AuthService extends HttpService {
   }
 
   get userDetails$(): Observable<User | null> {
+    if (!this.isUserExist) return of(null);
+
     if (this.userDetails.value) {
       return this.userDetails.asObservable();
     }

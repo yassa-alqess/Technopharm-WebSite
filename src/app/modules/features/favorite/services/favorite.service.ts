@@ -1,14 +1,18 @@
 import { Injectable, inject } from '@angular/core';
-import { AuthService, HttpService } from 'core/services';
+import { AlertService, AuthService, HttpService, TranslationService } from 'core/services';
 import { BehaviorSubject, map } from 'rxjs';
 import { ListType } from 'core/enums/list-type/list-type';
 import { Favorite, FavoritePayload, FavoriteResponse, Product } from 'core/interfaces';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FavoriteService extends HttpService {
   private authService = inject(AuthService);
+  private router = inject(Router);
+  private alert = inject(AlertService);
+  private translation = inject(TranslationService);
   private favorites = new BehaviorSubject<Favorite[]>([]);
   private cardId = this.authService.cardId;
 
@@ -19,11 +23,13 @@ export class FavoriteService extends HttpService {
   constructor() {
     super();
 
-    const body = {
-      cardId: this.cardId,
-    };
-
-    this.getFavorites(body).subscribe(response => this.favorites.next(response));
+    if (this.authService.isUserExist) {
+      const body = {
+        cardId: this.cardId,
+      };
+  
+      this.getFavorites(body).subscribe(response => this.favorites.next(response));
+    }
   }
 
   getFavorites(body: { cardId: string, includeLines?: boolean, listType?: ListType; }) {
@@ -60,16 +66,21 @@ export class FavoriteService extends HttpService {
   }
 
   add(item: Product, callBack?: () => void) {
-    if (!this.isItemFavorite(item)) {
-      const body = {
-        cardId: this.cardId,
-      };
-
-      this.addFavorite(item).subscribe(() => {
-        this.resetFavorites();
-        this.getFavorites(body).subscribe(response => this.favorites.next(response));
-        if (callBack) callBack();
-      });
+    if (this.authService.isUserExist) {
+      if (!this.isItemFavorite(item)) {
+        const body = {
+          cardId: this.cardId,
+        };
+  
+        this.addFavorite(item).subscribe(() => {
+          this.resetFavorites();
+          this.getFavorites(body).subscribe(response => this.favorites.next(response));
+          if (callBack) callBack();
+        });
+      }
+    } else {
+      this.alert.info(this.translation.instant('ALERT.MUST_LOGIN'));
+      this.router.navigateByUrl('/account/login');
     }
   }
 

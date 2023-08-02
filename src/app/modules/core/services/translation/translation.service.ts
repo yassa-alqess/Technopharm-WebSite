@@ -51,6 +51,10 @@ export class TranslationService {
     this.handleBasicLogic();
   }
 
+  instant(key: string | string[]) {
+    return this.translate.instant(key);
+  }
+
   private handleBasicLogic() {
     if (this.language === 'ar') {
       this.renderer.addClass(document.body, 'rtl');

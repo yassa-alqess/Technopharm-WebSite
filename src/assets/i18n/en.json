@@ -125,6 +125,9 @@
         "DELETE_CONFIRMATION": "Delete Confirmation",
         "DELETE_MESSAGE": "Are you sure that you want to delete it?"
     },
+    "ALERT": {
+        "MUST_LOGIN": "Please login to be able to do this action."
+    },
     "required_validation": "This field is required.",
     "min_validation": "Min Value ",
     "max_validation": "Max Value ",

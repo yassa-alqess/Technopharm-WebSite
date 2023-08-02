@@ -123,6 +123,9 @@
         "DELETE_CONFIRMATION": "تأكيد الحذف",
         "DELETE_MESSAGE": "هل أنت متأكد أنك تريد حذفه؟"
     },
+    "ALERT": {
+        "MUST_LOGIN": "الرجاء تسجيل الدخول لتتمكن من القيام بهذا الإجراء."
+    },
     "required_validation": "هذا الحقل إجباري.",
     "min_validation": "أقل قيمة ",
     "max_validation": "أكبر قيمة ",
