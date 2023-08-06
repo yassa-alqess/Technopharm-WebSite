@@ -85,7 +85,9 @@ export class ProductsComponent {
   }
 
   removeToFavorites(product: Product) {
-    console.log('remove-favorite');
+    this.favoriteService.remove(product, () => {
+      product.isFavorite = false;
+    });
   }
 
   viewProductAsModal(product: Product) {

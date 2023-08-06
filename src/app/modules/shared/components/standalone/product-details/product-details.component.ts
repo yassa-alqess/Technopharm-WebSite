@@ -69,7 +69,9 @@ export class ProductDetailsComponent {
   }
 
   removeFromFavourites() {
-    console.log('remove-favorite');
+    this.favoriteService.remove(this.product, () => {
+      this.product.isFavorite = false;
+    });
   }
 
   formatNumber(number: number) {
