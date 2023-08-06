@@ -77,5 +77,14 @@
 }
 
 ::ng-deep .favorites {
-    height: 260px;
+    max-height: 260px;
+    min-height: max-content;
+}
+
+::ng-deep .menu-content {
+    width: 270px;
+
+    .empty-state {
+        height: 135px;
+    }
 }

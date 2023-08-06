@@ -76,7 +76,7 @@
                                         <div class="favorites d-flex flex-column gap-3 overflow-auto">
                                             <ng-container *ngFor="let favorite of (favorites | async)">
                                                 <del-product-popup-item [item]="favorite.Item"
-                                                                        (removeFavorite)="removeFavoriteProduct(favorite)"></del-product-popup-item>
+                                                                        (removeFavorite)="removeFavoriteProduct(favorite.Item)"></del-product-popup-item>
                                             </ng-container>
                                         </div>
                                     </div>

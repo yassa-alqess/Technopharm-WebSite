@@ -87,7 +87,7 @@
                 }}
             </p>
 
-            <h2 class="font-18 text-truncate m-0 mb-2 px-1" [ngbTooltip]="product.Description">{{ product.Description }}</h2>
+            <h2 class="font-18 text-truncate m-0 mb-2 px-1" dir="ltr" [ngbTooltip]="product.Description">{{ product.Description }}</h2>
 
             <span class="d-flex align-content-center font-18 fw-bold px-1" *ngIf="!product.NewPrice">
                 <span>{{ formatNumber(product.ItemPrice) }}</span>

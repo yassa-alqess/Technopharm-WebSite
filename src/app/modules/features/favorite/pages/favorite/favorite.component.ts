@@ -29,7 +29,7 @@ export class FavoriteComponent {
   }
 
   removeToFavorites(product: Product) {
-    console.log('remove-favorite');
+    this.favoriteService.remove(product);
   }
 
   viewProductAsModal() {
