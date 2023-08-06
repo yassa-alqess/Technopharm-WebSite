@@ -29,6 +29,10 @@
             <h3 class="m-0 font-20 text-center fw-700 text-capitalize text-truncate w-100 p-3">
                 {{ isEnglish ? (offer.Description | lowercase) : (offer.ArabicDescription || offer.Description) }}
             </h3>
+
+            <p class="m-0 text-middle px-3 pb-3" *ngIf="offer.Details || offer.ArabicText">
+                {{ isEnglish ? offer.Details : (offer.ArabicText || offer.Details) }}.
+            </p>
         </div>
     </a>
 </ng-template>

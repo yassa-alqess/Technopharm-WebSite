@@ -78,7 +78,8 @@
     },
     "OFFERS": {
         "TITLE": "Offers",
-        "HINT": "There are special offers for the website's visitors"
+        "HINT": "There are special offers for the website's visitors",
+        "ALL": "All Offers"
     },
     "ACTIONS": {
         "ADD_FAVOURITES": "Add to Favourites",
