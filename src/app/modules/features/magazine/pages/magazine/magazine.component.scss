@@ -1,3 +1,5 @@
+@import "style";
+
 .magazines-box {
     img {
         width: 100%;
@@ -6,5 +8,11 @@
         border-top-right-radius: 8px;
         aspect-ratio: 3 / 2;
         object-fit: cover;
+    }
+
+    .text-dark {
+        &:hover {
+            color: $primary !important;
+        }
     }
 }

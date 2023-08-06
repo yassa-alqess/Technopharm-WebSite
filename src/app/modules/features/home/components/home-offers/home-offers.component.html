@@ -12,7 +12,7 @@
         <div class="offers-content position-relative mt-4">
             <div class="row d-none d-sm-flex" *ngIf="offers.length; else offerEmptyState">
                 <div class="col-sm-6 col-lg-4 col-xl-3 gy-3" *ngFor="let offer of offers | slice: 0:sliceEndCount; let i=index">
-                    <div class="offers-box border-radius-8 bg-white">
+                    <div class="offers-box border-radius-8 border default bg-white">
                         <ng-template [ngTemplateOutlet]="offerRef" [ngTemplateOutletContext]="{ $implicit: offer }"></ng-template>
                     </div>
                 </div>
@@ -67,12 +67,14 @@
 </ng-template>
 
 <ng-template #offerRef let-offer>
-    <a class="border-radius-8 d-flex flex-column align-items-center h-100">
-        <img class="img-fluid" [src]="offer.Images[0]?.Location" loading="lazy" [alt]="offer.Description" #offerImage
-             (error)="setOfferPlaceholderImage(offer); offerImage.style.objectFit = 'contain'" />
+    <a class="text-dark border-radius-8 d-flex flex-column align-items-center h-100">
+        <div class="border-radius-8 d-flex flex-column align-items-center h-100 w-100">
+            <img class="img-fluid" [src]="offer.Images[0]?.Location" loading="lazy" [alt]="offer.Description" #offerImage
+                 (error)="setOfferPlaceholderImage(offer); offerImage.style.objectFit = 'contain'; offerImage.style.borderBottom = '1px solid #d9d9d9'" />
 
-        <h4 class="m-0 font-20 text-dark py-2 text-capitalize">
-            {{ isEnglish ? (offer.Description | lowercase) : (offer.ArabicDescription || offer.Description) }}
-        </h4>
+            <h3 class="m-0 font-20 text-center fw-700 text-capitalize text-truncate w-100 p-3">
+                {{ isEnglish ? (offer.Description | lowercase) : (offer.ArabicDescription || offer.Description) }}
+            </h3>
+        </div>
     </a>
 </ng-template>

@@ -11,6 +11,21 @@ const MODULES = [
   BaseSharedModule,
 ];
 
+const Standalone_Components = [
+  STANDALONE_COMPONENTS.BreadcrumbComponent,
+  STANDALONE_COMPONENTS.CategoryComponent,
+  STANDALONE_COMPONENTS.ProductComponent,
+  STANDALONE_COMPONENTS.TitleComponent,
+  STANDALONE_COMPONENTS.SubTitleComponent,
+  STANDALONE_COMPONENTS.AccountInfoFormComponent,
+  STANDALONE_COMPONENTS.AccountAddressFormComponent,
+
+  STANDALONE_COMPONENTS.InputTextComponent,
+  STANDALONE_COMPONENTS.DatepickerComponent,
+  STANDALONE_COMPONENTS.DropdownComponent,
+  STANDALONE_COMPONENTS.RadioButtonComponent,
+] 
+
 @NgModule({
   declarations: [],
   imports: [
@@ -20,19 +35,14 @@ const MODULES = [
     ...MODULES,
 
     // Components - standalone
-    STANDALONE_COMPONENTS.BreadcrumbComponent,
-    STANDALONE_COMPONENTS.CategoryComponent,
-    STANDALONE_COMPONENTS.ProductComponent,
-    STANDALONE_COMPONENTS.TitleComponent,
-    STANDALONE_COMPONENTS.SubTitleComponent,
-    STANDALONE_COMPONENTS.AccountInfoFormComponent,
-    STANDALONE_COMPONENTS.AccountAddressFormComponent,
-
-    STANDALONE_COMPONENTS.InputTextComponent,
-    STANDALONE_COMPONENTS.DatepickerComponent,
-    STANDALONE_COMPONENTS.DropdownComponent,
-    STANDALONE_COMPONENTS.RadioButtonComponent,
+    ...Standalone_Components,
   ],
-  exports: []
+  exports: [
+    // Modules
+    ...MODULES,
+
+    // Components - standalone
+    ...Standalone_Components,
+  ]
 })
 export class SharedModule { }

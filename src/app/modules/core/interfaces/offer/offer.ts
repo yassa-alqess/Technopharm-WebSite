@@ -9,6 +9,7 @@ export interface Offer {
     ArabicText:     string;
     Code:           number;
     Description:    string;
+    ArabicDescription:    string;
     Details:        string;
     ExpirationDate: string;
     Images:         Partial<Image>[];

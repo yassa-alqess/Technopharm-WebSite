@@ -22,6 +22,7 @@ button {
   align-items: center;
 
   --mat-mdc-button-persistent-ripple-color: transparent;
+  --mdc-filled-button-container-color: transparent;
 
   &:disabled {
     color: $white !important;
