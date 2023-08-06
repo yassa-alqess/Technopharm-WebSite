@@ -1,6 +1,10 @@
 import { CategoryIDs } from "core/enums";
 import { ProductGroup } from "../category/category";
 
+export interface BestSellerItemsResponse {
+    BestSellerItemsGetResult: Product[];
+}
+
 export interface ProductsResponse {
     ItemsPageResult: Product[];
 }

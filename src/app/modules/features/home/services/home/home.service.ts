@@ -1,7 +1,7 @@
 import { Injectable, inject } from '@angular/core';
 import { AuthService, HttpService } from 'core/services';
 import { catchError, map, of } from 'rxjs';
-import { AdvertisementsResponse, OffersResponse, CityResponse, AreaResponse, Product, StoresResponse } from 'core/interfaces';
+import { AdvertisementsResponse, OffersResponse, CityResponse, AreaResponse, Product, StoresResponse, BestSellerItemsResponse } from 'core/interfaces';
 import { BestSellerItems, Advertisements, Offers, Cities, Areas } from '../../../../../../assets/mock-data';
 import { FavoriteService } from 'features/favorite/services/favorite.service';
 
@@ -23,8 +23,8 @@ export class HomeService extends HttpService {
     "maxNumberOfItems": 10,
     "includeDetails": true
   }) {
-    return this.post<Product[]>({ APIName: 'BestSellerItemsGet', body }).pipe(
-      map(response => response),
+    return this.post<BestSellerItemsResponse>({ APIName: 'BestSellerItemsGet', body }).pipe(
+      map(response => response.BestSellerItemsGetResult),
       catchError(() => {
         return of(BestSellerItems);
       }),
