@@ -17,29 +17,16 @@
                     </div>
 
                     <!-- search-bar -->
-                    <div class="search-bar position-relative d-none d-xl-inline-block">
-                        <div class="input-group d-flex align-items-center w-100 position-relative border default border-radius-4">
-                            <input type="text" class="form-control bg-white search-type" [(ngModel)]="searchValue"
-                                   [placeholder]="'SEARCHBAR_PLACEHOLDER' | translate" />
+                    <div class="search-bar mt-4">
+                        <del-search></del-search>
 
-                            <div class="input-group-append m-0">
-                                <span class="input-group-text bg-primary cursor-pointer m-0" (click)="onSearch()">
-                                    <svg class="search-b text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                         stroke-width="1.5" stroke="currentColor" width="24" height="24">
-
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-                                    </svg>
-                                </span>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </nav>
             <!-- Navigation End -->
 
             <!-- Menu Right Start  -->
-            <div class="list-menu d-flex align-items-center align-self-end">
+            <div class="list-menu d-flex align-items-center align-self-end mb-5">
                 <!-- Icon Menu Start -->
                 <mat-list class="d-flex align-items-center p-0" role="list">
                     <!-- User -->
@@ -80,7 +67,7 @@
                                             </ng-container>
                                         </div>
                                     </div>
-    
+
                                     <del-button btnClass="primary text-white font-16 h-40 bg-primary" routerLink="/favorites">
                                         {{ "ACTIONS.SHOW_MORE" | translate }}
                                     </del-button>
