@@ -19,27 +19,27 @@ export class SearchComponent {
   private searchService = inject(SearchService);
 
   stateCtrl = new FormControl('');
-  filteredStates: Observable<SearchResult[]>;
+  // filteredStates: Observable<SearchResult[]>;
 
   items: SearchResult[] = [];
 
 
 
-  constructor() {
-    this.filteredStates = this.stateCtrl.valueChanges.pipe(
-      startWith(''),
-      map(item => (item ? this._filterStates(item) : this.items.slice())),
-    );
-  }
+  // constructor() {
+  //   this.filteredStates = this.stateCtrl.valueChanges.pipe(
+  //     startWith(''),
+  //     map(item => (item ? this._filterStates(item) : this.items.slice())),
+  //   );
+  // }
 
-  private _filterStates(value: string): SearchResult[] {
-    const filterValue = value.toLowerCase();
-    const body = {
-      search: filterValue
-    };
+  // private _filterStates(value: string): SearchResult[] {
+  //   const filterValue = value.toLowerCase();
+  //   const body = {
+  //     search: filterValue
+  //   };
 
-    this.searchService.getItemsSearch(body).subscribe(response => this.items = response);
-    return this.items.filter(state => state.Items.Descriotion.toLowerCase().includes(filterValue));
-  }
+  //   this.searchService.getItemsSearch(body).subscribe(response => this.items = response);
+  //   return this.items.filter(state => state.Items.Descriotion.toLowerCase().includes(filterValue));
+  // }
 
 }
