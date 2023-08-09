@@ -19,12 +19,12 @@
 
                     <hr class="bg-middle">
 
-                    <div class="my-account-tabs" mat-tab-nav-bar [tabPanel]="tabPanel">
-                        <ul class="nav nav-tabs flex-md-column border-0 gap-2 w-100" id="myTab" role="tablist">
-                            <li class="nav-item" role="tab" *ngFor="let myAccountTab of myAccountTabs">
-                                <a mat-tab-link setRtl class="p-0" [id]="myAccountTab.tabRoute" [routerLink]="myAccountTab.tabRoute" routerLinkActive
-                                   #matLink="routerLinkActive" [active]="matLink.isActive">
-                                    <div class="nav-link" [ngClass]="{'active': matLink.isActive}">
+                    <div class="my-account-tabs" id="myAccountTabs" mat-tab-nav-bar [tabPanel]="tabPanel">
+                        <ul class="nav nav-tabs flex-md-column border-0 gap-2 w-100">
+                            <li class="nav-item" *ngFor="let myAccountTab of myAccountTabs">
+                                <a mat-tab-link setRtl class="p-0" [routerLink]="myAccountTab.tabRoute" routerLinkActive #matLink="routerLinkActive"
+                                   [active]="matLink.isActive" [attr.aria-label]="myAccountTab.tabRoute">
+                                    <div class="nav-link" [id]="myAccountTab.tabRoute" [ngClass]="{'active': matLink.isActive}">
                                         {{ myAccountTab.tabName | translate }}
 
                                         <svg xmlns="http://www.w3.org/2000/svg" class="d-none d-md-block" viewBox="0 0 20 20" fill="currentColor"

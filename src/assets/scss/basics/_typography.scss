@@ -6,7 +6,7 @@ $font-bold: "Cairo", sans-serif;
 body {
   font-family: $font-regular;
   @extend .font-16;
-  
+
   * {
     font-family: $font-regular;
   }
@@ -81,6 +81,10 @@ h6 {
 
 .fw-500 {
   font-weight: 500;
+}
+
+.fw-700 {
+  font-weight: 700;
 }
 
 *[class*="font-"] {

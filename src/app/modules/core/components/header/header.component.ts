@@ -1,6 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { SidebarContent } from 'core/enums';
+import { Product } from 'core/interfaces';
+import { Favorite } from 'core/interfaces/favorite/favorite';
 import { AuthService, SidebarToggleService } from 'core/services';
+import { FavoriteService } from 'features/favorite/services/favorite.service';
 
 @Component({
   selector: 'del-header',
@@ -10,6 +13,7 @@ import { AuthService, SidebarToggleService } from 'core/services';
 export class HeaderComponent {
   private sidebarToggleService = inject(SidebarToggleService);
   private authService = inject(AuthService);
+  private favoriteService = inject(FavoriteService);
 
   private get isUserExist() {
     return this.authService.isUserExist;
@@ -17,6 +21,7 @@ export class HeaderComponent {
 
   searchValue = "";
   userMenuItems!: any[];
+  favorites = this.favoriteService.favorites$;
 
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
@@ -59,5 +64,9 @@ export class HeaderComponent {
 
   onSearch() {
     console.log(this.searchValue);
+  }
+
+  removeFavoriteProduct(product: Product | undefined) {
+    this.favoriteService.remove(product as Product);
   }
 }

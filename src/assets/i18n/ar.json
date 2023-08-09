@@ -4,12 +4,15 @@
     "DOWNLOAD_APP": "إضغط هنا للتحميل",
     "RIGHTS": "جميع الحقوق محفوظة ",
     "SEARCHBAR_PLACEHOLDER": "ابحث عن منتج...",
+    "FAVORITE": "المفضلة",
     "HOME": "الرئيسية",
     "MAGAZINES": "المجلات",
     "SOLD_OUT": "نفذت الكمية",
     "FOLLOW_US": "تابعنا على",
     "AVAILABLE_QUANTITY": "الكمية المتاحة",
+    "STORES": "الفروع",
     "ABOUT_US": "نبذة عنا",
+    "LOCATION_ON_MAP": "الموقع علي الخريطة",
     "USER_HEADER_LIST": {
         "SIGN_IN": "تسجيل الدخول",
         "SIGN_OUT": "تسجيل الخروج",
@@ -74,10 +77,12 @@
     },
     "OFFERS": {
         "TITLE": "العروض",
-        "HINT": "هناك عروض خاصة لزوار الموقع"
+        "HINT": "هناك عروض خاصة لزوار الموقع",
+        "ALL": "جميع العروض"
     },
     "ACTIONS": {
         "ADD_FAVOURITES": "أضف إلى المفضلة",
+        "REMOVE_FAVOURITES": "حذف من المفضلة",
         "ADD_CART": "أضف إلى عربة التسوق",
         "QUICK_VIEW": "عرض سريع",
         "BACK": "الرجوع",
@@ -89,10 +94,12 @@
         "COMPLETE": "إستكمال",
         "CANCEL": "إلغاء",
         "SAVE": "حفظ",
-        "CONFIRM": "تأكيد"
+        "CONFIRM": "تأكيد",
+        "SHOW_MORE": "عرض المزيد"
     },
     "EMPTY": {
-        "OFFERS": "لا توجد عروض مضافة الآن."
+        "OFFERS": "لا توجد عروض مضافة الآن.",
+        "FAVORITE": "لا توجد مفضلة الآن."
     },
     "ERROR": {
         "404": "الصفحة غير موجودة",
@@ -116,6 +123,9 @@
     "DIALOG": {
         "DELETE_CONFIRMATION": "تأكيد الحذف",
         "DELETE_MESSAGE": "هل أنت متأكد أنك تريد حذفه؟"
+    },
+    "ALERT": {
+        "MUST_LOGIN": "الرجاء تسجيل الدخول لتتمكن من القيام بهذا الإجراء."
     },
     "required_validation": "هذا الحقل إجباري.",
     "min_validation": "أقل قيمة ",

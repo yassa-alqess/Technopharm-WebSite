@@ -1,13 +1,16 @@
-import { Injectable } from '@angular/core';
-import { HttpService } from 'core/services';
+import { Injectable, inject } from '@angular/core';
+import { AuthService, HttpService } from 'core/services';
 import { catchError, map, of } from 'rxjs';
-import { AdvertisementsResponse, OffersResponse, CityResponse, AreaResponse, Product } from 'core/interfaces';
+import { AdvertisementsResponse, OffersResponse, CityResponse, AreaResponse, Product, StoresResponse, BestSellerItemsResponse } from 'core/interfaces';
 import { BestSellerItems, Advertisements, Offers, Cities, Areas } from '../../../../../../assets/mock-data';
+import { FavoriteService } from 'features/favorite/services/favorite.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HomeService extends HttpService {
+  private authService = inject(AuthService);
+  private favoriteService = inject(FavoriteService);
 
   getBanners(body: { id: string; } = { id: 'LOY' }) {
     return this.post<AdvertisementsResponse>({ APIName: 'AdvertisementsGetById', body }).pipe(
@@ -20,16 +23,26 @@ export class HomeService extends HttpService {
     "maxNumberOfItems": 10,
     "includeDetails": true
   }) {
-    return this.post<Product[]>({ APIName: 'BestSellerItemsGet', body }).pipe(
-      map(response => response),
+    return this.post<BestSellerItemsResponse>({ APIName: 'BestSellerItemsGet', body }).pipe(
+      map(response => response.BestSellerItemsGetResult),
       catchError(() => {
         return of(BestSellerItems);
       }),
-    );
+    ).pipe(
+      map((products) => {
+        products.map(each => {
+          each.isFavorite = this.favoriteService.isItemFavorite(each);
+
+          return each;
+        });
+
+        return products;
+      })
+    );;
   }
 
   getOffers(body: { cardId: string; itemId: string; } = {
-    cardId: 'HOCT00555812',
+    cardId: this.authService.cardId,
     itemId: 'DIS0000239',
   }) {
     return this.post<OffersResponse>({ APIName: 'PublishedOffersGetByCardId', body }).pipe(
@@ -55,6 +68,12 @@ export class HomeService extends HttpService {
       catchError(() => {
         return of(Areas);
       })
+    );
+  }
+
+  getStores() {
+    return this.post<StoresResponse>({ APIName: 'StoresGetAll' }).pipe(
+      map(response => response.StoresGetAllResult),
     );
   }
 }

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from 'core/components/layout/layout.component';
 import { StaticCategoriesIDs } from 'core/enums';
+import { LoginGuard } from 'core/guards/login/login.guard';
 import { RootGuard } from 'core/guards/root/root.guard';
 
 const routes: Routes = [
@@ -70,10 +71,32 @@ const routes: Routes = [
         },
         loadComponent: () => import('./modules/features/offers/offers.component').then(m => m.OffersComponent)
       },
+      {
+        path: 'stores',
+        data: {
+          breadcrumb: 'STORES'
+        },
+        loadComponent: () => import('./modules/features/stores/stores.component').then(m => m.StoresComponent)
+      },
+      {
+        path: 'favorites',
+        data: {
+          breadcrumb: 'FAVORITE'
+        },
+        loadChildren: () => import('./modules/features/favorite/favorite.module').then(m => m.FavoriteModule),
+      },
+      {
+        path: 'magazines',
+        data: {
+          breadcrumb: 'MAGAZINES'
+        },
+        loadChildren: () => import('./modules/features/magazine/magazine.module').then(m => m.MagazineModule),
+      },
     ]
   },
   {
     path: 'account',
+    canActivate: [LoginGuard],
     loadChildren: () => import('./modules/features/account/account.module').then(m => m.AccountModule)
   },
   { path: 'error', loadChildren: () => import('./modules/features/error/error.module').then(m => m.ErrorModule) },

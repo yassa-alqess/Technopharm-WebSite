@@ -6,13 +6,13 @@
                 {{ 'OFFERS.TITLE' | translate }}
             </h2>
 
-            <del-sub-title title="OFFERS.HINT"></del-sub-title>
+            <del-sub-title title="OFFERS.HINT" *ngIf="offers.length"></del-sub-title>
         </div>
 
         <div class="offers-content position-relative mt-4">
             <div class="row d-none d-sm-flex" *ngIf="offers.length; else offerEmptyState">
                 <div class="col-sm-6 col-lg-4 col-xl-3 gy-3" *ngFor="let offer of offers | slice: 0:sliceEndCount; let i=index">
-                    <div class="offers-box bg-white">
+                    <div class="offers-box border-radius-8 border default bg-white">
                         <ng-template [ngTemplateOutlet]="offerRef" [ngTemplateOutletContext]="{ $implicit: offer }"></ng-template>
                     </div>
                 </div>
@@ -21,6 +21,14 @@
             <div class="offers-swiper d-sm-none">
                 <ng-template [ngTemplateOutlet]="OffersSwiper"></ng-template>
             </div>
+        </div>
+
+        <div class="d-flex align-items-center justify-content-center mt-5">
+            <del-menu  btnClass="h-40 px-4 bg-primary text-white" [isMenuTrigger]="false">
+                <a matMenuLabel class="d-flex font-16" routerLink="offers">
+                    {{ "OFFERS.ALL" | translate }}
+                </a>
+            </del-menu>
         </div>
     </div>
 </section>
@@ -40,7 +48,7 @@
     <swiper [slides]="offers | slice: 0:6" [config]="config">
         <ng-template swiperSlide let-offer>
             <div class="swiper-slide d-flex justify-content-center">
-                <div class="offers-box bg-white">
+                <div class="offers-box border-radius-8 bg-white">
                     <ng-template [ngTemplateOutlet]="offerRef" [ngTemplateOutletContext]="{ $implicit: offer }"></ng-template>
                 </div>
             </div>
@@ -48,7 +56,7 @@
     </swiper>
 
     <div class="swiper-button w-100 h-100 position-absolute top-0 d-flex align-items-center justify-content-between">
-        <button class="d-flex justify-content-center align-items-center swiper-next" setRtl>
+        <button class="d-flex justify-content-center align-items-center swiper-next" aria-label="Swiper Next Button" setRtl>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
                 <path fill-rule="evenodd"
                       d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
@@ -56,7 +64,7 @@
             </svg>
         </button>
 
-        <button class="d-flex justify-content-center align-items-center swiper-prev" setRtl>
+        <button class="d-flex justify-content-center align-items-center swiper-prev" aria-label="Swiper Previous Button" setRtl>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="20" height="20">
                 <path fill-rule="evenodd"
                       d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
@@ -67,12 +75,18 @@
 </ng-template>
 
 <ng-template #offerRef let-offer>
-    <a class="d-flex flex-column align-items-center h-100">
-        <img class="img-fluid" [src]="offer.Images[0]?.Location" loading="lazy" [alt]="offer.Description" #offerImage
-             (error)="setOfferPlaceholderImage(offer); offerImage.style.objectFit = 'contain'" />
+    <a class="text-dark border-radius-8 d-flex flex-column align-items-center h-100">
+        <div class="border-radius-8 d-flex flex-column align-items-center h-100 w-100">
+            <img class="img-fluid" [src]="offer.Images[0]?.Location" loading="lazy" [alt]="offer.Description" #offerImage
+                 (error)="setOfferPlaceholderImage(offer); offerImage.style.objectFit = 'contain'; offerImage.style.borderBottom = '1px solid #d9d9d9'" />
 
-        <h4 class="m-0 font-20 text-dark py-2 text-capitalize">
-            {{ isEnglish ? (offer.Description | lowercase) : (offer.ArabicDescription || offer.Description) }}
-        </h4>
+            <h3 class="m-0 font-20 text-center fw-700 text-capitalize text-truncate w-100 p-3">
+                {{ isEnglish ? (offer.Description | lowercase) : (offer.ArabicDescription || offer.Description) }}
+            </h3>
+
+            <p class="m-0 text-middle px-3 pb-3" *ngIf="offer.Details || offer.ArabicText">
+                {{ isEnglish ? offer.Details : (offer.ArabicText || offer.Details) }}.
+            </p>
+        </div>
     </a>
 </ng-template>

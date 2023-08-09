@@ -1,10 +1,13 @@
-export const Offers = [
+import { Offer } from "core/interfaces";
+
+export const Offers: Offer[] = [
     {
         Id: 'PU-000001346',
         ArabicText:
             'عرض ميد كير منتجات العناية بالبشرة والشعر خصم 30% على القطعة من 1-5 حتى 31-5',
         Code: 4,
         Description: 'med care 30%  May',
+        ArabicDescription: '',
         Details:
             'Medcare offers 30% discount on skincare and hair care products per item from 1-5 until 31-5.',
         ExpirationDate: '/Date(1685487600000+0300)/',
@@ -329,6 +332,7 @@ export const Offers = [
             'عرض تويست & جو منتجات العناية بالشعر خصم 50% على القطعة الثانية من 1-5 حتى 31-5',
         Code: 3,
         Description: 'twist &go1+50% 1-31 May',
+        ArabicDescription: '',
         Details:
             'Twist & Go offers 50% discount on the second item of hair care products from 1-5 until 31-5.',
         ExpirationDate: '/Date(1685487600000+0300)/',
@@ -377,6 +381,7 @@ export const Offers = [
             'عرض سومافي منتجات العناية بالشعر الكيرلى  خصم 50% على القطعة الثانية من 1-5 حتى 31-5',
         Code: 3,
         Description: 'Somavie 1+50% 1-31 May',
+        ArabicDescription: '',
         Details:
             'Somavie offers 50% discount on the second item of curly hair care products from 1-5 until 31-5.',
         ExpirationDate: '/Date(1685487600000+0300)/',
@@ -425,6 +430,7 @@ export const Offers = [
             'عرض لوريال إلفيف دريم 8 سكند وندر ووتر 200 مل خصم 30% على القطعة من 1-5 حتى 31-5',
         Code: 4,
         Description: 'Loreal Elvive Dream 30% May',
+        ArabicDescription: '',
         Details:
             "L'Oreal Elvive Dream 8 Second Wonder Water 200ml is discounted by 30% per piece from 1-5 until 31-5.",
         ExpirationDate: '/Date(1685487600000+0300)/',
@@ -472,6 +478,7 @@ export const Offers = [
         ArabicText: 'عرض كولاجرا كونسيلار خصم 40% على القطعة من 1-5 حتى 31-5',
         Code: 4,
         Description: 'Kolagra Medi +light 40% May ',
+        ArabicDescription: '',
         Details:
             'Kolagra Concealer in Medium and Light shades are discounted by 40% per piece from 1-5 until 31-5.',
         ExpirationDate: '/Date(1685487600000+0300)/',
@@ -533,6 +540,7 @@ export const Offers = [
             'عرض ديفول كيدز  منتجات العناية باالشعر الاطفال والشعر الكيرلى خصم 10% على القطعة من 1-5 حتى 31-5',
         Code: 4,
         Description: 'Divol Kids 10% May',
+        ArabicDescription: '',
         Details:
             'Divol Kids hair care products for children, including curly hair, are discounted by 10% per piece from 1-5 until 31-5.',
         ExpirationDate: '/Date(1685487600000+0300)/',
@@ -698,6 +706,7 @@ export const Offers = [
             'اشترى عبوة بيبي ستيبس حليب الماعز مرحلة ثالثة (3) واحصلى على  عبوة  مجانية بيبي ستيبس 300 مجم من 1-5 حتى 31-5',
         Code: 3,
         Description: 'Baby steps 2+1 1-31 May',
+        ArabicDescription: '',
         Details:
             'Buy a pack of Baby Steps Goat Milk Stage 3 formula and get a free 300ml pack of Baby Steps formula from 1-5 until 31-5.',
         ExpirationDate: '/Date(1685487600000+0300)/',
@@ -759,6 +768,7 @@ export const Offers = [
             'عرض بي بي اس 300 مجم اشترى 3 علبة  واحصلى على الرابعة مجانا من 1-5 حتى 31-5',
         Code: 3,
         Description: 'Baby steps 300mg 3+1 May',
+        ArabicDescription: '',
         Details:
             'BBS 300mg lgG buy 3 packs and get the 4th for free from 1-5 until 31-5.',
         ExpirationDate: '/Date(1685487600000+0300)/',
@@ -807,6 +817,7 @@ export const Offers = [
             'عرض بيبي ستيبس 300 مجم اشترى 3 علبة  واحصلى على الرابعة مجانا من  1-5 حتى 31-5',
         Code: 3,
         Description: 'Baby steps 3 3+1 May',
+        ArabicDescription: '',
         Details:
             'Baby Steps 300mg buy 3 packs and get the 4th for free from 1-5 until 31-5.',
         ExpirationDate: '/Date(1685487600000+0300)/',
@@ -855,6 +866,7 @@ export const Offers = [
             'اشترى عبوتين بيبي ستيبس حليب الماعز مرحلة ثالثة (3) واحصلى على العبوة الثالثة مجانيه من 1-5 حتى 31-5',
         Code: 3,
         Description: 'Baby Steps Stage (3) 2+1 May',
+        ArabicDescription: '',
         Details:
             'Buy two packs of Baby Steps Goat Milk Stage 3 formula and get the third pack for free from 1-5 until 31-5.',
         ExpirationDate: '/Date(1685487600000+0300)/',
@@ -903,6 +915,7 @@ export const Offers = [
             'اشترى عبوتين بيبي ستيبس حليب الماعز مرحلة تانية (2) واحصلى على العبوة الثالثة مجانيه من 1-5 حتى 31-5',
         Code: 3,
         Description: 'Baby Steps 2 1-31 May',
+        ArabicDescription: '',
         Details:
             'Buy two packs of Baby Steps Goat Milk Stage 2 formula and get the third pack for free from 1-5 until 31-5.',
         ExpirationDate: '/Date(1685487600000+0300)/',
@@ -950,6 +963,7 @@ export const Offers = [
         ArabicText: 'عرض فاين كير للكبار خصم 10% على القطعة من 1-5 حتى 31-5',
         Code: 4,
         Description: 'Fine Care 10% 1-31 May ',
+        ArabicDescription: '',
         Details: 'Fine Care offers a 10% discount on items 1-5 until May 31st.',
         ExpirationDate: '/Date(1685487600000+0300)/',
         Images: [
@@ -1113,6 +1127,7 @@ export const Offers = [
         ArabicText: 'عرض فاين بيبي  الجامبو خصم 10% على القطعة من 1-5 حتى 31-5',
         Code: 4,
         Description: 'Fine Baby 10% May',
+        ArabicDescription: '',
         Details:
             'Fine Baby offers a 10% discount on Jumbo items 1-5 until May 31st.',
         ExpirationDate: '/Date(1685487600000+0300)/',
@@ -1213,6 +1228,7 @@ export const Offers = [
             'اشترى علبة  فيتامين بروفى كيدز 120 قطعة  واحصلى على علبة  فيتامين سيرفيللو 60  قطعة  مجانا من 1-5 حتى 31-5',
         Code: 3,
         Description: 'Profi120 + cervello 60 May',
+        ArabicDescription: '',
         Details:
             'Buy a box of Profi Kids Vitamins 120 pieces and get a box of Cervello Vitamins 60 pieces for free from 1-5 until 31-5.',
         ExpirationDate: '/Date(1685487600000+0300)/',
@@ -1274,6 +1290,7 @@ export const Offers = [
             'اشترى علبه فيتامين سيرفيللو 120 قطعة واحصلى على علبة فيتامين بروفى كيدز 60 قطعة مجانا من 1-5 حتى 31-5',
         Code: 3,
         Description: 'Cervello120+ prof 60 May',
+        ArabicDescription: '',
         Details:
             'Buy a box of Cervello Vitamins 120 pieces and get a box of Profi Kids Vitamins 60 pieces for free from 1-5 until 31-5.',
         ExpirationDate: '/Date(1685487600000+0300)/',
@@ -1335,6 +1352,7 @@ export const Offers = [
             'اشترى علبة مينا أوميجا 3 120 جوميز أطفال واحصلي على  الثانية مجانا من 1-5 حتى 31-5',
         Code: 3,
         Description: 'Minna Omega 3 120 May',
+        ArabicDescription: '',
         Details:
             'Buy a box of Minna Omega 3 120 gummies for children and get the second one for free from 1-5 until 31-5.',
         ExpirationDate: '/Date(1685487600000+0300)/',
@@ -1383,6 +1401,7 @@ export const Offers = [
             'اشترى علبة مينا أوميجا 3 60 توميز أطفال واحصلى على الثانية  مجانا من 1-5 حتى 31-5',
         Code: 3,
         Description: 'Minna Omega 3 60  May',
+        ArabicDescription: '',
         Details:
             'Buy a box of Minna Omega 3 60 gummies for children and get the second one for free from 1-5 until 31-5.',
         ExpirationDate: '/Date(1685487600000+0300)/',
@@ -1431,6 +1450,7 @@ export const Offers = [
             'اشترى علبة اي او كير واى بروتين للاطفال واحصلى على الثانية مجانا  من 1-5 حتى 31-5',
         Code: 3,
         Description: 'IO Care-10 sachet May',
+        ArabicDescription: '',
         Details:
             'Buy a box of IO Care Whey Protein for Kids 10 Sachet and get the second one for free from 1-5 until 31-5.',
         ExpirationDate: '/Date(1685487600000+0300)/',
@@ -1478,6 +1498,7 @@ export const Offers = [
         ArabicText: 'عرض فيتامينات ناترول خصم 15% على القطعة من 1-5 حتى 31-5',
         Code: 4,
         Description: 'Vitamin Natrol 15% May',
+        ArabicDescription: '',
         Details:
             'Vitamin Natrol offers a 15% discount on items 1-5 until May 31st.',
         ExpirationDate: '/Date(1685487600000+0300)/',
@@ -1838,6 +1859,7 @@ export const Offers = [
             'اشترى علبة ريجيماكس 120مجم 30 كبسول واحصلى على هيرباتريند اعشاب تخسيس مجانا من 1-5 حتى 31-5',
         Code: 3,
         Description: 'Regimax+Herba May',
+        ArabicDescription: '',
         Details:
             'Buy a box of Regimax 120 Mg 30 Cap and get a free box of Herba Trend weight loss herbs from 1-5 until 31-5.',
         ExpirationDate: '/Date(1685487600000+0300)/',
@@ -1899,6 +1921,7 @@ export const Offers = [
             'اشترى علبة مادوفيت إيف الوفيرا للسيدات 30 قرص واحصلى على مادوكس فيتاسيد سى 20 قرص فوار \n مجانا من 1-5 حتى 31-5',
         Code: 3,
         Description: 'Maddox+Maddovit 1-31 May',
+        ArabicDescription: '',
         Details:
             'Buy a box of Maddovit Eve+Aloevera 30 Tab and get a free box of Maddox Multi Vitamin Orange from 1-5 until 31-5.',
         ExpirationDate: '/Date(1685487600000+0300)/',
@@ -1960,6 +1983,7 @@ export const Offers = [
             'اشترى علبة مادوفيت 30 قرص واحصلى على مادوكس فوار برتقال مجانا من 1-5 حتى 31-5',
         Code: 3,
         Description: 'Maddox+maddovit30 May',
+        ArabicDescription: '',
         Details:
             'Buy a box of Maddovit 30 Tab and get a free box of Maddox Multi Vitamin Orange from 1-5 until 31-5.',
         ExpirationDate: '/Date(1685487600000+0300)/',
@@ -2021,6 +2045,7 @@ export const Offers = [
             'اشترى علبة مادوفيت 100 قرص واحصلى على مادوفيت 30 قرص مجانا من 1-5 حتى 31-5',
         Code: 3,
         Description: 'Maddovit 100+Maddovit 30 May',
+        ArabicDescription: '',
         Details:
             'Buy a box of Maddovit 100 Tab and get a free box of Maddovit 30 Tab from 1-5 until 31-5.',
         ExpirationDate: '/Date(1685487600000+0300)/',
@@ -2082,6 +2107,7 @@ export const Offers = [
             'منتجات ممادوكس فيتامينات أقراص فوارة اشترى علبة واحصلى على الثانية  مجانا من 1-5 حتى 31-5',
         Code: 3,
         Description: 'Maddox1+1 May',
+        ArabicDescription: '',
         Details:
             'Buy a box of Maddox Vitamin EFF Tablets and get the second one for free from 1-5 until 31-5.',
         ExpirationDate: '/Date(1685487600000+0300)/',
@@ -2130,6 +2156,7 @@ export const Offers = [
             'اشترى علبة كركملوكس بلس 30 كبسولة واحصلى على علبة مادوكس كالسيوم وفيتامين د3 برتقالي 20 قرص فوار مجانا من 1-5 حتى 31-5',
         Code: 3,
         Description: 'Curcumlox+Maddox May',
+        ArabicDescription: '',
         Details:
             'Buy a box of Curcumlox Plus 30 Liquid Cap and get a free box of Maddox Calcium & Vitamin D3 Orange 20 EFF Tablets from 1-5 until 31-5.',
         ExpirationDate: '/Date(1685487600000+0300)/',
@@ -2191,6 +2218,7 @@ export const Offers = [
             'اشترى علبة ايريكتاليس  20 مج 2 قرص واحصلى على 50% خصم على القطعة الثانية من 1-5 حتى 31-5',
         Code: 3,
         Description: 'Erectalis1+50 May',
+        ArabicDescription: '',
         Details:
             'Buy a box of Erectalis 20 Mg 2 Tab and get 50% off the second item purchased from 1-5 until 31-5.',
         ExpirationDate: '/Date(1685487600000+0300)/',
@@ -2239,6 +2267,7 @@ export const Offers = [
             'اشترى علبة ديلبي 60 مج 3 قرص واحصلى على  50% خصم على القطعة الثانية من 1-5 حتى 31-5',
         Code: 3,
         Description: 'Delepe 1+50 May',
+        ArabicDescription: '',
         Details:
             'Buy a box of Delepe 60 Mg 3 Film and get 50% off the second item purchased from 1-5 until 31-5.',
         ExpirationDate: '/Date(1685487600000+0300)/',
@@ -2287,6 +2316,7 @@ export const Offers = [
             'اشترى علبة ديامونريكتا 20 مج 4 قرص واحصل على خصم 50% على القطعة الثانية من 1-5 حتى 15-5',
         Code: 3,
         Description: 'Diamonrecta 1+50 May',
+        ArabicDescription: '',
         Details:
             'Buy a box of Diamonrecta 20 Mg 4 Tab and get a 50% discount on the second item purchased from May 1st-5th until May 15th.',
         ExpirationDate: '/Date(1685487600000+0300)/',
@@ -2335,6 +2365,7 @@ export const Offers = [
             'اشترى علبة تاردانزا 60 مج 3 قرص واحصل على خصم 50% على القطعة الثانية من 1-5 حتى 15-5',
         Code: 3,
         Description: 'Tardanza 60 Mg 1+50 May',
+        ArabicDescription: '',
         Details:
             'Buy a box of Tardanza 60 Mg 3 Tab and get a 50% discount on the second item purchased from May 1st-5th until May 15th.',
         ExpirationDate: '/Date(1685487600000+0300)/',

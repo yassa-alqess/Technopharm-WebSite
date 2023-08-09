@@ -32,7 +32,7 @@
                     }
 
                     .input-group-text {
-                        padding: 11px 15px;
+                        padding: 12px 16px;
                         border: none;
                         border-radius: 0 4px 4px 0;
                     }
@@ -73,5 +73,18 @@
                 }
             }
         }
+    }
+}
+
+::ng-deep .favorites {
+    max-height: 260px;
+    min-height: max-content;
+}
+
+::ng-deep .menu-content {
+    width: 270px;
+
+    .empty-state {
+        height: 135px;
     }
 }

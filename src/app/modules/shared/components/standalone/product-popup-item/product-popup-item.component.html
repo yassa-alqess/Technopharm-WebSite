@@ -1,0 +1,23 @@
+<div class="item-card d-flex align-items-center gap-2 p-2 bg-light" (isEnglish)="isEnglish = $event" *ngIf="item">
+    <a [routerLink]="itemRouterLink" [queryParams]="{ subCategoryId: item.Description, productId: item.Id }">
+        <img [src]="item.Images[0].Location" [alt]="item.Description + '\'s Image'"
+             (error)="item.Images[0].Location = 'assets/images/common/Product_Image_Placeholder.png'" width="65px" height="55px" />
+    </a>
+
+    <div class="media-body d-flex align-items-center w-100">
+        <a class="item-info w-100" [routerLink]="itemRouterLink" [queryParams]="{ subCategoryId: item.Description, productId: item.Id }">
+            <h6 class="item-title text-dark text-truncate m-0 font-14" [ngbTooltip]="item.Description">{{ item.Description }}</h6>
+
+            <span class="text-primary font-14">
+                {{ formatNumber(item.ItemPrice) }}
+            </span>
+        </a>
+
+        <div class="remove-item d-flex align-self-start cursor-pointer text-middle px-1" (click)="remove()">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.2" stroke="currentColor" width="20px"
+                 height="20px">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </div>
+    </div>
+</div>

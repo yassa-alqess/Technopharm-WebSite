@@ -12,7 +12,11 @@ interface OtpResponse {
   providedIn: 'root'
 })
 export class AuthService extends HttpService {
-  private userDetails: BehaviorSubject<User | any> = new BehaviorSubject(null);
+  private userDetails = new BehaviorSubject<User | null>(null);
+
+  get cardId() {
+    return this.userDetails.value?.Cards![0].Id as string;
+  }
 
   get userPhone() {
     if (!localStorage.getItem('del-user-phone')) return '';
@@ -24,6 +28,8 @@ export class AuthService extends HttpService {
   }
 
   get userDetails$(): Observable<User | null> {
+    if (!this.isUserExist) return of(null);
+
     if (this.userDetails.value) {
       return this.userDetails.asObservable();
     }

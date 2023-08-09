@@ -24,10 +24,8 @@
                 --mdc-tab-indicator-active-indicator-color: #{$primary};
 
                 &.rtl {
-                    button {
-                        svg {
-                            transform: rotate(180deg);
-                        }
+                    svg {
+                        transform: rotate(180deg);
                     }
                 }
 

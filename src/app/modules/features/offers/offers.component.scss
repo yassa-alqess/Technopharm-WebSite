@@ -1,9 +1,9 @@
 .offers-box {
-    border-radius: 10px;
-
     img {
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
+        width: 100%;
+        height: 190px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
         aspect-ratio: 3 / 2;
         object-fit: fill;
     }

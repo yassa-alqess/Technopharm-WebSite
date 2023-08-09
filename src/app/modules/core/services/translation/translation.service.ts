@@ -28,7 +28,19 @@ export class TranslationService {
     return this.translate.currentLang === 'en';
   }
 
-  initLanguage() {
+  changeLanguage() {
+    this.language = this.language === 'en' ? 'ar' : 'en';
+    localStorage.setItem('currentLang', this.language);
+
+    this.translate.use(this.language);
+    this.handleBasicLogic();
+  }
+
+  instant(key: string | string[]) {
+    return this.translate.instant(key);
+  }
+
+  private initLanguage() {
     const lang = localStorage.getItem('currentLang');
 
     if (lang) {
@@ -40,14 +52,6 @@ export class TranslationService {
 
     this.translate.use(this.language);
     this.translate.setDefaultLang(this.language);
-    this.handleBasicLogic();
-  }
-
-  changeLanguage() {
-    this.language = this.language === 'en' ? 'ar' : 'en';
-    localStorage.setItem('currentLang', this.language);
-
-    this.translate.use(this.language);
     this.handleBasicLogic();
   }
 

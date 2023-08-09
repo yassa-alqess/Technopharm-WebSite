@@ -1,4 +1,4 @@
-<button class="main-btn {{ btnClass }}" mat-button [matMenuTriggerFor]="isMenuTrigger ? menu : null">
+<button class="main-btn {{ btnClass }}" mat-button [matMenuTriggerFor]="isMenuTrigger ? menu : null" [ariaLabel]="btnAriaLabel">
     <ng-content select="[matMenuLabel]"></ng-content>
 </button>
 

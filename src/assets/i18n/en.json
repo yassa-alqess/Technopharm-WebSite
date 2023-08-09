@@ -4,12 +4,15 @@
     "DOWNLOAD_APP": "Click here to download",
     "RIGHTS": "All Rights Received ",
     "SEARCHBAR_PLACEHOLDER": "Search for a product...",
+    "FAVORITE": "Favorite",
     "HOME": "Home",
     "MAGAZINES": "Magazines",
     "SOLD_OUT": "Sold Out",
     "FOLLOW_US": "Follow us on",
     "AVAILABLE_QUANTITY": "Available Quantity",
+    "STORES": "Branches",
     "ABOUT_US": "About Us",
+    "LOCATION_ON_MAP": "Location on Map",
     "USER_HEADER_LIST": {
         "SIGN_IN": "Sign In",
         "SIGN_OUT": "Sign Out",
@@ -75,10 +78,12 @@
     },
     "OFFERS": {
         "TITLE": "Offers",
-        "HINT": "There are special offers for the website's visitors"
+        "HINT": "There are special offers for the website's visitors",
+        "ALL": "All Offers"
     },
     "ACTIONS": {
         "ADD_FAVOURITES": "Add to Favourites",
+        "REMOVE_FAVOURITES": "Remove from Favourites",
         "ADD_CART": "Add to Cart",
         "QUICK_VIEW": "Quick View",
         "BACK": "Back",
@@ -90,10 +95,12 @@
         "COMPLETE": "Complete",
         "CANCEL": "Cancel",
         "SAVE": "Save",
-        "CONFIRM": "Confirm"
+        "CONFIRM": "Confirm",
+        "SHOW_MORE": "Show More"
     },
     "EMPTY": {
-        "OFFERS": "There are no offers added right now."
+        "OFFERS": "There are no offers added right now.",
+        "FAVORITE": "There are no favorites added right now."
     },
     "ERROR": {
         "404": "PAGE NOT FOUND",
@@ -118,6 +125,9 @@
     "DIALOG": {
         "DELETE_CONFIRMATION": "Delete Confirmation",
         "DELETE_MESSAGE": "Are you sure that you want to delete it?"
+    },
+    "ALERT": {
+        "MUST_LOGIN": "Please login to be able to do this action."
     },
     "required_validation": "This field is required.",
     "min_validation": "Min Value ",

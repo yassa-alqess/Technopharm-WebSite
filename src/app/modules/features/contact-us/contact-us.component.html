@@ -1,6 +1,6 @@
-<section class="contact-section">
-  <div class="container-lg">
-    <div class="row gy-lg-0 gx-0 gx-lg-4 justify-content-around">
+<section class="contact-section container-lg mt-4">
+  <div class="row gy-lg-0 gx-0 gx-lg-4">
+    <ng-container *ngIf="showContactUsForm">
       <div class="col-lg-6">
         <!-- Reply From Section Start -->
         <div class="replay-form border default border-radius-8 p-3" id="replaySection">
@@ -46,99 +46,99 @@
         </div>
         <!-- Reply From Section End -->
       </div>
+    </ng-container>
 
-      <!-- COMMUNICATE_WITH -->
-      <div class="col-lg-6 mt-4 mt-lg-0">
-        <div class="address-content-wrapper p-3 border default border-radius-8">
-          <div class="address-content-title">
-            <del-title title="CONTACT_US.COMMUNICATE_WITH" fontSize="font-22"></del-title>
-          </div>
+    <!-- COMMUNICATE_WITH -->
+    <div class="col-lg-6 mt-4 mt-lg-0">
+      <div class="address-content-wrapper p-3 border default border-radius-8">
+        <div class="address-content-title">
+          <del-title title="CONTACT_US.COMMUNICATE_WITH" fontSize="font-22"></del-title>
+        </div>
 
-          <!-- address-content -->
-          <div class="address-content mt-4">
-            <div class="row">
-              <!-- ADDRESS -->
-              <div class="col-12">
-                <div class="each-address-info bg-light d-flex align-item-center gap-2 p-3">
-                  <span class="svg_style bg-primary text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="24"
-                         height="24">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-                      <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                    </svg>
-                  </span>
+        <!-- address-content -->
+        <div class="address-content mt-4">
+          <div class="row">
+            <!-- ADDRESS -->
+            <div class="col-12">
+              <div class="address-info bg-light d-flex align-items-center gap-3 p-3">
+                <span class="svg_style bg-primary text-white border-radius-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="24"
+                       height="24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                  </svg>
+                </span>
 
-                  <div class="address-info">
-                    <h6 class="m-0 font-14 regular text-dark">
-                      {{ "CONTACT_US.ADDRESS" | translate }}
-                    </h6>
+                <div class="address-info">
+                  <h6 class="m-0 font-14 regular text-dark">
+                    {{ "CONTACT_US.ADDRESS" | translate }}
+                  </h6>
 
-                    <span class="font-16 text-middle">{{ mainAddress.name }}</span>
-                  </div>
+                  <span class="font-16 text-middle">{{ mainAddress.name }}</span>
                 </div>
               </div>
+            </div>
 
-              <!-- MOBILE_PHONE -->
-              <div class="col-12 mt-2">
-                <div class="each-address-info bg-light d-flex align-item-center gap-2 p-3">
-                  <span class="svg_style bg-primary text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="24"
-                         height="24">
-                      <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
-                    </svg>
-                  </span>
+            <!-- MOBILE_PHONE -->
+            <div class="col-12 mt-2">
+              <div class="mobile-phone-info bg-light d-flex align-items-center gap-3 p-3">
+                <span class="svg_style bg-primary text-white border-radius-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="24"
+                       height="24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                  </svg>
+                </span>
 
-                  <div class="address-info">
-                    <h6 class="m-0 font-14 regular text-dark">
-                      {{ "CONTACT_US.MOBILE_PHONE" | translate }}
-                    </h6>
+                <div class="mobile-phone-info">
+                  <h6 class="m-0 font-14 regular text-dark">
+                    {{ "CONTACT_US.MOBILE_PHONE" | translate }}
+                  </h6>
 
-                    <span class="font-16 text-middle">{{ mainAddress.mobile }}</span>
-                  </div>
+                  <span class="font-16 text-middle">{{ mainAddress.mobile }}</span>
                 </div>
               </div>
+            </div>
 
-              <!-- EMAIL -->
-              <div class="col-12 mt-2">
-                <div class="each-address-info bg-light d-flex align-item-center gap-2 p-3">
-                  <span class="svg_style bg-primary text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="24"
-                         height="24">
-                      <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-                    </svg>
-                  </span>
+            <!-- EMAIL -->
+            <div class="col-12 mt-2">
+              <div class="email-info bg-light d-flex align-items-center gap-3 p-3">
+                <span class="svg_style bg-primary text-white border-radius-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="24"
+                       height="24">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                  </svg>
+                </span>
 
-                  <div class="address-info">
-                    <h6 class="m-0 font-14 regular text-dark">
-                      {{ "CONTACT_US.EMAIL" | translate }}
-                    </h6>
+                <div class="email-info">
+                  <h6 class="m-0 font-14 regular text-dark">
+                    {{ "CONTACT_US.EMAIL" | translate }}
+                  </h6>
 
-                    <span class="font-16 text-middle">{{ mainAddress.email }}</span>
-                  </div>
+                  <span class="font-16 text-middle">{{ mainAddress.email }}</span>
                 </div>
               </div>
+            </div>
 
-              <!-- OTHER_ADDRESS -->
-              <div class="col-12 mt-2">
-                <div class="each-address-info bg-light d-flex align-item-center gap-2 p-3">
-                  <span class="svg_style bg-primary text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="24"
-                         height="24" class="w-6 h-6">
-                      <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
-                    </svg>
-                  </span>
+            <!-- OTHER_ADDRESS -->
+            <div class="col-12 mt-2">
+              <div class="other-address-info bg-light d-flex align-items-center gap-3 p-3">
+                <span class="svg_style bg-primary text-white border-radius-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" width="24"
+                       height="24" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M9 6.75V15m6-6v8.25m.503 3.498l4.875-2.437c.381-.19.622-.58.622-1.006V4.82c0-.836-.88-1.38-1.628-1.006l-3.869 1.934c-.317.159-.69.159-1.006 0L9.503 3.252a1.125 1.125 0 00-1.006 0L3.622 5.689C3.24 5.88 3 6.27 3 6.695V19.18c0 .836.88 1.38 1.628 1.006l3.869-1.934c.317-.159.69-.159 1.006 0l4.994 2.497c.317.158.69.158 1.006 0z" />
+                  </svg>
+                </span>
 
-                  <div class="address-info">
-                    <h6 class="m-0 font-14 regular text-dark">
-                      {{ "CONTACT_US.OTHER_ADDRESS" | translate }}
-                    </h6>
+                <div class="other-address-info">
+                  <h6 class="m-0 font-14 regular text-dark">
+                    {{ "CONTACT_US.OTHER_ADDRESS" | translate }}
+                  </h6>
 
-                    <span class="font-16 text-middle">{{ mainAddress.otherAddress }}</span>
-                  </div>
+                  <span class="font-16 text-middle">{{ mainAddress.otherAddress }}</span>
                 </div>
               </div>
             </div>
