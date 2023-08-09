@@ -8,7 +8,7 @@ export interface Search {
 export interface SearchResult {
     Id: string;
     ItemCategories: any[];
-    Items: Item[];
+    Items: Product[];
     Notifications: any[];
     OneLists: any[];
     ProductGroups: any[];
