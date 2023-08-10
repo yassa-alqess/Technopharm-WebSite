@@ -14,8 +14,9 @@ import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ProductPopupItemComponent {
   @Input() item!: Product | undefined;
+  @Input() showRemoveIcon = true;
+
   @Output() removeFavorite = new EventEmitter();
-  @Input() showRemoveIcon =true;
 
   isEnglish = false;
   itemRouterLink = '';
