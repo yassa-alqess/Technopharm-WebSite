@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from '../http/http.service';
-import { SearchResult } from 'core/interfaces/search/search';
+import { SearchResponse } from 'core/interfaces/search/search';
+import { map } from 'rxjs';
 
 
 @Injectable({
@@ -8,10 +9,14 @@ import { SearchResult } from 'core/interfaces/search/search';
 })
 export class SearchService extends HttpService {
 
-  getItemsSearch(body: { contactId?: string, search: string, searchTypes?: number; }) {
+  getItemsSearch(body: { search: string; contactId?: string; searchTypes?: number; isLoading?: boolean; }) {
     body.contactId = "CT01286651";
     body.searchTypes = 1;
-    return this.post<SearchResult[]>({ APIName: 'Search', body }).pipe();
+    body.isLoading = false;
+
+    return this.post<SearchResponse>({ APIName: 'Search', body }).pipe(
+      map(response => response.SearchResult.Items)
+    );
   }
 
 }

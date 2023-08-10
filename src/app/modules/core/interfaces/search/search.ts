@@ -1,7 +1,7 @@
 
 import { Product } from "../product/product";
 
-export interface Search {
+export interface SearchResponse {
     SearchResult: SearchResult;
 }
 

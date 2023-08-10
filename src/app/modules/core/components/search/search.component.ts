@@ -1,15 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { SearchResult } from 'core/interfaces/search/search';
-import { SearchService } from 'core/services/search/search.service';
-import { Observable } from 'rxjs';
-import { map, startWith } from 'rxjs/operators';
 
-export interface State {
-  flag: string;
-  name: string;
-  population: string;
-}
+import { Product } from 'core/interfaces';
+import { SearchService } from 'core/services/search/search.service';
+import { Observable, of } from 'rxjs';
+import { debounceTime, startWith, switchMap } from 'rxjs/operators';
+
 @Component({
   selector: 'del-search',
   templateUrl: './search.component.html',
@@ -18,28 +14,24 @@ export interface State {
 export class SearchComponent {
   private searchService = inject(SearchService);
 
-  stateCtrl = new FormControl('');
-  filteredStates: Observable<SearchResult[]>;
-
-  items: SearchResult[] = [];
-
-
+  searchControl = new FormControl('');
+  filteredItems: Observable<Product[]>;
 
   constructor() {
-    this.filteredStates = this.stateCtrl.valueChanges.pipe(
+    this.filteredItems = this.searchControl.valueChanges.pipe(
       startWith(''),
-      map(item => (item ? this._filterStates(item) : this.items.slice())),
+      debounceTime(500),
+      switchMap(searchKey => this.getItems(searchKey)),
     );
   }
 
-  private _filterStates(value: string): SearchResult[] {
-    const filterValue = value.toLowerCase();
+  private getItems(searchKey: string | null) {
+    if (!searchKey) return of([]);
+
     const body = {
-      search: filterValue
+      search: searchKey
     };
 
-    this.searchService.getItemsSearch(body).subscribe(response => this.items = response);
-    return this.items.filter(state => state.Items[0].Description.toLowerCase().includes(filterValue));
+    return this.searchService.getItemsSearch(body);
   }
-
 }

@@ -1,14 +1,23 @@
-<form class="example-form">
-    <mat-form-field class="example-full-width">
-        <mat-label>Search..</mat-label>
-        <input matInput aria-label="State" [matAutocomplete]="auto" [formControl]="stateCtrl">
-        <mat-autocomplete #auto="matAutocomplete">
-            <mat-option *ngFor="let item of filteredStates | async" [value]="item.Items">
-                <del-product-popup-item [item]?="item"></del-product-popup-item>
-            </mat-option>
-        </mat-autocomplete>
-    </mat-form-field>
+<div class="search-bar position-relative d-none d-xl-inline-block">
+    <div class="input-group d-flex align-items-center w-100 position-relative border default border-radius-4">
+        <input type="text" class="form-control bg-white search-type" [matAutocomplete]="auto" [formControl]="searchControl"
+               [placeholder]="'SEARCHBAR_PLACEHOLDER' | translate" />
 
-    <br>
+        <div class="input-group-append m-0">
+            <span class="input-group-text bg-primary cursor-pointer m-0">
+                <svg class="search-b text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                     stroke="currentColor" width="24" height="24">
 
-</form>
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                          d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                </svg>
+            </span>
+        </div>
+    </div>
+
+    <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let item of filteredItems | async" [value]="item">
+            <del-product-popup-item [item]="item"></del-product-popup-item>
+        </mat-option>
+    </mat-autocomplete>
+</div>
