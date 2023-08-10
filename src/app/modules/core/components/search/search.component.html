@@ -16,8 +16,8 @@
     </div>
 
     <mat-autocomplete #auto="matAutocomplete">
-        <mat-option *ngFor="let item of filteredItems | async" [value]="item">
-            <del-product-popup-item [item]="item"></del-product-popup-item>
+        <mat-option *ngFor="let item of filteredItems | async" [value]="item" >
+            <del-product-popup-item [item]="item" [showRemoveIcon]="false"></del-product-popup-item>
         </mat-option>
     </mat-autocomplete>
 </div>
