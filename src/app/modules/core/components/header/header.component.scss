@@ -17,27 +17,6 @@
                 }
             }
 
-            .search-bar {
-                width: 50%;
-
-                .input-group {
-                    .form-control {
-                        height: auto;
-                        border-radius: 0;
-                        border: none;
-
-                        &:focus {
-                            box-shadow: none;
-                        }
-                    }
-
-                    .input-group-text {
-                        padding: 12px 16px;
-                        border: none;
-                        border-radius: 0 4px 4px 0;
-                    }
-                }
-            }
         }
     }
 

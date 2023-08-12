@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { SidebarContent } from 'core/enums';
 import { Product } from 'core/interfaces';
-import { Favorite } from 'core/interfaces/favorite/favorite';
 import { AuthService, SidebarToggleService } from 'core/services';
 import { FavoriteService } from 'features/favorite/services/favorite.service';
 

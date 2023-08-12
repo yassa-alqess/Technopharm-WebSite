@@ -14,7 +14,16 @@ export class LoadingInterceptor implements HttpInterceptor {
   private loadingService = inject(LoadingService);
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    this.loadingService.setLoading(true, request.url);
+    const body: any = request.body;
+    if (body && "isLoading" in JSON.parse(body)) {
+      if (body.isLoading) {
+        this.loadingService.setLoading(true, request.url);
+      }
+
+      delete body.isLoading;
+    } else {
+      this.loadingService.setLoading(true, request.url);
+    }
 
     return next.handle(request).pipe(
       catchError((error) => {
