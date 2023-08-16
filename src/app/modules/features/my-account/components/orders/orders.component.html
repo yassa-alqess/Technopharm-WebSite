@@ -6,7 +6,7 @@
         <div class="tab-pane p-3" id="orders" role="tabpanel" aria-labelledby="orders-tab">
 
             <div class="order-wraper">
-                <div class="order-box">
+                <div class="order-box" *ngFor="let order of orders">
                     <div class="order-header d-flex">
                         <span class="headerSvg border-radius-50 bg-primary-light d-flex justify-content-center" width="45px" height="45px">
                             <svg class="text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -17,7 +17,7 @@
                         </span>
                         <div class="order-content mx-3">
                             <p class="order-status success mb-0 font-18 text-primary">تم الإلغاء</p>
-                            <p class="text-middle">#48478945465</p>
+                            <p class="text-middle">{{order.Id}}</p>
                         </div>
                     </div>
 
@@ -39,3 +39,6 @@
                 </div>
             </div>
         </div>
+        <ng-template #ordersEmpty>
+
+        </ng-template>

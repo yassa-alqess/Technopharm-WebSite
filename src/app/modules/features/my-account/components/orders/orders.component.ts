@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Orders } from 'core/interfaces/tranasactionHistory/transaction';
+import { TransactionHistoryService } from 'core/services/transactionhistory/transaction-history.service';
 
 @Component({
   selector: 'del-orders',
@@ -6,10 +8,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./orders.component.scss']
 })
 export class OrdersComponent {
-  rating: number = 3.5;
+  private transactionHistoryService = inject(TransactionHistoryService);
 
-  calculateStarWidth(): string {
-    const starWidth = (this.rating * 20) + '%';
-    return starWidth;
+  orders: Orders[] = [];
+
+  ngOnInit() {
+    this.getOrdersHistory();
+  }
+
+  getOrdersHistory() {
+    this.transactionHistoryService.getTransactionHistory().subscribe(response => this.orders = response);
+    console.log(this.orders);
   }
 }
