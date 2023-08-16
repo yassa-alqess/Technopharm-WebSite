@@ -1,9 +1,68 @@
 <div class="orders-wrapper">
-    <h1 class="m-0 font-20 regular text-dark">{{ 'MY_ACCOUNT.ORDERS' | translate }}</h1>
+    <p class="text-dark font-22 fw-500 ">{{"ORDER.TITLE" | translate}}</p>
+    <p class="text-middle font-16"> {{"ORDER.SUB_TITLE" | translate}} </p>
 
-    <hr>
+    <div class="orders-content mt-3 bg-white mx-3 border-radius-8">
+        <div class="tab-pane p-3" id="orders" role="tabpanel" aria-labelledby="orders-tab">
 
-    <div class="orders-content mt-3">
-        <p>coming soon!</p>
+            <div class="order-wraper">
+                <div class="order-box">
+                    <div class="order-header d-flex">
+                        <span class="headerSvg border-radius-50 bg-primary-light d-flex justify-content-center" width="45px" height="45px">
+                            <svg class="text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                 stroke="currentColor" width="30px" hight="30px">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                      d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+                            </svg>
+                        </span>
+                        <div class="order-content mx-3">
+                            <p class="order-status success mb-0 font-18 text-primary">تم الإلغاء</p>
+                            <p class="text-middle">#48478945465</p>
+                        </div>
+                    </div>
+
+                    <div class="order-info">
+                        <div class="product-details bg-light p-4 d-flex">
+                            <div class="img-box"><img src="../assets/images/fashion/product/front/4.jpg" alt="product" /></div>
+                            <div class="product-content">
+                                <h5>بانادول اكسترا للصداع</h5>
+                                <p class="truncate-3">
+
+                                    لوريم ايبسوم هو نموذج افتراضي يوضع في التصاميم لتعرض على العميل ليتصور طريقه وضع النصوص
+                                    بالتصاميم سواء كانت تصاميم مطبوعه ... بروشور او فلاير على سبيل المثال ... او نماذج مواقع
+                                    انترنت ...
+
+                                </p>
+                                <ul>
+                                    <li>
+                                        <span>السعر :<span> 120.00 جنيه </span></span>
+                                    </li>
+                                    <li>
+                                        <span>الحجم : <span>M</span></span>
+                                    </li>
+                                    <li>
+                                        <span>اللون : <span>أزرق</span></span>
+                                    </li>
+                                    <li>
+                                        <span>العدد : <span>5</span></span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="rating-box bg-light p-4 mt-2 d-flex">
+                            <span class="text-dark font-18"> {{"ORDER.RATE" |translate}} :</span>
+                            <div class="rating">
+                                <div class="stars" [style.width]="calculateStarWidth()">
+                                    &#9733;&#9733;&#9733;&#9733;&#9733;
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

@@ -123,6 +123,11 @@
         "ADDRESS": "Address",
         "OTHER_ADDRESS": "Other addresses"
     },
+    "ORDER": {
+        "TITLE": "My orders",
+        "SUB_TITLE": "You can view all your requests and follow their status",
+        "RATE": "Product rate"
+    },
     "DIALOG": {
         "DELETE_CONFIRMATION": "Delete Confirmation",
         "DELETE_MESSAGE": "Are you sure that you want to delete it?"

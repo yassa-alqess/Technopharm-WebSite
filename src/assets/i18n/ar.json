@@ -121,6 +121,11 @@
         "ADDRESS": "العنوان        ",
         "OTHER_ADDRESS": "عناوين أُخرى"
     },
+    "ORDER": {
+        "TITLE": "طلباتي ",
+        "SUB_TITLE": "يمكنك الإطلاع علي كل طلباتك و متابعة حالتها ",
+        "RATE": "تقييم المنتج "
+    },
     "DIALOG": {
         "DELETE_CONFIRMATION": "تأكيد الحذف",
         "DELETE_MESSAGE": "هل أنت متأكد أنك تريد حذفه؟"
