@@ -9,4 +9,5 @@ export * from './city/city';
 export * from './area/area';
 export * from './search/search';
 export * from './tranasactionHistory/transaction'
+export * from './transaction-history-details/transaction-history-details'
 

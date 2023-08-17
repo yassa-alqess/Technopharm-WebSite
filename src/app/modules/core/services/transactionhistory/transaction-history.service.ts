@@ -2,7 +2,8 @@ import { Injectable, inject } from '@angular/core';
 import { HttpService } from '../http/http.service';
 import { map } from 'rxjs';
 import { AuthService } from '../auth/auth.service';
-import { TransactionHistory } from 'core/interfaces/tranasactionHistory/transaction';
+import { TransactionHistoryResponse } from 'core/interfaces/tranasactionHistory/transaction';
+import { TransactionHistoryDetails } from 'core/interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +15,20 @@ export class TransactionHistoryService extends HttpService {
     cardId: "HOCT01270447",
     maxNumberOfTransactions: 10,
   }) {
-    return this.post<TransactionHistory>({ APIName: 'SalesEntriesGetByCardId', body }).pipe(
-      map(response => response.TransactionHistory),
+    return this.post<TransactionHistoryResponse>({ APIName: 'SalesEntriesGetByCardId', body }).pipe(
+      map(response => response.SalesEntriesGetByCardIdResult),
 
     );
   }
+
+ getTransactionHistoryDetails(body: { entryId: string; type?: number; }) {
+  body.entryId = "CO00000000523";
+  body.type = 2;
+
+  return this.post<TransactionHistoryDetails>({ APIName: 'SalesEntryGet', body }).pipe(
+    map(response => response.SalesEntryGetResult)
+  );
+}
+
+  
 }

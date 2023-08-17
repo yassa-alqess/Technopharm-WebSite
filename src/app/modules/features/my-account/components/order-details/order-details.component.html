@@ -1,0 +1,42 @@
+<div class="modal-container d-flex flex-column">
+    <div class="table p-4">
+        <table class="table table-hover ">
+            <thead>
+              <tr class="text-primary ">
+               
+                <th scope="col">Items</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Amount</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of order.Lines ">
+                <th scope="row">{{item.ItemDescription}}</th>
+                <td>{{item.Quantity}}</td>
+                <td>{{item.Amount}}</td>
+               
+              </tr>
+            </tbody>
+          </table>   
+        </div> 
+
+        <div class="bg-light  w-100" >
+           <div class="m-3 text-dark font-20  ">
+            <p>Amount: {{order.TotalAmount}}</p>
+            <p>Discount:{{order.TotalDiscount}} </p>
+            <p>Delivery:0.00</p>
+            <p>Tax Amount: {{order.Lines[0].TaxAmount}}</p>
+            <hr>
+            <p>TotalAmount: {{order.TotalNetAmount}}</p>
+           </div>
+           <div class="modal-footer w-100 d-flex justify-content-end gap-3" mat-dialog-actions>
+               <del-button btnClass="text-white bg-primary font-20 border-radius-6" mat-dialog-close>
+                   OK
+               </del-button>
+           
+           </div>
+    </div>
+
+
+</div>
+

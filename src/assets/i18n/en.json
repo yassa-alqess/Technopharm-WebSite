@@ -101,7 +101,8 @@
     "EMPTY": {
         "OFFERS": "There are no offers added right now.",
         "FAVORITE": "There are no favorites added right now.",
-        "SEARCH": "There're no search results."
+        "SEARCH": "There're no search results.",
+        "ORDERS": "There are no order history right now."
     },
     "ERROR": {
         "404": "PAGE NOT FOUND",
@@ -126,7 +127,14 @@
     "ORDER": {
         "TITLE": "My orders",
         "SUB_TITLE": "You can view all your requests and follow their status",
-        "RATE": "Product rate"
+        "STATUS": {
+            "CANCELLED": "Cancelled",
+            "DELIVERED": "Delivered",
+            "PICKING": "Picking staff assigned",
+            "RELEASED": "Released",
+            "DRIVER": "Driver assigned",
+            "STORE": "Recieved by store"
+        }
     },
     "DIALOG": {
         "DELETE_CONFIRMATION": "Delete Confirmation",

@@ -100,7 +100,8 @@
     "EMPTY": {
         "OFFERS": "لا توجد عروض مضافة الآن.",
         "FAVORITE": "لا توجد مفضلة الآن.",
-        "SEARCH": "لا توجد نتائج بحث."
+        "SEARCH": "لا توجد نتائج بحث.",
+        "ORDERS": "لا توجد طلبات سابقة ."
     },
     "ERROR": {
         "404": "الصفحة غير موجودة",
@@ -124,7 +125,14 @@
     "ORDER": {
         "TITLE": "طلباتي ",
         "SUB_TITLE": "يمكنك الإطلاع علي كل طلباتك و متابعة حالتها ",
-        "RATE": "تقييم المنتج "
+        "STATUS": {
+            "CANCELLED": "تم الالغاء",
+            "DELIVERED": "تم التوصيل",
+            "PICKING": "Picking staff assigned",
+            "RELEASED": "Released",
+            "DRIVER": "Driver assigned",
+            "STORE": "Recieved by store"
+        }
     },
     "DIALOG": {
         "DELETE_CONFIRMATION": "تأكيد الحذف",
