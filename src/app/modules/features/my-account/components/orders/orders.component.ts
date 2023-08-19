@@ -1,12 +1,12 @@
 import { Component, inject } from '@angular/core';
-import { Router } from '@angular/router';
-import { SalesEntryStatus } from 'core/enums/salesEntryStatus/salesEntryStatus';
-import { Orders } from 'core/interfaces/tranasactionHistory/transaction';
-import { TransactionHistoryService } from 'core/services/transactionhistory/transaction-history.service';
 import { format } from 'date-fns';
 
+import { Order } from 'core/interfaces';
+import { SalesEntryStatus } from 'core/enums';
+import { TransactionHistoryService } from 'core/services';
+
 interface OrderStatus {
-  [key: number]: { name: string; color: string; bg: string }
+  [key: number]: { name: string; color: string; bg: string; };
 }
 
 @Component({
@@ -16,10 +16,8 @@ interface OrderStatus {
 })
 export class OrdersComponent {
   private transactionHistoryService = inject(TransactionHistoryService);
-  private router = inject(Router)
-  
 
-  orders: Orders[] = [];
+  orders: Order[] = [];
   isEnglish = false;
 
   orderStatus: OrderStatus = {
@@ -53,19 +51,14 @@ export class OrdersComponent {
       color: 'text-middle',
       bg: 'bg-middle'
     }
-  }
+  };
 
   ngOnInit() {
     this.getOrdersHistory();
   }
 
-  
-
   getOrdersHistory() {
-    this.transactionHistoryService.getTransactionHistory().subscribe(response => {
-      this.orders = response;
-      console.log(this.orders);
-    });
+    this.transactionHistoryService.getTransactionHistory().subscribe(response => this.orders = response);
   }
 
   getOrderDate(birthDay: string) {
@@ -74,7 +67,6 @@ export class OrdersComponent {
 
     return format(new Date(Number(date.pop())), 'dd/MM/yyyy');
   }
-
 
   formatNumber(number: number) {
     return new Intl.NumberFormat(`${this.isEnglish ? 'en' : 'ar'}-EG`, { style: 'currency', currency: 'EGP' }).format(number);

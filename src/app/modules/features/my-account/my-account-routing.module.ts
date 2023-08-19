@@ -41,13 +41,12 @@ const routes: Routes = [
         path: 'orders',
         data: { breadcrumb: 'MY_ACCOUNT.ORDERS' },
         component: OrdersComponent,
-        children:[
-            {
-              path: 'details',
+        children: [
+          {
+            path: 'details',
             data: { component: OrderDetailsComponent, pageTitle: 'MY_ACCOUNT.ADDRESS.ADD' },
             component: DialogComponent,
-            }
-
+          }
         ]
       },
       {

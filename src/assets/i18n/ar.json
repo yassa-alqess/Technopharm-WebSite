@@ -21,6 +21,7 @@
     },
     "ACCOUNT": {
         "SIGN_IN_HINT": "من فضلك قم بتسجيل الدخول وتمتع برحلة الشراء",
+        "REGISTER_HINT": "من فضلك قم بالتسجيل للإستمتاع برحلة التسوق الخاصة بك",
         "MOBILE_NUMBER": "رقم الموبايل",
         "GENERATE_OTP": "إرسال رمز التحقق",
         "BACK_TO_HOME": "الرجوع للرئيسية",
@@ -114,8 +115,9 @@
         "NAME": "الإسم",
         "NAME-PLACEHOLDER": "من فضلك قم بكتابة إسمك",
         "EMAIL": "البريد الإلكتروني ",
-        "EMAIL_PLACEHOLDER": "من فضلك قم بكتابة البريد الإلكتروني   ",
-        "MOBILE_PHONE": "رقم الجوال        ",
+        "EMAIL_PLACEHOLDER": "من فضلك قم بكتابة البريد الإلكتروني",
+        "MOBILE_PHONE": "رقم الجوال",
+        "MOBILE_PLACEHOLDER": "الرجاء إدخال رقم هاتفك المحمول",
         "MESSAGE": "الرسالة",
         "SEND": "إرسال",
         "COMMUNICATE_WITH": "كُنّْ على تواصل معنا",
@@ -126,12 +128,12 @@
         "TITLE": "طلباتي ",
         "SUB_TITLE": "يمكنك الإطلاع علي كل طلباتك و متابعة حالتها ",
         "STATUS": {
-            "CANCELLED": "تم الالغاء",
+            "RELEASED": "تم الإنشاء",
+            "STORE": "تم إستلمها بواسطة المتجر",
+            "PICKING": "تم الانتقاء بواسطة طاقم العمل المُعَين",
+            "DRIVER": "تم إستلام الطلب بواسطة الديليفيري",
             "DELIVERED": "تم التوصيل",
-            "PICKING": "Picking staff assigned",
-            "RELEASED": "Released",
-            "DRIVER": "Driver assigned",
-            "STORE": "Recieved by store"
+            "CANCELLED": "تم الإلغاء"
         }
     },
     "DIALOG": {

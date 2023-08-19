@@ -2,5 +2,8 @@ export * from './alert/alert.service';
 export * from './auth/auth.service';
 export * from './categories/categories.service';
 export * from './http/http.service';
+export * from './search/search.service';
+export * from './loading/loading.service';
 export * from './translation/translation.service';
 export * from './sidebar-toggle/sidebar-toggle.service';
+export * from './transaction-history/transaction-history.service';

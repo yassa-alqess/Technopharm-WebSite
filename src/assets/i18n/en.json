@@ -115,9 +115,9 @@
         "NAME": "Name",
         "NAME_PLACEHOLDER": "Please enter your Name",
         "EMAIL": "Email",
-        "EMAIL_PLACEHOLDER": "Please enter your Email  ",
+        "EMAIL_PLACEHOLDER": "Please enter your Email",
         "MOBILE_PHONE": "Mobile Number",
-        "MOBILE_PLACEHOLDER": "Please enter your Mobile Number ",
+        "MOBILE_PLACEHOLDER": "Please enter your Mobile Number",
         "MESSAGE": "Message",
         "SEND": "Send",
         "COMMUNICATE_WITH": "Get in touch with us",
@@ -125,15 +125,15 @@
         "OTHER_ADDRESS": "Other addresses"
     },
     "ORDER": {
-        "TITLE": "My orders",
+        "TITLE": "My Orders",
         "SUB_TITLE": "You can view all your requests and follow their status",
         "STATUS": {
-            "CANCELLED": "Cancelled",
-            "DELIVERED": "Delivered",
-            "PICKING": "Picking staff assigned",
             "RELEASED": "Released",
-            "DRIVER": "Driver assigned",
-            "STORE": "Recieved by store"
+            "STORE": "Received by the store",
+            "PICKING": "Picking by the staff assigned",
+            "DRIVER": "The order was assigned to the delivery",
+            "DELIVERED": "Delivered",
+            "CANCELLED": "Cancelled"
         }
     },
     "DIALOG": {
