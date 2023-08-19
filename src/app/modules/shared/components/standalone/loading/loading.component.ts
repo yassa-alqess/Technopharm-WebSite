@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { LoadingService } from 'core/services/loading/loading.service';
+import { LoadingService } from 'core/services';
 
 @Component({
   selector: 'del-loading',

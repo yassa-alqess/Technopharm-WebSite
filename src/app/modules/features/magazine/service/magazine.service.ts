@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MagazineResponse } from 'core/interfaces/magazine/magazine';
+import { MagazineResponse } from 'core/interfaces';
 import { HttpService } from 'core/services';
 import { map } from 'rxjs';
 

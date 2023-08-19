@@ -4,7 +4,7 @@ import { of } from 'rxjs';
 import { debounceTime, finalize, map, startWith, switchMap } from 'rxjs/operators';
 
 import { Product } from 'core/interfaces';
-import { SearchService } from 'core/services/search/search.service';
+import { SearchService } from 'core/services';
 
 @Component({
   selector: 'del-search',

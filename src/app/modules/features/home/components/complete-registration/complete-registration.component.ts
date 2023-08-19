@@ -5,7 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { format } from 'date-fns';
 
 import { UserPayload } from 'core/interfaces';
-import { AuthService } from 'core/services/auth/auth.service';
+import { AuthService } from 'core/services';
 import { BaseSharedModule } from 'shared/sub-modules/base-shared';
 import { InputTextComponent, DropdownComponent, ButtonComponent, AccountInfoFormComponent, AccountAddressFormComponent } from 'shared/components';
 
