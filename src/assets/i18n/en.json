@@ -102,7 +102,7 @@
         "OFFERS": "There are no offers added right now.",
         "FAVORITE": "There are no favorites added right now.",
         "SEARCH": "There're no search results.",
-        "ORDERS": "There are no order history right now."
+        "ORDERS": "There are no orders right now."
     },
     "ERROR": {
         "404": "PAGE NOT FOUND",

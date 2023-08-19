@@ -11,7 +11,7 @@ export class TransactionHistoryService extends HttpService {
   private authService = inject(AuthService);
 
   getTransactionHistory(body: { cardId: string; maxNumberOfTransactions: number; } = {
-    cardId: "HOCT01270447",
+    cardId: this.authService.cardId, // "HOCT01270447",
     maxNumberOfTransactions: 10,
   }) {
     return this.post<TransactionHistoryResponse>({ APIName: 'SalesEntriesGetByCardId', body }).pipe(
