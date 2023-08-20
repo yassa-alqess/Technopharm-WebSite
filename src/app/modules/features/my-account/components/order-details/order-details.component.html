@@ -7,9 +7,10 @@
     <table class="table table-hover">
       <thead>
         <tr class="text-primary ">
-          <th scope="col">Item Name</th>
-          <th scope="col">Quantity</th>
-          <th scope="col">Amount</th>
+          <th scope="col"> {{"ORDER.DETAILS.ITEMNAME" |translate}} </th>
+          <th scope="col"> {{"ORDER.DETAILS.QUANTITY" |translate}} </th>
+          <th scope="col"> {{"ORDER.DETAILS.AMOUNT" |translate}}
+          </th>
         </tr>
       </thead>
 
@@ -27,9 +28,9 @@
         <div class="col-sm-6">
           <div class="px-3 py-2 bg-white border-radius-8 d-flex flex-column">
             <label for="amount" class="font-14">
-              Amount
+              {{"ORDER.DETAILS.AMOUNT" |translate}}
             </label>
-    
+
             <span id="amount" class="font-16 fw-bold mt-1">
               {{ order.TotalAmount }}
             </span>
@@ -39,9 +40,10 @@
         <div class="col-sm-6 mt-3 mt-sm-0">
           <div class="px-3 py-2 bg-white border-radius-8 d-flex flex-column">
             <label for="discount" class="font-14">
-              Discount
+              {{"ORDER.DETAILS.DISCOUNT" |translate}}
+
             </label>
-  
+
             <span id="discount" class="font-16 fw-bold mt-1">
               {{ order.TotalDiscount }}
             </span>
@@ -51,9 +53,9 @@
         <div class="col-sm-6 mt-3">
           <div class="px-3 py-2 bg-white border-radius-8 d-flex flex-column">
             <label for="delivery" class="font-14">
-              Delivery
+              {{"ORDER.DETAILS.DELIVERY" |translate}}
             </label>
-  
+
             <span id="delivery" class="font-16 fw-bold mt-1">
               {{ 0 }}
             </span>
@@ -63,9 +65,9 @@
         <div class="col-sm-6 mt-3">
           <div class="px-3 py-2 bg-white border-radius-8 d-flex flex-column">
             <label for="textAmount" class="font-14">
-              Tax Amount
+              {{"ORDER.DETAILS.TAX" |translate}}
             </label>
-  
+
             <span id="textAmount" class="font-16 fw-bold mt-1">
               {{ order.TaxAmount }}
             </span>
@@ -75,15 +77,22 @@
         <div class="col-12 mt-3">
           <div class="px-3 py-2 bg-white border-radius-8 d-flex flex-column">
             <label for="totalAmount" class="font-14">
-              TotalAmount
+              {{"ORDER.DETAILS.TOTALAMOUNT" |translate}}
+
             </label>
-  
+
             <span id="totalAmount" class="font-16 fw-bold mt-1">
               {{ order.TotalNetAmount }}
             </span>
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="my-3">
+      <del-button btnClass="primary font-18 border-radius-8" type="submit">
+        {{ 'ORDER.DETAILS.REORDER' | translate }}
+      </del-button>
     </div>
   </div>
 

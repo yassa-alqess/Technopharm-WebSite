@@ -134,6 +134,16 @@
             "DRIVER": "The order was assigned to the delivery",
             "DELIVERED": "Delivered",
             "CANCELLED": "Cancelled"
+        },
+        "DETAILS": {
+            "ITEMNAME": "Item Name",
+            "QUANTITY": "Quantity",
+            "AMOUNT": "Amount",
+            "DISCOUNT": "Discount",
+            "DELIVERY": "Delivery",
+            "TAX": "Tax Amount",
+            "TOTALAMOUNT": "Total Amount",
+            "REORDER": "Reorder Items"
         }
     },
     "DIALOG": {

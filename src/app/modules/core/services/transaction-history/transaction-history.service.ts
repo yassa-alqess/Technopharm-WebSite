@@ -20,6 +20,7 @@ export class TransactionHistoryService extends HttpService {
   }
 
   getTransactionHistoryDetails(body: { entryId: string; type?: number; }) {
+    body.entryId = "CO00000000523"
     body.type = 2;
 
     return this.post<TransactionHistoryDetails>({ APIName: 'SalesEntryGet', body }).pipe(
