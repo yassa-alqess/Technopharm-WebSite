@@ -6,7 +6,7 @@ import { SidebarContent } from 'core/enums';
 import { Product, ProductsPayload } from 'core/interfaces';
 import { ProductsService } from 'features/products/services/products/products.service';
 import { FavoriteService } from 'features/favorite/services/favorite.service';
-import { SidebarToggleService } from 'core/services/sidebar-toggle/sidebar-toggle.service';
+import { SidebarToggleService } from 'core/services';
 
 @Component({
   selector: 'del-products',

@@ -1,0 +1,104 @@
+<div class="modal-container d-flex flex-column" *ngIf="order">
+  <div class="modal-header bg-header" mat-dialog-header>
+    <h1 class="m-0 p-0 font-22 regular text-primary" mat-dialog-title>#{{ order.Id }}</h1>
+  </div>
+
+  <div class="px-4 py-3 m-0 bg-light" mat-dialog-content>
+    <table class="table table-hover">
+      <thead>
+        <tr class="text-primary ">
+          <th scope="col"> {{"ORDER.DETAILS.ITEMNAME" |translate}} </th>
+          <th scope="col"> {{"ORDER.DETAILS.QUANTITY" |translate}} </th>
+          <th scope="col"> {{"ORDER.DETAILS.AMOUNT" |translate}}
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let item of order.Lines">
+          <th scope="row">{{ item.ItemDescription }}</th>
+          <td>{{ item.Quantity }}</td>
+          <td>{{ item.Amount }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="mt-4 w-100">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="px-3 py-2 bg-white border-radius-8 d-flex flex-column">
+            <label for="amount" class="font-14">
+              {{"ORDER.DETAILS.AMOUNT" |translate}}
+            </label>
+
+            <span id="amount" class="font-16 fw-bold mt-1">
+              {{ order.TotalAmount }}
+            </span>
+          </div>
+        </div>
+
+        <div class="col-sm-6 mt-3 mt-sm-0">
+          <div class="px-3 py-2 bg-white border-radius-8 d-flex flex-column">
+            <label for="discount" class="font-14">
+              {{"ORDER.DETAILS.DISCOUNT" |translate}}
+
+            </label>
+
+            <span id="discount" class="font-16 fw-bold mt-1">
+              {{ order.TotalDiscount }}
+            </span>
+          </div>
+        </div>
+
+        <div class="col-sm-6 mt-3">
+          <div class="px-3 py-2 bg-white border-radius-8 d-flex flex-column">
+            <label for="delivery" class="font-14">
+              {{"ORDER.DETAILS.DELIVERY" |translate}}
+            </label>
+
+            <span id="delivery" class="font-16 fw-bold mt-1">
+              {{ 0 }}
+            </span>
+          </div>
+        </div>
+
+        <div class="col-sm-6 mt-3">
+          <div class="px-3 py-2 bg-white border-radius-8 d-flex flex-column">
+            <label for="textAmount" class="font-14">
+              {{"ORDER.DETAILS.TAX" |translate}}
+            </label>
+
+            <span id="textAmount" class="font-16 fw-bold mt-1">
+              {{ order.TaxAmount }}
+            </span>
+          </div>
+        </div>
+
+        <div class="col-12 mt-3">
+          <div class="px-3 py-2 bg-white border-radius-8 d-flex flex-column">
+            <label for="totalAmount" class="font-14">
+              {{"ORDER.DETAILS.TOTALAMOUNT" |translate}}
+
+            </label>
+
+            <span id="totalAmount" class="font-16 fw-bold mt-1">
+              {{ order.TotalNetAmount }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="my-3">
+      <del-button btnClass="primary font-18 border-radius-8" type="submit">
+        {{ 'ORDER.DETAILS.REORDER' | translate }}
+      </del-button>
+    </div>
+  </div>
+
+  <div class="modal-footer w-100 d-flex justify-content-end gap-3" mat-dialog-actions>
+    <del-button btnClass="primary border-radius-6" mat-dialog-close>
+      Close
+    </del-button>
+  </div>
+</div>

@@ -1,14 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from '../http/http.service';
-import { SearchResponse } from 'core/interfaces/search/search';
+import { SearchResponse } from 'core/interfaces';
 import { map } from 'rxjs';
-
 
 @Injectable({
   providedIn: 'root'
 })
 export class SearchService extends HttpService {
-
   getItemsSearch(body: { search: string; contactId?: string; searchTypes?: number; isLoading?: boolean; }) {
     body.contactId = "CT01286651";
     body.searchTypes = 1;
@@ -18,5 +16,4 @@ export class SearchService extends HttpService {
       map(response => response.SearchResult.Items)
     );
   }
-
 }

@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { SidebarContent } from 'core/enums';
-import { SidebarToggleService } from 'core/services/sidebar-toggle/sidebar-toggle.service';
+import { SidebarToggleService } from 'core/services';
 
 @Component({
   selector: 'del-sidebar',

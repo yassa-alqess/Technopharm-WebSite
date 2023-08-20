@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { MagazineService } from '../../service/magazine.service';
-import { Magazine } from 'core/interfaces/magazine/magazine';
+import { Magazine } from 'core/interfaces';
 
 @Component({
   selector: 'del-magazine',

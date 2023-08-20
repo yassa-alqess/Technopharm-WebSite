@@ -1,7 +1,7 @@
 import { Component, HostListener, ViewChild, inject } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'core/services/auth/auth.service';
+import { AuthService } from 'core/services';
 import { addMinutes, addSeconds, differenceInSeconds, format } from 'date-fns';
 import { NgOtpInputComponent } from 'ng-otp-input';
 import { Config } from 'ng-otp-input/lib/models/config';

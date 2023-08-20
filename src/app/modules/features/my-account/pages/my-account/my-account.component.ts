@@ -26,10 +26,10 @@ export class MyAccountComponent {
       tabName: 'MY_ACCOUNT.ADDRESSES',
       tabRoute: 'addresses'
     },
-    {
-      tabName: 'MY_ACCOUNT.WALLET',
-      tabRoute: 'wallet'
-    },
+    // {
+    //   tabName: 'MY_ACCOUNT.WALLET',
+    //   tabRoute: 'wallet'
+    // },
   ];
 
   ngOnInit(): void {

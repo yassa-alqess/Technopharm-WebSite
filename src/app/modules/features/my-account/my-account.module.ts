@@ -13,26 +13,30 @@ import { EditAccountComponent } from './components/edit-account/edit-account.com
 import { AccountAddressFormComponent, AccountInfoFormComponent, ButtonComponent } from 'shared/components';
 import { MatDialogModule } from '@angular/material/dialog';
 import { AddEditAddressComponent } from './components/add-edit-address/add-edit-address.component';
+import { SubTitleComponent } from "../../shared/components/standalone/sub-title/sub-title.component";
+import { OrderDetailsComponent } from './components/order-details/order-details.component';
 
 @NgModule({
-  declarations: [
-    MyAccountComponent,
-    InformationComponent,
-    OrdersComponent,
-    AddressesComponent,
-    WalletComponent,
-    EditAccountComponent,
-    AddEditAddressComponent
-  ],
-  imports: [
-    CommonModule,
-    MyAccountRoutingModule,
-    MatTabsModule,
-    BaseSharedModule,
-    MatDialogModule,
-    ButtonComponent,
-    AccountInfoFormComponent,
-    AccountAddressFormComponent,
-  ]
+    declarations: [
+        MyAccountComponent,
+        InformationComponent,
+        OrdersComponent,
+        AddressesComponent,
+        WalletComponent,
+        EditAccountComponent,
+        AddEditAddressComponent,
+        OrderDetailsComponent
+    ],
+    imports: [
+        CommonModule,
+        MyAccountRoutingModule,
+        MatTabsModule,
+        BaseSharedModule,
+        MatDialogModule,
+        ButtonComponent,
+        AccountInfoFormComponent,
+        AccountAddressFormComponent,
+        SubTitleComponent
+    ]
 })
 export class MyAccountModule { }
