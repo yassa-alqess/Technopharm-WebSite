@@ -42,7 +42,10 @@ export class ProductsComponent {
       filter((event) => event instanceof NavigationEnd),
       distinctUntilChanged(),
       takeUntil(this.destroy$)
-    ).subscribe(() => this.getProducts());
+    ).subscribe(() => {
+      this.pageNumber = 1;
+      this.getProducts();
+    });
   }
 
   ngOnInit(): void {
