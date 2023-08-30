@@ -7,3 +7,6 @@ export * from './favorite/favorite';
 export * from './user/user';
 export * from './city/city';
 export * from './area/area';
+export * from './search/search';
+export * from './magazine/magazine';
+export * from './tranasaction-history/tranasaction-history'

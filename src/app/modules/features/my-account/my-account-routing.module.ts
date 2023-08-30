@@ -10,9 +10,11 @@ import {
   AddressesComponent,
   WalletComponent,
   EditAccountComponent,
-  AddEditAddressComponent,
+  AddEditAddressComponent
 } from './components';
+
 import { DialogComponent } from 'shared/components';
+import { OrderDetailsComponent } from './components/order-details/order-details.component';
 
 const routes: Routes = [
   {
@@ -38,7 +40,14 @@ const routes: Routes = [
       {
         path: 'orders',
         data: { breadcrumb: 'MY_ACCOUNT.ORDERS' },
-        component: OrdersComponent
+        component: OrdersComponent,
+        children: [
+          {
+            path: 'details',
+            data: { component: OrderDetailsComponent, pageTitle: 'MY_ACCOUNT.ADDRESS.ADD' },
+            component: DialogComponent,
+          }
+        ]
       },
       {
         path: 'addresses',

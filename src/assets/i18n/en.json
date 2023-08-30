@@ -100,7 +100,9 @@
     },
     "EMPTY": {
         "OFFERS": "There are no offers added right now.",
-        "FAVORITE": "There are no favorites added right now."
+        "FAVORITE": "There are no favorites added right now.",
+        "SEARCH": "There're no search results.",
+        "ORDERS": "There are no orders right now."
     },
     "ERROR": {
         "404": "PAGE NOT FOUND",
@@ -113,14 +115,36 @@
         "NAME": "Name",
         "NAME_PLACEHOLDER": "Please enter your Name",
         "EMAIL": "Email",
-        "EMAIL_PLACEHOLDER": "Please enter your Email  ",
+        "EMAIL_PLACEHOLDER": "Please enter your Email",
         "MOBILE_PHONE": "Mobile Number",
-        "MOBILE_PLACEHOLDER": "Please enter your Mobile Number ",
+        "MOBILE_PLACEHOLDER": "Please enter your Mobile Number",
         "MESSAGE": "Message",
         "SEND": "Send",
         "COMMUNICATE_WITH": "Get in touch with us",
         "ADDRESS": "Address",
         "OTHER_ADDRESS": "Other addresses"
+    },
+    "ORDER": {
+        "TITLE": "My Orders",
+        "SUB_TITLE": "You can view all your requests and follow their status",
+        "STATUS": {
+            "RELEASED": "Released",
+            "STORE": "Received by the store",
+            "PICKING": "Picking by the staff assigned",
+            "DRIVER": "The order was assigned to the delivery",
+            "DELIVERED": "Delivered",
+            "CANCELLED": "Cancelled"
+        },
+        "DETAILS": {
+            "ITEMNAME": "Item Name",
+            "QUANTITY": "Quantity",
+            "AMOUNT": "Amount",
+            "DISCOUNT": "Discount",
+            "DELIVERY": "Delivery",
+            "TAX": "Tax Amount",
+            "TOTALAMOUNT": "Total Amount",
+            "REORDER": "Reorder Items"
+        }
     },
     "DIALOG": {
         "DELETE_CONFIRMATION": "Delete Confirmation",

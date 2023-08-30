@@ -1,5 +1,5 @@
 export enum AdvertisementsAppTypes {
-    magazine = 'magazie',
+    magazine = 'magazine',
     item = 'Item',
     search = 'Search',
     offer = 'Offer',

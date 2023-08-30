@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatDrawer } from '@angular/material/sidenav';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { SidebarToggleService } from 'core/services/sidebar-toggle/sidebar-toggle.service';
+import { SidebarToggleService } from 'core/services';
 import { Subject, filter, distinctUntilChanged, takeUntil } from 'rxjs';
 
 @Component({

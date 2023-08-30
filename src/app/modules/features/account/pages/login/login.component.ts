@@ -3,7 +3,7 @@ import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { environment } from '../../../../../../environments/environment';
 import { Subject, takeUntil } from 'rxjs';
-import { AuthService } from 'core/services/auth/auth.service';
+import { AuthService } from 'core/services';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserPayload } from 'core/interfaces';
 import { format } from 'date-fns';

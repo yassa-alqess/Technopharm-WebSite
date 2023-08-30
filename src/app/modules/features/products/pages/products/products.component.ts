@@ -6,7 +6,7 @@ import { SidebarContent } from 'core/enums';
 import { Product, ProductsPayload } from 'core/interfaces';
 import { ProductsService } from 'features/products/services/products/products.service';
 import { FavoriteService } from 'features/favorite/services/favorite.service';
-import { SidebarToggleService } from 'core/services/sidebar-toggle/sidebar-toggle.service';
+import { SidebarToggleService } from 'core/services';
 
 @Component({
   selector: 'del-products',
@@ -42,7 +42,10 @@ export class ProductsComponent {
       filter((event) => event instanceof NavigationEnd),
       distinctUntilChanged(),
       takeUntil(this.destroy$)
-    ).subscribe(() => this.getProducts());
+    ).subscribe(() => {
+      this.pageNumber = 1;
+      this.getProducts();
+    });
   }
 
   ngOnInit(): void {

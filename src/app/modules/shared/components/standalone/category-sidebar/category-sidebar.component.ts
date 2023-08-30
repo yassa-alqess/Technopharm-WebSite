@@ -5,7 +5,7 @@ import { Subject, filter, distinctUntilChanged, takeUntil } from 'rxjs';
 import { CategoryIDs } from 'core/enums';
 import { Category, ProductGroup } from 'core/interfaces';
 import { CategoriesService } from 'core/services';
-import { SidebarToggleService } from 'core/services/sidebar-toggle/sidebar-toggle.service';
+import { SidebarToggleService } from 'core/services';
 import { CategoryComponent } from '../category/category.component';
 import { TitleComponent } from '../title/title.component';
 import { TranslateModule } from '@ngx-translate/core';
