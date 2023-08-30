@@ -1,0 +1,12 @@
+@import "style";
+
+:host ::ng-deep.pagination-arrow {
+    --mdc-filled-button-container-color: #{$primary-light};
+    --mdc-filled-button-label-text-color: #{$primary};
+}
+
+.rtl {
+    svg {
+        transform: rotate(180deg);
+    }
+}

@@ -20,7 +20,7 @@
             </span>
 
             <div class="filter-options d-flex align-items-center justify-content-between w-100">
-              <div class="select-menu">
+              <div class="select-menu d-flex align-items-center gap-4">
                 <del-menu menuClass="mt-2 box-shadow" btnClass="border default border-radius-4 justify-content-start justify-content-xl-center px-4">
                   <span matMenuLabel class="d-flex">{{ 'ACTIONS.SORT_RESULTS' | translate }}</span>
 
@@ -28,6 +28,9 @@
                     {{ filterOption.optionName | translate }}
                   </del-menu-item>
                 </del-menu>
+
+                <del-pagination [pageNumber]="pageNumber" [totalCount]="products.length" (pageSelected)="pageNumber = $event; getProducts();">
+                </del-pagination>
               </div>
 
               <!-- filter-options | grid -->

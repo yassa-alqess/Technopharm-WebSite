@@ -8,7 +8,7 @@ import { DetailsComponent } from './pages/details/details.component';
 import { CategoriesRoutingModule } from './products-routing.module';
 
 import { BaseSharedModule } from 'shared/sub-modules/base-shared';
-import { CategorySidebarComponent, ProductComponent, ProductDetailsComponent } from 'shared/components';
+import { CategorySidebarComponent, PaginationComponent, ProductComponent, ProductDetailsComponent } from 'shared/components';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,8 @@ import { CategorySidebarComponent, ProductComponent, ProductDetailsComponent } f
     MatSidenavModule,
     ProductComponent,
     CategorySidebarComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    PaginationComponent
   ]
 })
 export class ProductsModule { }
